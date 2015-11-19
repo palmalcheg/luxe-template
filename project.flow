@@ -1,0 +1,32 @@
+{
+  luxe:{
+    window: {
+      width:160,
+      height:144,
+      title:'LuxeTemplate',
+      fullscreen:false,
+      resizable:false,
+      borderless:false
+    }
+  },
+  project : {
+    name : 'LuxeTemplate',
+    version : '1.0.0',
+    author : 'myosis',
+    app : {
+      main : 'dk.myosis.luxetemplate.Main',
+      name : 'LuxeTemplate',
+      package : 'dk.myosis.luxetemplate'
+    },
+    build : {
+      dependencies : {
+        luxe : '*',
+        mint : '*',
+        nape : '*'
+      }
+    },
+    files : {
+      assets : 'assets/'
+    }
+  }
+}
