@@ -6,28 +6,28 @@
 		},
 		{
 			"name": "Luxe",
-			"path": "/Users/dejean/Developer/haxe/haxelib_repository/luxe/git",
+			"path": "~/Developer/haxe/haxelib_repository/luxe/git",
 			"follow_symlinks": true
 		},
 		{
 
 			"name": "Mint",
-			"path": "/Users/dejean/Developer/haxe/haxelib_repository/mint/git",
+			"path": "~/Developer/haxe/haxelib_repository/mint/git",
 			"follow_symlinks": true
 		},
 		{
 			"name": "Flow",
-			"path": "/Users/dejean/Developer/haxe/haxelib_repository/flow/git",
+			"path": "~/haxe/haxelib_repository/flow/git",
 			"follow_symlinks": true			
 		},
 		{
 			"name": "Snow",
-			"path": "/Users/dejean/Developer/haxe/haxelib_repository/snow/git",
+			"path": "~/Developer/haxe/haxelib_repository/snow/git",
 			"follow_symlinks": true
 		},
 		{
 			"name": "Nape",
-			"path": "/Users/dejean/Developer/haxe/haxelib_repository/nape/2,0,19",
+			"path": "~/Developer/haxe/haxelib_repository/nape/2,0,19",
 			"follow_symlinks": true		
 		}	
 	]
