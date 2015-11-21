@@ -37,12 +37,3 @@ class Constants
 	// public static var GAME_BOY_COLOR_MEDIUM(default, never):Color = new Color().rgb(0x6b6931);
 	// public static var GAME_BOY_COLOR_DARK(default, never):Color = new Color().rgb(0x212010);
 }
-
-// enum GameBoyPaletteHex {
-
-// 	var Off = 0x9BBC0F;
-// 	var Light = 0x8BAC0F;
-// 	var Medium = 0x306230;
-// 	var Dark = 0x0F380F;
-
-// }

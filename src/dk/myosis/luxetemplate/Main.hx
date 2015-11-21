@@ -11,6 +11,7 @@ import luxe.Vector;
 import mint.Button;
 import mint.Canvas;
 import mint.Control;
+import mint.focus.Focus;
 import mint.types.Types;
 import mint.render.luxe.LuxeMintRender;
 import mint.render.luxe.Convert;
@@ -19,14 +20,15 @@ import mint.layout.margins.Margins;
 import dk.myosis.luxetemplate.states.Game;
 import dk.myosis.luxetemplate.states.Splash;
 import dk.myosis.luxetemplate.systems.PlayerInputSystem;
-import dk.myosis.luxetemplate.ui.CustomButtonRenderer;
-import dk.myosis.luxetemplate.ui.CustomRenderering;
+import dk.myosis.luxetemplate.ui.MyosisButtonRender;
+import dk.myosis.luxetemplate.ui.MyosisMintRendering;
 
 
 class Main extends luxe.Game {
 
     public static var mintRenderer:LuxeMintRender;
     public static var canvas:Canvas;
+    public static var focus: Focus;
 
     public static var w: Int = -1;
     public static var h: Int = -1;
@@ -45,7 +47,7 @@ class Main extends luxe.Game {
         config.preload.textures.push({ id:'assets/img/ui/gb_button.png', filter_min:nearest, filter_mag:nearest });        
         config.preload.textures.push({ id:'assets/img/ui/gb_button_pressed.png', filter_min:nearest, filter_mag:nearest });        
         config.preload.textures.push({ id:'assets/img/ui/gb_button_hover.png', filter_min:nearest, filter_mag:nearest });        
-        config.preload.fonts.push({ id:'assets/font/justabit/justabit64.fnt' });
+        config.preload.fonts.push({ id:'assets/font/justabit/justabit32.fnt' });      
 
         return config;
     }
@@ -62,24 +64,11 @@ class Main extends luxe.Game {
         canvas = new mint.Canvas({
             name:'canvas',
             rendering: mintRenderer,
-            options: { color:new Color(1, 0, 1, 1) },
-            x: 0, y:0, w: 100, h: 100
+            options: { color:Constants.GAME_BOY_COLOR_OFF },
+            x: 0, y:0, w: w, h: h
         });
 
-        // var button = new Button( {
-        //     parent: canvas,
-        //     name: "test_button",
-        //     x: 0, y:0, w:30, h: 20,
-        //     text: "start",
-        //     options: { color:new Color(0, 1, 0, 1) },
-        //     onclick: function(e,c) {trace('Button - MouseUp! ${Luxe.time}' );}
-        // } );
-
-        // var font = Luxe.resources.font('assets/font/justabit/justabit64.fnt');
-        // var txt:Text = Luxe.scene.get('test_button.label.text');
-        // txt.font = font;
-        // txt.point_size = 8;
-        // txt.geom.texture = txt.font.pages[0];
+        focus = new Focus(canvas);
 
         _states = new States({ name:'states' });
         _states.add(new Splash());
@@ -89,56 +78,50 @@ class Main extends luxe.Game {
         _button = new Button({
             parent: canvas, 
             name: 'testbutton', 
-            text: 'Test',
-            rendering: new CustomRendering(),
+            text: 'test',
+            rendering: new MyosisMintRendering(),
             x: 0, y:0, w:30, h: 20,
             onclick: function(e,c) { trace('mint button! ${Luxe.time}' );}
         });
 
-        _button.depth = 3;
-        // _button.onmouseenter.listen(function(e,c) { trace('MouseUp: mint button ${Luxe.time}' );});
-
-        var font = Luxe.resources.font('assets/font/justabit/justabit64.fnt');
         var txt:Text = Luxe.scene.get('testbutton.label.text');
-        txt.font = font;
+        txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         txt.point_size = 16;
         txt.geom.texture = txt.font.pages[0];
+
+        // var button2 = new Button( {
+        //     parent: canvas,
+        //     name: "testbutton2",
+        //     x: 50, y:0, w:30, h: 20,
+        //     text: "test",
+        //     options: { color:new Color(0, 1, 0, 1) },
+        //     onclick: function(e,c) {trace('Button - MouseUp! ${Luxe.time}' );}
+        // } );
+
+        // var txt2:Text = Luxe.scene.get('testbutton2.label.text');
+        // txt2.font = Luxe.resources.font('assets/font/justabit/justabit64.fnt');
+        // txt2.point_size = 16;
+        // txt2.geom.texture = txt2.font.pages[0];
     }
 
     override function onrender() {
-
         canvas.render();
-
-        // if(debug) {
-        //     for(c in canvas.children) {
-        //         drawc(c);
-        //     }
-        // }
-
     }
 
-    override function onmouseup(e) {
-        trace("Main - MouseUp");
+    override function onmouseup(e:luxe.Input.MouseEvent) {
+        // trace("Main - MouseUp");        
         canvas.mouseup( Convert.mouse_event(e) );
     }
 
-    override function onmousemove(e) {
+    override function onmousedown(e:luxe.Input.MouseEvent) {
+        // trace("Main - MouseUp: " + e);
+        canvas.mousedown( Convert.mouse_event(e) );
+    }
+
+    override function onmousemove(e:luxe.Input.MouseEvent) {
         // trace("Main - MouseMove");
+        mouseEventToWorld(e);
         canvas.mousemove( Convert.mouse_event(e) );
-
-        var s = 'debug:  (${Luxe.snow.os} / ${Luxe.snow.platform})\n';
-
-        s += 'canvas nodes: ' + (canvas != null ? '${canvas.nodes}' : 'none');
-        s += '\n';
-        s += 'focused: ' + (canvas.focused != null ? '${canvas.focused.name} [${canvas.focused.nodes}]' : 'none');
-        s += (canvas.focused != null ? ' / depth: '+canvas.focused.depth : '');
-        s += '\n';
-        s += 'modal: ' + (canvas.modal != null ?  canvas.modal.name : 'none');
-        s += '\n';
-        s += 'dragged: ' + (canvas.dragged != null ? canvas.dragged.name : 'none');
-        s += '\n\n';
-
-        trace(s);
     }
 
     // Scale camera's viewport accordingly when game is scaled, common and suitable for most games
@@ -150,10 +133,12 @@ class Main extends luxe.Game {
         // trace("----- Main update -----");
         canvas.update(dt);
         _inputSystem.update(dt);
+    }
 
-        // if (_button.ishovered) {
-        //     trace('MouseHover: mint button ${Luxe.time}' );
-        // }
+    function mouseEventToWorld(e:luxe.Input.MouseEvent) {
+        e.pos = Luxe.camera.screen_point_to_world(e.pos);
+        e.x = Std.int(e.pos.x);
+        e.y = Std.int(e.pos.y);
     }
 
 }
