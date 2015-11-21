@@ -3,19 +3,19 @@
     window: {
       width:160,
       height:144,
-      title:'LuxeTemplate',
+      title:'Luxe Template',
       fullscreen:false,
       resizable:false,
       borderless:false
     }
   },
   project : {
-    name : 'LuxeTemplate',
+    name : 'luxe-template',
     version : '1.0.0',
     author : 'myosis',
     app : {
       main : 'dk.myosis.luxetemplate.Main',
-      name : 'LuxeTemplate',
+      name : 'luxe-template',
       package : 'dk.myosis.luxetemplate'
     },
     build : {
