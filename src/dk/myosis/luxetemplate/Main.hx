@@ -46,7 +46,9 @@ class Main extends luxe.Game {
         config.preload.textures.push({ id:'assets/img/smiley.png', filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id:'assets/img/ui/gb_button.png', filter_min:nearest, filter_mag:nearest });        
         config.preload.textures.push({ id:'assets/img/ui/gb_button_pressed.png', filter_min:nearest, filter_mag:nearest });        
-        config.preload.textures.push({ id:'assets/img/ui/gb_button_hover.png', filter_min:nearest, filter_mag:nearest });        
+        config.preload.textures.push({ id:'assets/img/ui/gb_button_hover.png', filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id:'assets/img/ui/button2.png', filter_min:nearest, filter_mag:nearest });        
+        config.preload.textures.push({ id:'assets/img/ui/button2_pressed.png', filter_min:nearest, filter_mag:nearest });       
         config.preload.fonts.push({ id:'assets/font/justabit/justabit32.fnt' });      
 
         return config;
@@ -88,6 +90,7 @@ class Main extends luxe.Game {
         txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         txt.point_size = 16;
         txt.geom.texture = txt.font.pages[0];
+        txt.color = Constants.GAME_BOY_COLOR_DARK;
 
         // var button2 = new Button( {
         //     parent: canvas,

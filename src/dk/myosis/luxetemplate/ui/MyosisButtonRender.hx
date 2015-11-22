@@ -3,25 +3,19 @@ package dk.myosis.luxetemplate.ui;
 import luxe.Color;
 import luxe.Log.*;
 import luxe.NineSlice;
+import luxe.Text;
 import luxe.Vector;
 
 import mint.Button;
+import mint.Control;
 import mint.render.Render;
 import mint.render.Rendering;
+import mint.types.Types.MouseEvent;
 
 import dk.myosis.luxetemplate.Constants;
 import dk.myosis.luxetemplate.ui.MyosisMintRendering;
 
-private typedef MyosisButtonOptions = {
-    var color: Color;
-    var color_hover: Color;
-    var color_down: Color;
-}
-
 class MyosisButtonRender extends Render {
-    public var color: Color;
-    public var color_hover: Color;
-    public var color_down: Color;
 
     var visual:NineSlice;
 
@@ -32,27 +26,20 @@ class MyosisButtonRender extends Render {
         visual = new luxe.NineSlice({
             name: control.name + '.visual',
             batcher: customRendering.options.batcher,
-            texture : Luxe.resources.texture('assets/img/ui/gb_button.png'),
+            texture : Luxe.resources.texture('assets/img/ui/button2.png'),
             top : 5, left : 5, right : 5, bottom : 5,
             pos: new Vector(control.x, control.y),
             size: new Vector(control.w, control.h),
-            color: color,
             depth: customRendering.options.depth + control.depth,
             visible: control.visible,
         });
 
         visual.create(new Vector(control.x, control.y), control.w, control.h);
-
-        var _opt: MyosisButtonOptions = _control.options.options;
-
-        color = def(_opt.color, new Color().rgb(0x373737));
-        color_hover = def(_opt.color_hover, new Color().rgb(0x445158));
-        color_down = def(_opt.color_down, new Color().rgb(0x444444));
         
-        control.onmouseenter.listen(function(e,c) { visual.texture = Luxe.resources.texture('assets/img/ui/gb_button_hover.png'); });
-        control.onmouseleave.listen(function(e,c) { visual.texture = Luxe.resources.texture('assets/img/ui/gb_button.png'); });
-        control.onmousedown.listen(function(e,c) { visual.texture = Luxe.resources.texture('assets/img/ui/gb_button_pressed.png'); });
-        control.onmouseup.listen(function(e,c) { visual.texture = Luxe.resources.texture('assets/img/ui/gb_button.png'); });
+        control.onmouseenter.listen(goToHoverState);
+        control.onmouseleave.listen(goToNormalState);
+        control.onmousedown.listen(goToPressedState);
+        control.onmouseup.listen(goToNormalState);
     }
 
     override function onbounds() {
@@ -72,6 +59,31 @@ class MyosisButtonRender extends Render {
     override function ondestroy() {
         visual.destroy();
         visual = null;
+    }
+
+    function goToNormalState(e:MouseEvent, c:Control) {
+        log("goToNormalState");
+        log(e); 
+        log(c);        
+        var b:Button = cast control;
+        visual.texture = Luxe.resources.texture('assets/img/ui/button2.png');        
+
+        if (e.button == none) {
+            // mouseleave
+            var txt:Text = Luxe.scene.get('testbutton.label.text'); 
+            txt.color = Constants.GAME_BOY_COLOR_DARK;
+        }
+    }
+
+    function goToHoverState(e:MouseEvent, c:Control) {
+        log("goToHoverState");        
+        var txt:Text = Luxe.scene.get('testbutton.label.text'); 
+        txt.color = Constants.GAME_BOY_COLOR_MEDIUM;
+    }
+
+    function goToPressedState(e:MouseEvent, c:Control) {
+        log("goToPressedState");        
+        visual.texture = Luxe.resources.texture('assets/img/ui/button2_pressed.png');
     }
 
 }
