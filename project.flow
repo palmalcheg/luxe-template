@@ -12,11 +12,11 @@
   project : {
     name : 'luxe-template',
     version : '1.0.0',
-    author : 'myosis',
+    author : 'miosis',
     app : {
-      main : 'dk.myosis.luxetemplate.Main',
+      main : 'dk.miosis.luxetemplate.Main',
       name : 'luxe-template',
-      package : 'dk.myosis.luxetemplate'
+      package : 'dk.miosis.luxetemplate'
     },
     build : {
       dependencies : {

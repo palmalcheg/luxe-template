@@ -1,4 +1,4 @@
-package dk.myosis.luxetemplate.components;
+package dk.miosis.luxetemplate.components;
 
 import haxe.Int64;
 

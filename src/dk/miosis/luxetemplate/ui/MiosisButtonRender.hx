@@ -1,4 +1,4 @@
-package dk.myosis.luxetemplate.ui;
+package dk.miosis.luxetemplate.ui;
 
 import luxe.Color;
 import luxe.Log.*;
@@ -12,16 +12,16 @@ import mint.render.Render;
 import mint.render.Rendering;
 import mint.types.Types.MouseEvent;
 
-import dk.myosis.luxetemplate.Constants;
-import dk.myosis.luxetemplate.ui.MyosisMintRendering;
+import dk.miosis.luxetemplate.Constants;
+import dk.miosis.luxetemplate.ui.MiosisMintRendering;
 
-class MyosisButtonRender extends Render {
+class MiosisButtonRender extends Render {
 
     var visual:NineSlice;
 
     public function new(_rendering:Rendering, _control:Button) {
         super(_rendering, _control);
-        var customRendering:MyosisMintRendering = cast rendering;
+        var customRendering:MiosisMintRendering = cast rendering;
 
         visual = new luxe.NineSlice({
             name: control.name + '.visual',
@@ -52,7 +52,7 @@ class MyosisButtonRender extends Render {
     }
 
     override function ondepth(_depth:Float) {
-        var customRendering:MyosisMintRendering = cast rendering;
+        var customRendering:MiosisMintRendering = cast rendering;
         visual.depth = customRendering.options.depth + _depth;
     }
 
@@ -62,9 +62,6 @@ class MyosisButtonRender extends Render {
     }
 
     function goToNormalState(e:MouseEvent, c:Control) {
-        log("goToNormalState");
-        log(e); 
-        log(c);        
         var b:Button = cast control;
         visual.texture = Luxe.resources.texture('assets/img/ui/button2.png');        
 
@@ -76,13 +73,11 @@ class MyosisButtonRender extends Render {
     }
 
     function goToHoverState(e:MouseEvent, c:Control) {
-        log("goToHoverState");        
         var txt:Text = Luxe.scene.get('testbutton.label.text'); 
         txt.color = Constants.GAME_BOY_COLOR_MEDIUM;
     }
 
     function goToPressedState(e:MouseEvent, c:Control) {
-        log("goToPressedState");        
         visual.texture = Luxe.resources.texture('assets/img/ui/button2_pressed.png');
     }
 

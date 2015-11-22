@@ -1,11 +1,12 @@
-package dk.myosis.luxetemplate.systems;
+package dk.miosis.luxetemplate.systems;
 
 import luxe.Input;
 import luxe.Objects;
 import luxe.Sprite;
 import luxe.Vector;
 
-import dk.myosis.luxetemplate.components.PlayerMovement;
+import dk.miosis.luxetemplate.entities.Player;
+import dk.miosis.luxetemplate.components.PlayerMovement;
 
 class PlayerInputSystem extends luxe.Objects {
 
@@ -27,15 +28,10 @@ class PlayerInputSystem extends luxe.Objects {
         Luxe.input.bind_key('down', Key.down);
   	}
 
-	public function registerComponent():PlayerMovement {
-        var entity = new Sprite({
-            texture:Luxe.resources.texture('assets/img/smiley.png'),
-            pos:new Vector(Main.w * 0.5, Main.h * 0.5),
-            depth:4
-        });
+	public function addComponentTo(player:Player):PlayerMovement {
 		var component = new PlayerMovement();
-		component.halfSize = entity.size.x * 0.5;
-		entity.add(component);
+		component.halfSize = player.size.x * 0.5;
+		player.add(component);
 		components.push(component);
 		return component;
 	}

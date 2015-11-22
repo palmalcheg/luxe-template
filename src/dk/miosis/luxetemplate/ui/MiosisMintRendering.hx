@@ -1,4 +1,4 @@
-package dk.myosis.luxetemplate.ui;
+package dk.miosis.luxetemplate.ui;
 
 import luxe.options.RenderProperties;
 import luxe.Log.*;
@@ -7,7 +7,7 @@ import mint.Button;
 import mint.Control;
 import mint.render.Rendering;
 
-class MyosisMintRendering extends Rendering {
+class MiosisMintRendering extends Rendering {
 
 	public var options:RenderProperties;
 
@@ -23,7 +23,7 @@ class MyosisMintRendering extends Rendering {
 
     override function get<T:Control, T1>( _type:Class<T>, _control:T ) : T1 {
         return cast switch(_type) {
-            case Button: new MyosisButtonRender(this, cast _control);
+            case Button: new MiosisButtonRender(this, cast _control);
             case _: null;
         }
     }

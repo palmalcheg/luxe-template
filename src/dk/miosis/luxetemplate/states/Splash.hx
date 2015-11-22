@@ -1,4 +1,4 @@
-package dk.myosis.luxetemplate.states;
+package dk.miosis.luxetemplate.states;
 
 import luxe.States;
 import luxe.Input;
