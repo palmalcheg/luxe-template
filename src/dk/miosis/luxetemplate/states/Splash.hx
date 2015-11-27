@@ -6,7 +6,6 @@ import luxe.Entity;
 import luxe.Vector;
 import luxe.Color;
 
-
 class Splash extends State {
 
 	public function new() {

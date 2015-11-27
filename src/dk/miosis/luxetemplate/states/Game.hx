@@ -15,11 +15,12 @@ import phoenix.Texture;
 
 import dk.miosis.luxetemplate.Constants;
 import dk.miosis.luxetemplate.entities.Player;
+import dk.miosis.luxetemplate.states.BaseState;
 import dk.miosis.luxetemplate.systems.PlayerInputSystem;
 import dk.miosis.luxetemplate.ui.MiosisButtonRender;
 import dk.miosis.luxetemplate.ui.MiosisMintRendering;
 
-class Game extends State {
+class Game extends BaseState {
 
     var player:Player;
     var inputSystem:PlayerInputSystem;
@@ -41,8 +42,8 @@ class Game extends State {
             parent: Main.canvas, 
             name: 'testbutton', 
             text: 'test',
-            rendering: new MiosisMintRendering(),
-            x: 0, y:0, w:30, h: 20
+            rendering: new MiosisMintRendering({ batcher: Main.ui_batcher }),
+            x: 0.1 * Main.w, y:0.1 * Main.h, w:30, h: 20
         });
 
         var txt:Text = Luxe.scene.get('testbutton.label.text');
@@ -64,6 +65,8 @@ class Game extends State {
         // txt2.font = Luxe.resources.font('assets/font/justabit/justabit64.fnt');
         // txt2.point_size = 16;
         // txt2.geom.texture = txt2.font.pages[0];
+
+        super.onenter(_);
     }
 
 	override function onkeyup(e:KeyEvent) {

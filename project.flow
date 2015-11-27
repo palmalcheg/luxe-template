@@ -19,6 +19,7 @@
       package : 'dk.miosis.luxetemplate'
     },
     build : {
+      flags:['--macro luxe.Log.level(0)'],
       dependencies : {
         luxe : '*',
         mint : '*',
