@@ -1,4 +1,4 @@
-package dk.miosis.luxetemplate.states;
+package dk.miosis.luxetemplate.state;
 
 import luxe.Color;
 import luxe.Input;
@@ -14,9 +14,9 @@ import phoenix.Batcher;
 import phoenix.Texture;
 
 import dk.miosis.luxetemplate.Constants;
-import dk.miosis.luxetemplate.entities.Player;
-import dk.miosis.luxetemplate.states.BaseState;
-import dk.miosis.luxetemplate.systems.PlayerInputSystem;
+import dk.miosis.luxetemplate.entity.Player;
+import dk.miosis.luxetemplate.state.BaseState;
+import dk.miosis.luxetemplate.system.PlayerInputSystem;
 import dk.miosis.luxetemplate.ui.MiosisButtonRender;
 import dk.miosis.luxetemplate.ui.MiosisMintRendering;
 

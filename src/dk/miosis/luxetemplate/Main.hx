@@ -14,8 +14,8 @@ import mint.render.luxe.LuxeMintRender;
 import mint.render.luxe.Convert;
 import mint.layout.margins.Margins;
 
-import dk.miosis.luxetemplate.states.Game;
-import dk.miosis.luxetemplate.states.Splash;
+import dk.miosis.luxetemplate.state.Game;
+import dk.miosis.luxetemplate.state.Splash;
 
 class Main extends luxe.Game {
 

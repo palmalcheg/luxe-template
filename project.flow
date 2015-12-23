@@ -22,8 +22,7 @@
       flags:['--macro luxe.Log.level(0)'],
       dependencies : {
         luxe : '*',
-        mint : '*',
-        nape : '*'
+        mint : '*'
       }
     },
     files : {

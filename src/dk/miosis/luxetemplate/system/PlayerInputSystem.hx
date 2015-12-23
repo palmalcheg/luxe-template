@@ -1,12 +1,12 @@
-package dk.miosis.luxetemplate.systems;
+package dk.miosis.luxetemplate.system;
 
 import luxe.Input;
 import luxe.Objects;
 import luxe.Sprite;
 import luxe.Vector;
 
-import dk.miosis.luxetemplate.entities.Player;
-import dk.miosis.luxetemplate.components.PlayerMovement;
+import dk.miosis.luxetemplate.entity.Player;
+import dk.miosis.luxetemplate.component.PlayerMovement;
 
 class PlayerInputSystem extends luxe.Objects {
 

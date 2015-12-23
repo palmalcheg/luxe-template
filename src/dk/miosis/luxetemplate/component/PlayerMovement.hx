@@ -1,6 +1,4 @@
-package dk.miosis.luxetemplate.components;
-
-import haxe.Int64;
+package dk.miosis.luxetemplate.component;
 
 import luxe.Component;
 import luxe.Sprite;

@@ -1,4 +1,4 @@
-package dk.miosis.luxetemplate.entities;
+package dk.miosis.luxetemplate.entity;
 
 import luxe.Sprite;
 import luxe.Vector;
