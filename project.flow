@@ -19,12 +19,13 @@
       package : 'dk.miosis.luxetemplate'
     },
     build : {
+      defines:['MACOSX_VER=10.9'],
       flags:['--macro luxe.Log.level(0)'],
       dependencies : {
         luxe : '*',
         mint : '*'
       }
-    },
+    },   
     files : {
       assets : 'assets/'
     }
