@@ -26,7 +26,7 @@ class MiosisButtonRender extends Render {
         visual = new luxe.NineSlice({
             name: control.name + '.visual',
             batcher: customRendering.options.batcher,
-            texture : Luxe.resources.texture('assets/img/ui/button2.png'),
+            texture : Luxe.resources.texture('assets/img/ui/button_normal.png'),
             top : 5, left : 5, right : 5, bottom : 5,
             pos: new Vector(control.x, control.y),
             size: new Vector(control.w, control.h),
@@ -63,7 +63,7 @@ class MiosisButtonRender extends Render {
 
     function goToNormalState(e:MouseEvent, c:Control) {
         var b:Button = cast control;
-        visual.texture = Luxe.resources.texture('assets/img/ui/button2.png');        
+        visual.texture = Luxe.resources.texture('assets/img/ui/button_normal.png');        
 
         if (e.button == none) {
             // mouseleave
@@ -78,7 +78,7 @@ class MiosisButtonRender extends Render {
     }
 
     function goToPressedState(e:MouseEvent, c:Control) {
-        visual.texture = Luxe.resources.texture('assets/img/ui/button2_pressed.png');
+        visual.texture = Luxe.resources.texture('assets/img/ui/button_pressed.png');
     }
 
 }

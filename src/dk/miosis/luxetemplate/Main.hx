@@ -38,11 +38,8 @@ class Main extends luxe.Game {
         
         config.preload.textures.push({ id:'assets/img/pixel.png', filter_min:nearest, filter_mag:nearest });        
         config.preload.textures.push({ id:'assets/img/smiley.png', filter_min:nearest, filter_mag:nearest });
-        config.preload.textures.push({ id:'assets/img/ui/gb_button.png', filter_min:nearest, filter_mag:nearest });        
-        config.preload.textures.push({ id:'assets/img/ui/gb_button_pressed.png', filter_min:nearest, filter_mag:nearest });        
-        config.preload.textures.push({ id:'assets/img/ui/gb_button_hover.png', filter_min:nearest, filter_mag:nearest });
-        config.preload.textures.push({ id:'assets/img/ui/button2.png', filter_min:nearest, filter_mag:nearest });        
-        config.preload.textures.push({ id:'assets/img/ui/button2_pressed.png', filter_min:nearest, filter_mag:nearest });       
+        config.preload.textures.push({ id:'assets/img/ui/button_normal.png', filter_min:nearest, filter_mag:nearest });        
+        config.preload.textures.push({ id:'assets/img/ui/button_pressed.png', filter_min:nearest, filter_mag:nearest });       
         
         config.preload.fonts.push({ id:'assets/font/justabit/justabit32.fnt' });      
 
