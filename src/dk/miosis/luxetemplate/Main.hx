@@ -6,7 +6,11 @@ import luxe.Screen.WindowEvent;
 import luxe.States;
 import luxe.Vector;
 
+import luxe.importers.tiled.TiledMap;
+import luxe.importers.tiled.TiledObjectGroup;
+
 import phoenix.Batcher;
+import phoenix.Texture.FilterType;
 
 import mint.Canvas;
 import mint.focus.Focus;
@@ -29,6 +33,10 @@ class Main extends luxe.Game {
 
     var _states:States;
 
+    var map:TiledMap;
+    var map_scale:Int = 1;
+
+
     override function config(config:luxe.AppConfig) {
         w = config.window.width;
         h = config.window.height;
@@ -39,9 +47,12 @@ class Main extends luxe.Game {
         config.preload.textures.push({ id:'assets/img/pixel.png', filter_min:nearest, filter_mag:nearest });        
         config.preload.textures.push({ id:'assets/img/smiley.png', filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id:'assets/img/ui/button_normal.png', filter_min:nearest, filter_mag:nearest });        
-        config.preload.textures.push({ id:'assets/img/ui/button_pressed.png', filter_min:nearest, filter_mag:nearest });       
+        config.preload.textures.push({ id:'assets/img/ui/button_pressed.png', filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id:'assets/tiled/simple_8x8_tiles.png', filter_min:nearest, filter_mag:nearest });
         
-        config.preload.fonts.push({ id:'assets/font/justabit/justabit32.fnt' });      
+        config.preload.fonts.push({ id:'assets/font/justabit/justabit32.fnt' }); 
+
+        config.preload.texts.push({id:'assets/tiled/simple_160x144_8x8_map.tmx'});     
 
         return config;
     }
@@ -76,6 +87,14 @@ class Main extends luxe.Game {
         _states.add(new Splash());
         _states.add(new Game());
         _states.set("game");
+    }
+
+    function create_map() 
+    {
+        var map_data = Luxe.resources.text('assets/tiled/simple_160x144_8x8_map.tmx').asset.text;
+        assertnull(map_data, 'Resource not found!');
+        map = new TiledMap({ format:'tmx', tiled_file_data: map_data });
+        map.display({ scale:map_scale, filter:FilterType.nearest });
     }
 
     override function onrender() {
