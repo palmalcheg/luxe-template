@@ -6,8 +6,7 @@ import luxe.Screen.WindowEvent;
 import luxe.States;
 import luxe.Vector;
 
-import luxe.importers.tiled.TiledMap;
-import luxe.importers.tiled.TiledObjectGroup;
+import luxe.collision.shapes.Polygon;
 
 import phoenix.Batcher;
 import phoenix.Texture.FilterType;
@@ -20,6 +19,7 @@ import mint.layout.margins.Margins;
 
 import dk.miosis.luxetemplate.state.Game;
 import dk.miosis.luxetemplate.state.Splash;
+import dk.miosis.luxetemplate.system.MiosisPhysicsEngine;
 
 class Main extends luxe.Game {
 
@@ -33,9 +33,7 @@ class Main extends luxe.Game {
 
     var _states:States;
 
-    var map:TiledMap;
-    var map_scale:Int = 1;
-
+    var sim:MiosisPhysicsEngine;
 
     override function config(config:luxe.AppConfig) {
         w = config.window.width;
@@ -64,7 +62,7 @@ class Main extends luxe.Game {
         trace (Luxe.screen.w);
         trace (Luxe.screen.h);
 
-        // ui_batcher = new Batcher(Luxe.renderer, 'ui_batcher');
+        ui_batcher = new Batcher(Luxe.renderer, 'ui_batcher');
         var ui_camera = new luxe.Camera();
         ui_camera.size = new phoenix.Vector(w, h, 1);
         ui_camera.size_mode = luxe.Camera.SizeMode.fit;
@@ -78,23 +76,20 @@ class Main extends luxe.Game {
             name:'canvas',
             rendering: mintRenderer,
             options: { color:Constants.COLOR_TRANSPARENT },
-            x: 0, y:0, w: w, h: h
+            x: 0, y:0, w: 100, h: 100
         });
 
         focus = new Focus(canvas);
+
+        // Physics
+        sim = Luxe.physics.add_engine(MiosisPhysicsEngine);
+        sim.draw = false;
+        sim.player_collider = Polygon.rectangle(0,0,8,8);
 
         _states = new States({ name:'states' });
         _states.add(new Splash());
         _states.add(new Game());
         _states.set("game");
-    }
-
-    function create_map() 
-    {
-        var map_data = Luxe.resources.text('assets/tiled/simple_160x144_8x8_map.tmx').asset.text;
-        assertnull(map_data, 'Resource not found!');
-        map = new TiledMap({ format:'tmx', tiled_file_data: map_data });
-        map.display({ scale:map_scale, filter:FilterType.nearest });
     }
 
     override function onrender() {

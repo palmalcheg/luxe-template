@@ -8,10 +8,14 @@ import luxe.States;
 import luxe.Text;
 import luxe.Vector;
 
+import luxe.importers.tiled.TiledMap;
+import luxe.importers.tiled.TiledObjectGroup;
+
 import mint.Button;
 
 import phoenix.Batcher;
 import phoenix.Texture;
+import phoenix.Texture.FilterType;
 
 import dk.miosis.luxetemplate.Constants;
 import dk.miosis.luxetemplate.entity.Player;
@@ -25,6 +29,9 @@ class Game extends BaseState {
     var player:Player;
     var inputSystem:PlayerInputSystem;
     var button:Button;
+
+    var map:TiledMap;
+    var map_scale:Int = 1;
 
 	public function new() {
         super({ name:'game' });
@@ -66,7 +73,19 @@ class Game extends BaseState {
         // txt2.point_size = 16;
         // txt2.geom.texture = txt2.font.pages[0];
 
+        create_map();
         super.onenter(_);
+    }
+
+    function create_map() 
+    {         
+        var map_data = Luxe.resources.text('assets/tiled/simple_160x144_8x8_map.tmx').asset.text;
+        assertnull(map_data, 'Resource not found!');     
+        map = new TiledMap({
+            asset_path:"assets/tiled/",
+            format:'tmx', 
+            tiled_file_data: map_data });
+        map.display({ scale:map_scale, filter:FilterType.nearest });
     }
 
 	override function onkeyup(e:KeyEvent) {
