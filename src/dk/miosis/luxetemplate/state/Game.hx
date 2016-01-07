@@ -8,6 +8,8 @@ import luxe.States;
 import luxe.Text;
 import luxe.Vector;
 
+import luxe.collision.shapes.Polygon;
+
 import luxe.importers.tiled.TiledMap;
 import luxe.importers.tiled.TiledObjectGroup;
 
@@ -38,6 +40,7 @@ class Game extends BaseState {
     }
 
 	override function onenter<T>(_:T) {
+        trace("Entering Game state.");
         // Set background color
         Luxe.renderer.clear_color = Constants.GAME_BOY_COLOR_OFF;
 
@@ -74,6 +77,7 @@ class Game extends BaseState {
         // txt2.geom.texture = txt2.font.pages[0];
 
         create_map();
+        create_map_collision();
         super.onenter(_);
     }
 
@@ -87,6 +91,22 @@ class Game extends BaseState {
             tiled_file_data: map_data });
         map.display({ scale:map_scale, filter:FilterType.nearest });
     }
+
+    function create_map_collision() {
+        var layerTiles = map.layer('collision');
+        assertnull(layerTiles, 'Map layer _collision_ not found!');
+        var bounds = layerTiles.bounds_fitted();
+        trace("SNOOK");
+
+        for(bound in bounds) {
+            bound.x *= map.tile_width * map_scale;
+            bound.y *= map.tile_height * map_scale;
+            bound.w *= map.tile_width * map_scale;
+            bound.h *= map.tile_height * map_scale;
+            Main.sim.obstacle_colliders.push(Polygon.rectangle(bound.x, bound.y, bound.w, bound.h, false));
+        }
+
+    } //create_map_collision
 
 	override function onkeyup(e:KeyEvent) {
         if(e.keycode == Key.escape) {

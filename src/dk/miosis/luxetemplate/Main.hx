@@ -33,7 +33,7 @@ class Main extends luxe.Game {
 
     var _states:States;
 
-    var sim:MiosisPhysicsEngine;
+    public static var sim:MiosisPhysicsEngine;
 
     override function config(config:luxe.AppConfig) {
         w = config.window.width;
