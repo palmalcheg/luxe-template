@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"layer",
+				"layerTiles"
+			],
+			[
+				"Miosis",
+				"MiosisPhysicsEngine"
+			],
+			[
 				"mo",
 				"p· MouseEvent	MouseEvent"
 			],
@@ -259,6 +267,80 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/dk/miosis/luxetemplate/Main.hx",
+			"settings":
+			{
+				"buffer_size": 4074,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "project.flow",
+			"settings":
+			{
+				"buffer_size": 615,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer/assets/tilemap.tmx",
+			"settings":
+			{
+				"buffer_size": 2355,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/dk/miosis/luxetemplate/state/Game.hx",
+			"settings":
+			{
+				"buffer_size": 3665,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/tiled/simple_160x144_8x8_map.tmx",
+			"settings":
+			{
+				"buffer_size": 28233,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/dk/miosis/luxetemplate/system/MiosisPhysicsEngine.hx",
+			"settings":
+			{
+				"buffer_size": 4589,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer/src/Simulation.hx",
+			"settings":
+			{
+				"buffer_size": 4540,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer/src/Main.hx",
+			"settings":
+			{
+				"buffer_size": 11716,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 5939 files for \"create_map_collision\"\n\n/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/state/Game.hx:\n   89      }\n   90  \n   91:     function create_map_collision() {\n   92  \n   93          var bounds = map.layer('collision').bounds_fitted();\n   ..\n  101          }\n  102  \n  103:     } //create_map_collision\n  104  \n  105  	override function onkeyup(e:KeyEvent) {\n\n/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer/src/Main.hx:\n   80  \n   81          create_map();\n   82:         create_map_collision();\n   83          bind_input();\n   84  \n   ..\n  109      } //bind_input\n  110  \n  111:     function create_map_collision() {\n  112  \n  113          var bounds = map.layer('collision').bounds_fitted();\n  ...\n  120          }\n  121  \n  122:     } //create_map_collision\n  123  \n  124      function create_map() {\n\n5 matches across 2 files\n",
+			"settings":
+			{
+				"buffer_size": 926,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -337,21 +419,27 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/dejean/developer/personal/projects/haxe/luxe-template",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/assets",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/assets/img",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/assets/tiled",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/state",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/system",
 		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/luxe",
 		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples",
 		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples",
 		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer/src",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/guides",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/guides/5_components",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/guides/5_components/src",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/tests",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/tests/features"
+		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer/assets",
+		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer/src"
 	],
 	"file_history":
 	[
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/assets/tiled/simple_160x144_8x8_map.tmx",
+		"/Users/dejean/Developer/personal/graphics/tilemap/simple_8x8/simple_160x144_8x8_map.json",
 		"/Users/dejean/.bash_profile",
 		"/Users/dejean/Developer/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/Main.hx",
 		"/Users/dejean/Developer/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/entities/Overlay.hx",
@@ -497,6 +585,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"create_map_collision",
+			"BOOM",
+			"\"BOOM\"",
+			"BAM",
 			".level(",
 			".exclude",
 			".filter",
@@ -620,11 +712,7 @@
 			"object",
 			"add_layer",
 			"properties",
-			"tiles_padded",
-			"tileset",
-			"FilterType",
-			"gravity",
-			");\n"
+			"tiles_padded"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -651,8 +739,311 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/dk/miosis/luxetemplate/Main.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4074,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								240,
+								240
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 1388.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "project.flow",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 615,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								608,
+								608
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sublime_flow/flow-file.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer/assets/tilemap.tmx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2355,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/dk/miosis/luxetemplate/state/Game.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3665,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2922,
+								2922
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1316.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "assets/tiled/simple_160x144_8x8_map.tmx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								607,
+								607
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5890.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/dk/miosis/luxetemplate/system/MiosisPhysicsEngine.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4589,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer/src/Simulation.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								888,
+								888
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer/src/Main.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11716,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1291,
+								1291
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sublime_haxe/Haxe.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 565.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 926,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										193,
+										213
+									],
+									[
+										340,
+										360
+									],
+									[
+										568,
+										588
+									],
+									[
+										689,
+										709
+									],
+									[
+										836,
+										856
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								583,
+								583
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -737,7 +1128,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 389.0,
+	"side_bar_width": 386.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

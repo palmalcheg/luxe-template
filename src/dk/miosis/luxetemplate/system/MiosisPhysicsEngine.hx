@@ -20,8 +20,8 @@ import luxe.utils.Maths;
 // - Collision = separating things that overlap)
 // - Collision response = forces applied due to collision ("physics")
 
-class MiosisPhysicsEngine extends luxe.Physics.PhysicsEngine {
-
+class MiosisPhysicsEngine extends luxe.Physics.PhysicsEngine 
+{
     public var player_collider: Shape;
     public var player_velocity: Vector;
     public var player_can_jump: Bool = false;
@@ -29,9 +29,8 @@ class MiosisPhysicsEngine extends luxe.Physics.PhysicsEngine {
     public var obstacle_colliders: Array<Shape>;
     public var trigger_colliders: Array<Shape>;
 
-        //This is called when you call new Simulation
-    public function new() {
-
+    public function new() 
+    {
         super();
 
         //The paused flag comes from luxe.Physics.PhysicsEngine
@@ -46,21 +45,20 @@ class MiosisPhysicsEngine extends luxe.Physics.PhysicsEngine {
         //physics related values
 
         player_velocity = new Vector();
-
-    } //new
+    }
 
         //Called for you when the init event from luxe happens
         //This happens once up front at initialization
-    override public function init() {
-
+    override public function init() 
+    {
             //The gravity value comes from luxe.Physics.PhysicsEngine
             //and is just a Vector we can use to apply gravity as a force
         gravity.set_xyz(0, 800, 0);
 
-    } //init
+    }
 
-    override public function update() {
-
+    override public function update() 
+    {
             //don't do anything unless we are running
         if(paused) return;
     
@@ -71,28 +69,28 @@ class MiosisPhysicsEngine extends luxe.Physics.PhysicsEngine {
             //Then we resolve collisions that may have happened
         handle_collision();
 
-    } //update
+    }
 
-    function handle_physics() {
-
+    function handle_physics()
+    {
             // The player is affected by gravity as a force,
             // we scale it against the size of the physics time step 
         player_velocity.x += gravity.x * Luxe.physics.step_delta;
         player_velocity.y += gravity.y * Luxe.physics.step_delta;
 
-    } //handle_physics
+    }
 
-    function update_colliders() {
-
+    function update_colliders()
+    {
             // We add the velocity to the player position,
             // scaled by the size of the physics time step
         player_collider.position.x += player_velocity.x * Luxe.physics.step_delta;
         player_collider.position.y += player_velocity.y * Luxe.physics.step_delta;
     
-    } //update_colliders
+    }
 
-    function handle_collision() {
-
+    function handle_collision() 
+    {
         player_can_jump = false;
 
         var collisions = Collision.shapeWithShapes(player_collider, obstacle_colliders);
@@ -101,13 +99,17 @@ class MiosisPhysicsEngine extends luxe.Physics.PhysicsEngine {
 
             player_collider.position = player_collider.position.add(collision.separation);
 
-            if(collision.unitVector.x != 0) {
+            if(collision.unitVector.x != 0) 
+            {
                 player_velocity.x = 0;
             }
 
-            if(collision.unitVector.y != 0 && Maths.sign(collision.unitVector.y) != Maths.sign(player_velocity.y)) {
+            if(collision.unitVector.y != 0 && Maths.sign(collision.unitVector.y) != Maths.sign(player_velocity.y)) 
+            {
                 player_velocity.y = 0;
-                if(collision.unitVector.y < 0) {
+            
+                if(collision.unitVector.y < 0) 
+                {
                     player_can_jump = true;
                 }
             }
@@ -117,13 +119,13 @@ class MiosisPhysicsEngine extends luxe.Physics.PhysicsEngine {
         collisions = Collision.shapeWithShapes(player_collider, trigger_colliders);
         Luxe.events.fire('simulation.triggers.collide', collisions);
 
-    } //handle_collision
+    }
 
 
         //This gets called by the engine for us to draw things if we need to,
         //It gets called every frame and is helpful for debug drawing
-    override public function render() {
-
+    override public function render() 
+    {
         if(!draw) return;
 
         for(shape in obstacle_colliders)  draw_collider_polygon(cast shape);
@@ -131,11 +133,11 @@ class MiosisPhysicsEngine extends luxe.Physics.PhysicsEngine {
             
         draw_collider_polygon(cast player_collider);
 
-    } //render
+    }
 
         //helper to draw colliders
-    function draw_collider_polygon(poly:Polygon) {
-
+    function draw_collider_polygon(poly:Polygon) 
+    {
         var geom = Luxe.draw.poly({
             solid:false,
             close:true,

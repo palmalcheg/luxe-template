@@ -3,11 +3,12 @@ package dk.miosis.luxetemplate.component;
 import luxe.Color;
 import luxe.Sprite;
 
-class FadeOverlay extends luxe.Component {
-
+class FadeOverlay extends luxe.Component 
+{
     var overlay:Sprite;
 
-    override function init() {
+    override function init() 
+    {
         overlay = new Sprite({
             size: Luxe.screen.size,
             color: new Color(0,0,0,1),
@@ -16,16 +17,18 @@ class FadeOverlay extends luxe.Component {
         });
     }
 
-    public function out(?t=0.15,?fn:Void->Void) {
+    public function out(?t=0.15,?fn:Void->Void) 
+    {
         overlay.color.tween(t, {a:1}).onComplete(fn);
     }
 
-    public function up(?t=0.15,?fn:Void->Void) {
+    public function up(?t=0.15,?fn:Void->Void) 
+    {
         overlay.color.tween(t, {a:0}).onComplete(fn);
     }
 
-    override function ondestroy() {
+    override function ondestroy() 
+    {
         overlay.destroy( );
     }
-
 }

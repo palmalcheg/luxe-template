@@ -21,8 +21,8 @@ import dk.miosis.luxetemplate.state.Game;
 import dk.miosis.luxetemplate.state.Splash;
 import dk.miosis.luxetemplate.system.MiosisPhysicsEngine;
 
-class Main extends luxe.Game {
-
+class Main extends luxe.Game 
+{
     public static var mintRenderer:LuxeMintRender;
     public static var canvas:Canvas;
     public static var focus: Focus;
@@ -33,9 +33,10 @@ class Main extends luxe.Game {
 
     var _states:States;
 
-    public static var sim:MiosisPhysicsEngine;
+    public static var physics:MiosisPhysicsEngine;
 
-    override function config(config:luxe.AppConfig) {
+    override function config(config:luxe.AppConfig) 
+    {
         w = config.window.width;
         h = config.window.height;
 
@@ -55,12 +56,13 @@ class Main extends luxe.Game {
         return config;
     }
 
-    override function ready() {
+    override function ready() 
+    {
         Luxe.camera.size = new Vector(w, h);
         Luxe.camera.size_mode = luxe.Camera.SizeMode.fit;
 
-        trace (Luxe.screen.w);
-        trace (Luxe.screen.h);
+        log('Screen width: ${Luxe.screen.w}');
+        log('Screen height: ${Luxe.screen.h}');
 
         ui_batcher = new Batcher(Luxe.renderer, 'ui_batcher');
         var ui_camera = new luxe.Camera();
@@ -81,10 +83,10 @@ class Main extends luxe.Game {
 
         focus = new Focus(canvas);
 
-        // Physics
-        sim = Luxe.physics.add_engine(MiosisPhysicsEngine);
-        sim.draw = false;
-        sim.player_collider = Polygon.rectangle(0,0,8,8);
+        // Set up custom physics
+        physics = Luxe.physics.add_engine(MiosisPhysicsEngine);
+        physics.draw = false;
+        physics.player_collider = Polygon.rectangle(0,0,8,8);
 
         _states = new States({ name:'states' });
         _states.add(new Splash());

@@ -7,11 +7,12 @@ import mint.Button;
 import mint.Control;
 import mint.render.Rendering;
 
-class MiosisMintRendering extends Rendering {
-
+class MiosisMintRendering extends Rendering 
+{
 	public var options:RenderProperties;
 
-    public function new(?_options:RenderProperties) {
+    public function new(?_options:RenderProperties) 
+    {
         super();
 
         options = def(_options, {});
@@ -21,8 +22,10 @@ class MiosisMintRendering extends Rendering {
         def(options.visible, true);
     }
 
-    override function get<T:Control, T1>( _type:Class<T>, _control:T ) : T1 {
-        return cast switch(_type) {
+    override function get<T:Control, T1>( _type:Class<T>, _control:T ) : T1 
+    {
+        return cast switch(_type) 
+        {
             case Button: new MiosisButtonRender(this, cast _control);
             case _: null;
         }

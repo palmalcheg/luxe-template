@@ -10,16 +10,17 @@ import luxe.Vector;
 
 import dk.miosis.luxetemplate.component.FadeOverlay;
 
-class BaseState extends State {
-
+class BaseState extends State 
+{
     var _overlay:FadeOverlay;
 
-    public function new(options:StateOptions) {
+    public function new(options:StateOptions) 
+    {
         super(options);
     }
 
-    override function onenter<T>(_:T) {
+    override function onenter<T>(_:T) 
+    {
         _overlay = new FadeOverlay();
-    }
-    
+    }    
 }

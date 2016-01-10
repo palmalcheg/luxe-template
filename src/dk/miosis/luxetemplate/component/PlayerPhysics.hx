@@ -6,11 +6,19 @@ import luxe.Log.*;
 import luxe.Sprite;
 import luxe.Vector;
 
-class PlayerMovement extends Component
+class PlayerPhysics extends Component
 {
-	public var movement_vector:Vector;
-	public var sprite:Sprite;
-	public var halfSize:Float;
+	var max_vel = 50;
+    var air_vel = 60;
+    var move_spd = 600;
+    var jump_force = 200;
+    var damp = 0.72;
+    var damp_air = 0.9;
+    var jumpsAvailable:Int = 0;
+
+	var movement_vector:Vector;
+	var sprite:Sprite;
+	var halfSize:Float;
 
 	public override function init() 
 	{
