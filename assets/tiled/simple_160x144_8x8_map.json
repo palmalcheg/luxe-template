@@ -52,8 +52,37 @@
          "width":20,
          "x":0,
          "y":0
+        }, 
+        {
+         "color":"#29a450",
+         "draworder":"topdown",
+         "height":0,
+         "name":"markers",
+         "objects":[
+                {
+                 "ellipse":true,
+                 "height":4,
+                 "id":7,
+                 "name":"spawn",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"spawn",
+                 "visible":true,
+                 "width":4,
+                 "x":26,
+                 "y":130
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":0,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":1,
+ "nextobjectid":8,
  "orientation":"orthogonal",
  "properties":
     {

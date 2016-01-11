@@ -32,6 +32,8 @@ class Game extends BaseState
     var player:Player;
     var playerMovement:PlayerMovement;    
     var playerPhysics:PlayerPhysics;
+    var player_spawn_pos:Vector;
+
     var button:Button;
 
     var map:TiledMap;
@@ -48,16 +50,6 @@ class Game extends BaseState
         // Set background color
         Luxe.renderer.clear_color = Constants.GAME_BOY_COLOR_OFF;
 
-        player = new Player();
-
-        // No physics
-        playerMovement = new PlayerMovement();
-        player.add(playerMovement);
-
-        // // Custom physics
-        // playerPhysics = new PlayerPhysics();
-        // player.add(playerPhysics);
-
         button = new Button({
             parent: Main.canvas, 
             name: 'testbutton', 
@@ -67,6 +59,7 @@ class Game extends BaseState
         });
 
         var txt:Text = Luxe.scene.get('testbutton.label.text');
+
         txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         txt.point_size = 16;
         txt.geom.texture = txt.font.pages[0];
@@ -87,6 +80,96 @@ class Game extends BaseState
             format:'tmx', 
             tiled_file_data: map_data });
         map.display({ scale:map_scale, filter:FilterType.nearest });
+
+        for(_group in map.tiledmap_data.object_groups) 
+        {
+            if (_group.name == 'markers')
+            {
+                for(_object in _group.objects) 
+                {
+                    switch(_object.type) 
+                    {
+                        case 'spawn': 
+                        {
+                            //The spawn position is set from the map
+                            player_spawn_pos = new Vector(_object.pos.x, _object.pos.y);
+                            log('spawn pos: ${player_spawn_pos}');
+
+                            //We use it to move the collider,
+                            Main.physics.player_collider.position.copy_from(player_spawn_pos);
+
+                            player = new Player();
+
+                            // No physics
+                            // playerMovement = new PlayerMovement();
+                            // player.add(playerMovement);
+
+                            // // Custom physics
+                            playerPhysics = new PlayerPhysics();
+                            player.add(playerPhysics);
+                            player.pos.copy_from(player_spawn_pos); // Do we have to clone??
+                        } //spawn
+                        case 'exit': 
+                        {
+                            // var _y = _object.pos.y;
+
+                            //     //create the exit collectible sprite
+                            // exit = new Sprite({
+                            //     centered:false, depth:8,
+                            //     pos: new Vector(_object.pos.x, _y+2),
+                            //     texture:Luxe.resources.texture('assets/exit.png')
+                            // });
+
+                            //     //Bounce the exit collectible sprite up and down
+                            // luxe.tween.Actuate.tween(exit.pos, 1.5, { y:_y }).reflect().repeat();
+
+                            // var shape = Polygon.rectangle(
+                            //     _object.pos.x * map_scale,
+                            //     _object.pos.y * map_scale,
+                            //     _object.width * map_scale,
+                            //     _object.height * map_scale,
+                            //     false
+                            // );
+
+                            //     //set the type tag on the collider
+                            // shape.tags.set('type', 'exit');
+
+                            //     //store it in the list of triggers
+                            // sim.trigger_colliders.push(shape);
+
+                        } //exit
+                        case 'portal': 
+                        {
+                            //     //create the portal map if its not yet created
+                            // if(portals == null) portals = new Map();
+
+                            //     //store the position of the portal for when we teleport
+                            // portals.set(_object.id, _object.pos);
+
+                            //     //create the portal collision shape
+                            // var shape = Polygon.rectangle(
+                            //     _object.pos.x * map_scale,
+                            //     _object.pos.y * map_scale,
+                            //     _object.width * map_scale,
+                            //     _object.height * map_scale,
+                            //     false
+                            // );
+
+                            //     //fetch the information from tiled object property for the target teleporter
+                            // var target_id = Std.parseInt(_object.properties.get('target'));
+                            //     //store it on the collider
+                            // shape.data = { target:target_id };
+                            //     //and add a tag for the type of collider
+                            // shape.tags.set('type', 'portal');
+
+                            //     //and finally add it to the list of triggers
+                            // sim.trigger_colliders.push(shape);
+
+                        } //portal
+                    } //switch type
+                } //each object
+            }
+        } //each object group
     }
 
     function create_map_collision() 
@@ -102,6 +185,7 @@ class Game extends BaseState
             bound.y *= map.tile_height * map_scale;
             bound.w *= map.tile_width * map_scale;
             bound.h *= map.tile_height * map_scale;
+
             Main.physics.obstacle_colliders.push(Polygon.rectangle(bound.x, bound.y, bound.w, bound.h, false));
         }
     }
