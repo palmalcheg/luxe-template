@@ -17,14 +17,14 @@ class FadeOverlay extends luxe.Component
         });
     }
 
-    public function out(?t=0.15,?fn:Void->Void) 
-    {
-        overlay.color.tween(t, {a:1}).onComplete(fn);
-    }
-
-    public function up(?t=0.15,?fn:Void->Void) 
+    public function fade_in(?t=0.15,?fn:Void->Void) 
     {
         overlay.color.tween(t, {a:0}).onComplete(fn);
+    }
+
+    public function fade_out(?t=0.15,?fn:Void->Void) 
+    {
+        overlay.color.tween(t, {a:1}).onComplete(fn);
     }
 
     override function ondestroy() 

@@ -9,6 +9,7 @@ import luxe.Text;
 import luxe.Vector;
 
 import luxe.collision.shapes.Polygon;
+import luxe.collision.data.ShapeCollision;
 
 import luxe.importers.tiled.TiledMap;
 import luxe.importers.tiled.TiledObjectGroup;
@@ -67,7 +68,13 @@ class Game extends BaseState
 
         create_map();
         create_map_collision();
+
+        Luxe.events.listen('simulation.triggers.collide', ontrigger);
+
         super.onenter(_);
+
+        //fade in when the init event happens
+        Luxe.on(Luxe.Ev.init, function(_){ _overlay.fade_in(0.5); });
     }
 
     function create_map() 
@@ -189,6 +196,43 @@ class Game extends BaseState
             Main.physics.obstacle_colliders.push(Polygon.rectangle(bound.x, bound.y, bound.w, bound.h, false));
         }
     }
+
+    function ontrigger(collisions:Array<ShapeCollision>) 
+    {
+        // if(collisions.length == 0) 
+        // {
+        //     teleport_disabled = false;
+        // }
+
+        // for(collision in collisions) {
+
+        //     var _type = collision.shape2.tags.get('type');
+
+        //     switch(_type) {
+        //         case 'portal':
+        //                 //can we teleport?
+        //             if(!teleport_disabled) {
+
+        //                 var _destination = portals.get(collision.shape2.data.target);
+
+        //                     //add 4 so that we are no longer colliding
+        //                 sim.player_collider.position.x = _destination.x;
+        //                 sim.player_collider.position.y = _destination.y + 4;
+
+        //                 teleport_disabled = true;
+
+        //             } //if
+
+        //         case 'exit':
+
+        //         case _:
+            
+        //     } //switch type
+
+        // } //each collision
+
+    } //ontrigger
+
 
 	override function onkeyup(e:KeyEvent) 
     {
