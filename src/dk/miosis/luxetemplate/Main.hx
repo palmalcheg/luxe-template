@@ -92,9 +92,6 @@ class Main extends luxe.Game
         _states.add(new Splash());
         _states.add(new Game());
         _states.set("game");
-
-        //start the simulation
-        physics.paused = false;
     }
 
     override function onrender() {

@@ -6,15 +6,17 @@ import luxe.Log.*;
 import luxe.Sprite;
 import luxe.Vector;
 
+import luxe.utils.Maths;
+
 class PlayerPhysics extends Component
 {
-	var max_vel = 50;
-    var air_vel = 60;
-    var move_spd = 600;
-    var jump_force = 200;
-    var damp = 0.72;
-    var damp_air = 0.9;
-    var jumpsAvailable:Int = 0;
+    var move_speed:Int;
+    var jump_force:Int;
+	var max_velocity:Int;
+    var air_velocity:Int;
+    var jumps_available:Int;
+    var damp:Float;
+    var damp_air:Float;
 
 	var movement_vector:Vector;
 	var sprite:Sprite;
@@ -25,62 +27,66 @@ class PlayerPhysics extends Component
 		movement_vector = new Vector();
 		sprite = cast entity;
 
-	    // Bind keys
-	    Luxe.input.bind_key('a', Key.key_a);
+		// Variables
+		max_velocity = 50;
+		air_velocity = 60;
+		move_speed = 600;
+		jump_force = 200;
+		damp = 0.72;
+		damp_air = 0.9;
+		jumps_available = 0;
+
+	    // Key bindings
+	    Luxe.input.bind_key('left', Key.key_a);
 	    Luxe.input.bind_key('left', Key.left);
-	    Luxe.input.bind_key('d', Key.key_d);
+	    Luxe.input.bind_key('right', Key.key_d);
 	    Luxe.input.bind_key('right', Key.right);
-		Luxe.input.bind_key('w', Key.key_w);
-	    Luxe.input.bind_key('up', Key.up);
-		Luxe.input.bind_key('s', Key.key_s);
-	    Luxe.input.bind_key('down', Key.down);
+        Luxe.input.bind_key('jump', Key.key_w);
+        Luxe.input.bind_key('jump', Key.up);
+        Luxe.input.bind_key('jump', Key.space);
+
 	}
 
 	public override function update(dt:Float) 
 	{
 		movement_vector.set_xyz(0, 0, 0); // Reset
 
-		if(Luxe.input.inputdown('a') || Luxe.input.inputdown('left')) 
+		if (Luxe.input.inputdown('left')) 
 		{
-			movement_vector.x = -1;
+            Main.physics.player_velocity.x -= move_speed * dt;
+		}
+		else if (Luxe.input.inputdown('right')) 
+		{
+            Main.physics.player_velocity.x += move_speed * dt;
+		}
+		else
+		{
+            if (Main.physics.player_can_jump) 
+            {
+                Main.physics.player_velocity.x *= damp;
+            } 
+            else 
+            {
+                Main.physics.player_velocity.x *= damp_air;
+            }
 		}
 
-		if(Luxe.input.inputdown('d') || Luxe.input.inputdown('right')) 
+		if (Main.physics.player_can_jump) 
 		{
-			movement_vector.x = 1;
-		}
+            jumps_available = 2;
+        }
 
-		if(Luxe.input.inputdown('w') || Luxe.input.inputdown('up')) 
-		{
-			movement_vector.y = -1;
-		}
+        if (jumps_available > 0 && Luxe.input.inputpressed('jump')) 
+        {
+            Main.physics.player_velocity.y = -jump_force;
+            --jumps_available;
+        }
 
-		if(Luxe.input.inputdown('s') || Luxe.input.inputdown('down')) 
-		{
-			movement_vector.y = 1;
-		}
+		Main.physics.player_collider.position.x = Maths.clamp(Main.physics.player_collider.position.x, 4, 256 - 4);
+        pos.copy_from(Main.physics.player_collider.position);
 
-		movement_vector.normalize();
-		pos.add(movement_vector);
+        var _max_vel = (Main.physics.player_can_jump) ? max_velocity : air_velocity;
+        Main.physics.player_velocity.x = Maths.clamp(Main.physics.player_velocity.x, -_max_vel, _max_vel);
 
-		if (pos.x < halfSize) 
-		{
-			pos.x = halfSize;
-		}
-
-		if (pos.x > (Main.w - halfSize)) 
-		{
-			pos.x = Main.w - halfSize;
-		}
-
-		if (pos.y < halfSize) 
-		{
-			pos.y = halfSize;
-		}
-
-		if (pos.y > (Main.h - halfSize)) 
-		{
-			pos.y = Main.h - halfSize;
-		}
 	}
 }

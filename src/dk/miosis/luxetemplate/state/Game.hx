@@ -71,6 +71,9 @@ class Game extends BaseState
 
         Luxe.events.listen('simulation.triggers.collide', ontrigger);
 
+        //start the simulation
+        Main.physics.paused = false;
+
         super.onenter(_);
 
         //fade in when the init event happens

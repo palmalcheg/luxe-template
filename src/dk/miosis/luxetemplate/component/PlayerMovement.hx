@@ -18,13 +18,13 @@ class PlayerMovement extends Component
 		sprite = cast entity;
 
 	    // Bind keys
-	    Luxe.input.bind_key('a', Key.key_a);
+	    Luxe.input.bind_key('left', Key.key_a);
 	    Luxe.input.bind_key('left', Key.left);
-	    Luxe.input.bind_key('d', Key.key_d);
+	    Luxe.input.bind_key('right', Key.key_d);
 	    Luxe.input.bind_key('right', Key.right);
-		Luxe.input.bind_key('w', Key.key_w);
+		Luxe.input.bind_key('up', Key.key_w);
 	    Luxe.input.bind_key('up', Key.up);
-		Luxe.input.bind_key('s', Key.key_s);
+		Luxe.input.bind_key('down', Key.key_s);
 	    Luxe.input.bind_key('down', Key.down);
 	}
 
@@ -32,22 +32,22 @@ class PlayerMovement extends Component
 	{
 		movement_vector.set_xyz(0, 0, 0); // Reset
 
-		if(Luxe.input.inputdown('a') || Luxe.input.inputdown('left')) 
+		if(Luxe.input.inputdown('left')) 
 		{
 			movement_vector.x = -1;
 		}
 
-		if(Luxe.input.inputdown('d') || Luxe.input.inputdown('right')) 
+		if(Luxe.input.inputdown('right')) 
 		{
 			movement_vector.x = 1;
 		}
 
-		if(Luxe.input.inputdown('w') || Luxe.input.inputdown('up')) 
+		if(Luxe.input.inputdown('up')) 
 		{
 			movement_vector.y = -1;
 		}
 
-		if(Luxe.input.inputdown('s') || Luxe.input.inputdown('down')) 
+		if(Luxe.input.inputdown('down')) 
 		{
 			movement_vector.y = 1;
 		}
