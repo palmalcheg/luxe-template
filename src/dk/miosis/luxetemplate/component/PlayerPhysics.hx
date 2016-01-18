@@ -44,8 +44,20 @@ class PlayerPhysics extends Component
         Luxe.input.bind_key('jump', Key.key_w);
         Luxe.input.bind_key('jump', Key.up);
         Luxe.input.bind_key('jump', Key.space);
-
+        Luxe.input.bind_gamepad('jump', Constants.GamepadMappings.get("ps3_mac").get("button_cross"));
 	}
+
+	public override function ongamepaddown( event:GamepadEvent ) 
+	{
+		// if (event.button >= 0)
+		// 	log(event);
+	}
+
+    public override function ongamepadaxis( event:GamepadEvent )
+    {
+   //  	if (event.axis == 5)
+			// log(event);
+    }
 
 	public override function update(dt:Float) 
 	{
@@ -87,6 +99,5 @@ class PlayerPhysics extends Component
 
         var _max_vel = (Main.physics.player_can_jump) ? max_velocity : air_velocity;
         Main.physics.player_velocity.x = Maths.clamp(Main.physics.player_velocity.x, -_max_vel, _max_vel);
-
 	}
 }

@@ -3,6 +3,30 @@ package dk.miosis.luxetemplate;
 import  haxe.Int64;
 import luxe.Color;
 
+// @:enum
+// abstract Platforms(Int) 
+// {
+// 	var Mac = 0;
+// 	var Windows = 1;
+// 	var Linux = 2;
+// }
+
+// @:enum
+// abstract Gamepads(Int) 
+// {
+// 	var PS3 = 0;
+// 	var Xbox360 = 1;
+// }
+
+// @:enum
+// abstract GamepadButtons(Int) 
+// {
+// 	var Cross = 0;
+// 	var Square = 1;
+// 	var Triangle = 2;
+// 	var Circle = 2;	
+// }
+
 class Constants
 {
 	public static var GAME_SCALE(default, never):Int = 2;
@@ -37,4 +61,34 @@ class Constants
 	// public static var GAME_BOY_COLOR_LIGHT(default, never):Color = new Color().rgb(0xb5ae4a);
 	// public static var GAME_BOY_COLOR_MEDIUM(default, never):Color = new Color().rgb(0x6b6931);
 	// public static var GAME_BOY_COLOR_DARK(default, never):Color = new Color().rgb(0x212010);
+
+	public static var GamepadMappings:Map<String, Map<String, Int>> = 
+	[
+		"ps3_mac" => 
+			[
+				// Buttons
+				"button_cross" => 0,
+				"button_circle" => 1,
+				"button_square" => 2,
+				"button_triangle" => 3,
+				"button_select" => 4,
+				"button_ps" => 5,
+				"button_start" => 6,
+				"button_left_stick" => 7,
+				"button_right_stick" => 8,				
+				"button_left_shoulder" => 9,
+				"button_right_shoulder" => 10,
+				"dpad_up" => 11,
+				"dpad_down" => 12,
+				"dpad_left" => 13,
+				"dpad_right" => 14,
+				// Axes
+				"stick_left_x" => 0,				
+				"stick_left_y" => 1,
+				"stick_right_x" => 2,
+				"stick_right_y" => 3,				
+				"trigger_left" => 4,
+				"trigger_right" => 5,
+			]
+	];
 }
