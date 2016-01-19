@@ -66,7 +66,6 @@ class Constants
 	[
 		"ps3_mac" => 
 			[
-				// Buttons
 				"button_cross" => 0,
 				"button_circle" => 1,
 				"button_square" => 2,
@@ -78,17 +77,40 @@ class Constants
 				"button_right_stick" => 8,				
 				"button_left_shoulder" => 9,
 				"button_right_shoulder" => 10,
-				"dpad_up" => 11,
-				"dpad_down" => 12,
-				"dpad_left" => 13,
-				"dpad_right" => 14,
-				// Axes
-				"stick_left_x" => 0,				
-				"stick_left_y" => 1,
-				"stick_right_x" => 2,
-				"stick_right_y" => 3,				
-				"trigger_left" => 4,
-				"trigger_right" => 5,
-			]
+				"button_dpad_up" => 11,
+				"button_dpad_down" => 12,
+				"button_dpad_left" => 13,
+				"button_dpad_right" => 14,
+				"axis_stick_left_x" => 0,				
+				"axis_stick_left_y" => 1,
+				"axis_stick_right_x" => 2,
+				"axis_stick_right_y" => 3,				
+				"axis_trigger_left" => 4,
+				"axis_trigger_right" => 5,
+			],
+		"ps3_web" => 
+			[
+				"button_cross" => 14,
+				"button_circle" => 13,
+				"button_square" => 12,
+				"button_triangle" => 15,
+				"button_select" => 0,
+				"button_ps" => 16,
+				"button_start" => 3,
+				"button_left_stick" => 1,
+				"button_right_stick" => 2,				
+				"button_left_shoulder" => 10,
+				"button_right_shoulder" => 11,
+				"button_dpad_up" => 4,
+				"button_dpad_down" => 6,
+				"button_dpad_left" => 7,
+				"button_dpad_right" => 5,
+				"button_trigger_left" => 8,
+				"button_trigger_right" => 9,				
+				"axis_stick_left_x" => 0,				
+				"axis_stick_left_y" => 1,
+				"axis_stick_right_x" => 2,
+				"axis_stick_right_y" => 3
+			],			
 	];
 }
