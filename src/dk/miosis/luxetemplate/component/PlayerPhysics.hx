@@ -50,7 +50,7 @@ class PlayerPhysics extends Component
 	public override function ongamepaddown( event:GamepadEvent ) 
 	{
 		// if (event.button >= 4)
-		// 	log(event);
+			// log(event);
 	}
 
     public override function ongamepadaxis( event:GamepadEvent )
