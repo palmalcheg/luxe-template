@@ -71,7 +71,7 @@ class Constants
 				"button_square" => 2,
 				"button_triangle" => 3,
 				"button_select" => 4,
-				"button_ps" => 5,
+				"button_home" => 5,
 				"button_start" => 6,
 				"button_left_stick" => 7,
 				"button_right_stick" => 8,				
@@ -89,13 +89,13 @@ class Constants
 				"axis_trigger_right" => 5,
 			],
 		"ps3_web" => 
-			[
+			[// Firefox
 				"button_cross" => 14,
 				"button_circle" => 13,
 				"button_square" => 12,
 				"button_triangle" => 15,
 				"button_select" => 0,
-				"button_ps" => 16,
+				"button_home" => 16,
 				"button_start" => 3,
 				"button_left_stick" => 1,
 				"button_right_stick" => 2,				
@@ -137,7 +137,7 @@ class Constants
 				"axis_trigger_right" => 5,
 			],
 		"xbox360_web" => 
-			[
+			[// Firefox
 				"button_cross" => 11,
 				"button_circle" => 12,
 				"button_square" => 14,

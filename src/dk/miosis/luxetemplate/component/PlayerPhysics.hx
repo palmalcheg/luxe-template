@@ -44,7 +44,18 @@ class PlayerPhysics extends Component
         Luxe.input.bind_key('jump', Key.key_w);
         Luxe.input.bind_key('jump', Key.up);
         Luxe.input.bind_key('jump', Key.space);
-        Luxe.input.bind_gamepad('jump', Constants.GamepadMappings.get("ps3_mac").get("button_cross"));
+
+        // Gamepad bindings
+		#if web
+	        Luxe.input.bind_gamepad('jump', Constants.GamepadMappings.get("ps3_web").get("button_cross"));
+	        Luxe.input.bind_gamepad('jump', Constants.GamepadMappings.get("xbox360_web").get("button_cross"));
+		#end
+
+		#if mac
+	        Luxe.input.bind_gamepad('jump', Constants.GamepadMappings.get("ps3_mac").get("button_cross"));
+			Luxe.input.bind_gamepad('jump', Constants.GamepadMappings.get("xbox360_mac").get("button_cross"));	        
+		#end
+
 	}
 
 	public override function ongamepaddown( event:GamepadEvent ) 
