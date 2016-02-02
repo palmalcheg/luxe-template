@@ -2,6 +2,8 @@ package dk.miosis.luxetemplate;
 
 import luxe.Log;
 import luxe.Log.*;
+import luxe.Parcel;
+import luxe.ParcelProgress;
 import luxe.Screen.WindowEvent;
 import luxe.States;
 import luxe.Vector;

@@ -1,64 +1,26 @@
-// {
-//     "textures" : [
-//         { "id" : "assets/maps/tileset.png" },
-//         { "id" : "assets/sprites/featherrock.png" },
-//         { "id" : "assets/sprites/ring.png" },
-//         { "id" : "assets/sprites/breakable_block.png" },
-//         { "id" : "assets/sprites/chest.png" },
-//         { "id" : "assets/sprites/elf.png" },
-//         { "id" : "assets/sprites/goblin.png" },
-//         { "id" : "assets/sprites/indicator ui.png" },
-//         { "id" : "assets/sprites/magicbar.png" },
-//         { "id" : "assets/sprites/goblinsbar.png" },
-//         { "id" : "assets/sprites/goldbar.png" },
-//         { "id" : "assets/sprites/light.png" },
-//         { "id" : "assets/cinematic/mountain bg.png" },
-//         { "id" : "assets/cinematic/weapons.png" },
-//         { "id" : "assets/cinematic/coins and gems.png" },
-//         { "id" : "assets/cinematic/fireside.png" },
-//         { "id" : "assets/cinematic/feather.png" },
-//         { "id" : "assets/cinematic/rock.png" },
-//         { "id" : "assets/cinematic/featherrock.png" },
-//         { "id" : "assets/cinematic/blank.png" }
-//     ],
-//     "shaders" : [
-//         { "ps_id":"assets/shaders/isolate_bright.glsl" },
-//         { "ps_id":"assets/shaders/blur.glsl" },
-//         { "ps_id":"assets/shaders/glitch.glsl" },
-//         { "ps_id":"assets/shaders/circleout.glsl" }
-//     ],
-//     "fonts" : [
-//         { "id" : "assets/04b03.fnt" }
-//     ],
-//     "sounds" : [
-//         { "id" : "assets/music/theme.ogg", "name" : "theme", "is_stream" : false},
-//         { "id" : "assets/music/theme_reverb.ogg", "name" : "theme_reverb", "is_stream" : false},
-//         { "id" : "assets/sounds/coins.ogg", "name" : "coins", "is_stream" : false},
-//         { "id" : "assets/sounds/blockbreak.ogg", "name" : "blockbreak", "is_stream" : false},
-//         { "id" : "assets/sounds/flap.ogg", "name" : "flap", "is_stream" : false},
-//         { "id" : "assets/sounds/soul.ogg", "name" : "soul", "is_stream" : false},
-//         { "id" : "assets/sounds/bodywhack.ogg", "name" : "bodywhack", "is_stream" : false},
-//         { "id" : "assets/sounds/groundhit.ogg", "name" : "groundhit", "is_stream" : false},
-//         { "id" : "assets/sounds/burnt.ogg", "name" : "burnt", "is_stream" : false},
-//         { "id" : "assets/sounds/wahwah.ogg", "name" : "wahwah", "is_stream" : false},
-//         { "id" : "assets/sounds/tada.ogg", "name" : "tada", "is_stream" : false}
-//     ],
-//     "text" : [
-//         { "id" : "assets/maps/dev.tmx" },
-//         { "id" : "assets/maps/level0.tmx" },
-//         { "id" : "assets/maps/level1.tmx" },
-//         { "id" : "assets/maps/level2.tmx" },
-//         { "id" : "assets/maps/level3.tmx" },
-//         { "id" : "assets/maps/level4.tmx" },
-//         { "id" : "assets/maps/level5.tmx" },
-//         { "id" : "assets/maps/level6.tmx" },
-//         { "id" : "assets/maps/level7.tmx" }
-//     ],
-//     "json" : [
-//         { "id" : "assets/tweakconfig.json" },
-//         { "id" : "assets/sprites/featherrock.json" },
-//         { "id" : "assets/sprites/elf.json" },
-//         { "id" : "assets/sprites/goblin.json" },
-//         { "id" : "assets/cinematic/cinematic.json" }
-//     ]
-// }
+{
+    "textures" : 
+    [
+        { "id" : "assets/maps/tileset.png" },
+    ],
+    "shaders" : 
+    [
+        { "ps_id":"assets/shaders/isolate_bright.glsl" },
+    ],
+    "fonts" : 
+    [
+        { "id" : "assets/04b03.fnt" }
+    ],
+    "sounds" : 
+    [
+        { "id" : "assets/music/theme.ogg", "name" : "theme", "is_stream" : false},
+    ],
+    "text" : 
+    [
+        { "id" : "assets/maps/dev.tmx" },
+    ],
+    "json" : 
+    [
+        { "id" : "assets/tweakconfig.json" },
+    ]
+}
