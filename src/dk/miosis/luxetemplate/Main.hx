@@ -21,6 +21,8 @@ import mint.render.luxe.LuxeMintRender;
 import mint.render.luxe.Convert;
 import mint.layout.margins.Margins;
 
+import snow.api.Promise;
+
 import dk.miosis.luxetemplate.state.Game;
 import dk.miosis.luxetemplate.state.Splash;
 import dk.miosis.luxetemplate.system.CirclePreloader;
@@ -32,13 +34,12 @@ class Main extends luxe.Game
     public static var canvas:Canvas;
     public static var focus: Focus;
     public static var ui_batcher: phoenix.Batcher;
+    public static var physics:MiosisPhysicsEngine;    
 
-    public static var w: Int = -1;
-    public static var h: Int = -1;
+    public static var w:Int = -1;
+    public static var h:Int = -1;
 
     var _states:States;
-
-    public static var physics:MiosisPhysicsEngine;
 
     override function config(config:luxe.AppConfig) 
     {
@@ -55,15 +56,18 @@ class Main extends luxe.Game
     {
         log("ready");
 
-        var promise_json = Luxe.resources.load_json("assets/parcel.json");
-        promise_json.then(create_parcel_and_preloader);
+        // Load assets
+        var promise_json:Promise = Luxe.resources.load_json("assets/parcel.json");
+        promise_json.then(load_assets);
 
+        // Fit camera viewport to window size
         Luxe.camera.size = new Vector(w, h);
         Luxe.camera.size_mode = luxe.Camera.SizeMode.fit;
 
         log('Screen width: ${Luxe.screen.w}');
         log('Screen height: ${Luxe.screen.h}');
 
+        // Set up Mint canvas
         var ui_camera = new luxe.Camera();
         ui_camera.size = new phoenix.Vector(w, h, 1);
         ui_camera.size_mode = luxe.Camera.SizeMode.fit;
@@ -89,11 +93,11 @@ class Main extends luxe.Game
         physics.player_collider = Polygon.rectangle(0,0,8,8);
     }
 
-    function create_parcel_and_preloader(json:JSONResource) 
+    function load_assets(json:JSONResource) 
     {
         log("create_parcel");
 
-        var parcel = new Parcel();
+        var parcel:Parcel = new Parcel();
         parcel.from_json(json.asset.json);
 
         new ParcelProgress({
