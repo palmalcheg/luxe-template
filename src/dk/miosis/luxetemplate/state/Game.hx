@@ -47,7 +47,7 @@ class Game extends BaseState
 
 	override function onenter<T>(_:T) 
     {
-        _debug("Entering Game state.");
+        _debug("---------- GameState.onenter ----------");
 
         Luxe.renderer.clear_color = Constants.GAME_BOY_COLOR_OFF;
 
@@ -74,22 +74,13 @@ class Game extends BaseState
         //start the simulation
         Main.physics.paused = false;
 
-        // super.onenter(_);
-
-        // //fade in when the init event happens
-        // Luxe.on(Luxe.Ev.init, function(_){ _overlay.fade_in(0.5); });
-        // Luxe.on(Luxe.Ev.init, fade_in);        
+        super.onenter(_);
     }
-
-    // function fade_in(_)
-    // {
-    //     log("******************* fade_in ****************************");
-    //     _overlay.fade_in(0.5);
-    // }
 
     function create_map() 
     {    
-        log("create_map");
+        _debug("---------- Game.create_map ----------");
+
         var map_data = Luxe.resources.text('assets/tiled/simple_160x144_8x8_map.tmx').asset.text;
         assertnull(map_data, 'Resource not found!');  
 
@@ -242,8 +233,7 @@ class Game extends BaseState
 
         // } //each collision
 
-    } //ontrigger
-
+    }
 
 	override function onkeyup(e:KeyEvent) 
     {

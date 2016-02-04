@@ -22,5 +22,6 @@ class BaseState extends State
     override function onenter<T>(_:T) 
     {
         _overlay = Luxe.camera.add(new FadeOverlay({ name:'fade' }));
+        _overlay.fade_in(0.5);
     }    
 }

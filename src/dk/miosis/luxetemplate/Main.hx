@@ -54,7 +54,7 @@ class Main extends luxe.Game
 
     override function ready() 
     {
-        log("ready");
+        _debug("---------- Main.ready ----------");
 
         // Load assets
         var promise_json:Promise = Luxe.resources.load_json("assets/parcel.json");
@@ -95,7 +95,7 @@ class Main extends luxe.Game
 
     function load_assets(json:JSONResource) 
     {
-        log("create_parcel");
+        _debug("---------- Main.load_assets ----------");
 
         var parcel:Parcel = new Parcel();
         parcel.from_json(json.asset.json);
@@ -111,7 +111,7 @@ class Main extends luxe.Game
 
     function assets_loaded(_) 
     {
-        log("assets_loaded");
+        _debug("---------- Main.assets_loaded ----------");
 
         _states = new States({ name:'states' });
         _states.add(new Splash());
@@ -147,7 +147,7 @@ class Main extends luxe.Game
 
     override function update(dt:Float) 
     {
-        _verbose("----- Main update -----");
+        _verbose("---------- Main.update ----------");
 
         canvas.update(dt);
     }
