@@ -14,6 +14,8 @@ import luxe.collision.data.ShapeCollision;
 import luxe.importers.tiled.TiledMap;
 import luxe.importers.tiled.TiledObjectGroup;
 
+import luxe.resource.Resource.AudioResource;
+
 import mint.Button;
 
 import phoenix.Batcher;
@@ -39,6 +41,9 @@ class Game extends BaseState
 
     var map:TiledMap;
     var map_scale:Int = 1;
+
+    var music: AudioResource;
+    var music_handle: luxe.Audio.AudioHandle;
 
 	public function new() 
     {
@@ -76,6 +81,10 @@ class Game extends BaseState
 
         //start the simulation
         Main.physics.paused = false;
+
+        // Start music
+        music = Luxe.resources.audio('assets/audio/steppin.ogg');
+        music_handle = Luxe.audio.loop(music.source);        
 
         super.onenter(_);
     }
