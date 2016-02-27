@@ -64,6 +64,8 @@ class Game extends BaseState
         txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         txt.point_size = 16;
         txt.geom.texture = txt.font.pages[0];
+        txt.geom.texture.filter_min = nearest;
+        txt.geom.texture.filter_mag = nearest;        
         txt.color = Constants.GAME_BOY_COLOR_DARK;
 
         create_map();
