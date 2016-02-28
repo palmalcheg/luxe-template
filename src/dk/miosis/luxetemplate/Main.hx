@@ -30,7 +30,7 @@ import dk.miosis.luxetemplate.system.MiosisPhysicsEngine;
 
 class Main extends luxe.Game 
 {
-    public static var mintRenderer:LuxeMintRender;
+    public static var mint_renderer:LuxeMintRender;
     public static var canvas:Canvas;
     public static var focus: Focus;
     public static var ui_batcher: phoenix.Batcher;
@@ -39,7 +39,7 @@ class Main extends luxe.Game
     public static var w:Int = -1;
     public static var h:Int = -1;
 
-    var _states:States;
+    var states:States;
 
     override function config(config:luxe.AppConfig) 
     {
@@ -76,11 +76,11 @@ class Main extends luxe.Game
         
         Luxe.renderer.add_batch(ui_batcher);
 
-        mintRenderer = new LuxeMintRender({ batcher:ui_batcher });
+        mint_renderer = new LuxeMintRender({ batcher:ui_batcher });
         
         canvas = new mint.Canvas({
             name:'canvas',
-            rendering: mintRenderer,
+            rendering: mint_renderer,
             options: { color:Constants.COLOR_TRANSPARENT },
             x: 0, y:0, w: 100, h: 100
         });
@@ -113,10 +113,10 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.assets_loaded ----------");
 
-        _states = new States({ name:'states' });
-        _states.add(new Splash());
-        _states.add(new Game());
-        _states.set("game");
+        states = new States({ name:'states' });
+        states.add(new Splash());
+        states.add(new Game());
+        states.set("game");
     }
 
     override function onrender() 

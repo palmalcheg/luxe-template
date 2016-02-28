@@ -10,7 +10,7 @@ class PlayerMovement extends Component
 {
 	public var movement_vector:Vector;
 	public var sprite:Sprite;
-	public var halfSize:Float;
+	public var half_size:Float;
 
 	public override function init() 
 	{
@@ -55,24 +55,24 @@ class PlayerMovement extends Component
 		movement_vector.normalize();
 		pos.add(movement_vector);
 
-		if (pos.x < halfSize) 
+		if (pos.x < half_size) 
 		{
-			pos.x = halfSize;
+			pos.x = half_size;
 		}
 
-		if (pos.x > (Main.w - halfSize)) 
+		if (pos.x > (Main.w - half_size)) 
 		{
-			pos.x = Main.w - halfSize;
+			pos.x = Main.w - half_size;
 		}
 
-		if (pos.y < halfSize) 
+		if (pos.y < half_size) 
 		{
-			pos.y = halfSize;
+			pos.y = half_size;
 		}
 
-		if (pos.y > (Main.h - halfSize)) 
+		if (pos.y > (Main.h - half_size)) 
 		{
-			pos.y = Main.h - halfSize;
+			pos.y = Main.h - half_size;
 		}
 	}
 }

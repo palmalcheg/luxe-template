@@ -12,7 +12,7 @@ import dk.miosis.luxetemplate.component.FadeOverlay;
 
 class BaseState extends State 
 {
-    var _overlay:FadeOverlay;
+    var overlay:FadeOverlay;
 
     public function new(options:StateOptions) 
     {
@@ -21,7 +21,7 @@ class BaseState extends State
 
     override function onenter<T>(_:T) 
     {
-        _overlay = Luxe.camera.add(new FadeOverlay({ name:'fade' }));
-        _overlay.fade_in(0.5);
+        overlay = Luxe.camera.add(new FadeOverlay({ name:'fade' }));
+        overlay.fade_in(0.5);
     }    
 }

@@ -33,8 +33,8 @@ import dk.miosis.luxetemplate.ui.MiosisMintRendering;
 class Game extends BaseState 
 {
     var player:Player;
-    var playerMovement:PlayerMovement;    
-    var playerPhysics:PlayerPhysics;
+    var player_movement:PlayerMovement;    
+    var player_physics:PlayerPhysics;
     var player_spawn_pos:Vector;
 
     var button:Button;
@@ -122,12 +122,12 @@ class Game extends BaseState
                             player = new Player();
 
                             // No physics
-                            // playerMovement = new PlayerMovement();
-                            // player.add(playerMovement);
+                            // player_movement = new PlayerMovement();
+                            // player.add(player_movement);
 
                             // // Custom physics
-                            playerPhysics = new PlayerPhysics();
-                            player.add(playerPhysics);
+                            player_physics = new PlayerPhysics();
+                            player.add(player_physics);
                             player.pos.copy_from(player_spawn_pos); // Do we have to clone??
                         } //spawn
                         case 'exit': 

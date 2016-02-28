@@ -20,7 +20,6 @@ class PlayerPhysics extends Component
 
 	var movement_vector:Vector;
 	var sprite:Sprite;
-	var halfSize:Float;
 
 	public override function init() 
 	{
