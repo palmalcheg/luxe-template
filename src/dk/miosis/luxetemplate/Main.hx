@@ -19,13 +19,11 @@ import mint.Canvas;
 import mint.focus.Focus;
 import mint.render.luxe.LuxeMintRender;
 import mint.render.luxe.Convert;
-import mint.layout.margins.Margins;
 
 import snow.api.Promise;
 
 import dk.miosis.luxetemplate.state.Game;
 import dk.miosis.luxetemplate.state.Splash;
-import dk.miosis.luxetemplate.system.CirclePreloader;
 import dk.miosis.luxetemplate.system.MiosisPhysicsEngine;
 
 class Main extends luxe.Game 
@@ -54,7 +52,7 @@ class Main extends luxe.Game
 
     override function ready() 
     {
-        _debug("---------- Main.ready ----------");
+        _verbose("---------- Main.ready ----------");
 
         // Load assets
         var promise_json:Promise = Luxe.resources.load_json("assets/parcel.json");
@@ -95,7 +93,7 @@ class Main extends luxe.Game
 
     function load_assets(json:JSONResource) 
     {
-        _debug("---------- Main.load_assets ----------");
+        _verbose("---------- Main.load_assets ----------");
 
         var parcel:Parcel = new Parcel();
         parcel.from_json(json.asset.json);
@@ -111,12 +109,12 @@ class Main extends luxe.Game
 
     function assets_loaded(_) 
     {
-        _debug("---------- Main.assets_loaded ----------");
+        _verbose("---------- Main.assets_loaded ----------");
 
         states = new States({ name:'states' });
         states.add(new Splash());
         states.add(new Game());
-        states.set("game");
+        states.set("splash");
     }
 
     override function onrender() 

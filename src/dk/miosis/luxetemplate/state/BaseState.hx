@@ -2,17 +2,15 @@ package dk.miosis.luxetemplate.state;
 
 import luxe.Color;
 import luxe.Entity;
-import luxe.Input;
 import luxe.options.StateOptions;
+import luxe.Sprite;
 import luxe.States;
-import luxe.Vector;
-
 
 import dk.miosis.luxetemplate.component.FadeOverlay;
 
 class BaseState extends State 
 {
-    var overlay:FadeOverlay;
+    var fade_overlay:FadeOverlay;    
 
     public function new(options:StateOptions) 
     {
@@ -21,7 +19,13 @@ class BaseState extends State
 
     override function onenter<T>(_:T) 
     {
-        overlay = Luxe.camera.add(new FadeOverlay({ name:'fade' }));
-        overlay.fade_in(0.5);
+        var fade_overlay_sprite = new Sprite({
+            size: Luxe.screen.size,
+            color: new Color(0,0,0,1),
+            centered: false,
+            depth:99
+        });
+
+        fade_overlay = fade_overlay_sprite.add(new FadeOverlay({ name:'fade' }));
     }    
 }

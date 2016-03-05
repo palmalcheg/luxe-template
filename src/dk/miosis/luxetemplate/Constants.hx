@@ -32,6 +32,7 @@ class Constants
 	public static var GAME_SCALE(default, never):Int = 2;
 
 	public static var COLOR_TRANSPARENT(default, never):Color = new Color().set(1, 0, 1, 0);
+	public static var COLOR_WHITE(default, never):Color = new Color().set(1, 1, 1, 1);
 	// // Game Boy palette, gray 1
 	// public static var GAME_BOY_COLOR_OFF(default, never):Color = new Color().rgb(0xffffff);
 	// public static var GAME_BOY_COLOR_LIGHT(default, never):Color = new Color().rgb(0xb2b2b2);
