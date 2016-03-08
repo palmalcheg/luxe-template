@@ -30,7 +30,7 @@ import dk.miosis.luxetemplate.state.BaseState;
 import dk.miosis.luxetemplate.ui.MiosisButtonRender;
 import dk.miosis.luxetemplate.ui.MiosisMintRendering;
 
-class Game extends BaseState 
+class Game extends BaseState
 {
     var player:Player;
     var player_movement:PlayerMovement;    
@@ -47,7 +47,7 @@ class Game extends BaseState
 
 	public function new() 
     {
-        super({ name:'game' });
+        super({ name:'game', fade_in_time:4.0, fade_out_time:1.0 });
     }
 
 	override function onenter<T>(_:T) 
@@ -84,7 +84,7 @@ class Game extends BaseState
 
         // Start music
         music = Luxe.resources.audio('assets/audio/steppin.ogg');
-        music_handle = Luxe.audio.loop(music.source);        
+        music_handle = Luxe.audio.loop(music.source);
 
         super.onenter(_);
     }
@@ -93,11 +93,11 @@ class Game extends BaseState
     {    
         _debug("---------- Game.create_map ----------");
 
-        var map_data = Luxe.resources.text('assets/tiled/simple_160x144_8x8_map.tmx').asset.text;
+        var map_data = Luxe.resources.text('assets/text/simple_160x144_8x8_map.tmx').asset.text;
         assertnull(map_data, 'Resource not found!');  
 
         map = new TiledMap({
-            asset_path:"assets/tiled/",
+            asset_path:"assets/img/",
             format:'tmx', 
             tiled_file_data: map_data });
         map.display({ scale:map_scale, filter:FilterType.nearest });
@@ -195,6 +195,7 @@ class Game extends BaseState
 
     function create_map_collision() 
     {
+        _debug("---------- Game.create_map_collision ----------");
         var layerTiles = map.layer('collision');
         assertnull(layerTiles, 'Map layer _collision_ not found!');
 

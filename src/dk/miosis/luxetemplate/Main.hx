@@ -7,6 +7,7 @@ import luxe.Parcel;
 import luxe.ParcelProgress;
 import luxe.resource.Resource;
 import luxe.Screen.WindowEvent;
+import luxe.Sprite;
 import luxe.States;
 import luxe.Vector;
 
@@ -22,6 +23,8 @@ import mint.render.luxe.Convert;
 
 import snow.api.Promise;
 
+import dk.miosis.luxetemplate.component.FadeOverlay;
+import dk.miosis.luxetemplate.state.BaseState;
 import dk.miosis.luxetemplate.state.Game;
 import dk.miosis.luxetemplate.state.Splash;
 import dk.miosis.luxetemplate.system.MiosisPhysicsEngine;
@@ -37,7 +40,12 @@ class Main extends luxe.Game
     public static var w:Int = -1;
     public static var h:Int = -1;
 
+    var next_state:String;
+
     var states:States;
+
+    var fade_overlay_sprite:Sprite;
+    var fade_overlay:FadeOverlay;  
 
     override function config(config:luxe.AppConfig) 
     {
@@ -52,7 +60,9 @@ class Main extends luxe.Game
 
     override function ready() 
     {
-        _verbose("---------- Main.ready ----------");
+        _debug("---------- Main.ready ----------");
+
+        next_state = "splash";
 
         // Load assets
         var promise_json:Promise = Luxe.resources.load_json("assets/parcel.json");
@@ -89,11 +99,14 @@ class Main extends luxe.Game
         physics = Luxe.physics.add_engine(MiosisPhysicsEngine);
         physics.draw = false;
         physics.player_collider = Polygon.rectangle(0,0,8,8);
+
+        // Subscribe to state change events
+        Luxe.events.listen('change_state', on_change_state);
     }
 
     function load_assets(json:JSONResource) 
     {
-        _verbose("---------- Main.load_assets ----------");
+        _debug("---------- Main.load_assets ----------");
 
         var parcel:Parcel = new Parcel();
         parcel.from_json(json.asset.json);
@@ -109,12 +122,56 @@ class Main extends luxe.Game
 
     function assets_loaded(_) 
     {
-        _verbose("---------- Main.assets_loaded ----------");
+        _debug("---------- Main.assets_loaded ----------");
+
+        // Set up fade overlay
+        fade_overlay_sprite = new Sprite({
+            size: Luxe.screen.size,
+            color: Constants.COLOR_RED,
+            centered: false,
+            depth:99
+        });
+        fade_overlay = fade_overlay_sprite.add(new FadeOverlay({ name:'fade' }));
+        fade_overlay_sprite.events.listen('fade_overlay_ready', on_fade_overlay_ready);
 
         states = new States({ name:'states' });
         states.add(new Splash());
         states.add(new Game());
-        states.set("splash");
+        states.set(next_state);
+    }
+
+    function on_fade_overlay_ready(e)
+    {
+        var state:BaseState = cast states.current_state;
+        fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);
+    }
+
+    function on_fade_in_done()
+    {
+        var state:BaseState = cast states.current_state;
+        state.post_fade_in();
+    }
+
+    function on_change_state(e)
+    {
+        var state:BaseState = cast states.current_state;
+        next_state = e.state;
+
+        if (state.fade_out_time > 0)
+        {
+            fade_overlay.fade_out(state.fade_in_time, on_fade_out_done);    
+        }
+        else
+        {
+            on_fade_out_done();
+        }
+    }
+
+    function on_fade_out_done()
+    {
+        states.set(next_state);
+        var state:BaseState = cast states.current_state;
+        fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);
     }
 
     override function onrender() 
@@ -145,7 +202,7 @@ class Main extends luxe.Game
 
     override function update(dt:Float) 
     {
-        _verbose("---------- Main.update ----------");
+        _verboser("---------- Main.update ----------");
 
         canvas.update(dt);
     }

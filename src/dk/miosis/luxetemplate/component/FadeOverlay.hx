@@ -1,30 +1,53 @@
 package dk.miosis.luxetemplate.component;
 
 import luxe.Color;
+import luxe.Log.*;
 import luxe.Sprite;
+
+import luxe.options.ComponentOptions;
 
 class FadeOverlay extends luxe.Component 
 {
     var sprite:Sprite;
 
-    override function init() 
+    public function new(?_options:ComponentOptions) 
     {
-        sprite = cast entity;
-        fade_in(0.5);
+        _debug("---------- FadeOverlay.new ----------");        
+
+        if (_options.name == null) 
+        {
+            _options.name = "fade";
+        }
+
+        super(_options);
     }
 
-    public function fade_in(?t=0.15,?fn:Void->Void) 
+    override function init() 
+    {
+        _debug("---------- FadeOverlay.init ----------");
+        sprite = cast entity;
+        entity.events.fire('fade_overlay_ready');        
+    }
+
+    public function fade_in(?t = 0.15, ?fn:Void->Void) 
     {
         sprite.color.tween(t, {a:0}).onComplete(fn);
     }
 
-    public function fade_out(?t=0.15,?fn:Void->Void) 
+    public function fade_out(?t = 0.15, ?fn:Void->Void) 
     {
         sprite.color.tween(t, {a:1}).onComplete(fn);
     }
 
+    override function onremoved()
+    {
+        _debug("---------- FadeOverlay.onremoved ----------");
+        _debug(entity);
+    }
+
     override function ondestroy() 
     {
-        sprite.destroy( );
+        _debug("---------- FadeOverlay.ondestroy ----------");
+        _debug(entity);        
     }
 }

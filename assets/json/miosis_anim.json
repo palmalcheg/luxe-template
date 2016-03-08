@@ -1,0 +1,14 @@
+{
+    "static" : {
+        "frame_size":{ "x":"32", "y":"32" },
+        "frameset": ["1"],
+        "loop": "false",
+        "speed": "1"
+    },
+    "contraction" : {
+        "frame_size":{ "x":"32", "y":"32" },
+        "frameset": ["1-6"],
+        "loop": "false",
+        "speed": "8"
+    }
+}

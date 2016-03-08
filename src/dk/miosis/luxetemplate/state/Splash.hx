@@ -1,6 +1,7 @@
 package dk.miosis.luxetemplate.state;
 
 import luxe.Color;
+import luxe.components.sprite.SpriteAnimation;
 import luxe.Entity;
 import luxe.Input;
 import luxe.Log.*;
@@ -8,90 +9,142 @@ import luxe.Sprite;
 import luxe.States;
 import luxe.Vector;
 
+import dk.miosis.luxetemplate.component.LetterOAnimation;
 
-class Splash extends State 
+class Splash extends BaseState 
 {
+	var o_anim:SpriteAnimation;
 	var letters:Array<Sprite>;
 
 	public function new() 
 	{
-        super({ name:'splash' });
-        letters = new Array<Sprite>();
+        _debug("---------- Splash.new ----------");
 
+        super({ name:'splash', fade_in_time:4.0, fade_out_time:1.0 });
+        letters = new Array<Sprite>();
     }
 
 	override function onenter<T>(_:T) 
 	{
+        _debug("---------- Splash.onenter ----------");     
+
 		// Set background color
 	    Luxe.renderer.clear_color = Constants.GAME_BOY_COLOR_DARK;
+               
+        super.onenter(_);		
+    }
 
-		_debug("BOOM");
+    override function onleave<T>( _data:T ) 
+    {
+        _debug("Splash.onleave with data " + _data);
 
-		// Compute character sprite positions
-		var halfscreen_width = Main.w * 0.5;
-		var distance = 4;
-		var width_total = 3 * 16 + 2 * 4 + 32 + 5 * distance;
-		var width_total_half = 0.5 * width_total;
+        o_anim = null;
 
-		// M
-		var pos_x = halfscreen_width - width_total_half + 8;
+        for (i in 0 ... letters.length)
+        {
+	    	letters[i].destroy();
+	    	letters[i] = null;        		
+        }
 
-	    letters.push(new Sprite({
+        letters = null;
+        
+        super.onleave(_data);
+    }
+
+    override function post_fade_in()
+    {
+        // Compute character sprite positions
+        var halfscreen_width = Main.w * 0.5;
+        var distance = 4;
+        var width_total = 3 * 16 + 2 * 4 + 32 + 5 * distance;
+        var width_total_half = 0.5 * width_total;
+
+        // M
+        var pos_x = halfscreen_width - width_total_half + 8;
+
+        letters.push(new Sprite({
+            name:'miosis_m',
             texture:Luxe.resources.texture('assets/img/logo/miosis_m.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: Constants.GAME_BOY_COLOR_OFF,
             depth:4
         }));
 
-		// I
-		pos_x += 8 + distance + 2;
+        // I
+        pos_x += 8 + distance + 2;
 
-	    letters.push(new Sprite({
+        letters.push(new Sprite({
+            name:'miosis_i1',            
             texture:Luxe.resources.texture('assets/img/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: Constants.GAME_BOY_COLOR_OFF,
             depth:4
         }));
 
-		// O
-		pos_x += 2 + distance + 16;
+        // O
+        pos_x += 2 + distance + 16;
 
-	    letters.push(new Sprite({
-            texture:Luxe.resources.texture('assets/img/logo/miosis_o_1.png'),
+        letters.push(new Sprite({
+            name:'miosis_o',                        
+            texture:Luxe.resources.texture('assets/img/logo/miosis_o.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color: Constants.GAME_BOY_COLOR_OFF,
-            depth:4
+            color: Constants.GAME_BOY_COLOR_MEDIUM,
+            depth:4,
+            size: new Vector(32, 32)
         }));
 
-		// S
-		pos_x += 16 + distance + 8;
+        // S
+        pos_x += 16 + distance + 8;
 
-	    letters.push(new Sprite({
+        letters.push(new Sprite({
+            name:'miosis_s',                        
             texture:Luxe.resources.texture('assets/img/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: Constants.GAME_BOY_COLOR_OFF,
             depth:4
         }));
 
-		// I
-		pos_x += 8 + distance + 2;
+        // I
+        pos_x += 8 + distance + 2;
 
-	    letters.push(new Sprite({
+        letters.push(new Sprite({
+            name:'miosis_i2',                        
             texture:Luxe.resources.texture('assets/img/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: Constants.GAME_BOY_COLOR_OFF,
             depth:4
         }));
 
-		// S
-		pos_x += 2 + distance + 8;
+        // S
+        pos_x += 2 + distance + 8;
 
-	    letters.push(new Sprite({
+        letters.push(new Sprite({
+            name:'miosis_s2',                        
             texture:Luxe.resources.texture('assets/img/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: Constants.GAME_BOY_COLOR_OFF,
             depth:4
         }));
 
-    }   
+        o_anim = letters[2].add(new LetterOAnimation({ name:'anim'}));
+        o_anim.entity.events.listen('animation.contraction.end', on_anim_done);
+    }
+
+    function on_anim_done(e)
+    {
+        _debug("---------- Splash.on_anim_done ----------");
+
+        o_anim.entity.events.unlisten('animation.contraction.end');
+        Luxe.events.fire('change_state', { state : 'game', fade_in_time : fade_in_time, fade_out_time : fade_out_time });
+    }
+
+    override function onkeyup(e:KeyEvent) 
+    {
+        _debug("---------- Splash.onkeyup ----------");
+
+        if(e.keycode == Key.escape) 
+        {
+            Luxe.events.fire('change_state', { state:'game' });
+        }
+    }  
 }

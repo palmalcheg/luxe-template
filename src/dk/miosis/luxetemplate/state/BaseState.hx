@@ -2,30 +2,52 @@ package dk.miosis.luxetemplate.state;
 
 import luxe.Color;
 import luxe.Entity;
+import luxe.Log.*;
 import luxe.options.StateOptions;
 import luxe.Sprite;
 import luxe.States;
 
 import dk.miosis.luxetemplate.component.FadeOverlay;
 
+typedef BaseStateOptions = 
+{
+    > StateOptions,
+    @:optional var fade_in_time:Float;
+    @:optional var fade_out_time:Float;
+}
+
 class BaseState extends State 
 {
-    var fade_overlay:FadeOverlay;    
+    public var fade_in_time:Float;
+    public var fade_out_time:Float;    
 
-    public function new(options:StateOptions) 
+    public function new(_options:BaseStateOptions) 
     {
-        super(options);
+        _debug("---------- BaseState.new ----------");
+
+        if (_options.fade_in_time != null)
+        {
+            fade_in_time = _options.fade_in_time;
+        }
+        else
+        {
+            fade_in_time = 0;
+        }
+
+        if (_options.fade_out_time != null)
+        {
+            fade_out_time = _options.fade_out_time;
+        }
+        else
+        {
+            fade_out_time = 0;
+        }        
+
+        super(_options);
     }
 
-    override function onenter<T>(_:T) 
+    public function post_fade_in()
     {
-        var fade_overlay_sprite = new Sprite({
-            size: Luxe.screen.size,
-            color: new Color(0,0,0,1),
-            centered: false,
-            depth:99
-        });
-
-        fade_overlay = fade_overlay_sprite.add(new FadeOverlay({ name:'fade' }));
-    }    
+        // DO STUFF
+    }
 }
