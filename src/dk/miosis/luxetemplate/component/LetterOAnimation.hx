@@ -23,7 +23,7 @@ class LetterOAnimation extends luxe.components.sprite.SpriteAnimation
 
         var anim_json = Luxe.resources.json('assets/json/miosis_anim.json');
         add_from_json_object(anim_json.asset.json);
-        animation = 'contraction';
+        animation = 'splash';
         play();
     }
 

@@ -42,7 +42,7 @@ class Splash extends BaseState
 
         for (i in 0 ... letters.length)
         {
-	    	letters[i].destroy();
+	    	// letters[i].destroy();
 	    	letters[i] = null;        		
         }
 
@@ -88,7 +88,7 @@ class Splash extends BaseState
             name:'miosis_o',                        
             texture:Luxe.resources.texture('assets/img/logo/miosis_o.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color: Constants.GAME_BOY_COLOR_MEDIUM,
+            color: Constants.GAME_BOY_COLOR_OFF,
             depth:4,
             size: new Vector(32, 32)
         }));
@@ -127,14 +127,14 @@ class Splash extends BaseState
         }));
 
         o_anim = letters[2].add(new LetterOAnimation({ name:'anim'}));
-        o_anim.entity.events.listen('animation.contraction.end', on_anim_done);
+        o_anim.entity.events.listen('animation.splash.end', on_anim_done);
     }
 
     function on_anim_done(e)
     {
         _debug("---------- Splash.on_anim_done ----------");
 
-        o_anim.entity.events.unlisten('animation.contraction.end');
+        o_anim.entity.events.unlisten('animation.splash.end');
         Luxe.events.fire('change_state', { state : 'game', fade_in_time : fade_in_time, fade_out_time : fade_out_time });
     }
 

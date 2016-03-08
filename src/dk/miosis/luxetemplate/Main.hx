@@ -132,7 +132,7 @@ class Main extends luxe.Game
 
         fade_overlay_sprite = new Sprite({
             name: 'fade_overlay_sprite',
-            // scene: overlay_scene,
+            scene: overlay_scene,
             size: Luxe.screen.size,
             color: Constants.GAME_BOY_COLOR_DARK,
             centered: false,
@@ -179,6 +179,7 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.on_fade_out_done ----------");
 
+        Luxe.scene.empty();
         states.set(next_state);
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);

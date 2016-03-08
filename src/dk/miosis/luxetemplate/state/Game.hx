@@ -83,7 +83,7 @@ class Game extends BaseState
         Main.physics.paused = false;
 
         // Start music
-        music = Luxe.resources.audio('assets/audio/steppin.ogg');
+        music = Luxe.resources.audio('assets/audio/steppin.wav');
         music_handle = Luxe.audio.loop(music.source);
 
         super.onenter(_);

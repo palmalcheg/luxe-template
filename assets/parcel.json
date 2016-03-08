@@ -23,7 +23,7 @@
         { "id" : "assets/font/justabit/justabit32.fnt" }
     ],            
     "sounds" : [
-        { "id" : "assets/audio/steppin.ogg", "name" : "steppin", "is_stream" : false }
+        { "id" : "assets/audio/steppin.wav", "name" : "steppin", "is_stream" : false }
     ],
     "text" : [
         { "id" : "assets/text/simple_160x144_8x8_map.tmx" }
