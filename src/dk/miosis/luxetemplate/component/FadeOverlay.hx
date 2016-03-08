@@ -22,20 +22,26 @@ class FadeOverlay extends luxe.Component
         super(_options);
     }
 
-    override function init() 
+    override function onadded() 
     {
         _debug("---------- FadeOverlay.init ----------");
+
         sprite = cast entity;
-        entity.events.fire('fade_overlay_ready');        
+        _debug("Fire");
+        sprite.events.fire('fade_overlay_ready');        
     }
 
     public function fade_in(?t = 0.15, ?fn:Void->Void) 
     {
+        _debug("---------- FadeOverlay.fade_in ----------");
+
         sprite.color.tween(t, {a:0}).onComplete(fn);
     }
 
     public function fade_out(?t = 0.15, ?fn:Void->Void) 
     {
+        _debug("---------- FadeOverlay.fade_out ----------");
+                
         sprite.color.tween(t, {a:1}).onComplete(fn);
     }
 

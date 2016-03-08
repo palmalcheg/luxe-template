@@ -6,6 +6,7 @@ import luxe.Log.*;
 import luxe.Parcel;
 import luxe.ParcelProgress;
 import luxe.resource.Resource;
+import luxe.Scene;
 import luxe.Screen.WindowEvent;
 import luxe.Sprite;
 import luxe.States;
@@ -34,8 +35,9 @@ class Main extends luxe.Game
     public static var mint_renderer:LuxeMintRender;
     public static var canvas:Canvas;
     public static var focus: Focus;
+    public static var game_batcher: phoenix.Batcher;    
     public static var ui_batcher: phoenix.Batcher;
-    public static var physics:MiosisPhysicsEngine;    
+    public static var physics:MiosisPhysicsEngine; 
 
     public static var w:Int = -1;
     public static var h:Int = -1;
@@ -44,6 +46,7 @@ class Main extends luxe.Game
 
     var states:States;
 
+    var overlay_scene:Scene;
     var fade_overlay_sprite:Sprite;
     var fade_overlay:FadeOverlay;  
 
@@ -101,7 +104,7 @@ class Main extends luxe.Game
         physics.player_collider = Polygon.rectangle(0,0,8,8);
 
         // Subscribe to state change events
-        Luxe.events.listen('change_state', on_change_state);
+        Luxe.events.listen('change_state', on_change_state);        
     }
 
     function load_assets(json:JSONResource) 
@@ -125,35 +128,32 @@ class Main extends luxe.Game
         _debug("---------- Main.assets_loaded ----------");
 
         // Set up fade overlay
+        overlay_scene = new Scene('overlay_scene');
+
         fade_overlay_sprite = new Sprite({
+            name: 'fade_overlay_sprite',
+            // scene: overlay_scene,
             size: Luxe.screen.size,
-            color: Constants.COLOR_RED,
+            color: Constants.GAME_BOY_COLOR_DARK,
             centered: false,
             depth:99
-        });
+        });     
         fade_overlay = fade_overlay_sprite.add(new FadeOverlay({ name:'fade' }));
-        fade_overlay_sprite.events.listen('fade_overlay_ready', on_fade_overlay_ready);
-
+        
+        // Go to first state
         states = new States({ name:'states' });
         states.add(new Splash());
         states.add(new Game());
         states.set(next_state);
-    }
 
-    function on_fade_overlay_ready(e)
-    {
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);
     }
 
-    function on_fade_in_done()
-    {
-        var state:BaseState = cast states.current_state;
-        state.post_fade_in();
-    }
-
     function on_change_state(e)
     {
+        _debug("---------- Main.on_change_state ----------");
+
         var state:BaseState = cast states.current_state;
         next_state = e.state;
 
@@ -167,8 +167,18 @@ class Main extends luxe.Game
         }
     }
 
+    function on_fade_in_done()
+    {
+        _debug("---------- Main.on_fade_in_done ----------");
+
+        var state:BaseState = cast states.current_state;
+        state.post_fade_in();
+    }
+
     function on_fade_out_done()
     {
+        _debug("---------- Main.on_fade_out_done ----------");
+
         states.set(next_state);
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);

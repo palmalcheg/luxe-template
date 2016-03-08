@@ -20,7 +20,7 @@ class Splash extends BaseState
 	{
         _debug("---------- Splash.new ----------");
 
-        super({ name:'splash', fade_in_time:4.0, fade_out_time:1.0 });
+        super({ name:'splash', fade_in_time:0.0, fade_out_time:0.5 });
         letters = new Array<Sprite>();
     }
 
@@ -144,7 +144,7 @@ class Splash extends BaseState
 
         if(e.keycode == Key.escape) 
         {
-            Luxe.events.fire('change_state', { state:'game' });
+            Luxe.events.fire('change_state', { state : 'game', fade_in_time : fade_in_time, fade_out_time : fade_out_time });
         }
     }  
 }

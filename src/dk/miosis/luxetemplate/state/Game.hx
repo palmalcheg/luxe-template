@@ -47,7 +47,7 @@ class Game extends BaseState
 
 	public function new() 
     {
-        super({ name:'game', fade_in_time:4.0, fade_out_time:1.0 });
+        super({ name:'game', fade_in_time:0.5, fade_out_time:0.5 });
     }
 
 	override function onenter<T>(_:T) 
