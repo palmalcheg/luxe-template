@@ -3,8 +3,6 @@ package dk.miosis.luxetemplate;
 import luxe.Color;
 import luxe.Log;
 import luxe.Log.*;
-import luxe.Parcel;
-import luxe.ParcelProgress;
 import luxe.resource.Resource;
 import luxe.Scene;
 import luxe.Screen.WindowEvent;
@@ -26,6 +24,7 @@ import snow.api.Promise;
 
 import dk.miosis.luxetemplate.component.FadeOverlay;
 import dk.miosis.luxetemplate.state.BaseState;
+import dk.miosis.luxetemplate.state.Load;
 import dk.miosis.luxetemplate.state.Game;
 import dk.miosis.luxetemplate.state.Splash;
 import dk.miosis.luxetemplate.system.MiosisPhysicsEngine;
@@ -56,7 +55,14 @@ class Main extends luxe.Game
         h = config.window.height;
 
         config.window.width *= Constants.GAME_SCALE;
-        config.window.height *= Constants.GAME_SCALE;   
+        config.window.height *= Constants.GAME_SCALE;
+
+        // Just load assets for the splash screen
+        config.preload.textures.push({ id : "assets/img/logo/miosis_m.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : "assets/img/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : "assets/img/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : "assets/img/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.jsons.push({ id : "assets/json/miosis_anim.json" });
 
         return config;
     }
@@ -64,12 +70,6 @@ class Main extends luxe.Game
     override function ready() 
     {
         _debug("---------- Main.ready ----------");
-
-        next_state = "splash";
-
-        // Load assets
-        var promise_json:Promise = Luxe.resources.load_json("assets/parcel.json");
-        promise_json.then(load_assets);
 
         // Fit camera viewport to window size
         Luxe.camera.size = new Vector(w, h);
@@ -104,30 +104,7 @@ class Main extends luxe.Game
         physics.player_collider = Polygon.rectangle(0,0,8,8);
 
         // Subscribe to state change events
-        Luxe.events.listen('change_state', on_change_state);        
-    }
-
-    function load_assets(json:JSONResource) 
-    {
-        _debug("---------- Main.load_assets ----------");
-
-        var parcel:Parcel = new Parcel();
-        parcel.from_json(json.asset.json);
-
-        new ParcelProgress({
-            parcel: parcel,
-            bar : Constants.GAME_BOY_COLOR_LIGHT,
-            bar_border  : Constants.GAME_BOY_COLOR_MEDIUM,            
-            background  : Constants.GAME_BOY_COLOR_DARK,
-            oncomplete: assets_loaded
-        });
-        
-        parcel.load();        
-    }
-
-    function assets_loaded(_) 
-    {
-        _debug("---------- Main.assets_loaded ----------");
+        Luxe.events.listen('change_state', on_change_state);
 
         // Set up fade overlay
         overlay_scene = new Scene('overlay_scene');
@@ -144,17 +121,19 @@ class Main extends luxe.Game
         
         // Go to first state
         states = new States({ name:'states' });
+        states.add(new Load());
         states.add(new Splash());
         states.add(new Game());
+        next_state = "splash";
         states.set(next_state);
 
         var state:BaseState = cast states.current_state;
-        fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);
+        fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);      
     }
 
     function on_change_state(e)
     {
-        _debug("---------- Main.on_change_state ----------");
+        _debug("---------- Main.on_change_state, go to state: " + e.state + "----------");        
 
         var state:BaseState = cast states.current_state;
         next_state = e.state;
@@ -183,6 +162,7 @@ class Main extends luxe.Game
 
         Luxe.scene.empty();
         states.set(next_state);
+
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);
     }
@@ -211,6 +191,12 @@ class Main extends luxe.Game
     override function onwindowsized( e:WindowEvent ) 
     {
         Luxe.camera.viewport = new luxe.Rectangle(0, 0, e.x, e.y);
+    }
+
+    override public function ondestroy() 
+    {
+        states.destroy(); 
+        overlay_scene.destroy();  
     }
 
     override function update(dt:Float) 

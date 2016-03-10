@@ -42,7 +42,6 @@ class Splash extends BaseState
 
         for (i in 0 ... letters.length)
         {
-	    	// letters[i].destroy();
 	    	letters[i] = null;        		
         }
 
@@ -135,7 +134,7 @@ class Splash extends BaseState
         _debug("---------- Splash.on_anim_done ----------");
 
         o_anim.entity.events.unlisten('animation.splash.end');
-        Luxe.events.fire('change_state', { state : 'game', fade_in_time : fade_in_time, fade_out_time : fade_out_time });
+        Luxe.events.fire('change_state', { state : 'load', fade_in_time : fade_in_time, fade_out_time : fade_out_time });
     }
 
     override function onkeyup(e:KeyEvent) 
@@ -144,7 +143,7 @@ class Splash extends BaseState
 
         if(e.keycode == Key.escape) 
         {
-            Luxe.events.fire('change_state', { state : 'game', fade_in_time : fade_in_time, fade_out_time : fade_out_time });
+            Luxe.shutdown();
         }
     }  
 }
