@@ -116,7 +116,9 @@ class Main extends luxe.Game
 
         new ParcelProgress({
             parcel: parcel,
-            background  : new Color(1,1,1,0.85),
+            bar : Constants.GAME_BOY_COLOR_LIGHT,
+            bar_border  : Constants.GAME_BOY_COLOR_MEDIUM,            
+            background  : Constants.GAME_BOY_COLOR_DARK,
             oncomplete: assets_loaded
         });
         
