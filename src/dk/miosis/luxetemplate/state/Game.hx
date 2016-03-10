@@ -89,6 +89,26 @@ class Game extends BaseState
         super.onenter(_);
     }
 
+    override function onleave<T>( _data:T ) 
+    {
+        // Clean up
+        player = null;
+        player_movement = null;    
+        player_physics = null;
+        player_spawn_pos = null;
+
+        button = null;
+
+        map.destroy();
+        map = null;
+
+        // music.destroy();
+        music = null;
+        music_handle = null;
+
+        super.onleave(_data);
+    }
+
     function create_map() 
     {    
         _debug("---------- Game.create_map ----------");

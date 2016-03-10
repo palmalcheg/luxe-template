@@ -29,7 +29,7 @@ import luxe.Color;
 
 class Constants
 {
-	public static var GAME_SCALE(default, never):Int = 2;
+	public static var GAME_SCALE(default, never):Int = 4;
 
 	public static var COLOR_TRANSPARENT(default, never):Color = new Color().set(1, 0, 1, 0);
 	public static var COLOR_WHITE(default, never):Color = new Color().set(1, 1, 1, 1);

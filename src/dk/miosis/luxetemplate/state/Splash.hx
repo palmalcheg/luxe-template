@@ -42,7 +42,7 @@ class Splash extends BaseState
 
         for (i in 0 ... letters.length)
         {
-	    	letters[i] = null;        		
+            letters[i] = null;              
         }
 
         letters = null;

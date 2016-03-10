@@ -42,7 +42,10 @@ class Main extends luxe.Game
     public static var w:Int = -1;
     public static var h:Int = -1;
 
-    var next_state:String;
+    var previous_state:String;
+    var current_state:String;
+
+    var current_parcel:Parcel;
 
     var states:States;
 
@@ -86,7 +89,7 @@ class Main extends luxe.Game
         ui_batcher = Luxe.renderer.create_batcher({ name:'ui_batcher', camera: ui_camera.view });
         ui_batcher.layer = 2;
         
-        Luxe.renderer.add_batch(ui_batcher);
+        // Luxe.renderer.add_batch(ui_batcher);
 
         mint_renderer = new LuxeMintRender({ batcher:ui_batcher });
         
@@ -125,8 +128,9 @@ class Main extends luxe.Game
         states.add(new Load());
         states.add(new Splash());
         states.add(new Game());
-        next_state = "splash";
-        states.set(next_state);
+        previous_state = "";        
+        current_state = "splash";
+        states.set(current_state);
 
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);      
@@ -137,7 +141,8 @@ class Main extends luxe.Game
         _debug("---------- Main.on_change_state, go to state: " + e.state + "----------");        
 
         var state:BaseState = cast states.current_state;
-        next_state = e.state;
+        previous_state = current_state;
+        current_state = e.state;
 
         if (state.fade_out_time > 0)
         {
@@ -162,7 +167,16 @@ class Main extends luxe.Game
         _debug("---------- Main.on_fade_out_done ----------");
 
         Luxe.scene.empty();
-        states.set(next_state);
+        states.set(current_state);
+
+        if (previous_state == 'splash')
+        {
+            Luxe.resources.destroy("assets/img/logo/miosis_m.png");
+            Luxe.resources.destroy("assets/img/logo/miosis_i.png");
+            Luxe.resources.destroy("assets/img/logo/miosis_s.png");
+            Luxe.resources.destroy("assets/img/logo/miosis_o.png");
+            Luxe.resources.destroy("assets/json/miosis_anim.json");
+        }
 
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);
@@ -205,7 +219,11 @@ class Main extends luxe.Game
     override public function ondestroy() 
     {
         states.destroy(); 
-        overlay_scene.destroy();  
+        overlay_scene.destroy();
+        states = null; 
+        overlay_scene = null;   
+        fade_overlay_sprite = null;
+        fade_overlay = null;  
     }
 
     override function update(dt:Float) 
