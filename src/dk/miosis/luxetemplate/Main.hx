@@ -1,6 +1,7 @@
 package dk.miosis.luxetemplate;
 
 import luxe.Color;
+import luxe.Input;
 import luxe.Log;
 import luxe.Log.*;
 import luxe.resource.Resource;
@@ -170,6 +171,14 @@ class Main extends luxe.Game
     override function onrender() 
     {
        canvas.render();
+    }
+
+    override function onkeyup(e:luxe.Input.KeyEvent) 
+    {
+        if(e.keycode == Key.escape) 
+        {
+            Luxe.shutdown();
+        }
     }
 
     override function onmouseup(e:luxe.Input.MouseEvent) 

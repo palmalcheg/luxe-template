@@ -246,13 +246,5 @@ class Game extends BaseState
 
         // } //each collision
 
-    }
-
-	override function onkeyup(e:KeyEvent) 
-    {
-        if(e.keycode == Key.escape) 
-        {
-            Luxe.shutdown();
-        }
-    }    
+    }  
 }

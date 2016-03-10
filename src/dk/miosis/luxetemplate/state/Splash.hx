@@ -136,14 +136,4 @@ class Splash extends BaseState
         o_anim.entity.events.unlisten('animation.splash.end');
         Luxe.events.fire('change_state', { state : 'load', fade_in_time : fade_in_time, fade_out_time : fade_out_time });
     }
-
-    override function onkeyup(e:KeyEvent) 
-    {
-        _debug("---------- Splash.onkeyup ----------");
-
-        if(e.keycode == Key.escape) 
-        {
-            Luxe.shutdown();
-        }
-    }  
 }
