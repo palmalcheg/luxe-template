@@ -1,6 +1,7 @@
 package dk.miosis.luxetemplate.state;
 
 import luxe.Color;
+import luxe.Entity;
 import luxe.Input;
 import luxe.Log.*;
 import luxe.Sprite;
@@ -64,8 +65,11 @@ class Game extends BaseState
             x: 0.1 * Main.w, y:0.1 * Main.h, w:30, h: 20
         });
 
-        var txt:Text = Luxe.scene.get('testbutton.label.text');
-
+        // var txt:NineSlice = Luxe.scene.get('testbutton.visual');
+        
+        var labelRenderer:mint.render.luxe.Label = cast button.label.renderer;
+        Luxe.scene.add(labelRenderer.text);
+        var txt:Text = Luxe.scene.get('testbutton.label.text');        
         txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         txt.point_size = 16;
         txt.geom.letter_snapping = true;        

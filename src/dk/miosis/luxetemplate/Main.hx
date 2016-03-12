@@ -4,6 +4,7 @@ import luxe.Color;
 import luxe.Input;
 import luxe.Log;
 import luxe.Log.*;
+import luxe.Parcel;
 import luxe.resource.Resource;
 import luxe.Scene;
 import luxe.Screen.WindowEvent;
@@ -88,8 +89,6 @@ class Main extends luxe.Game
         ui_camera.size_mode = luxe.Camera.SizeMode.fit;
         ui_batcher = Luxe.renderer.create_batcher({ name:'ui_batcher', camera: ui_camera.view });
         ui_batcher.layer = 2;
-        
-        // Luxe.renderer.add_batch(ui_batcher);
 
         mint_renderer = new LuxeMintRender({ batcher:ui_batcher });
         

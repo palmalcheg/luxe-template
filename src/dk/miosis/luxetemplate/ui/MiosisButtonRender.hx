@@ -32,7 +32,7 @@ class MiosisButtonRender extends Render
             pos: new Vector(control.x, control.y),
             size: new Vector(control.w, control.h),
             depth: customRendering.options.depth + control.depth,
-            visible: control.visible,
+            visible: control.visible
         });
 
         visual.create(new Vector(control.x, control.y), control.w, control.h);
