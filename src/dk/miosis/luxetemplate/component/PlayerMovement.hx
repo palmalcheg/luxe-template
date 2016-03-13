@@ -6,11 +6,29 @@ import luxe.Log.*;
 import luxe.Sprite;
 import luxe.Vector;
 
+import luxe.options.ComponentOptions;
+
 class PlayerMovement extends Component
 {
 	public var movement_vector:Vector;
 	public var sprite:Sprite;
 	public var half_size:Float;
+
+    public function new(?_options:ComponentOptions) 
+    {
+        _debug("---------- PlayerMovement.new ----------");        
+
+        if (_options == null) 
+        {
+			_options = { name : "movement"};
+        } 
+        else if (_options.name == null)
+        {
+            _options.name = "movement";
+        }
+
+        super(_options);
+    }
 
 	public override function init() 
 	{

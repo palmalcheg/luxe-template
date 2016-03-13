@@ -8,6 +8,8 @@ import luxe.Vector;
 
 import luxe.utils.Maths;
 
+import luxe.options.ComponentOptions;
+
 class PlayerPhysics extends Component
 {
     var move_speed:Int;
@@ -20,6 +22,22 @@ class PlayerPhysics extends Component
 
 	var movement_vector:Vector;
 	var sprite:Sprite;
+
+    public function new(?_options:ComponentOptions) 
+    {
+        _debug("---------- PlayerPhysics.new ----------");        
+
+        if (_options == null) 
+        {
+            _options = { name : "physics"};
+        } 
+        else if (_options.name == null)
+        {
+            _options.name = "physics";
+        }
+
+        super(_options);
+    }
 
 	public override function init() 
 	{

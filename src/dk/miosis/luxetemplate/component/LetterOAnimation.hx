@@ -9,9 +9,13 @@ class LetterOAnimation extends luxe.components.sprite.SpriteAnimation
     {
         _debug("---------- LetterOAnimation.new ----------");        
 
-        if (_options.name == null) 
+        if (_options == null) 
         {
-            _options.name = "miosis_o_anim";
+            _options = { name : "animation"};
+        } 
+        else if (_options.name == null)
+        {
+            _options.name = "animation";
         }
 
         super(_options);
@@ -22,7 +26,9 @@ class LetterOAnimation extends luxe.components.sprite.SpriteAnimation
         _debug("---------- LetterOAnimation.init ----------");        
 
         var anim_json = Luxe.resources.json('assets/json/miosis_anim.json');
+        _debug("---------- LetterOAnimation.init ----------" + anim_json);                
         add_from_json_object(anim_json.asset.json);
+        _debug("---------- LetterOAnimation.init ----------");                
         animation = 'splash';
         play();
     }

@@ -14,7 +14,11 @@ class FadeOverlay extends luxe.Component
     {
         _debug("---------- FadeOverlay.new ----------");        
 
-        if (_options.name == null) 
+        if (_options == null) 
+        {
+            _options = { name : "fade"};
+        } 
+        else if (_options.name == null)
         {
             _options.name = "fade";
         }
