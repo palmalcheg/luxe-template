@@ -44,7 +44,7 @@ class Main extends luxe.Game
     public static var h:Int = -1;
 
     var load_state:Load;
-    var current_state:String;
+    var next_state:String;
     var current_parcel:Parcel;
     var states:States;
     var overlay_scene:Scene;
@@ -124,8 +124,8 @@ class Main extends luxe.Game
         load_state = states.add(new Load());
         states.add(new Splash());
         states.add(new Game());
-        current_state = "splash";
-        states.set(current_state);
+        next_state = "splash";
+        states.set(next_state);
 
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);      
@@ -133,12 +133,11 @@ class Main extends luxe.Game
 
     function on_change_state(e)
     {
-        _debug("---------- Main.on_change_state, go to state: " + e.state + "----------");        
+        _debug("---------- Main.on_change_state, go to state: " + e.state + "----------");
 
-        var state:BaseState = cast states.current_state;
-        current_state = e.state;
-
-        if (current_state == 'load')
+        next_state = e.state;
+        
+        if (next_state == 'load')
         {
             current_parcel = e.parcel;
         }
@@ -146,6 +145,8 @@ class Main extends luxe.Game
         {
             current_parcel = null;
         }
+
+        var state:BaseState = cast states.current_state;
 
         if (state.fade_out_time > 0)
         {
@@ -172,7 +173,7 @@ class Main extends luxe.Game
         Luxe.scene.empty();
 
         // Destroy unused resources
-        if (current_state == 'load')
+        if (next_state == 'load')
         {
             if (current_parcel == null)
             {// Previous state was splash => assets were loaded in config
@@ -191,7 +192,7 @@ class Main extends luxe.Game
             load_state.state_to_load = 'game';
         }
 
-        states.set(current_state);
+        states.set(next_state);
 
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);
@@ -259,7 +260,7 @@ class Main extends luxe.Game
         }
 
         load_state = null;
-        current_state = null;
+        next_state = null;
         fade_overlay_sprite = null;
         fade_overlay = null;
     }
