@@ -43,13 +43,10 @@ class Main extends luxe.Game
     public static var w:Int = -1;
     public static var h:Int = -1;
 
-    var previous_state:String;
+    var load_state:Load;
     var current_state:String;
-
     var current_parcel:Parcel;
-
     var states:States;
-
     var overlay_scene:Scene;
     var fade_overlay_sprite:Sprite;
     var fade_overlay:FadeOverlay;  
@@ -124,10 +121,9 @@ class Main extends luxe.Game
         
         // Go to first state
         states = new States({ name:'states' });
-        states.add(new Load());
+        load_state = states.add(new Load());
         states.add(new Splash());
         states.add(new Game());
-        previous_state = "";        
         current_state = "splash";
         states.set(current_state);
 
@@ -140,8 +136,16 @@ class Main extends luxe.Game
         _debug("---------- Main.on_change_state, go to state: " + e.state + "----------");        
 
         var state:BaseState = cast states.current_state;
-        previous_state = current_state;
         current_state = e.state;
+
+        if (current_state == 'load')
+        {
+            current_parcel = e.parcel;
+        }
+        else
+        {
+            current_parcel = null;
+        }
 
         if (state.fade_out_time > 0)
         {
@@ -166,16 +170,28 @@ class Main extends luxe.Game
         _debug("---------- Main.on_fade_out_done ----------");
 
         Luxe.scene.empty();
-        states.set(current_state);
 
-        if (previous_state == 'splash')
+        // Destroy unused resources
+        if (current_state == 'load')
         {
-            Luxe.resources.destroy("assets/img/logo/miosis_m.png");
-            Luxe.resources.destroy("assets/img/logo/miosis_i.png");
-            Luxe.resources.destroy("assets/img/logo/miosis_s.png");
-            Luxe.resources.destroy("assets/img/logo/miosis_o.png");
-            Luxe.resources.destroy("assets/json/miosis_anim.json");
+            if (current_parcel == null)
+            {// Previous state was splash => assets were loaded in config
+                Luxe.resources.destroy("assets/img/logo/miosis_m.png");
+                Luxe.resources.destroy("assets/img/logo/miosis_i.png");
+                Luxe.resources.destroy("assets/img/logo/miosis_s.png");
+                Luxe.resources.destroy("assets/img/logo/miosis_o.png");
+                Luxe.resources.destroy("assets/json/miosis_anim.json");
+            }
+            else
+            {// Previous state was not splash => assets were loaded from a parcel
+                current_parcel.unload();
+            }
+
+            // TODO: Set filename according to some config file
+            load_state.state_to_load = 'game';
         }
+
+        states.set(current_state);
 
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);
@@ -215,21 +231,37 @@ class Main extends luxe.Game
         Luxe.camera.viewport = new luxe.Rectangle(0, 0, e.x, e.y);
     }
 
-    override public function ondestroy() 
-    {
-        states.destroy(); 
-        overlay_scene.destroy();
-        states = null; 
-        overlay_scene = null;   
-        fade_overlay_sprite = null;
-        fade_overlay = null;  
-    }
-
     override function update(dt:Float) 
     {
         _verboser("---------- Main.update ----------");
 
         canvas.update(dt);
+    }
+
+        override function ondestroy() 
+    {
+        if (states != null)
+        {
+            states.destroy();
+            states = null;            
+        }
+
+        if (overlay_scene != null)
+        {
+            overlay_scene.destroy();
+            overlay_scene = null;
+        }
+
+        if (current_parcel != null)
+        {
+            current_parcel.unload();
+            current_parcel = null; 
+        }
+
+        load_state = null;
+        current_state = null;
+        fade_overlay_sprite = null;
+        fade_overlay = null;
     }
 
     function mouseEventToWorld(e:luxe.Input.MouseEvent) 

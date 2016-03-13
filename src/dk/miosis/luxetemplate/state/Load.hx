@@ -17,11 +17,15 @@ import snow.api.Promise;
 
 class Load extends BaseState 
 {
+    public var state_to_load:String;
+
 	public function new() 
 	{
         _debug("---------- Load.new ----------");
 
-        super({ name:'load', fade_in_time:0.0, fade_out_time:0.0 });
+        state_to_load = "";
+
+        super({ name : 'load', fade_in_time : 0.0, fade_out_time : 0.0 });
     }
 
 	override function onenter<T>(_:T) 
@@ -31,7 +35,7 @@ class Load extends BaseState
 		// Set background color
 	    Luxe.renderer.clear_color = Constants.GAME_BOY_COLOR_DARK;
 
-        var promise_json:Promise = Luxe.resources.load_json("assets/parcel.json");
+        var promise_json:Promise = Luxe.resources.load_json("assets/" + state_to_load + ".json");
         promise_json.then(load_assets);
                
         super.onenter(_);		
@@ -55,10 +59,17 @@ class Load extends BaseState
         parcel.load();        
     }
 
-    function on_parcel_loaded(e)
+    function on_parcel_loaded(parcel:Parcel)
     {
         _debug("---------- Load.on_anim_done ----------");
 
-        Luxe.events.fire('change_state', { state : 'game', fade_in_time : fade_in_time, fade_out_time : fade_out_time });
+        var args = { 
+            state : state_to_load, 
+            fade_in_time : fade_in_time, 
+            fade_out_time : fade_out_time, 
+            parcel : parcel 
+        };
+
+        Luxe.events.fire('change_state', args);
     } 
 }
