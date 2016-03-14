@@ -1,6 +1,5 @@
 package dk.miosis.luxetemplate.component;
 
-import luxe.Color;
 import luxe.Log.*;
 import luxe.Sprite;
 

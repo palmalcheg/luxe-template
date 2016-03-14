@@ -1,11 +1,7 @@
 package dk.miosis.luxetemplate.state;
 
 import luxe.Color;
-import luxe.Entity;
-import luxe.Input;
 import luxe.Log.*;
-import luxe.Sprite;
-import luxe.States;
 import luxe.Text;
 import luxe.Vector;
 

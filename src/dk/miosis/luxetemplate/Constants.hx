@@ -1,6 +1,5 @@
 package dk.miosis.luxetemplate;
 
-import  haxe.Int64;
 import luxe.Color;
 
 // @:enum

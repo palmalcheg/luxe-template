@@ -1,18 +1,13 @@
 package dk.miosis.luxetemplate.state;
 
 import luxe.Color;
-import luxe.components.sprite.SpriteAnimation;
-import luxe.Entity;
-import luxe.Input;
 import luxe.Log.*;
+import luxe.Parcel;
 import luxe.Sprite;
-import luxe.States;
 import luxe.Vector;
 import luxe.Visual;
-import luxe.resource.Resource;
 
-import luxe.Parcel;
-import luxe.ParcelProgress;
+import luxe.resource.Resource;
 
 import snow.api.Promise;
 

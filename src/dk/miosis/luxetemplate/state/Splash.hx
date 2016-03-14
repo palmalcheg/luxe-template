@@ -1,13 +1,10 @@
 package dk.miosis.luxetemplate.state;
 
-import luxe.Color;
-import luxe.components.sprite.SpriteAnimation;
-import luxe.Entity;
-import luxe.Input;
 import luxe.Log.*;
 import luxe.Sprite;
-import luxe.States;
 import luxe.Vector;
+
+import luxe.components.sprite.SpriteAnimation;
 
 import dk.miosis.luxetemplate.component.LetterOAnimation;
 

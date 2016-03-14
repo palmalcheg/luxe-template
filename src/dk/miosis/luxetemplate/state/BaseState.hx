@@ -1,7 +1,5 @@
 package dk.miosis.luxetemplate.state;
 
-import luxe.Color;
-import luxe.Entity;
 import luxe.Log.*;
 import luxe.options.StateOptions;
 import luxe.Sprite;

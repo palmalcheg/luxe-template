@@ -1,11 +1,8 @@
 package dk.miosis.luxetemplate;
 
-import luxe.Color;
 import luxe.Input;
-import luxe.Log;
 import luxe.Log.*;
 import luxe.Parcel;
-import luxe.resource.Resource;
 import luxe.Scene;
 import luxe.Screen.WindowEvent;
 import luxe.Sprite;
