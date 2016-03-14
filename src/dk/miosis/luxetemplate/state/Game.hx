@@ -51,6 +51,7 @@ class Game extends BaseState
     {
         _debug("---------- GameState.onenter ----------");
 
+        // Set background color
         Luxe.renderer.clear_color = Constants.GAME_BOY_COLOR_OFF;
 
         button = new Button({

@@ -70,6 +70,9 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.ready ----------");
 
+        // Set background color
+        Luxe.renderer.clear_color = Constants.GAME_BOY_COLOR_DARK;
+
         // Fit camera viewport to window size
         Luxe.camera.size = new Vector(w, h);
         Luxe.camera.size_mode = luxe.Camera.SizeMode.fit;
