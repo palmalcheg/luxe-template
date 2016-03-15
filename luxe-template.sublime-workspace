@@ -275,6 +275,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "project.flow",
+			"settings":
+			{
+				"buffer_size": 616,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -353,34 +361,7 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/assets",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/assets/audio",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/assets/img",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/assets/tiled",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/component",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/entity",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/state",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/system",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/luxe",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/luxe/components",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/alphas",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/alphas/3_0_powell",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/alphas/3_0_powell/assets",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/alphas/3_0_powell/assets/level_1",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/alphas/3_0_powell/assets/menu",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/alphas/3_0_powell/src",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/guides",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/tests",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/tests/features",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/tests/features/audio",
-		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/tests/features/audio/src"
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template"
 	],
 	"file_history":
 	[
@@ -515,7 +496,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -695,14 +676,45 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "project.flow",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 616,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								257,
+								257
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/sublime_flow/flow-file.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -743,7 +755,7 @@
 	"project": "luxe-template.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -61,7 +61,7 @@ class Main extends luxe.Game
         config.preload.textures.push({ id : "assets/img/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/img/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/img/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.jsons.push({ id : "assets/json/miosis_anim.json" });
+        config.preload.jsons.push({ id : "assets/json/animation/miosis_anim.json" });
 
         return config;
     }

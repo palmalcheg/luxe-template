@@ -128,7 +128,7 @@ class Load extends BaseState
             depth : 101
         });
 
-        var promise_json:Promise = Luxe.resources.load_json("assets/" + state_to_load + ".json");
+        var promise_json:Promise = Luxe.resources.load_json("assets/json/parcel/parcel_" + state_to_load + ".json");
         promise_json.then(load_assets);
                
         super.onenter(_);		
