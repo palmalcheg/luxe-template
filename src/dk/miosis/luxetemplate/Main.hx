@@ -110,6 +110,7 @@ class Main extends luxe.Game
         overlay_scene = new Scene('overlay_scene');
 
         fade_overlay_sprite = new Sprite({
+            parent: Luxe.camera,
             name: 'fade_overlay_sprite',
             scene: overlay_scene,
             size: Luxe.screen.size,

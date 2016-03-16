@@ -44,7 +44,7 @@ class Game extends BaseState
 
 	public function new() 
     {
-        super({ name:'game', fade_in_time:0.5, fade_out_time:0.5 });
+        super({ name:'game', fade_in_time:10, fade_out_time:0.5 });
     }
 
 	override function onenter<T>(_:T) 
@@ -61,12 +61,10 @@ class Game extends BaseState
             rendering: new MiosisMintRendering({ batcher: Main.ui_batcher }),
             x: 0.1 * Main.w, y:0.1 * Main.h, w:30, h: 20
         });
-
-        // var txt:NineSlice = Luxe.scene.get('testbutton.visual');
         
         var labelRenderer:mint.render.luxe.Label = cast button.label.renderer;
         Luxe.scene.add(labelRenderer.text);
-        var txt:Text = Luxe.scene.get('testbutton.label.text');        
+        var txt:Text = Luxe.scene.get('testbutton.label.text');      
         txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         txt.point_size = 16;
         txt.geom.letter_snapping = true;        
@@ -80,7 +78,7 @@ class Game extends BaseState
 
         Luxe.events.listen('simulation.triggers.collide', ontrigger);
 
-        //start the simulation
+        // Start the simulation
         Main.physics.paused = false;
 
         // Start music
@@ -115,6 +113,7 @@ class Game extends BaseState
         _debug("---------- Game.create_map ----------");
 
         var map_data = Luxe.resources.text('assets/text/simple_160x144_8x8_map.tmx').asset.text;
+        
         assertnull(map_data, 'Resource not found!');  
 
         map = new TiledMap({
