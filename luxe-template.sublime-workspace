@@ -275,14 +275,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "project.flow",
-			"settings":
-			{
-				"buffer_size": 616,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -361,16 +353,38 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template"
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/component",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/state",
+		"/Users/dejean/Developer/haxe/haxelib_repository/mint/git",
+		"/Users/dejean/Developer/haxe/haxelib_repository/mint/git/mint",
+		"/Users/dejean/Developer/haxe/haxelib_repository/mint/git/mint/render",
+		"/Users/dejean/Developer/haxe/haxelib_repository/mint/git/mint/render/luxe"
 	],
 	"file_history":
 	[
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/Main.hx",
+		"/Users/dejean/Developer/haxe/haxelib_repository/mint/git/mint/render/luxe/Button.hx",
+		"/Users/dejean/Developer/haxe/haxelib_repository/mint/git/mint/Button.hx",
+		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/luxe/options/RenderProperties.hx",
+		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/luxe/options/GeometryOptions.hx",
+		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/phoenix/geometry/TextGeometry.hx",
+		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/phoenix/geometry/Geometry.hx",
+		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/phoenix/geometry/QuadGeometry.hx",
+		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/luxe/Visual.hx",
+		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/luxe/Text.hx",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/project.flow",
+		"/Users/dejean/developer/haxe/haxelib_repository/luxe/git/luxe/Entity.hx",
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/state/Game.hx",
+		"/Users/dejean/.bash_profile",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/component/FadeOverlay.hx",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/state/BaseState.hx",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/component/PlayerPhysics.hx",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/component/PlayerMovement.hx",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/state/Game.hx",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/Main.hx",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/entity/Overlay.hx",
 		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/tests/features/audio/src/Main.hx",
 		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/luxe/ParcelProgress.hx",
@@ -378,7 +392,6 @@
 		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/luxe/tween/Actuate.hx",
 		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/luxe/Audio.hx",
 		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/phoenix/Color.hx",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/project.flow",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64.build/cpp/include/luxe/tween/Actuate.h",
 		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/luxe/Entity.hx",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64.build/cpp/include/luxe/Scene.h",
@@ -410,7 +423,6 @@
 		"/Users/dejean/Developer/haxe/haxelib_repository/luxe/git/samples/examples/platformer/assets/tilemap.tmx",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/assets/tiled/simple_160x144_8x8_map.tmx",
 		"/Users/dejean/Developer/personal/graphics/tilemap/simple_8x8/simple_160x144_8x8_map.json",
-		"/Users/dejean/.bash_profile",
 		"/Users/dejean/Developer/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/Main.hx",
 		"/Users/dejean/Developer/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/entities/Overlay.hx",
 		"/Users/dejean/Developer/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/states/Splash.hx",
@@ -482,21 +494,11 @@
 		"/Users/dejean/Developer/projects/haxe/PlatformerSandbox/PlatformerSandbox.sublime-project",
 		"/Users/dejean/Developer/external/repo/forked/luxe/luxe/Physics.hx",
 		"/Users/dejean/Developer/external/repo/forked/luxe/luxe/Game.hx",
-		"/Users/dejean/Developer/projects/haxe/PlatformerSandbox/src/dk/myosis/platformersandbox/components/PhysicsUtilitities.hx",
-		"/Users/dejean/Developer/projects/haxe/PlatformerSandbox/src/dk/myosis/platformersandbox/components/PlatformPhysics.hx",
-		"/usr/lib/haxe/lib/snow/git/snow/api/Promise.hx",
-		"/usr/lib/haxe/lib/snow/git/snow/system/audio/Audio.hx",
-		"/usr/lib/haxe/lib/snow/git/snow/modules/openal/Audio.hx",
-		"/usr/lib/haxe/lib/snow/git/snow/core/native/audio/Audio.hx",
-		"/usr/lib/haxe/lib/snow/git/snow/modules/interfaces/Audio.hx",
-		"/Users/dejean/Developer/external/repo/forked/luxe/luxe/Audio.hx",
-		"/Users/dejean/Developer/external/repo/forked/luxe/tests/features/audio/src/Main.hx",
-		"/Users/dejean/Developer/projects/haxe/PlatformerSandbox/src/dk/myosis/platformersandbox/components/PlayerPhysics.hx",
-		"/Users/dejean/Developer/projects/haxe/PlatformerSandbox/project.flow"
+		"/Users/dejean/Developer/projects/haxe/PlatformerSandbox/src/dk/myosis/platformersandbox/components/PhysicsUtilitities.hx"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -517,6 +519,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"batcher",
+			"text",
 			"fade",
 			"new Player(",
 			"halfSize",
@@ -642,9 +646,7 @@
 			"postupdate",
 			".timescale",
 			".step(",
-			"step(",
-			"velocity",
-			"AL"
+			"step("
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -676,39 +678,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "project.flow",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 616,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								257,
-								257
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/sublime_flow/flow-file.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
