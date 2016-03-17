@@ -44,7 +44,6 @@ class Main extends luxe.Game
     var next_state:String;
     var current_parcel:Parcel;
     var states:States;
-    var overlay_scene:Scene;
     var fade_overlay_sprite:Sprite;
     var fade_overlay:FadeOverlay;  
 
@@ -106,13 +105,9 @@ class Main extends luxe.Game
         // Subscribe to state change events
         Luxe.events.listen('change_state', on_change_state);
 
-        // Set up fade overlay
-        overlay_scene = new Scene('overlay_scene');
-
         fade_overlay_sprite = new Sprite({
             parent: Luxe.camera,
             name: 'fade_overlay_sprite',
-            scene: overlay_scene,
             size: Luxe.screen.size,
             color: Constants.GAME_BOY_COLOR_DARK,
             centered: false,
@@ -246,12 +241,6 @@ class Main extends luxe.Game
         {
             states.destroy();
             states = null;            
-        }
-
-        if (overlay_scene != null)
-        {
-            overlay_scene.destroy();
-            overlay_scene = null;
         }
 
         if (current_parcel != null)
