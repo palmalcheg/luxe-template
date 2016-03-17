@@ -1,6 +1,5 @@
 package dk.miosis.luxetemplate.ui;
 
-import luxe.Color;
 import luxe.Log.*;
 import luxe.NineSlice;
 import luxe.Text;
@@ -37,10 +36,10 @@ class MiosisButtonRender extends Render
 
         visual.create(new Vector(control.x, control.y), control.w, control.h);
         
-        control.onmouseenter.listen(goToHoverState);
-        control.onmouseleave.listen(goToNormalState);
-        control.onmousedown.listen(goToPressedState);
-        control.onmouseup.listen(goToNormalState);
+        control.onmouseenter.listen(goto_hover_state);
+        control.onmouseleave.listen(goto_normal_state);
+        control.onmousedown.listen(goto_pressed_state);
+        control.onmouseup.listen(goto_normal_state);
     }
 
     override function onbounds() 
@@ -66,7 +65,7 @@ class MiosisButtonRender extends Render
         visual = null;
     }
 
-    function goToNormalState(e:MouseEvent, c:Control) 
+    function goto_normal_state(e:MouseEvent, c:Control) 
     {
         var b:Button = cast control;
         visual.texture = Luxe.resources.texture('assets/img/ui/button_normal.png');        
@@ -79,13 +78,13 @@ class MiosisButtonRender extends Render
         }
     }
 
-    function goToHoverState(e:MouseEvent, c:Control) 
+    function goto_hover_state(e:MouseEvent, c:Control) 
     {
         var txt:Text = Luxe.scene.get('testbutton.label.text'); 
         txt.color = Constants.GAME_BOY_COLOR_MEDIUM;
     }
 
-    function goToPressedState(e:MouseEvent, c:Control) 
+    function goto_pressed_state(e:MouseEvent, c:Control) 
     {
         visual.texture = Luxe.resources.texture('assets/img/ui/button_pressed.png');
     }
