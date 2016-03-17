@@ -41,6 +41,8 @@ class PlayerPhysics extends Component
 
 	public override function init() 
 	{
+		_debug("---------- PlayerPhysics.init ----------");
+		
 		movement_vector = new Vector();
 		sprite = cast entity;
 

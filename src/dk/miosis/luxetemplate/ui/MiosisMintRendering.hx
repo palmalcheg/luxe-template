@@ -1,7 +1,8 @@
 package dk.miosis.luxetemplate.ui;
 
-import luxe.options.RenderProperties;
 import luxe.Log.*;
+
+import luxe.options.RenderProperties;
 
 import mint.Button;
 import mint.Control;

@@ -30,7 +30,6 @@ class FadeOverlay extends luxe.Component
         _debug("---------- FadeOverlay.init ----------");
 
         sprite = cast entity;
-        _debug("Fire");
         sprite.events.fire('fade_overlay_ready');        
     }
 

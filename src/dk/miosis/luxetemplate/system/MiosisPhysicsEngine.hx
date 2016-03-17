@@ -1,11 +1,13 @@
 package dk.miosis.luxetemplate.system;
 
+import luxe.Log.*;
+import luxe.Vector;
+
 import luxe.collision.Collision;
 import luxe.collision.shapes.Shape;
 import luxe.collision.shapes.Polygon;
-import luxe.Vector;
-import luxe.utils.Maths;
 
+import luxe.utils.Maths;
 
 // The Simulation class handles two things:
 //
@@ -31,6 +33,8 @@ class MiosisPhysicsEngine extends luxe.Physics.PhysicsEngine
 
     public function new() 
     {
+        _debug("---------- MiosisPhysicsEngine.new ----------");
+
         super();
 
         //The paused flag comes from luxe.Physics.PhysicsEngine

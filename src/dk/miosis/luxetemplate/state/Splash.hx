@@ -23,7 +23,7 @@ class Splash extends BaseState
 
 	override function onenter<T>(_:T) 
 	{
-        _debug("---------- Splash.onenter ----------");     
+        _debug("---------- Splash.onenter ----------");
 
 		// Set background color
 	    Luxe.renderer.clear_color = Constants.GAME_BOY_COLOR_DARK;
@@ -33,7 +33,7 @@ class Splash extends BaseState
 
     override function onleave<T>( _data:T ) 
     {
-        _debug("Splash.onleave with data " + _data);
+        _debug("---------- Splash.onleave ----------");
 
         o_anim = null;
 
@@ -49,6 +49,8 @@ class Splash extends BaseState
 
     override function post_fade_in()
     {
+        _debug("---------- Splash.post_fade_in ----------");
+        
         // Compute character sprite positions
         var halfscreen_width = Main.w * 0.5;
         var distance = 4;

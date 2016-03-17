@@ -32,6 +32,8 @@ class PlayerMovement extends Component
 
 	public override function init() 
 	{
+		_debug("---------- PlayerMovement.init ----------");        
+		
 		movement_vector = new Vector();
 		sprite = cast entity;
 

@@ -1,6 +1,7 @@
 package dk.miosis.luxetemplate.component;
 
 import luxe.Log.*;
+
 import luxe.options.ComponentOptions;
 
 class LetterOAnimation extends luxe.components.sprite.SpriteAnimation 

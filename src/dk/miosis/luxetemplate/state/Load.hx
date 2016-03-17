@@ -136,6 +136,8 @@ class Load extends BaseState
 
     override function onleave<T>( _data:T ) 
     {
+        _debug("---------- Load.onleave ----------");
+        
         // Clean up
         progress_bar = null;
         progress_border = null;

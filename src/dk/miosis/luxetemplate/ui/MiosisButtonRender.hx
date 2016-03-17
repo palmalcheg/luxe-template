@@ -20,6 +20,8 @@ class MiosisButtonRender extends Render
 
     public function new(_rendering:Rendering, _control:Button) 
     {
+        _debug("---------- MiosisButtonRender.new ----------");
+
         super(_rendering, _control);
         var customRendering:MiosisMintRendering = cast rendering;
 
@@ -67,6 +69,8 @@ class MiosisButtonRender extends Render
 
     function goto_normal_state(e:MouseEvent, c:Control) 
     {
+        _debug("---------- MiosisButtonRender.goto_normal_state ----------");
+
         var b:Button = cast control;
         visual.texture = Luxe.resources.texture('assets/img/ui/button_normal.png');        
 
@@ -80,12 +84,16 @@ class MiosisButtonRender extends Render
 
     function goto_hover_state(e:MouseEvent, c:Control) 
     {
+        _debug("---------- MiosisButtonRender.goto_hover_state ----------");
+
         var txt:Text = Luxe.scene.get('testbutton.label.text'); 
         txt.color = Constants.GAME_BOY_COLOR_MEDIUM;
     }
 
     function goto_pressed_state(e:MouseEvent, c:Control) 
     {
+        _debug("---------- MiosisButtonRender.goto_pressed_state ----------");
+                
         visual.texture = Luxe.resources.texture('assets/img/ui/button_pressed.png');
     }
 }

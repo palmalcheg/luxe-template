@@ -44,6 +44,8 @@ class Game extends BaseState
 
 	public function new() 
     {
+        _debug("---------- GameState.new ----------");
+                
         super({ name:'game', fade_in_time:10, fade_out_time:0.5 });
     }
 
