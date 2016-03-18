@@ -1,5 +1,6 @@
 package dk.miosis.luxetemplate;
 
+import luxe.Color;
 import luxe.Input;
 import luxe.Log.*;
 import luxe.Parcel;
@@ -33,8 +34,8 @@ class Main extends luxe.Game
     public static var mint_renderer:LuxeMintRender;
     public static var canvas:Canvas;
     public static var focus: Focus;
-    public static var game_batcher: phoenix.Batcher;    
-    public static var ui_batcher: phoenix.Batcher;
+    public static var background_batcher: phoenix.Batcher;    
+    public static var foreground_batcher: phoenix.Batcher;
     public static var physics:MiosisPhysicsEngine; 
 
     public static var w:Int = -1;
@@ -70,7 +71,7 @@ class Main extends luxe.Game
         _debug("---------- Main.ready ----------");
 
         // Set background color
-        Luxe.renderer.clear_color = Constants.GAME_BOY_COLOR_DARK;
+        Luxe.renderer.clear_color = new Color().rgb(Constants.GAME_BOY_COLOR_DARK);
 
         // Fit camera viewport to window size
         Luxe.camera.size = new Vector(w, h);
@@ -79,19 +80,20 @@ class Main extends luxe.Game
         log('Screen width: ${Luxe.screen.w}');
         log('Screen height: ${Luxe.screen.h}');
 
-        // Set up Mint canvas
-        var ui_camera = new luxe.Camera();
-        ui_camera.size = new phoenix.Vector(w, h, 1);
-        ui_camera.size_mode = luxe.Camera.SizeMode.fit;
-        ui_batcher = Luxe.renderer.create_batcher({ name:'ui_batcher', camera: ui_camera.view });
-        ui_batcher.layer = 2;
+        var foreground_camera = new luxe.Camera();
+        foreground_camera.size = new phoenix.Vector(w, h);
+        foreground_camera.size_mode = luxe.Camera.SizeMode.fit;
 
-        mint_renderer = new LuxeMintRender({ batcher:ui_batcher });
+        foreground_batcher = Luxe.renderer.create_batcher({ name:'foreground_batcher', camera: foreground_camera.view });
+        foreground_batcher.layer = 998;
+
+        mint_renderer = new LuxeMintRender({ batcher:Luxe.renderer.batcher });
         
+        // Set up Mint canvas
         canvas = new mint.Canvas({
             name:'canvas',
             rendering: mint_renderer,
-            options: { color:Constants.COLOR_TRANSPARENT },
+            options: { color:new Color(1, 1, 1, 0) },
             x: 0, y:0, w: 100, h: 100
         });
 
@@ -105,15 +107,16 @@ class Main extends luxe.Game
         // Subscribe to state change events
         Luxe.events.listen('change_state', on_change_state);
 
+        // Set up fade overlay
         fade_overlay_sprite = new Sprite({
             parent: Luxe.camera,
             name: 'fade_overlay_sprite',
             size: Luxe.screen.size,
-            color: Constants.GAME_BOY_COLOR_DARK,
+            color: new Color().rgb(Constants.GAME_BOY_COLOR_DARK),
             centered: false,
-            depth:99
+            depth:999
         });     
-        fade_overlay = fade_overlay_sprite.add(new FadeOverlay({ name:'fade' }));
+        fade_overlay = fade_overlay_sprite.add(new FadeOverlay());
         
         // Go to first state
         states = new States({ name:'states' });

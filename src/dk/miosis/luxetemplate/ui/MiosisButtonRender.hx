@@ -1,5 +1,6 @@
 package dk.miosis.luxetemplate.ui;
 
+import luxe.Color;
 import luxe.Log.*;
 import luxe.NineSlice;
 import luxe.Text;
@@ -77,8 +78,8 @@ class MiosisButtonRender extends Render
         if (e.button == none) 
         {
             // mouseleave
-            var txt:Text = Luxe.scene.get('testbutton.label.text'); 
-            txt.color = Constants.GAME_BOY_COLOR_DARK;
+            var txt:Text = Luxe.scene.get('testbutton.label.text');
+            txt.color = new Color().rgb(Constants.GAME_BOY_COLOR_DARK);
         }
     }
 
@@ -87,7 +88,7 @@ class MiosisButtonRender extends Render
         _debug("---------- MiosisButtonRender.goto_hover_state ----------");
 
         var txt:Text = Luxe.scene.get('testbutton.label.text'); 
-        txt.color = Constants.GAME_BOY_COLOR_MEDIUM;
+        txt.color = new Color().rgb(Constants.GAME_BOY_COLOR_MEDIUM);
     }
 
     function goto_pressed_state(e:MouseEvent, c:Control) 

@@ -46,7 +46,7 @@ class Game extends BaseState
     {
         _debug("---------- GameState.new ----------");
                 
-        super({ name:'game', fade_in_time:10, fade_out_time:0.5 });
+        super({ name:'game', fade_in_time:0.5, fade_out_time:0.5 });
     }
 
 	override function onenter<T>(_:T) 
@@ -54,13 +54,13 @@ class Game extends BaseState
         _debug("---------- GameState.onenter ----------");
 
         // Set background color
-        Luxe.renderer.clear_color = Constants.GAME_BOY_COLOR_OFF;
-
+        Luxe.renderer.clear_color = new Color().rgb(Constants.GAME_BOY_COLOR_OFF);
+        
         button = new Button({
             parent: Main.canvas, 
             name: 'testbutton', 
             text: 'test',
-            rendering: new MiosisMintRendering({ batcher: Main.ui_batcher }),
+            rendering: new MiosisMintRendering({ batcher: Luxe.renderer.batcher }),
             x: 0.1 * Main.w, y:0.1 * Main.h, w:30, h: 20
         });
         
@@ -73,7 +73,9 @@ class Game extends BaseState
         txt.geom.texture = txt.font.pages[0];
         txt.geom.texture.filter_min = nearest;
         txt.geom.texture.filter_mag = nearest;
-        txt.color = Constants.GAME_BOY_COLOR_DARK;
+        txt.color = new Color().rgb(Constants.GAME_BOY_COLOR_DARK);
+
+        _debug("Label renderer batcher " + labelRenderer.text.geom.batchers);
 
         create_map();
         create_map_collision();

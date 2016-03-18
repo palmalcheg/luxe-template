@@ -30,26 +30,23 @@ class Constants
 {
 	public static var GAME_SCALE(default, never):Int = 4;
 
-	public static var COLOR_TRANSPARENT(default, never):Color = new Color().set(1, 0, 1, 0);
-	public static var COLOR_WHITE(default, never):Color = new Color().set(1, 1, 1, 1);
-	public static var COLOR_RED(default, never):Color = new Color().set(1, 0, 0, 1);	
 	// // Game Boy palette, gray 1
-	// public static var GAME_BOY_COLOR_OFF(default, never):Color = new Color().rgb(0xffffff);
-	// public static var GAME_BOY_COLOR_LIGHT(default, never):Color = new Color().rgb(0xb2b2b2);
-	// public static var GAME_BOY_COLOR_MEDIUM(default, never):Color = new Color().rgb(0x757575);
-	// public static var GAME_BOY_COLOR_DARK(default, never):Color = new Color().rgb(0x000000);
+	// public static inline var GAME_BOY_COLOR_OFF:Int = 0xffffff;
+	// public static inline var GAME_BOY_COLOR_LIGHT:Int = 0xb2b2b2;
+	// public static inline var GAME_BOY_COLOR_MEDIUM:Int = 0x757575;
+	// public static inline var GAME_BOY_COLOR_DARK:Int = 0x000000;
 
 	// Game Boy palette, gray 2
-	public static var GAME_BOY_COLOR_OFF(default, never):Color = new Color().rgb(0xefefef);
-	public static var GAME_BOY_COLOR_LIGHT(default, never):Color = new Color().rgb(0xb2b2b2);
-	public static var GAME_BOY_COLOR_MEDIUM(default, never):Color = new Color().rgb(0x757575);
-	public static var GAME_BOY_COLOR_DARK(default, never):Color = new Color().rgb(0x383838);
+	public static inline var GAME_BOY_COLOR_OFF:Int = 0xefefef;
+	public static inline var GAME_BOY_COLOR_LIGHT:Int = 0xb2b2b2;
+	public static inline var GAME_BOY_COLOR_MEDIUM:Int = 0x757575;
+	public static inline var GAME_BOY_COLOR_DARK:Int = 0x383838;
 
 	// // Game Boy palette, green 1
-	// public static var GAME_BOY_COLOR_OFF(default, never):Color = new Color().rgb(0x9BBC0F);
-	// public static var GAME_BOY_COLOR_LIGHT(default, never):Color = new Color().rgb(0x8BAC0F);
-	// public static var GAME_BOY_COLOR_MEDIUM(default, never):Color = new Color().rgb(0x306230);
-	// public static var GAME_BOY_COLOR_DARK(default, never):Color = new Color().rgb(0x0F380F);
+	// public static var GAME_BOY_COLOR_OFF(default, never)::Int = 0x9BBC0F;
+	// public static var GAME_BOY_COLOR_LIGHT(default, never)::Int = 0x8BAC0F;
+	// public static var GAME_BOY_COLOR_MEDIUM(default, never)::Int = 0x306230;
+	// public static var GAME_BOY_COLOR_DARK(default, never)::Int = 0x0F380F;
 
 	// // Game Boy palette, green 2
 	// public static var GAME_BOY_COLOR_OFF(default, never):Color = new Color().rgb(0xb7dc11);
