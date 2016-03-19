@@ -28,11 +28,12 @@ import dk.miosis.luxetemplate.state.Load;
 import dk.miosis.luxetemplate.state.Game;
 import dk.miosis.luxetemplate.state.Splash;
 import dk.miosis.luxetemplate.system.MiosisPhysicsEngine;
+import dk.miosis.luxetemplate.ui.MiosisCanvas;
 
 class Main extends luxe.Game 
 {
     public static var mint_renderer:LuxeMintRender;
-    public static var canvas:Canvas;
+    public static var canvas:MiosisCanvas;
     public static var focus: Focus;
     public static var background_batcher: phoenix.Batcher;    
     public static var foreground_batcher: phoenix.Batcher;
@@ -90,12 +91,13 @@ class Main extends luxe.Game
         mint_renderer = new LuxeMintRender({ batcher:Luxe.renderer.batcher });
         
         // Set up Mint canvas
-        canvas = new mint.Canvas({
+        canvas = new MiosisCanvas({
             name:'canvas',
             rendering: mint_renderer,
             options: { color:new Color(1, 1, 1, 0) },
             x: 0, y:0, w: 100, h: 100
         });
+        canvas.auto_listen();
 
         focus = new Focus(canvas);
 
@@ -197,33 +199,12 @@ class Main extends luxe.Game
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);
     }
 
-    override function onrender() 
-    {
-       canvas.render();
-    }
-
     override function onkeyup(e:luxe.Input.KeyEvent) 
     {
         if(e.keycode == Key.escape) 
         {
             Luxe.shutdown();
         }
-    }
-
-    override function onmouseup(e:luxe.Input.MouseEvent) 
-    {
-        canvas.mouseup(Convert.mouse_event(e));
-    }
-
-    override function onmousedown(e:luxe.Input.MouseEvent) 
-    {
-        canvas.mousedown(Convert.mouse_event(e));    
-    }
-
-    override function onmousemove(e:luxe.Input.MouseEvent) 
-    {
-        mouseEventToWorld(e);
-        canvas.mousemove( Convert.mouse_event(e) );  
     }
 
     override function onwindowsized( e:WindowEvent ) 
@@ -238,7 +219,7 @@ class Main extends luxe.Game
         canvas.update(dt);
     }
 
-        override function ondestroy() 
+    override function ondestroy() 
     {
         if (states != null)
         {
@@ -256,12 +237,5 @@ class Main extends luxe.Game
         next_state = null;
         fade_overlay_sprite = null;
         fade_overlay = null;
-    }
-
-    function mouseEventToWorld(e:luxe.Input.MouseEvent) 
-    {
-        e.pos = Luxe.camera.screen_point_to_world(e.pos);
-        e.x = Std.int(e.pos.x);
-        e.y = Std.int(e.pos.y);
     }
 }
