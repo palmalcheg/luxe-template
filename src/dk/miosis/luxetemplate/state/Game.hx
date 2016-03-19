@@ -54,7 +54,7 @@ class Game extends BaseState
         _debug("---------- GameState.onenter ----------");
 
         // Set background color
-        Luxe.renderer.clear_color = new Color().rgb(Constants.GAME_BOY_COLOR_OFF);
+        Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_2_OFF);
         
         button = new Button({
             parent: Main.canvas, 
@@ -73,7 +73,7 @@ class Game extends BaseState
         txt.geom.texture = txt.font.pages[0];
         txt.geom.texture.filter_min = nearest;
         txt.geom.texture.filter_mag = nearest;
-        txt.color = new Color().rgb(Constants.GAME_BOY_COLOR_DARK);
+        txt.color = new Color().rgb(Constants.COLOR_GB_2_DARK);
 
         _debug("Label renderer batcher " + labelRenderer.text.geom.batchers);
 

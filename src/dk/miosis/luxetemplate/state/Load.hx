@@ -41,7 +41,7 @@ class Load extends BaseState
         _debug("---------- Load.new ----------");
 
         // Set background color
-        Luxe.renderer.clear_color = new Color().rgb(Constants.GAME_BOY_COLOR_DARK);
+        Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_2_DARK);
 
         state_to_load = "";
 
@@ -51,7 +51,7 @@ class Load extends BaseState
         }
         else
         {
-            bar_color = new Color().rgb(Constants.GAME_BOY_COLOR_OFF);
+            bar_color = new Color().rgb(Constants.COLOR_GB_2_OFF);
         }
 
         if (_options != null && _options.border_color != null)
@@ -60,7 +60,7 @@ class Load extends BaseState
         }
         else
         {
-            border_color = new Color().rgb(Constants.GAME_BOY_COLOR_MEDIUM);
+            border_color = new Color().rgb(Constants.COLOR_GB_2_MEDIUM);
         }
 
         if (_options != null && _options.background_color != null)
@@ -69,7 +69,7 @@ class Load extends BaseState
         }
         else
         {
-            background_color = new Color().rgb(Constants.GAME_BOY_COLOR_DARK);
+            background_color = new Color().rgb(Constants.COLOR_GB_2_DARK);
         }
 
         super({ name : 'load', fade_in_time : 0.2, fade_out_time : 0.2 });

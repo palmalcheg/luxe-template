@@ -79,7 +79,7 @@ class MiosisButtonRender extends Render
         {
             // mouseleave
             var txt:Text = Luxe.scene.get('testbutton.label.text');
-            txt.color = new Color().rgb(Constants.GAME_BOY_COLOR_DARK);
+            txt.color = new Color().rgb(Constants.COLOR_GB_2_DARK);
         }
     }
 
@@ -88,7 +88,7 @@ class MiosisButtonRender extends Render
         _debug("---------- MiosisButtonRender.goto_hover_state ----------");
 
         var txt:Text = Luxe.scene.get('testbutton.label.text'); 
-        txt.color = new Color().rgb(Constants.GAME_BOY_COLOR_MEDIUM);
+        txt.color = new Color().rgb(Constants.COLOR_GB_2_MEDIUM);
     }
 
     function goto_pressed_state(e:MouseEvent, c:Control) 

@@ -71,7 +71,7 @@ class Main extends luxe.Game
         _debug("---------- Main.ready ----------");
 
         // Set background color
-        Luxe.renderer.clear_color = new Color().rgb(Constants.GAME_BOY_COLOR_DARK);
+        Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_2_DARK);
 
         // Fit camera viewport to window size
         Luxe.camera.size = new Vector(w, h);
@@ -112,7 +112,7 @@ class Main extends luxe.Game
             parent: Luxe.camera,
             name: 'fade_overlay_sprite',
             size: Luxe.screen.size,
-            color: new Color().rgb(Constants.GAME_BOY_COLOR_DARK),
+            color: new Color().rgb(Constants.COLOR_GB_2_DARK),
             centered: false,
             depth:999
         });     

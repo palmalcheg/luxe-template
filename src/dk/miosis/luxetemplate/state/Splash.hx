@@ -27,7 +27,7 @@ class Splash extends BaseState
         _debug("---------- Splash.onenter ----------");
 
 		// Set background color
-	    Luxe.renderer.clear_color = new Color().rgb(Constants.GAME_BOY_COLOR_DARK);
+	    Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_2_DARK);
                
         super.onenter(_);		
     }
@@ -65,7 +65,7 @@ class Splash extends BaseState
             name:'miosis_m',
             texture:Luxe.resources.texture('assets/img/logo/miosis_m.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(Constants.GAME_BOY_COLOR_OFF),
+            color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4
         }));
 
@@ -76,7 +76,7 @@ class Splash extends BaseState
             name:'miosis_i1',            
             texture:Luxe.resources.texture('assets/img/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(Constants.GAME_BOY_COLOR_OFF),
+            color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4
         }));
 
@@ -87,7 +87,7 @@ class Splash extends BaseState
             name:'miosis_o',                        
             texture:Luxe.resources.texture('assets/img/logo/miosis_o.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(Constants.GAME_BOY_COLOR_OFF),
+            color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4,
             size: new Vector(32, 32)
         }));
@@ -99,7 +99,7 @@ class Splash extends BaseState
             name:'miosis_s',                        
             texture:Luxe.resources.texture('assets/img/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(Constants.GAME_BOY_COLOR_OFF),
+            color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4
         }));
 
@@ -110,7 +110,7 @@ class Splash extends BaseState
             name:'miosis_i2',                        
             texture:Luxe.resources.texture('assets/img/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(Constants.GAME_BOY_COLOR_OFF),
+            color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4
         }));
 
@@ -121,7 +121,7 @@ class Splash extends BaseState
             name:'miosis_s2',                        
             texture:Luxe.resources.texture('assets/img/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(Constants.GAME_BOY_COLOR_OFF),
+            color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4
         }));
 
