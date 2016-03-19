@@ -75,8 +75,6 @@ class Game extends BaseState
         txt.geom.texture.filter_mag = nearest;
         txt.color = new Color().rgb(Constants.COLOR_GB_2_DARK);
 
-        _debug("Label renderer batcher " + labelRenderer.text.geom.batchers);
-
         create_map();
         create_map_collision();
 

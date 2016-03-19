@@ -1,5 +1,6 @@
 package dk.miosis.luxetemplate;
 
+import luxe.Camera;
 import luxe.Color;
 import luxe.Input;
 import luxe.Log.*;
@@ -18,7 +19,6 @@ import phoenix.Texture.FilterType;
 import mint.Canvas;
 import mint.focus.Focus;
 import mint.render.luxe.LuxeMintRender;
-import mint.render.luxe.Convert;
 
 import snow.api.Promise;
 
@@ -81,14 +81,32 @@ class Main extends luxe.Game
         log('Screen width: ${Luxe.screen.w}');
         log('Screen height: ${Luxe.screen.h}');
 
-        var foreground_camera = new luxe.Camera();
+        // Set up rendering
+        var background_camera = new Camera({
+            name: 'background_camera'
+        });
+        background_camera.size = new phoenix.Vector(w, h);
+        background_camera.size_mode = luxe.Camera.SizeMode.fit;
+
+        var foreground_camera = new Camera({
+            name: 'foreground_camera'
+        });
         foreground_camera.size = new phoenix.Vector(w, h);
         foreground_camera.size_mode = luxe.Camera.SizeMode.fit;
 
-        foreground_batcher = Luxe.renderer.create_batcher({ name:'foreground_batcher', camera: foreground_camera.view });
-        foreground_batcher.layer = 998;
+        background_batcher = Luxe.renderer.create_batcher({
+            layer: -1,
+            name:'background_batcher',
+            camera: background_camera.view
+        });
 
-        mint_renderer = new LuxeMintRender({ batcher:Luxe.renderer.batcher });
+        foreground_batcher = Luxe.renderer.create_batcher({
+            layer: 3,
+            name:'foreground_batcher',
+            camera: foreground_camera.view
+        });
+
+        mint_renderer = new LuxeMintRender({ batcher:foreground_batcher });
         
         // Set up Mint canvas
         canvas = new MiosisCanvas({
@@ -106,11 +124,9 @@ class Main extends luxe.Game
         physics.draw = false;
         physics.player_collider = Polygon.rectangle(0,0,8,8);
 
-        // Subscribe to state change events
-        Luxe.events.listen('change_state', on_change_state);
-
         // Set up fade overlay
         fade_overlay_sprite = new Sprite({
+            batcher: foreground_batcher,
             parent: Luxe.camera,
             name: 'fade_overlay_sprite',
             size: Luxe.screen.size,
@@ -120,6 +136,9 @@ class Main extends luxe.Game
         });     
         fade_overlay = fade_overlay_sprite.add(new FadeOverlay());
         
+        // Subscribe to state change events
+        Luxe.events.listen('change_state', on_change_state);
+
         // Go to first state
         states = new States({ name:'states' });
         load_state = states.add(new Load());
@@ -210,13 +229,6 @@ class Main extends luxe.Game
     override function onwindowsized( e:WindowEvent ) 
     {
         Luxe.camera.viewport = new luxe.Rectangle(0, 0, e.x, e.y);
-    }
-
-    override function update(dt:Float) 
-    {
-        _verboser("---------- Main.update ----------");
-
-        canvas.update(dt);
     }
 
     override function ondestroy() 
