@@ -14,9 +14,13 @@ package dk.miosis.luxetemplate.utility;
 		private var thread:Thread;
 		private var task:Dynamic->Dynamic;
 		private var mutex:Mutex;
-		public var started:Bool;
 		private var _done:Bool;
+		private var _result:Dynamic;
+
+		public var started:Bool;
+		public var result(get, never):Dynamic;
 		public var done(get, never):Bool;
+
 		private function get_done():Bool
 		{
 			mutex.acquire();
@@ -24,8 +28,7 @@ package dk.miosis.luxetemplate.utility;
 			mutex.release();
 			return d;
 		}
-		private var _result:Dynamic;
-		public var result(get, never):Dynamic;
+
 		private function get_result():Dynamic
 		{
 			mutex.acquire();

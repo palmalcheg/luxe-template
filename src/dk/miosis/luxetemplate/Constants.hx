@@ -2,32 +2,18 @@ package dk.miosis.luxetemplate;
 
 import luxe.Color;
 
-// @:enum
-// abstract Platforms(Int) 
-// {
-// 	var Mac = 0;
-// 	var Windows = 1;
-// 	var Linux = 2;
-// }
-
-// @:enum
-// abstract Gamepads(Int) 
-// {
-// 	var PS3 = 0;
-// 	var Xbox360 = 1;
-// }
-
-// @:enum
-// abstract GamepadButtons(Int) 
-// {
-// 	var Cross = 0;
-// 	var Square = 1;
-// 	var Triangle = 2;
-// 	var Circle = 2;	
-// }
-
 class Constants
 {
+
+	public static function clear(arr:Array<Dynamic>)
+	{
+#if (cpp||php)
+		arr.splice(0,arr.length);
+#else
+		untyped arr.length = 0;
+#end
+	}
+
 	public static var GAME_SCALE(default, never):Int = 4;
 
 	// Basic colors

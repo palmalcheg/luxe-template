@@ -66,6 +66,7 @@ class Game extends BaseState
         
         var labelRenderer:mint.render.luxe.Label = cast button.label.renderer;
         Luxe.scene.add(labelRenderer.text);
+        
         var txt:Text = Luxe.scene.get('testbutton.label.text');      
         txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         txt.point_size = 16;
