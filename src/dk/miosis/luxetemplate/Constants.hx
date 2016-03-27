@@ -8,13 +8,15 @@ class Constants
 	public static function clear(arr:Array<Dynamic>)
 	{
 #if (cpp||php)
-		arr.splice(0,arr.length);
+		arr.splice(0, arr.length);
 #else
 		untyped arr.length = 0;
 #end
 	}
 
 	public static var GAME_SCALE(default, never):Int = 4;
+
+	static inline public var PI:Float = 3.14159265358979323846;
 
 	// Basic colors
 	public static inline var COLOR_BLACK:Int = 0x000000;

@@ -275,14 +275,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/Users/dejean/Developer/cape/projects/lego-futurelab-ignite/repo/trunk/Unity/Ignite/Assets/Resources/Data/scene_configs.xml",
-			"settings":
-			{
-				"buffer_size": 146886,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -371,13 +363,11 @@
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/state",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/system",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/ui",
-		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/utility",
-		"/Users/dejean/Developer/haxe/haxelib_repository/mint/git/mint",
-		"/Users/dejean/Developer/haxe/haxelib_repository/mint/git/mint/render",
-		"/Users/dejean/Developer/haxe/haxelib_repository/mint/git/mint/render/luxe"
+		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/utility"
 	],
 	"file_history":
 	[
+		"/Users/dejean/Developer/cape/projects/lego-futurelab-ignite/repo/trunk/Unity/Ignite/Assets/Resources/Data/scene_configs.xml",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/ui/MiosisButtonRender.hx",
 		"/Users/dejean/Developer/personal/projects/haxe/luxe-template/src/dk/miosis/luxetemplate/Main.hx",
 		"/Users/dejean/Developer/haxe/haxelib_repository/mint/git/mint/render/luxe/Button.hx",
@@ -504,8 +494,7 @@
 		"/Users/dejean/Developer/projects/haxe/PlatformerSandbox/src/dk/myosis/platformersandbox/systems/PhysicsSystem.hx",
 		"/Users/dejean/Developer/projects/haxe/PlatformerSandbox/src/dk/myosis/platformersandbox/components/PhysicsUtilities.hx",
 		"/Users/dejean/Developer/projects/haxe/PlatformerSandbox/PlatformerSandbox.sublime-project",
-		"/Users/dejean/Developer/external/repo/forked/luxe/luxe/Physics.hx",
-		"/Users/dejean/Developer/external/repo/forked/luxe/luxe/Game.hx"
+		"/Users/dejean/Developer/external/repo/forked/luxe/luxe/Physics.hx"
 	],
 	"find":
 	{
@@ -692,39 +681,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/Users/dejean/Developer/cape/projects/lego-futurelab-ignite/repo/trunk/Unity/Ignite/Assets/Resources/Data/scene_configs.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 146886,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								145761,
-								145761
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 10954.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

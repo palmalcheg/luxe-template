@@ -133,7 +133,7 @@ class Main extends luxe.Game
             size: Luxe.screen.size,
             color: new Color().rgb(Constants.COLOR_GB_2_DARK),
             centered: false,
-            depth:999
+            depth:990
         });     
         fade_overlay = fade_overlay_sprite.add(new FadeOverlay());
         
@@ -146,7 +146,7 @@ class Main extends luxe.Game
         states.add(new Splash());
         states.add(new Game());
         states.add(new Euclido());        
-        next_state = "euclido";
+        next_state = "splash";
         states.set(next_state);
 
         var state:BaseState = cast states.current_state;
@@ -211,7 +211,7 @@ class Main extends luxe.Game
             }
 
             // TODO: Set filename according to some config file
-            load_state.state_to_load = 'game';
+            load_state.state_to_load = 'euclido';
         }
 
         states.set(next_state);
