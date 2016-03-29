@@ -4,6 +4,7 @@ import luxe.Log.*;
 import luxe.options.ComponentOptions;
 import luxe.resource.Resource.AudioResource;
 
+import dk.miosis.luxetemplate.component.EuclidianVisualiser;
 import dk.miosis.luxetemplate.utility.EuclidianRhythmGenerator;
 import dk.miosis.luxetemplate.utility.MiosisUtilities;
 

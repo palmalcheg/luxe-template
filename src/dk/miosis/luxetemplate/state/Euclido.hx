@@ -10,33 +10,40 @@ import dk.miosis.luxetemplate.component.EuclidianVisualiser;
 
 class Euclido extends BaseState
 {
-    var rhythm_sequencer:EuclidianSequencer;
-    var rhythm_visualiser:EuclidianVisualiser;
+    var sequencer:EuclidianSequencer;
+    var pattern_visualisers:Array<EuclidianVisualiser>;
 
-	public function new() 
+    public function new() 
     {
         _debug("---------- Euclido.new ----------");
-                
+
         super({ name : 'euclido', fade_in_time : 4.5, fade_out_time : 0.5 });
     }
 
-	override function onenter<T>(_:T) 
+    override function onenter<T>(_:T) 
     {
         _debug("---------- Euclido.onenter ----------");
 
         Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_BLUE);
 
-        var rhythm_parent = new Entity({ name: 'euclidian_rhythm'});
+        var root = new Entity({ name: 'root'});
 
-        rhythm_sequencer = new EuclidianSequencer(4, 110, 4);
+        var sound_count = 1;
 
-        rhythm_visualiser = new EuclidianVisualiser({
-            layer_distance : 5.0, 
-            point_radius : 2.0
-        });
-        
-        rhythm_parent.add(rhythm_sequencer);        
-        rhythm_parent.add(rhythm_visualiser);
+        sequencer = new EuclidianSequencer(sound_count, 110, 4);
+        root.add(sequencer);
+
+        pattern_visualisers = new Array<EuclidianVisualiser>();
+
+        for (i in 0...sound_count)
+        {
+            var pattern_visualiser = new EuclidianVisualiser({
+                name : 'euclidian_visualiser_' + i,
+                
+                });
+
+            pattern_visualisers.push(root.add(pattern_visualiser));
+        }
 
         super.onenter(_);       
     }
@@ -52,7 +59,7 @@ class Euclido extends BaseState
 
     override function update(dt:Float)
     {
-        
+
 
     }   
 }
