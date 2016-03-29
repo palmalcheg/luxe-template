@@ -4,6 +4,7 @@ import luxe.Log.*;
 import luxe.options.ComponentOptions;
 import luxe.resource.Resource.AudioResource;
 
+import dk.miosis.luxetemplate.utility.EuclidianRhythmGenerator;
 import dk.miosis.luxetemplate.utility.MiosisUtilities;
 
 class EuclidianSequencer extends luxe.Component
@@ -43,14 +44,20 @@ class EuclidianSequencer extends luxe.Component
         _note_masks = new Array<Int>();
         _note_time = 60 / (tempo * notes_per_beat);
 
-        var minNoteTime = 1 / 60;
+        var min_note_time = 1 / 60;
 
-        _debug("minNoteTime = " + minNoteTime);
+        _debug("min_note_time = " + min_note_time);
         _debug("_note_time = " + _note_time);        
 
-        if (_note_time < minNoteTime)
+        if (_note_time < min_note_time)
         {
             _debug("Framerate too low for tempo");
+        }
+
+        for (i in 0..._note_offsets.length)
+        {
+            _note_offsets.push(i * _note_time);
+            // trace("_noteOffsets[" + i + "] = " + _noteOffsets[i]);
         }
 
         // Init sounds
@@ -62,6 +69,22 @@ class EuclidianSequencer extends luxe.Component
             var resource = Luxe.resources.audio('assets/audio/euclido/sound_' + i);
             _sounds.push(resource);
         }
+
+        var rhythm_generator = new EuclidianRhythmGenerator();
+
+        rhythm_generator.generate(16, 5);
+        _note_masks.push(rhythm_generator.get_bitmask());
+
+        rhythm_generator.generate(16, 3);
+        _note_masks.push(rhythm_generator.get_bitmask());
+
+        rhythm_generator.generate(16, 2);
+        _note_masks.push(rhythm_generator.get_bitmask());
+
+        rhythm_generator.generate(16, 8);
+        _note_masks.push(rhythm_generator.get_bitmask());
+
+        _debug(_note_masks);
 
         super(_options);
     }
@@ -77,6 +100,7 @@ class EuclidianSequencer extends luxe.Component
                 if (_note_masks[i] != 0 && is_note_on(_next_note, i))
                 {
                     // _sounds[i].play(true);
+                    // _debug("BOOM");
                 }
             }
 

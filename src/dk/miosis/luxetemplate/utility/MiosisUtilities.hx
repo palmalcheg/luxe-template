@@ -1,17 +1,19 @@
 package dk.miosis.luxetemplate.utility;
 
+import luxe.Log.*;
+
 class MiosisUtilities
 {
 	public static function clear(arr:Array<Dynamic>)
 	{
-#if (cpp || php)
-		arr.splice(0, arr.length);
-#else
-		untyped arr.length = 0;
-#end
-	}
+        #if (cpp || php)
+        arr.splice(0, arr.length);
+        #else
+        untyped arr.length = 0;
+        #end
+    }
 
-    public static function bitmask_int_to_string(value:Int, size:Int = 32, spaced:Bool = false):String
+    public static function bitmask_int_to_string(value:Int, size:Int = 64, spaced:Bool = false):String
     {
         var str = "";
         var i = size;
@@ -36,16 +38,16 @@ class MiosisUtilities
         return str;
     }
 
-    public static function bitmask_string_to_int(str:String, size:Int = 32):Int
+    public static function bitmask_string_to_int(str:String):Int
     {
         var value = 0;
-        var i = size;
+        var i = str.length;
 
         while (--i > -1)
         {
             if (str.charAt(i) == "1")
             {
-                value & (1 << i);
+                value |= (1 << i);              
             }
         }
 

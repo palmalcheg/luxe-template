@@ -12,7 +12,7 @@
 
         public function new() 
         {
-            _debug("---------- Bjorklund.new ----------");
+            _debug("---------- EuclidianRhythmGenerator.new ----------");
 
             _counts = new Array<Int>();
             _remainders = new Array<Int>();
@@ -20,6 +20,7 @@
 
         public function get_bitmask()
         {
+            _debug(_bitmask_string);
             return MiosisUtilities.bitmask_string_to_int(_bitmask_string);
         }
 
@@ -30,7 +31,7 @@
 
         public function generate(steps:Int, pulses:Int):Void
         {
-            _debug("---------- Bjorklund.run ----------");
+            _debug("---------- EuclidianRhythmGenerator.generate ----------");
 
             if (pulses > steps)
             {
