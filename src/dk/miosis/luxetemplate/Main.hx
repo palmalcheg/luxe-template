@@ -24,7 +24,6 @@ import snow.api.Promise;
 
 import dk.miosis.luxetemplate.component.FadeOverlay;
 import dk.miosis.luxetemplate.state.BaseState;
-import dk.miosis.luxetemplate.state.Euclido;
 import dk.miosis.luxetemplate.state.Load;
 import dk.miosis.luxetemplate.state.Game;
 import dk.miosis.luxetemplate.state.Splash;
@@ -145,7 +144,6 @@ class Main extends luxe.Game
         load_state = states.add(new Load());
         states.add(new Splash());
         states.add(new Game());
-        states.add(new Euclido());        
         next_state = "splash";
         states.set(next_state);
 
@@ -211,7 +209,7 @@ class Main extends luxe.Game
             }
 
             // TODO: Set filename according to some config file
-            load_state.state_to_load = 'euclido';
+            load_state.state_to_load = 'game';
         }
 
         states.set(next_state);
