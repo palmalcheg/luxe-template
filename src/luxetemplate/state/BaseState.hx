@@ -1,11 +1,11 @@
-package dk.miosis.luxetemplate.state;
+package luxetemplate.state;
 
 import luxe.Log.*;
 import luxe.options.StateOptions;
 import luxe.Sprite;
 import luxe.States;
 
-import dk.miosis.luxetemplate.component.FadeOverlay;
+import luxetemplate.component.FadeOverlay;
 
 typedef BaseStateOptions = 
 {

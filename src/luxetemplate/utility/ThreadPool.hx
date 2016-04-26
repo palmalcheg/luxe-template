@@ -1,4 +1,4 @@
-package dk.miosis.luxetemplate.utility;
+package luxetemplate.utility;
 
 #if neko
 	import neko.vm.Thread;

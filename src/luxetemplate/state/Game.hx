@@ -1,4 +1,4 @@
-package dk.miosis.luxetemplate.state;
+package luxetemplate.state;
 
 import luxe.Color;
 import luxe.Log.*;
@@ -19,13 +19,14 @@ import phoenix.Batcher;
 import phoenix.Texture;
 import phoenix.Texture.FilterType;
 
-import dk.miosis.luxetemplate.Constants;
-import dk.miosis.luxetemplate.component.PlayerMovement;
-import dk.miosis.luxetemplate.component.PlayerPhysics;
-import dk.miosis.luxetemplate.entity.Player;
-import dk.miosis.luxetemplate.state.BaseState;
-import dk.miosis.luxetemplate.ui.MiosisButtonRender;
-import dk.miosis.luxetemplate.ui.MiosisMintRendering;
+import miosis.ui.MiosisButtonRender;
+import miosis.ui.MiosisMintRendering;
+
+import luxetemplate.Constants;
+import luxetemplate.component.PlayerMovement;
+import luxetemplate.component.PlayerPhysics;
+import luxetemplate.entity.Player;
+import luxetemplate.state.BaseState;
 
 class Game extends BaseState
 {

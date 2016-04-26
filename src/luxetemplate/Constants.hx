@@ -1,4 +1,4 @@
-package dk.miosis.luxetemplate;
+package luxetemplate;
 
 import luxe.Color;
 

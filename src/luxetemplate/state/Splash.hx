@@ -1,4 +1,4 @@
-package dk.miosis.luxetemplate.state;
+package luxetemplate.state;
 
 import luxe.Color;
 import luxe.Log.*;
@@ -7,7 +7,7 @@ import luxe.Vector;
 
 import luxe.components.sprite.SpriteAnimation;
 
-import dk.miosis.luxetemplate.component.LetterOAnimation;
+import luxetemplate.component.LetterOAnimation;
 
 class Splash extends BaseState 
 {

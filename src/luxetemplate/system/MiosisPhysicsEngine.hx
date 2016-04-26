@@ -1,4 +1,4 @@
-package dk.miosis.luxetemplate.system;
+package luxetemplate.system;
 
 import luxe.Log.*;
 import luxe.Vector;

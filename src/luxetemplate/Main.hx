@@ -1,4 +1,4 @@
-package dk.miosis.luxetemplate;
+package luxetemplate;
 
 import luxe.Camera;
 import luxe.Color;
@@ -22,13 +22,14 @@ import mint.render.luxe.LuxeMintRender;
 
 import snow.api.Promise;
 
-import dk.miosis.luxetemplate.component.FadeOverlay;
-import dk.miosis.luxetemplate.state.BaseState;
-import dk.miosis.luxetemplate.state.Load;
-import dk.miosis.luxetemplate.state.Game;
-import dk.miosis.luxetemplate.state.Splash;
-import dk.miosis.luxetemplate.system.MiosisPhysicsEngine;
-import dk.miosis.luxetemplate.ui.MiosisCanvas;
+import miosis.ui.MiosisCanvas;
+
+import luxetemplate.component.FadeOverlay;
+import luxetemplate.state.BaseState;
+import luxetemplate.state.Load;
+import luxetemplate.state.Game;
+import luxetemplate.state.Splash;
+import luxetemplate.system.MiosisPhysicsEngine;
 
 class Main extends luxe.Game 
 {

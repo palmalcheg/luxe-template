@@ -14,9 +14,9 @@
     version : '1.0.0',
     author : 'miosis',
     app : {
-      main : 'dk.miosis.luxetemplate.Main',
+      main : 'luxetemplate.Main',
       name : 'luxe-template',
-      package : 'dk.miosis.luxetemplate'
+      package : 'luxetemplate'
     },
     build : {
       defines:['MACOSX_VER=10.9'],

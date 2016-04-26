@@ -1,4 +1,4 @@
-package dk.miosis.luxetemplate.state;
+package luxetemplate.state;
 
 import luxe.Color;
 import luxe.Log.*;
@@ -11,7 +11,7 @@ import luxe.resource.Resource;
 
 import snow.api.Promise;
 
-import dk.miosis.luxetemplate.state.BaseState;
+import luxetemplate.state.BaseState;
 
 typedef LoadStateOptions = 
 {

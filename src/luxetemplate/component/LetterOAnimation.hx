@@ -1,4 +1,4 @@
-package dk.miosis.luxetemplate.component;
+package luxetemplate.component;
 
 import luxe.Log.*;
 
