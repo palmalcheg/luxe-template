@@ -1,12 +1,7 @@
 {
-  luxe:{
-    window: {
-      width:160,
-      height:144,
-      title:'Luxe Template',
-      fullscreen:false,
-      resizable:false,
-      borderless:false
+  snow : {
+    config: {
+      config_path: 'assets/json/config/config.json'
     }
   },
   project : {
@@ -27,6 +22,7 @@
       }
     },   
     files : {
+      config : 'config.json',
       assets : 'assets/'
     }
   }
