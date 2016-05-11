@@ -14,8 +14,6 @@ class Constants
 #end
 	}
 
-	public static var GAME_SCALE(default, never):Int = 4;
-
 	static inline public var PI:Float = 3.14159265358979323846;
 
 	// Basic colors

@@ -52,11 +52,11 @@ class Main extends luxe.Game
 
     override function config(config:luxe.GameConfig) 
     {
-        w = config.window.width;
-        h = config.window.height;
+        w = Luxe.snow.config.user.window.width;
+        h = Luxe.snow.config.user.window.height;
 
-        config.window.width *= Constants.GAME_SCALE;
-        config.window.height *= Constants.GAME_SCALE;
+        config.window.width = w * cast Luxe.snow.config.user.game_scale;
+        config.window.height = h * cast Luxe.snow.config.user.game_scale;
 
         // Just load assets for the splash screen
         config.preload.textures.push({ id : "assets/img/logo/miosis_m.png", filter_min:nearest, filter_mag:nearest });
@@ -64,6 +64,8 @@ class Main extends luxe.Game
         config.preload.textures.push({ id : "assets/img/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/img/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
         config.preload.jsons.push({ id : "assets/json/animation/miosis_anim.json" });
+
+        log('config loaded as ' + Luxe.snow.config.user);
 
         return config;
     }
