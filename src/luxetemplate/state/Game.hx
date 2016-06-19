@@ -62,7 +62,7 @@ class Game extends BaseState
             name: 'testbutton', 
             text: 'test',
             rendering: new MiosisMintRendering({ batcher: Luxe.renderer.batcher }),
-            x: 0.1 * Main.w, y:0.1 * Main.h, w:30, h: 20
+            x: 0.1 * Luxe.screen.width, y:0.1 * Luxe.screen.height, w:30, h: 20
         });
         
         var labelRenderer:mint.render.luxe.Label = cast button.label.renderer;

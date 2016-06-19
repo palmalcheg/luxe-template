@@ -27,7 +27,13 @@ class MiosisButtonRender extends Render
         super(_rendering, _control);
         var customRendering:MiosisMintRendering = cast rendering;
 
+        log(control.x);
+log(control.y);
+log(control.w);
+log(control.h);        
+
         visual = new luxe.NineSlice({
+            no_scene: true,
             name: control.name + '.visual',
             batcher: customRendering.options.batcher,
             texture : Luxe.resources.texture('assets/img/ui/button_normal.png'),

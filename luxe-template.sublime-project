@@ -28,6 +28,11 @@
 			"name": "Nape",
 			"path": "/Users/dejean/Developer/haxe/haxelib_repository/nape/2,0,19",
 			"follow_symlinks": true		
-		}	
+		},
+		{
+			"name": "LincModiqus",
+			"path": "/Users/dejean/Developer/haxe/haxelib_repository/linc_modiqus/git",
+			"follow_symlinks": true		
+		}
 	]
 }

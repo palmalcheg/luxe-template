@@ -31,6 +31,8 @@ import luxetemplate.state.Game;
 import luxetemplate.state.Splash;
 import luxetemplate.system.MiosisPhysicsEngine;
 
+import modiqus.Modiqus;
+
 class Main extends luxe.Game 
 {
     public static var mint_renderer:LuxeMintRender;
@@ -43,6 +45,8 @@ class Main extends luxe.Game
     public static var w:Int = -1;
     public static var h:Int = -1;
 
+    public static var game_scale:Float = 1.0;
+
     var load_state:Load;
     var next_state:String;
     var current_parcel:Parcel;
@@ -52,6 +56,10 @@ class Main extends luxe.Game
 
     override function config(config:luxe.GameConfig) 
     {
+        log('config loaded as ' + Luxe.snow.config.user);
+
+        game_scale = Luxe.snow.config.user.game_scale;
+
         w = Luxe.snow.config.user.window.width;
         h = Luxe.snow.config.user.window.height;
 
@@ -64,8 +72,6 @@ class Main extends luxe.Game
         config.preload.textures.push({ id : "assets/img/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/img/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
         config.preload.jsons.push({ id : "assets/json/animation/miosis_anim.json" });
-
-        log('config loaded as ' + Luxe.snow.config.user);
 
         return config;
     }
@@ -84,6 +90,9 @@ class Main extends luxe.Game
         log('Screen width: ${Luxe.screen.w}');
         log('Screen height: ${Luxe.screen.h}');
 
+        // Set up audio
+        Modiqus.start(true);
+
         // Set up rendering
         var background_camera = new Camera({
             name: 'background_camera'
@@ -94,8 +103,7 @@ class Main extends luxe.Game
         var foreground_camera = new Camera({
             name: 'foreground_camera'
         });
-        foreground_camera.size = new phoenix.Vector(w, h);
-        foreground_camera.size_mode = luxe.Camera.SizeMode.fit;
+        foreground_camera.size = new phoenix.Vector(Luxe.screen.width, Luxe.screen.height);
 
         background_batcher = Luxe.renderer.create_batcher({
             layer: -1,

@@ -9,6 +9,8 @@ import luxe.components.sprite.SpriteAnimation;
 
 import luxetemplate.component.LetterOAnimation;
 
+import modiqus.Modiqus;
+
 class Splash extends BaseState 
 {
 	var o_anim:SpriteAnimation;
@@ -17,6 +19,8 @@ class Splash extends BaseState
 	public function new() 
 	{
         _debug("---------- Splash.new ----------");
+
+        Modiqus.test();
 
         super({ name:'splash', fade_in_time:0.0, fade_out_time:0.5 });
         letters = new Array<Sprite>();
