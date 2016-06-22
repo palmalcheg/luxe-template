@@ -36,8 +36,8 @@ class Load extends BaseState
     var border_color:Color;
     var background_color:Color;
 
-	public function new(?_options:LoadStateOptions) 
-	{
+    public function new(?_options:LoadStateOptions) 
+    {
         _debug("---------- Load.new ----------");
 
         // Set background color
@@ -75,8 +75,8 @@ class Load extends BaseState
         super({ name : 'load', fade_in_time : 0.2, fade_out_time : 0.2 });
     }
 
-	override function onenter<T>(_:T) 
-	{
+    override function onenter<T>(_:T) 
+    {
         _debug("---------- Load.onenter ----------");
 
         var view_width:Float = Luxe.screen.w;
@@ -128,10 +128,11 @@ class Load extends BaseState
             depth : 101
         });
 
+
         var promise_json:Promise = Luxe.resources.load_json("assets/json/parcel/parcel_" + state_to_load + ".json");
-        promise_json.then(load_assets);
+        promise_json.then(load_assets, json_load_failed);
                
-        super.onenter(_);		
+        super.onenter(_);       
     }
 
     override function onleave<T>( _data:T ) 
@@ -150,7 +151,7 @@ class Load extends BaseState
         super.onleave(_data);
     }
 
-   function load_assets(json:JSONResource) 
+    function load_assets(json:JSONResource) 
     {
         _debug("---------- Load.load_assets ----------");
 
@@ -161,6 +162,20 @@ class Load extends BaseState
         parcel.on(ParcelEvent.complete, oncomplete);
         
         parcel.load();        
+    }
+
+    function json_load_failed(json:JSONResource) 
+    {
+        _debug("---------- Load.json_load_failed ----------");
+        set_progress(1);
+        var args = { 
+            state : state_to_load, 
+            fade_in_time : fade_in_time, 
+            fade_out_time : fade_out_time, 
+            parcel : null 
+        };
+
+        Luxe.events.fire('change_state', args);
     }
 
     function onprogress(change:ParcelChange ) 

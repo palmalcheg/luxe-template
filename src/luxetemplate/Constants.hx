@@ -14,8 +14,6 @@ class Constants
 #end
 	}
 
-	static inline public var PI:Float = 3.14159265358979323846;
-
 	// Basic colors
 	public static inline var COLOR_BLACK:Int = 0x000000;
 	public static inline var COLOR_WHITE:Int = 0xffffff;

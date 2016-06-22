@@ -29,6 +29,7 @@ import luxetemplate.state.BaseState;
 import luxetemplate.state.Load;
 import luxetemplate.state.Game;
 import luxetemplate.state.Splash;
+import luxetemplate.state.Synth;
 import luxetemplate.system.MiosisPhysicsEngine;
 
 import modiqus.Modiqus;
@@ -66,6 +67,9 @@ class Main extends luxe.Game
         config.window.width = w * cast Luxe.snow.config.user.game_scale;
         config.window.height = h * cast Luxe.snow.config.user.game_scale;
 
+        config.window.width = 160;
+        config.window.height = 144;
+
         // Just load assets for the splash screen
         config.preload.textures.push({ id : "assets/img/logo/miosis_m.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/img/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
@@ -83,27 +87,29 @@ class Main extends luxe.Game
         // Set background color
         Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_2_DARK);
 
+        log('Main w: ${w}');
+        log('Main h: ${h}');
+        log('Screen width:${w} ${Luxe.screen.w}');
+        log('Screen height: ${h} ${Luxe.screen.h}');
+
         // Fit camera viewport to window size
         Luxe.camera.size = new Vector(w, h);
         Luxe.camera.size_mode = luxe.Camera.SizeMode.fit;
 
-        log('Screen width: ${Luxe.screen.w}');
-        log('Screen height: ${Luxe.screen.h}');
-
         // Set up audio
-        Modiqus.start(true);
+        // Modiqus.start(true);
 
         // Set up rendering
         var background_camera = new Camera({
             name: 'background_camera'
         });
-        background_camera.size = new phoenix.Vector(w, h);
+        background_camera.size = new Vector(w, h);
         background_camera.size_mode = luxe.Camera.SizeMode.fit;
 
         var foreground_camera = new Camera({
             name: 'foreground_camera'
         });
-        foreground_camera.size = new phoenix.Vector(Luxe.screen.width, Luxe.screen.height);
+        foreground_camera.size = new Vector(Luxe.screen.width, Luxe.screen.height);
 
         background_batcher = Luxe.renderer.create_batcher({
             layer: -1,
@@ -155,6 +161,7 @@ class Main extends luxe.Game
         load_state = states.add(new Load());
         states.add(new Splash());
         states.add(new Game());
+        states.add(new Synth());        
         next_state = "splash";
         states.set(next_state);
 
@@ -194,6 +201,7 @@ class Main extends luxe.Game
         _debug("---------- Main.on_fade_in_done ----------");
 
         var state:BaseState = cast states.current_state;
+        _debug(state);
         state.post_fade_in();
     }
 
@@ -220,7 +228,7 @@ class Main extends luxe.Game
             }
 
             // TODO: Set filename according to some config file
-            load_state.state_to_load = 'game';
+            load_state.state_to_load = 'synth';
         }
 
         states.set(next_state);
