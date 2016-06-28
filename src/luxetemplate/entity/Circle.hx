@@ -22,9 +22,7 @@ class Circle extends Visual
             _debug(Luxe.screen.h);       
             _options = { 
                 name : "circle",
-                // pos : new Vector(Luxe.screen.w / 2, Luxe.screen.h / 2),
-                pos : new Vector(0.5 * Main.w, 0.5 * Main.h),             
-                // pos : new Vector(0, 0),                
+                pos : new Vector(0.5 * Main.w, 0.5 * Main.h),
                 color : new Color(1, 1, 1, 1)
             };
         } 

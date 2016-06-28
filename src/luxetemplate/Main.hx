@@ -67,9 +67,6 @@ class Main extends luxe.Game
         config.window.width = w * cast Luxe.snow.config.user.game_scale;
         config.window.height = h * cast Luxe.snow.config.user.game_scale;
 
-        config.window.width = 160;
-        config.window.height = 144;
-
         // Just load assets for the splash screen
         config.preload.textures.push({ id : "assets/img/logo/miosis_m.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/img/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
@@ -84,6 +81,8 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.ready ----------");
 
+        Modiqus.start(true);
+
         // Set background color
         Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_2_DARK);
 
@@ -95,9 +94,6 @@ class Main extends luxe.Game
         // Fit camera viewport to window size
         Luxe.camera.size = new Vector(w, h);
         Luxe.camera.size_mode = luxe.Camera.SizeMode.fit;
-
-        // Set up audio
-        // Modiqus.start(true);
 
         // Set up rendering
         var background_camera = new Camera({
