@@ -10,16 +10,16 @@ import luxe.options.VisualOptions;
 
 class Circle extends Visual 
 {
+    public var radius:Float;
+
     public function new(?_options:VisualOptions, _radius:Float = 10) 
     {   
         _debug("---------- Circle.new ----------");
 
+        radius = _radius;
+
         if (_options == null) 
         {
-            _debug(Main.w);
-            _debug(Main.h);            
-            _debug(Luxe.screen.w);
-            _debug(Luxe.screen.h);       
             _options = { 
                 name : "circle",
                 pos : new Vector(0.5 * Main.w, 0.5 * Main.h),
@@ -32,7 +32,7 @@ class Circle extends Visual
         }
 
         _options.geometry = Luxe.draw.circle({
-            r : Main.w * 0.1,
+            r : radius,
             color : _options.color
         });   
 
