@@ -15,7 +15,7 @@
     },
     build : {
       defines:['MACOSX_VER=10.11'],
-      flags:['--macro luxe.Log.level(2)'],
+      flags:['--macro luxe.Log.level(1)'],
       dependencies : {
         luxe : '*',
         mint : '*',

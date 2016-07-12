@@ -8,9 +8,9 @@ import luxe.Component;
 
 import luxe.options.ComponentOptions;
 
-class SynthObject extends Component
+class SynthController extends Component
 {
-	public var sprite:Sprite;
+	private var sprite:Sprite;
 
     public function new(?_options:ComponentOptions) 
     {
@@ -25,6 +25,7 @@ class SynthObject extends Component
             _options.name = "synthobject";
         }
 
+    	sprite = cast entity;
         super(_options);
     }
 
