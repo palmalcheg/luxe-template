@@ -14,8 +14,8 @@
 /*********************/
 
 sr = 44100
-kr = 4410    
-ksmps = 10
+;kr = 4410    
+ksmps = 32
 nchnls = 2
 0dbfs = 1
 
@@ -32,11 +32,12 @@ SNAmpChn 	strcat SNAmpChn, ".NoteAmplitude"
 puts SNAmpChn, 1
 
 kNAmpChn	chnget SNAmpChn
+kAmpChn	lineto kNAmpChn, 0.1
 
 prints "kNAmpChn: %f\n", kNAmpChn
 
 asound oscili p4, p5, 1
-outs asound * kNAmpChn, asound * kNAmpChn
+outs asound * kAmpChn, asound * kAmpChn
 endin
 
 </CsInstruments>
