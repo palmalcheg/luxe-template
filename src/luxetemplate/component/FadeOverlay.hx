@@ -7,44 +7,44 @@ import luxe.options.ComponentOptions;
 
 class FadeOverlay extends luxe.Component 
 {
-    var sprite:Sprite;
+    private var _sprite:Sprite;
 
-    public function new(?_options:ComponentOptions) 
+    public function new(?options:ComponentOptions) 
     {
         _debug("---------- FadeOverlay.new ----------");        
 
-        if (_options == null) 
+        if (options == null) 
         {
-            _options = { name : "fade"};
+            options = { name : "fade"};
         } 
-        else if (_options.name == null)
+        else if (options.name == null)
         {
-            _options.name = "fade";
+            options.name = "fade";
         }
 
-        super(_options);
+        super(options);
     }
 
     override function onadded() 
     {
         _debug("---------- FadeOverlay.init ----------");
 
-        sprite = cast entity;
-        sprite.events.fire('fade_overlay_ready');        
+        _sprite = cast entity;
+        _sprite.events.fire('fade_overlay_ready');        
     }
 
     public function fade_in(?t = 0.15, ?fn:Void->Void) 
     {
         _debug("---------- FadeOverlay.fade_in ----------");
 
-        sprite.color.tween(t, {a:0}).onComplete(fn);
+        _sprite.color.tween(t, {a:0}).onComplete(fn);
     }
 
     public function fade_out(?t = 0.15, ?fn:Void->Void) 
     {
         _debug("---------- FadeOverlay.fade_out ----------");
                 
-        sprite.color.tween(t, {a:1}).onComplete(fn);
+        _sprite.color.tween(t, {a:1}).onComplete(fn);
     }
 
     override function onremoved()

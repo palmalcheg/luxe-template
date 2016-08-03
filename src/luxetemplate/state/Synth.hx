@@ -2,34 +2,23 @@ package luxetemplate.state;
 
 import luxe.Color;
 import luxe.Log.*;
-import luxe.Sprite;
 import luxe.Vector;
 
-import luxe.tween.Actuate;
-import luxe.tween.actuators.GenericActuator;
-import luxe.utils.Maths;
-
 import luxetemplate.entity.Circle;
+import luxetemplate.component.ShapeController;
 
 import modiqus.Modiqus;
 
 class Synth extends BaseState 
 {
     var _circles:Array<Circle>;
-    var _circleDelays:Array<Float>;
-    var _circleTweenTimes:Array<Float>;
-    var _circleTweenActive:Array<Bool>;    
-    var _tweens:Array<IGenericActuator>;
-    var _circleScaleMin:Array<Float>;    
-    var _circleScaleMax:Array<Float>;    
-
-    var _objectCount:Int;
+    var _object_count:Int;
 
 	public function new() 
 	{
         _debug("---------- Synth.new ----------");
 
-        _objectCount = 16;
+        _object_count = 16;
 
         super({ name:'synth', fade_in_time:0.5, fade_out_time:0.5 });
     }
@@ -42,44 +31,25 @@ class Synth extends BaseState
 	    Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_2_LIGHT);
 
         _circles = new Array<Circle>();
-        _circleDelays = new Array<Float>();
-        _circleTweenTimes = new Array<Float>();
-        _tweens = new Array<IGenericActuator>();
-        _circleTweenActive = new Array<Bool>();
-        _circleScaleMin = new Array<Float>();        
-        _circleScaleMax = new Array<Float>();
 
-        for (i in 0..._objectCount)
+        for (i in 0..._object_count)
         {
-            var scaleMax:Float = 1 + Math.random();
-
-            _circles.push(get_circle(i, scaleMax));
-
-            var tween = Actuate.tween(_circles[i].scale, 0.5 + Math.random(), {x : scaleMax * _circles[i].scale.x, y : scaleMax * _circles[i].scale.y} )
-            .reflect()
-            .repeat()
-            .onRepeat(on_tween_repeat, [ i ])
-            .ease(luxe.tween.easing.Elastic.easeIn);
-            // .ease(luxe.tween.easing.Linear.easeNone);            
-            // .ease(luxe.tween.easing.Cubic.easeIn);                        
-
-            Actuate.pause(tween);
-            _tweens.push(tween);
-
-            _circleDelays.push(Math.random() * 2);
-            _circleTweenTimes.push(0);
-            _circleTweenActive[i] = false;
-
-            log("SCALE : " + _circles[i].scale);
-
-            Modiqus.setControlChannel("1.00000" + i + ".NoteAmplitude", 0.2);
-            Modiqus.sendMessage("i 1.00000" + i + " 0 -1 1 261.63");         
+            var circle:Circle = create_circle();
+            circle.name += "_" + i;
+            
+            var shapeController:ShapeController = new ShapeController({
+                name : "synth_controller_" + i,
+                csound_instrument : "1.00000" + i
+                });
+            
+            circle.add(shapeController);
+            _circles.push(circle);
         }
 
         super.onenter(_);		
     }
 
-    private function get_circle(i:Int, scale_max:Float):Circle
+    private function create_circle():Circle
     {
         // TODO: use scaleMax when setting position
         var radius = Main.h * 0.05 + Math.random() * Main.h * 0.05;
@@ -117,25 +87,11 @@ class Synth extends BaseState
         color.a = 0.5 + Math.random() * 0.2;
 
         var circle = new Circle({
-            name : "circle" + i,
             pos : position,
             color : color
         }, radius);
 
-        _circleScaleMin[i] = circle.scale.x;
-        _circleScaleMax[i] = _circleScaleMin[i] * scale_max;   
-
-        log("MIN : " + _circleScaleMin[i] + ", MAX : " + _circleScaleMax[i]);    
-
         return circle;
-    }
-
-    private function on_tween_repeat(i:Int)
-    {
-        Actuate.pause(_tweens[i]);
-        _circleTweenActive[i] = false;
-        // var color = Color.random();
-        // _circles[i].color = color;
     }
 
     override function onleave<T>( _data:T ) 
@@ -152,30 +108,5 @@ class Synth extends BaseState
 
     public override function update(dt:Float) 
     {
-        for (i in 0..._objectCount)
-        {
-            if (_circleTweenActive[i])
-            {
-                // Tweak audio params
-                // log(_circles[i].scale);
-                var amplitude = (_circles[i].scale.x - _circleScaleMin[i]) / (_circleScaleMax[i] - _circleScaleMin[i]);
-                amplitude = Maths.clamp(amplitude, 0, 1);
-                // log("Scale : " + _circles[i].scale);                                
-                // log("Amplitude : " + amplitude); 
-
-                Modiqus.setControlChannel("1.00000" + i + ".NoteAmplitude", amplitude);
-            }
-            else
-            {
-                _circleTweenTimes[i] += dt;                
-            }
-
-            if (_circleTweenTimes[i] >= _circleDelays[i])
-            {
-                Actuate.resume(_tweens[i]);
-                _circleTweenTimes[i] = Math.random() * 8;
-                _circleTweenActive[i] = true;
-            }
-        }
     }
 }
