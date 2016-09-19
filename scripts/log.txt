@@ -1,0 +1,2325 @@
+/Users/dejean/Developer/personal/projects/haxe/luxe-template
+flow / 1.0.0-alpha.2 (node.js v0.12.7)
+flow / target is mac ( arch 64 )
+flow / build only
+flow / haxe version 3.2.1
+
+flow / build - luxe-template 1.0.0 for mac
+flow / build - running haxe ...
+flow / build - running hxcpp for arch 64 ...
+ - Compiling group 'haxe' with flags -Iinclude -I/Users/dejean/Developer/haxe/haxelib_repository/linc_modiqus/git//linc/ -I/Users/dejean/Developer/haxe/haxelib_repository/linc_modiqus/git//lib/csound/inc -I/Users/dejean/Developer/haxe/haxelib_repository/linc_modiqus/git//lib/modiqus/inc -mmacosx-version-min=10.7 -I/Users/dejean/Developer/haxe/haxelib_repository/linc_ogg/git//lib/ -I/Users/dejean/Developer/haxe/haxelib_repository/linc_ogg/git//linc/ -I/Users/dejean/Developer/haxe/haxelib_repository/linc_ogg/git//lib//ogg/include/ -I/Users/dejean/Developer/haxe/haxelib_repository/linc_ogg/git//lib//vorbis/include/ -I/Users/dejean/Developer/haxe/haxelib_repository/linc_ogg/git//lib//theora/include/ -DNATIVE_TOOLKIT_OGG -DNATIVE_TOOLKIT_VORBIS -DNATIVE_TOOLKIT_THEORA -DLINC_OPENAL -I/Users/dejean/Developer/haxe/haxelib_repository/linc_openal/git//linc/ -I/Users/dejean/Developer/haxe/haxelib_repository/linc_opengl/git//linc/ -I/Users/dejean/Developer/haxe/haxelib_repository/linc_opengl/git//lib/glew/include/ -DLINC_OPENGL_GLEW -DGLEW_STATIC -DLINC_SDL -I/Users/dejean/Developer/haxe/haxelib_repository/linc_sdl/git//linc/ -I/Users/dejean/Developer/haxe/haxelib_repository/linc_sdl/git//lib/sdl/include/ -I/Users/dejean/Developer/haxe/haxelib_repository/linc_sdl/git//lib/sdl/include/configs/mac/ -DHAVE_LIBC -DNATIVE_TOOLKIT_SDL -I/Users/dejean/Developer/haxe/haxelib_repository/linc_stb/git//lib/ -I/Users/dejean/Developer/haxe/haxelib_repository/linc_stb/git//linc/ -I/Users/dejean/Developer/haxe/haxelib_repository/linc_timestamp/git//linc/ -c -fvisibility=hidden -stdlib=libstdc++ -O2 -I/Users/dejean/Developer/haxe/haxelib_repository/hxcpp/3,3,49/include -DHX_MACOS -m64 -Wno-parentheses -Wno-unused-value -Wno-format-extra-args -DHXCPP_M64 -DHXCPP_VISIT_ALLOCS(haxe) -DHXCPP_API_LEVEL=321(haxe) tags=[haxe,static]
+ - [1mCompile :[0m src/luxetemplate/state/Synth.cpp
+ - Link : luxe-template
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/44/15ba28d91a47a82ffa70de807a022e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e4/2f1d6c2369f92722784964ea3a3be3.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/18/bc7b69e1f8e28bffec25bd01be5232.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/f2/a2077faa0955cfee06d5fb2ec68992.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/49/6ad89eccae5fb4aa967e16cc619eb7.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/58/16fb4afb74230a6af7de5d26d05937.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/71/58f1d95dd99d2d150bba37b8dc5115.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/fa/c851ee2503664454f1061789e6ed88.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/da/6e52506ae7dace0a2d976378791820.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a3/f346dc2e4b6997a1530c81bd369f16.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/20/98a24ee1dc5ea2c58bf412d06da1c0.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a9/fb27ac39756844e8e6a8b51cbf71cb.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/01/b90871b9c3bb532aaa30add024f747.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/40/631644c7607cd073d8fe355bd40a09.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/92/60336ee761fd11f638c65d8f1f3590.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a4/b21fcac7a1d5bade8d3f00859bf3a9.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/74/6ad8b9a0400f6b02de04bd8b492369.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/11/29be8672a7b3c6b2dfeb50b7a2e7a2.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e8/3e194e57344ecd6c593529d815600d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/88/79b73b7b1095e7cb4501c6dc6fe31a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d9/cc93434fbdc917efe5f6d123f6c547.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e0/2498caacaebd13a10c4aeaa4c27769.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/3b/880eb4cd8f3b0e1f1f7f8f4ebffee7.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/23/23acda46282e87c6bc82b5bc2a7dbd.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/9c/524e8eb8ec3af8290b20c2b044499f.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/69/51c569563e94d4700a32af4c350b29.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d2/67e201bb64e7c1dc42a33a6771826c.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/86/61ae8967d208754764de390ca2a030.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/30/9531dd278ceb824f68df01a89911fb.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/dd/9c703249dd48e4260e90aa7578b109.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/a4/5e615c8a06c2144d2884cccbbe009a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a4/4bb88260a8191b8e462a534dfa0437.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/6d/92c2bbbac7de80efd280484a63ca14.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/96/2432d254dd12eb5cccf496885200f5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/6d/e060072374c843ea7953a2354ce672.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/0e/7af076eb4b99ffcd7dac5ef3f8d0e6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/59/0a1d479d10dc5424eb6122ced4275f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/0f/8d1f48844c50425baf39d484b43b91.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/fe/93b0bf076814b19b1ad30668ebe835.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/fa/16648ec9ea8f3fc000dd57433cac5e.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/17/0982ed95f31802e5af09f786649478.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e1/7b6a6117acfca0adf6128dc59de442.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/73/e801be4706e125a88fa6e904d5b099.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/9c/c80dffff2115c90aac50c1d1f96b00.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c7/e6f17eb62fd925d02d6a143e3fb321.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/6a/a37507788d28ba778205c289c66f61.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b7/7a5e5239f1e7b594c64fb8938e64cf.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/18/7f3029c0a22570b99cda5e04be1030.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/1e/770ded6744acc513704813e80ff1a5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/93/f71e6d9cb177c320f6e5cd79259d17.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/40/1df0b6617346662f2964116c8bba65.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/27/1a76dd7dbebdcec48f77a06cf9c2f6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/fd/7e171344b6b5ccc2ef309813c36e98.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a4/617e53573528fb998b15cf6dba1045.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/76/eb711a78cbbcdf4bcf07266595e7a5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/fd/1aacb55682e0e7b89ecb9bb4af6b13.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/99/43e773bb048d4968320b93bdba74de.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/4a/1fa0d9984214be15512643f751da0e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d5/13b14b9fae68d5675c9f95d23c9c3b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/cf/f3bdd7a04aa52c1d4b63c908769a77.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ba/d5c46986cdc8e4eb4d0347823f1c17.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ab/0545777bc408dfadf19220b833d3f7.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/f9/5aa202fbab2efe82021163cb136b09.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/0a/416a039e83ab42cc6a926390c5ca22.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/66/0408e855a66e8f924b20a292ecef95.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a6/25c9d9b9d2844668ba3b147f48bffb.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/72/1e63e5bf5f42e3165eae55d8587587.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+
+object file (/Users/dejean/.hxcpp_cache/haxe/ba/39175cace76ae848310ae52462721b.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/69/ce7251226539c8ed2f5d645e6c2d5e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/6f/c3e02822901596250cc31e93bb4deb.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c9/b54f1c1ed376a29360034197d30e18.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/69/ed0e62941ed8598fcac8c458b14ecb.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/5d/500fc4889078f44c683d568eacb2fa.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/74/216c29744d3cf2810496df7adc95c6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/4f/1fbc61bc2b7df093a957f6d230b69e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ab/206f9dfae4be9451decdb4e4f469b9.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/64/8909a4d87c9339ee5bd81717797384.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a0/ed09b1a432393a6f53561e05313bef.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d2/d77d795c9318b969afb05341345729.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/dc/cbb4d87c6b996eea4183c9013fa27f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/03/6053afda2a751406b80159ff56bdc0.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/17/99f3e8116275ba4cae4cf95436279c.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/83/705563a64eed3d3e0eaf156e8d47f0.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/2f/9b2dbc10c29a7850db8dd5d677879d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c3/b4966629586a8366064fe493b484bc.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/52/d22500c3edc09391b3ed7378b97b22.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/6c/61b796f53a67cb49cc3c5aba230249.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/f0/510041a6dd0d848e593d9c75a351ba.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/8a/4638f479b2ce2d13be309ae68a477a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/59/389457f3433e9f2dd0b65d5b09ac9f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/1d/a7c929002df41f81d291ca7cd120db.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/e5/8f597208ea8a05204503f1fc77dc1e.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/42/506faee8c08e19669d4cec8c3eae31.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ca/0691170840c0eed0e3f45f38be9802.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/4a/dbd6d7b9c5ac4a8d807d9c06fa7638.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/82/1816fc28ec31dbd74feeaaa222beb1.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ff/fc479823e1528f3ee271dd2a2169a0.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/0b/45c32bbb8b30827dcb61d8344e8ba6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/34/fb2d807fcc25d894a31b3cd72e7ee9.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/28/b3c1b257dcb1694bcb50fa5867503e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/93/b5f9156962de1ceb86ca2e74f4d5b8.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/7e/96b2085e7ba289fdd3437efb8b9ec1.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/58/fdd3edcd6a6d71dea72ba8c444fbdb.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/9a/a0cb70772ce3db98da91f654196474.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/80/c5989cd9718d2d77b24a2ae66cb2fa.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/2c/82dbcedab105c5f62abd160a9eaf46.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/29/30823f6e999f19bf841787ff0ea545.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/7c/7d15c72cb23f3c840518765b00432d.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/fd/d4a6027eb5e16f655bdec7c47347e3.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/b8/80760d7b1949635846214792eaab06.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/22/76bfb9949777add649eb0978777a1f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/74/01442fb355c3ad327da4c2580c8700.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/81/f2ac3001dea851822dfd135b9f4e05.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c0/5865439ac6359b90d5a27e42b1774d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/4c/37c844252c59d7111c2fbc1ffb7a65.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/3d/7e56039c53e914ebf98ea41fb2805b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/5d/e5d5233f4a26fcd3de66832c610cbd.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/42/3422409d0e972a7173ff6272990b44.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b4/95cb7b8434ec5576b699bf8f8daf10.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/59/5f6634a4a2a3cf82dd21ac2ce81e0a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e0/0ccb29bdec4e805a356689730eacc2.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/4b/3d3371b49d067aeb36a082ade7078a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/94/b9e47e95467328c1f8f3ee591c58c0.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a2/16f347834c5de39c578a696009c5d5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/eb/fb68cde0ead33f6fb058cbf454c6f9.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/48/7f13632842bb38ca49c09c9a8e43e5.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/0d/80452cc12d379a61c6f2c76c3bb1fe.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/88/a675e2ae8e538f4dc38bb9bcf35d09.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/98/ad3c8897857db88006c53cd689b5c5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/95/f60256108a24e895e042eec98f936f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ff/88089d51ad64823742ace2469dc802.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/13/d0ee4d4fd554fc6ef5497929419754.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/30/d11f2896bac8c7dfab4786a5dd6e95.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c9/3da21ebb02f4eaaad0e20651e39cb1.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/6a/474ebaf9869d985e54cde03eabea8b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a2/29f1ef16f427c5d6a2d57d753c77ab.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/0a/8015858d7a760b4167d28997762ba6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/00/65bd3ca79ce9cf18861c52463ea398.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c5/20535364eed4d4ec2c86a6de07d7d3.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/0e/65b67046fee9c6e08c8d4db84d372d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/3e/0cdcf2106ce76576a06f2af7a2ed22.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/21/f1ca842dcfa9348920fd4bc7b3e80d.o) was built for newer OSX version (10.7) than being linked (10.5)
+object file (/Users/dejean/.hxcpp_cache/haxe/4d/0687aec3c8f43562e540bc4752bcde.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/3a/cdb3829b3bdf061d116112a353e175.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/09/4a8e0f18be26c1187e76c9fd575030.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d1/78a8cc58eab9b1dd501ed13e2b8847.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/f8/66b1e459ea881b7f1370c615784bcd.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c9/0d7843631c62f11c130ba63d18d3ce.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/27/fca7a8fa7f3dcea564d49b49fe9c71.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/79/ffe912fa7ad56f119d16f1896e0adc.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/fb/d44ae05a2a9599d85d10023338ce53.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ff/fa345a2311bfe39252f0bd8777ace1.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/52/9baa3d5af8e59f48c036ac0a579dee.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c3/8e50839896ffb4d0f1f8ff593a045f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/51/19b9339f607a49a6de245fff9c9fef.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/8c/4cdf8c5c5327be9ed03e5515bc7caf.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/4d/3a6f20fe0b4392b95b83b906cefa7e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/62/0f73467ec987cdc66f47b72a2cb03f.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ef/00b70e8d5adc0502adf7573a373184.o) was built for newer OSX version (10.7) than being linked (10.5)
+object file (/Users/dejean/.hxcpp_cache/haxe/c9/5df9d1be5f8409119ed8f55726ad47.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/7e/a2ee9d66411f5cc2b89d0d006beaa6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/53/2dfe5a2cf357ea78d8338470e593ee.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/83/679fa6229971647489eb5dc43079d0.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/f5/c0c0b97306ae01b25f08df59980251.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/9e/3ce40f2d2723b30ef861be49188ca2.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/8f/7081f6b933e3c1e8f46758d14bf072.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/14/bf24b5350cec9ac3471fa03ff9ced3.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/ef/d7d3b60024a50eb72bda02be6247f6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/57/ad78be3a10e52003bfdeda18bc3d87.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/5a/a511bd7147585ee2a9efcbe4bcedd6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ff/39d5b8531cb2e204917bb529061c67.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/ce/8286d740f124bc22039134bac07b7b.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/f8/0468bace9ef8a7f38d82e09422a31c.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/f5/ad520115cef2cecf8fc223e9b1113d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ef/f56edbc42810c4568a858a23997031.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/1d/c5ebd64d788665a0d731bb5b45d012.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e5/35ef6f3fc4a2383461ad1cc5203d19.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/6b/e9ce87ba9e56c57f0e156a191d7f9e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c7/463c1c7d551cb9de6b4895d880c215.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/99/a9676ebed0675f7cfdc3bf5c3dfe0b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ff/19ae361307e22f443975162e20fde7.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/93/dc1945a4899505c83fb136105ea1ad.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e1/d544f72e7692a4b0bc8e5e41abaa60.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/2d/955e4a94184274ca22c34ad227281d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/05/c40223ff2cc6a38e27b2610b7716d6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c5/bebc76dc8d74ba01b97a901496710a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/1a/d5f2230bd8f33ea208c1241729b4bd.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/49/322c95dc7ab5adc6e1d5fce2e52f22.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/87/d682c6a22000776f853fd0af79b30b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/06/45ef4fccccef3d5ef07b507e52ec23.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ea/2500dc57c2d55a89df5a30bcab2dc0.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/11/9fc97c721003d1d134311460a06df8.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/8c/8e9d5c040ec04ad2ffd669c8b2257d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/f7/9af35cf48300328b5ec4de8061a9da.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/2c/62a5b0701e1f1a0a0e70a412eebfe7.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d7/01e25d9d3ad19e6752df4bf23e9c1d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e5/54b43f0d9ead9c6ff617026944335f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/2b/e3c4c6685516afb51c3639ce29ab44.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/41/4a5c203f4136f36dbf7c0512024f8d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b8/72dbe3397e4de25230638bc955fd4e.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/bb/00bd390a6a99428df167d2c7306cc1.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/46/64a384070f65970a48e98bec2fdbb5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/9a/f989bcc4105e099409708cacda85da.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/96/edc2141d1758d94fb8466e77be6886.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/3a/46f4b9c0f095f2bb4132abf6f216b2.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/5f/6ee1024b5e6ef1c240ffd4f494608a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/9e/50b09d7fe92685e6fc6a7c2f7f1bc6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/01/d782c37583d981c54c35c5d7108efb.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/19/966bb8e525cbf78951d4114df5a55e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/74/3a8d78b174a55240447e7afe797e90.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a2/e6a138a0bca4783fa47ccf2e51284e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/5c/b4916a064c793ce8a3b762b00865e5.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/0f/878339ccbbb580bd750297e02d4465.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/64/d35bfb65564537c83daca5ab3bf48a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/3f/dff05a2907a7d3805562f4d80bc67d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/9f/1c115850ce53aceb8c6fa7cf35569f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b1/50598ba2d5f8f18c471aa5771f1176.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/45/5ccf2f86baeb4ed2c8735b51529ea1.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/29/a81ed4836e08a37f8a65518a016fa6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/6b/30625e6bcebba4513f3b56fa2e44a2.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b6/df5c4c2533bbe80682c181800566d6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/0b/fb95475ecc92b680ed533c6789cf68.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/cb/913c66c069c76b5797eba834493f66.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/43/3e49a12799a12e6e8446a6ab082cb9.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/16/9c6480a553abfe7fcffd56234d84dc.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/2c/430cb49bae05263c53c4183c9a0d2c.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/6a/890f162c5e50ca7bacbbbc28b37d25.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/eb/3fc0046b0ae28ae6add3d189120bde.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/df/758deb7d51d5e03c015816861c7c4b.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/aa/cf2ce1ae7167b53a1574d022a3616e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e3/03708f3d0e410676087d6aad2fd9f6.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/fc/77e03fce7c0d611706d8cf43d974ea.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/78/aae651b62ef58f27283aef3547ac65.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/f8/0246923fc5fc82a40137b357f07ff2.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/1a/9c42afccade72b1f207f2e5800244f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/3d/7d3a7b5c8855f577d0a8b32ae432b5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a9/f48caaa5f1aad8a2beef7b5d55dbf4.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/6a/3ab3c4335f2570d7b6bb30482cd68e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/56/6fa6d1ae8832bc2291a3e8592251d0.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/43/eb5b225723f691d06e6d0c6c3fc4fe.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/74/7e43b497216e9c49846376724f85b6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ff/56a0b783a6270ad2128c911de5b008.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c9/2acaaa092365c5a9c62c00b64249bf.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/43/013e32f1b6b4747a52115e476cc726.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/6d/c12d2f8f913ccb7b83653b183320b6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/eb/a591ae9d150e28aae6257bdcb61131.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/60/634b7230d5c1c1dbb54e1e3539cd7a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/af/4c499cf0e5ce39c1d8467462d8c329.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/35/407f1f1feafb6a98f6ec401864691a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/bf/574d4c1221930e16e5ecaa693993ef.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/38/7250df837e76b748bf10eedc042626.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/fe/65c611ddea8d4718dcbc3b99f735d5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/3e/e937b2fd3713881f8c29bb0175f320.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c8/03eccda2aad0da181a828280ed4752.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/98/9abe7a0f8f0bfeed91944edc607d6a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b6/4932d992367d637a2a6271cf2d0064.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/1a/5e75caea3dfcab06dd0d30ff0dfdf0.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/bf/a197c1fde4a08d0c33a01292c8ef52.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e2/4e17250ce78e3f7070e27063ed3a24.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/46/56a0f1741b9e72110cdb8dc010e4ce.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ef/e910b56222d4b15827de7fbfaea8e1.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c7/12ff3cb8673cc9f53fc5578e1ca00a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/34/1f0104009bd8ddf2d3690df2ae60a7.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e0/985a8db62f8e9be477a0e2ce31e9a4.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/65/f72246a5d1d53c80f149c2b245c56f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/06/0954337d3628d0442cf5b43f182d29.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/97/9a83c2deec7a05c0fc5f6f448ddcee.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/14/49b54130f88d6ec2a2ebe1ab76478b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/df/cef74feb6dba2c7e0db09a1b4b1e0a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b9/0b5b3b3c560cb4d1d3fa2772298716.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/33/b8292bc9266f1cf8850decd4ce73c7.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/0a/32d89897b699696901d236b797910c.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/7c/6ed6de407ec5533a46fdc8c873dfa2.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c5/dda73acd3f04f43d529f001d7770e5.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c5/af9d41c709cc75607c71bf9f6d20e5.o) was built for newer OSX version (10.7) than being linked (10.5)
+object file (/Users/dejean/.hxcpp_cache/haxe/3c/a37d35e8b084c0d99f2b8b881f6ddd.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e9/a651eeae023e821d9c71c7f92f575b.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/fc/76620720746c2450fd036693e63eb3.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/58/845ff060d0a6466380d2e9f815e3b7.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/bb/0e13e01ae2210e42769f7b3e64a5da.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/33/f13c3a0f9aba4e9bd34d1d33fa9c0a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/4f/68fa6c7ca9cc32f46efa914dca3042.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e5/e0ca50806ee793d87adb485e9b8c0e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/49/234f73a2cbaffdddd933694b67f754.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/38/a087d2e51a176e5494eaae96b5fcbd.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/38/3893895c9ed4f7a56ff11faa212f50.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/fe/1fd4e920bbf85ab2d604cc916f724f.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a8/ecfcb289e49873174073607668c784.o) was built for newer OSX version (10.7) than being linked (10.5)
+object file (/Users/dejean/.hxcpp_cache/haxe/7e/db3df345521f123d59da173df2008b.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/fc/b22a0c7856a4c8a9589c90a5a54b8b.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/29/09fc54d20fca16b93b17950837df95.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/6e/dd2ceb9cb313b33e462fa8acde1f3f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ce/2cff6d7e88784f485a8d09c04f32fc.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ef/8272835100edb9e5d27ec694d5bb64.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d1/9633c09a043279e5794306a463e62a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b0/b3ba22cf7c0b6c1b1abb5b01a7a4aa.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/08/4020afa9b55d147d3e9c2506f0082a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b2/d7fa4ba38870ed1b79f3743a143b02.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ad/3fcbede892e17db9c705b6f2e0495b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/48/7162ab3a6e1245302a25da9c5de21b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/8c/cf839ed8882ce21633f0abe3a48ab2.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/40/11295bcf01c1ebeb80344506e7d18d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/59/6ba75880879bc46bf07b72ebceaf39.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a2/8b0626ba021763b80883921142ac80.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d6/c245f3445321d104cf6ee3a7d34e0e.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/80/e20383953623a81396196ca9e50985.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c3/46154c4f890b38c87ee0d7bbaf09f4.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/a9/6acf7933d8908e28be6e2697b33088.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e4/304c07f993e816c7926479036ed000.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/f5/f01e8b7ef3b2d38a2117b9bb0608b9.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ae/e174e5b3e7388a45f0238ae6ec0f70.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/b2/419cc56d02aa48900b5b39446fee95.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/52/566b259cda8def47629f9d4be44cc4.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/61/ee28dc0259598036ab09895b7b4be0.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ac/352c30dc4cad7c54bbfd97f567350d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/55/faa44a5a8dbc194969c94fa0ec1d77.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/f7/1d4eac84fab746018e556ef01fcb03.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/52/35711da34a756625a00368109d6bdc.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/fd/5661bd32b024949d345e0a17cd025e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/bd/0fb494f6d74a0cc31d2b0232b018c5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/00/1d0a5d92729b3fbc839b4078e8518a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/af/ceab67e9e59406b2cc330c269b2d3e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/67/9637c9166508e40a54269b82b688cf.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ac/21c480830f2f004006b3d3d10a2278.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/56/dc3f546c3f5230e9465587b48fdcc4.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/7e/a566a63428466b0f4de479a1ea9761.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/25/5e16499eaa93a918a797e9f804937c.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/92/3652986a9411ea521ab3a326f24fd4.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/17/9fae53baacfe34f5da9a3579d4279b.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/7a/24d67fae4e3cbe762606a14877882b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: 
+
+object file (/Users/dejean/.hxcpp_cache/haxe/64/eee501af55779e1bddccbc898ff223.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a8/e411eae46167522c484daaf815f1d6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/fe/8e577b8e4f8cb772f7b595f638b320.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/cd/2af5404c51316ddb71e2572eaa7a5a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/23/9e3b74148d89f8ce8166f84667c0f0.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/15/02769102dfa7b57817b084105befe7.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/2f/2b9bc85d1ee56f6076cc6a3551808b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/bb/0fad3cffef63eea4fe32ddd1bb3fd4.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/84/6fd90bf7ac45831078cd4cc0bc1117.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/39/4aeeacc0224bfdf5cb65439c2279e7.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ab/cb82cd79581a780c40369e876a19e1.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/58/1a10faa9e679c028d045f278640058.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/3a/50cb323bd02f8632a853c88a2b52d5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: 
+
+object file (/Users/dejean/.hxcpp_cache/haxe/b9/920a1b0ba9bc37fe613bddcbf711d3.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/b7/8aab41e142036bf072ece8014e7c5c.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a1/c870d3011fe304d226e296d7bfc31d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/7c/f9be817550e228f15e80c83214d701.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d4/ac17e05a3e7040bec8b800c6eaa5b5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ea/6b1eecbd46389cdfc0ea4c911a51be.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/2c/730e6ebff2bb13293c4cda44d094d1.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/8e/99b7db7f51cea4a18f2329c485a774.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/56/84154d9c0a66d6e4bccf277516a2e8.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/5d/c859fa349c281ece71bdd4f26a766b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ad/2834db5518cc1fd6fdada489e7d060.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/32/c36da244200903a387102f92eb33d6.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ae/ca5f485621e04313617e11cc36b441.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/e9/f6d7b66de3c91639009d62c2a83a3e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/b5/af8b9e356aa2d11d41918a5f6f86e8.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/91/0ab9306054991550d18cc076ea0adb.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/70/e020744f08a7cf503270660fc3bb23.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a9/1c62774dbe62d8b84dbbf150fce61f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ea/c6a97f0e4de3a3fccff9591864551c.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/59/f29f2dd788ec6b30c6ab7c4e129e43.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/bf/dc8c8995849b765f5ae9d5ad7f3788.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d4/647060204a36b663d896d916007ea4.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/66/fee976cc6cc6b732f6497d163878a1.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/8d/861870f65c8625d15ccb115ac7cac4.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/fb/7f981a6874c910e862030e23f71a61.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/84/524762b200c27561791f6d9fdeef8e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b1/874fd40caa88647b304bf515b126c7.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ad/e239601f8e9ed5d08046b04b086d03.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/50/48e312642c327d3bb3b368ab192bf4.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/53/3f7e413513ef3ac0548d2652f0784a.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/7c/c355fac1114882ba7c40d6dcfafd5c.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/d2/6d671f853d65443b142e5e79aaebb9.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/84/e429f0e66429fd5b074928b2a9d5f2.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d4/7a62357d92485df6de43af7d010fa8.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/77/e06eef94ff22c2f21f66a952703e75.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/78/4bd6e309d675f0868549bf632b8164.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/a2/63b305b27dbc9722b86163619a64ea.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/1c/d4e374d9d343ab3e155625ef5ece99.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/98/5775f4c6907503adb6a9e5634dac0c.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/d9/e9587fedfed5db2216ab94642104ff.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/57/8a18109ae25603cf5335f8d34fc3e5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/7d/af6507779423da07d341c6a2c66a7c.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/9a/7a43e4845886a6c650a92ed69779f4.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b5/1ec13240450e128c1445695334cfe3.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e1/374803a36fb09f3cd2981057a47a49.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/9c/1c5523ea113fdfe35a77e84c409d51.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/28/2bb197c9ec49f113b2672c32ebedf3.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e7/013b956263ed387ec1fde760adf126.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/46/2a6858f1a68eddcacb2f54b83e0a84.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/d5/5b32624d55b46a23d20ce24ddbbd08.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/10/3c1a661d4676ea970c1dcaa8fa7b82.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/c2/989a74bf3359a0d53ab2d19f12877e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/1d/cbd2e5d720269fe6ee3728d335731a.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/57/5ff830908ab7b315d1a2c56bfa047f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/3c/49e4580508815696359205618be954.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/14/e6601de8e95da967d631914c26e17e.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b9/e8e79fbd3d28d7ac036fa05268625d.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/b8/f3bcb871815c479601e43970552b60.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/af/bd3119af3a8db3fc23fb5a1f86db82.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/0f/caeaf0e35374029a0aaeb557e5d95c.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/11/95c99fc35c811cb489cf64eb707755.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/f7/f6f954a9eca229788c778d1a85978c.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/56/652b8563e11ac9bff8d87ce51dd345.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/92/8362ff26a92fb82de6ccbb35c5588b.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/8c/2c98051c763f1308f948ad20dd92fd.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/43/6673477b227d9338584966925f4b39.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/75/b811a433c02728a07e812dc34eb2ea.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/43/a06a979754a465773e63481855a53f.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/e4/918c7c05a0a3904e21394380596e40.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/7f/691b57cba3626d2c8ebc28bd095819.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/40/c84113e390f6e673ba8f151be6e502.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/83/7740cc34a71e938b15e66aeebe2649.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/99/4805ebd066aeb17e4c6602e20c0ef8.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/46/4704c9082ec0666ce79ef9142abcbc.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/29/cf652aa2402ce08e40e789b0b3864b.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/43/f63cf175fb5fcacff6c5e506eb13ca.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/1b/6aa451be56a07e666e1cc3f3dd3ccd.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/2f/6e9d4ca331b0441f28960c1eb57176.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/17/4d83b1c3a2ecc702d772d3b949b340.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/f8/bd91b991f0f644c4e7bcf28a93958d.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/f1/04614b0c3f99ef72299398a4dab0b5.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/82/e31fb60a647c2e1b7438c1f059d458.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/2e/82cdbf30e31b0c6966c5a0636e3ebf.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/76/2db04eafbcdd4f137ffbdae2c68565.o) was built for newer OSX version (10.7) than being linked (10.5)
+ld: warning: ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/cc/608a049b11e5dbf0cff80db0586b2b.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/6e/5ce3de1617c83986ec56edeb5d063b.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/c9/488b1b148b2c95862748fbf91a44f1.o) was built for newer OSX version (10.7) than being linked (10.5)ld: warning: 
+
+ld: warning: 
+object file (/Users/dejean/.hxcpp_cache/haxe/4c/80a293d19053cd5ff7fde9211b7d7d.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/b9/48edd1e7d144c118fe03496548e867.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: ld: warning: object file (/Users/dejean/.hxcpp_cache/haxe/ff/e3eb8335312e829aa0e3b711927285.o) was built for newer OSX version (10.7) than being linked (10.5)object file (/Users/dejean/.hxcpp_cache/haxe/d0/16dcdfd6140650821bf7a29e1bf53d.o) was built for newer OSX version (10.7) than being linked (10.5)
+
+ld: warning: object file (/Users/dejean/Developer/haxe/haxelib_repository/linc_modiqus/git/lib/modiqus/lib/libmodiqus.a(mqCsoundWrapper.o)) was built for newer OSX version (10.7) than being linked (10.5)
+flow / build - done
+/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS
+Main.hx:60:      i / main / config loaded as { window => { title => Luxe Template, borderless => false, width => 160, resizable => false, height => 144, fullscreen => false }, game_scale => 4 }
+Engine.hx:139:    i / luxe / log / level to 2
+Engine.hx:140:    i / luxe / log / filter : null
+Engine.hx:141:    i / luxe / log / exclude : null
+Engine.hx:148:    i / luxe / 1.0.0-alpha.3+f7ba883a48 / debug:false / os:mac / platform:mac
+Engine.hx:221:    d / luxe / creating subsystems...
+Renderer.hx:94:  d / renderer / default Framebuffer set to GLFramebuffer(0)
+Renderer.hx:95:  d / renderer / default Renderbuffer set to GLRenderbuffer(0)
+Debug.hx:117:     d / debug / 	 debug initialized.
+Timer.hx:21:     d / timer / 	 timer initialized.
+Audio.hx:119:     d / audio / 	 audio initialized.
+Input.hx:183:     d / input / 	 input initialized.
+Renderer.hx:306:  d / renderer / creating default shaders...
+Renderer.hx:366:  d / renderer / done.
+Renderer.hx:374:  d / renderer / creating the default font...
+Renderer.hx:394:  d / renderer / done. 275x512
+Scene.hx:107:     d / scene / default scene / adding default camera with id : gbh0z
+Engine.hx:292:    i / luxe / opengl  / 2.1 NVIDIA-10.10.13 310.42.25f01 / 1.20 / NVIDIA GeForce GT 750M OpenGL Engine / NVIDIA Corporation / 
+Engine.hx:294:    d / luxe / ready. loading default parcel { sounds => [], fonts => [], textures => [{ filter_mag => 9728, filter_min => 9728, id => assets/img/logo/miosis_m.png },{ filter_mag => 9728, filter_min => 9728, id => assets/img/logo/miosis_i.png },{ filter_mag => 9728, filter_min => 9728, id => assets/img/logo/miosis_s.png },{ filter_mag => 9728, filter_min => 9728, id => assets/img/logo/miosis_o.png }], shaders => [], texts => [], bytes => [], jsons => [{ id => assets/json/animation/miosis_anim.json }] }
+Parcel.hx:160:    d / parcel / default_parcel / default_parcel / loading 5 items
+Parcel.hx:161:    d / parcel /    bytes: 0
+Parcel.hx:162:    d / parcel /    texts: 0
+Parcel.hx:163:    d / parcel /    jsons: 1
+Parcel.hx:164:    d / parcel /    textures: 4
+Parcel.hx:165:    d / parcel /    fonts: 0
+Parcel.hx:166:    d / parcel /    shaders: 0
+Parcel.hx:167:    d / parcel /    sounds: 0
+Resources.hx:203: d / resources / json / loading / assets/json/animation/miosis_anim.json
+Parcel.hx:519:    d / parcel / loaded 1 / assets/json/animation/miosis_anim.json / 5 for default_parcel / Resource(`assets/json/animation/miosis_anim.json`, json, loaded)
+Resources.hx:229: d / resources / texture / loading / assets/img/logo/miosis_m.png
+Texture.hx:319:   d / texture / Texture Asset id: assets/img/logo/miosis_m.png
+Texture.hx:320:   d / texture / 	 image.bpp: 4
+Texture.hx:321:   d / texture / 	 image.bpp_source: 4
+Texture.hx:322:   d / texture / 	 image.pixels.length: 1024
+Texture.hx:323:   d / texture / 	 image.height: 16
+Texture.hx:324:   d / texture / 	 image.height_actual: 16
+Texture.hx:325:   d / texture / 	 image.width: 16
+Texture.hx:326:   d / texture / 	 image.width_actual: 16
+Parcel.hx:519:    d / parcel / loaded 2 / assets/img/logo/miosis_m.png / 5 for default_parcel / Texture(id: assets/img/logo/miosis_m.png, tex: GLTexture(2), type:tex_2D, size(size: 16x16, actual: 16x16) filter(min: nearest, mag:nearest) clamp(s: edge, t: edge) )
+Resources.hx:229: d / resources / texture / loading / assets/img/logo/miosis_i.png
+Texture.hx:319:   d / texture / Texture Asset id: assets/img/logo/miosis_i.png
+Texture.hx:320:   d / texture / 	 image.bpp: 4
+Texture.hx:321:   d / texture / 	 image.bpp_source: 4
+Texture.hx:322:   d / texture / 	 image.pixels.length: 256
+Texture.hx:323:   d / texture / 	 image.height: 16
+Texture.hx:324:   d / texture / 	 image.height_actual: 16
+Texture.hx:325:   d / texture / 	 image.width: 4
+Texture.hx:326:   d / texture / 	 image.width_actual: 4
+Parcel.hx:519:    d / parcel / loaded 3 / assets/img/logo/miosis_i.png / 5 for default_parcel / Texture(id: assets/img/logo/miosis_i.png, tex: GLTexture(3), type:tex_2D, size(size: 4x16, actual: 4x16) filter(min: nearest, mag:nearest) clamp(s: edge, t: edge) )
+Resources.hx:229: d / resources / texture / loading / assets/img/logo/miosis_s.png
+Texture.hx:319:   d / texture / Texture Asset id: assets/img/logo/miosis_s.png
+Texture.hx:320:   d / texture / 	 image.bpp: 4
+Texture.hx:321:   d / texture / 	 image.bpp_source: 4
+Texture.hx:322:   d / texture / 	 image.pixels.length: 1024
+Texture.hx:323:   d / texture / 	 image.height: 16
+Texture.hx:324:   d / texture / 	 image.height_actual: 16
+Texture.hx:325:   d / texture / 	 image.width: 16
+Texture.hx:326:   d / texture / 	 image.width_actual: 16
+Parcel.hx:519:    d / parcel / loaded 4 / assets/img/logo/miosis_s.png / 5 for default_parcel / Texture(id: assets/img/logo/miosis_s.png, tex: GLTexture(4), type:tex_2D, size(size: 16x16, actual: 16x16) filter(min: nearest, mag:nearest) clamp(s: edge, t: edge) )
+Resources.hx:229: d / resources / texture / loading / assets/img/logo/miosis_o.png
+Texture.hx:319:   d / texture / Texture Asset id: assets/img/logo/miosis_o.png
+Texture.hx:320:   d / texture / 	 image.bpp: 4
+Texture.hx:321:   d / texture / 	 image.bpp_source: 4
+Texture.hx:322:   d / texture / 	 image.pixels.length: 36864
+Texture.hx:323:   d / texture / 	 image.height: 32
+Texture.hx:324:   d / texture / 	 image.height_actual: 32
+Texture.hx:325:   d / texture / 	 image.width: 288
+Texture.hx:326:   d / texture / 	 image.width_actual: 288
+Parcel.hx:519:    d / parcel / loaded 5 / assets/img/logo/miosis_o.png / 5 for default_parcel / Texture(id: assets/img/logo/miosis_o.png, tex: GLTexture(5), type:tex_2D, size(size: 288x32, actual: 288x32) filter(min: nearest, mag:nearest) clamp(s: edge, t: edge) )
+Parcel.hx:593:    d / parcel / completed load default_parcel in 0.251448696999432
+Main.hx:82:      d / main / ---------- Main.ready ----------
+[Csound] UnifiedCSD:  /Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd
+[Csound] STARTING FILE
+[Csound] Creating options
+[Csound] Creating orchestra
+[Csound] Creating score
+[Csound] rtaudio: coreaaudio-AuHAL module enabled
+[Csound] Looking up token for: giSine
+[Csound] Looking up token for: ftgen
+[Csound] Looking up token for: giTriangle
+[Csound] Looking up token for: ftgen
+[Csound] Looking up token for: giSawtooth
+[Csound] Looking up token for: ftgen
+[Csound] Looking up token for: giSquare
+[Csound] Looking up token for: ftgen
+[Csound] Looking up token for: SNAmpChn
+[Csound] Looking up token for: sprintf
+[Csound] Looking up token for: p1
+[Csound] Looking up token for: SNAmpChn
+[Csound] Looking up token for: strcat
+[Csound] Looking up token for: SNAmpChn
+[Csound] Looking up token for: puts
+[Csound] opcode0 $1=0x101cda520 (puts)
+[Csound] Looking up token for: SNAmpChn
+[Csound] Looking up token for: kNAmpChn
+[Csound] Looking up token for: chnget
+[Csound] Looking up token for: SNAmpChn
+[Csound] Looking up token for: kAmpChn
+[Csound] Looking up token for: lineto
+[Csound] Looking up token for: kNAmpChn
+[Csound] Looking up token for: prints
+[Csound] opcode0 $1=0x101cdaab0 (prints)
+[Csound] Looking up token for: kNAmpChn
+[Csound] Looking up token for: asound
+[Csound] Looking up token for: oscili
+[Csound] Looking up token for: p4
+[Csound] Looking up token for: p5
+[Csound] Looking up token for: outs
+[Csound] opcode0 $1=0x101cdb0b0 (outs)
+[Csound] Looking up token for: asound
+[Csound] Looking up token for: kAmpChn
+[Csound] Looking up token for: asound
+[Csound] Looking up token for: kAmpChn
+[Csound] AST - INITIAL
+
+[Csound] <ast>
+[Csound] <tree (0x101cd70e0 : 0x101cd6fc0) type="61" 
+[Csound] name="="
+[Csound]  loc="17:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd6f60 : 0x101cd6f20) type="292" 
+[Csound] name="SRATE_TOKEN"
+[Csound]  loc="16:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd7080 : 0x101cd7020) type="301" 
+[Csound] name="INTEGER_TOKEN" value="44100"
+[Csound]  loc="16:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound] </tree>
+[Csound] <treenext (0x101cd7320 : 0x101cd7200) type="61" 
+[Csound] name="="
+[Csound]  loc="19:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd71a0 : 0x101cd7140) type="294" 
+[Csound] name="KSMPS_TOKEN"
+[Csound]  loc="18:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd72c0 : 0x101cd7260) type="301" 
+[Csound] name="INTEGER_TOKEN" value="32"
+[Csound]  loc="18:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd7560 : 0x101cd7440) type="61" 
+[Csound] name="="
+[Csound]  loc="20:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd73e0 : 0x101cd7380) type="295" 
+[Csound] name="NCHNLS_TOKEN"
+[Csound]  loc="19:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd7500 : 0x101cd74a0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="2"
+[Csound]  loc="19:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd77a0 : 0x101cd7680) type="61" 
+[Csound] name="="
+[Csound]  loc="21:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd7620 : 0x101cd75c0) type="297" 
+[Csound] name="ZERODBFS_TOKEN"
+[Csound]  loc="20:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd7740 : 0x101cd76e0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="20:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd7920 : 0x101cd7860) type="277" 
+[Csound] name="T_OPCODE" opname="ftgen"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd78c0 : 0x101cd7800) type="299" 
+[Csound] name="T_IDENT" varname="giSine"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd79e0 : 0x101cd7980) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] <treenext (0x101cd7aa0 : 0x101cd7a40) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd7b60 : 0x101cd7b00) type="273" 
+[Csound] name="LABEL_TOKEN" label="1024"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd7c20 : 0x101cd7bc0) type="273" 
+[Csound] name="LABEL_TOKEN" label="10"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd7ce0 : 0x101cd7c80) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd7e60 : 0x101cd7da0) type="277" 
+[Csound] name="T_OPCODE" opname="ftgen"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd7e00 : 0x101cd7d40) type="299" 
+[Csound] name="T_IDENT" varname="giTriangle"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd7f20 : 0x101cd7ec0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="2"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] <treenext (0x101cd7fe0 : 0x101cd7f80) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd80a0 : 0x101cd8040) type="273" 
+[Csound] name="LABEL_TOKEN" label="1024"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8160 : 0x101cd8100) type="273" 
+[Csound] name="LABEL_TOKEN" label="7"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8220 : 0x101cd81c0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd82e0 : 0x101cd8280) type="273" 
+[Csound] name="LABEL_TOKEN" label="256"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd83a0 : 0x101cd8340) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8460 : 0x101cd8400) type="273" 
+[Csound] name="LABEL_TOKEN" label="512"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8580 : 0x0) type="323" 
+[Csound] name="S_UMINUS"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cd8520 : 0x101cd84c0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8640 : 0x101cd85e0) type="273" 
+[Csound] name="LABEL_TOKEN" label="256"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8700 : 0x101cd86a0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd8880 : 0x101cd87c0) type="277" 
+[Csound] name="T_OPCODE" opname="ftgen"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd8820 : 0x101cd8760) type="299" 
+[Csound] name="T_IDENT" varname="giSawtooth"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd8940 : 0x101cd88e0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="3"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] <treenext (0x101cd8a00 : 0x101cd89a0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8ac0 : 0x101cd8a60) type="273" 
+[Csound] name="LABEL_TOKEN" label="1024"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8b80 : 0x101cd8b20) type="273" 
+[Csound] name="LABEL_TOKEN" label="7"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8c40 : 0x101cd8be0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8d00 : 0x101cd8ca0) type="273" 
+[Csound] name="LABEL_TOKEN" label="512"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8dc0 : 0x101cd8d60) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8e80 : 0x101cd8e20) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8fa0 : 0x0) type="323" 
+[Csound] name="S_UMINUS"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cd8f40 : 0x101cd8ee0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9060 : 0x101cd9000) type="273" 
+[Csound] name="LABEL_TOKEN" label="512"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9120 : 0x101cd90c0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd92a0 : 0x101cd91e0) type="277" 
+[Csound] name="T_OPCODE" opname="ftgen"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd9240 : 0x101cd9180) type="299" 
+[Csound] name="T_IDENT" varname="giSquare"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd9360 : 0x101cd9300) type="301" 
+[Csound] name="INTEGER_TOKEN" value="4"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] <treenext (0x101cd9420 : 0x101cd93c0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd94e0 : 0x101cd9480) type="273" 
+[Csound] name="LABEL_TOKEN" label="1024"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd95a0 : 0x101cd9540) type="273" 
+[Csound] name="LABEL_TOKEN" label="7"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9660 : 0x101cd9600) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9720 : 0x101cd96c0) type="273" 
+[Csound] name="LABEL_TOKEN" label="512"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd97e0 : 0x101cd9780) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd98a0 : 0x101cd9840) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd99c0 : 0x0) type="323" 
+[Csound] name="S_UMINUS"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cd9960 : 0x101cd9900) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9a80 : 0x101cd9a20) type="273" 
+[Csound] name="LABEL_TOKEN" label="512"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9ba0 : 0x0) type="323" 
+[Csound] name="S_UMINUS"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cd9b40 : 0x101cd9ae0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] </treenext>
+[Csound] </treenext>
+[Csound] <treenext (0x101cdb920 : 0x0) type="287" 
+[Csound] name="INSTR_TOKEN"
+[Csound]  loc="27:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd9c60 : 0x101cd9c00) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="28:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd9f20 : 0x101cd9e60) type="277" 
+[Csound] name="T_OPCODE" opname="sprintf"
+[Csound]  loc="29:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cd9ec0 : 0x101cd9e00) type="299" 
+[Csound] name="T_IDENT" varname="SNAmpChn"
+[Csound]  loc="29:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cd9fe0 : 0x101cd9f80) type="298" 
+[Csound] name="T_STRCONST" str=""%f""
+[Csound]  loc="29:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cda0a0 : 0x101cda040) type="273" 
+[Csound] name="LABEL_TOKEN" label="p1"
+[Csound]  loc="30:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] <treenext (0x101cda290 : 0x101cd9d60) type="277" 
+[Csound] name="T_OPCODE" opname="strcat"
+[Csound]  loc="30:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cd9da0 : 0x101cda1f0) type="299" 
+[Csound] name="T_IDENT" varname="SNAmpChn"
+[Csound]  loc="30:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cda350 : 0x101cda2f0) type="273" 
+[Csound] name="LABEL_TOKEN" label="SNAmpChn"
+[Csound]  loc="30:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cda420 : 0x101cda3b0) type="298" 
+[Csound] name="T_STRCONST" str="".NoteAmplitude""
+[Csound]  loc="30:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cda140 : 0x101cda520) type="275" 
+[Csound] name="T_OPCODE0" opname0="puts"
+[Csound]  loc="32:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cda5c0 : 0x101cda250) type="273" 
+[Csound] name="LABEL_TOKEN" label="SNAmpChn"
+[Csound]  loc="32:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cda660 : 0x101cda620) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="33:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cda8a0 : 0x101cda560) type="277" 
+[Csound] name="T_OPCODE" opname="chnget"
+[Csound]  loc="34:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cda840 : 0x101cda760) type="299" 
+[Csound] name="T_IDENT" varname="kNAmpChn"
+[Csound]  loc="34:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cda940 : 0x101cda900) type="273" 
+[Csound] name="LABEL_TOKEN" label="SNAmpChn"
+[Csound]  loc="35:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cdabe0 : 0x101cdab40) type="277" 
+[Csound] name="T_OPCODE" opname="lineto"
+[Csound]  loc="35:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cdab80 : 0x101cda9f0) type="299" 
+[Csound] name="T_IDENT" varname="kAmpChn"
+[Csound]  loc="35:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdac80 : 0x101cdac40) type="273" 
+[Csound] name="LABEL_TOKEN" label="kNAmpChn"
+[Csound]  loc="35:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdad40 : 0x101cdace0) type="302" 
+[Csound] name="NUMBER_TOKEN" value="0.100000"
+[Csound]  loc="35:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cdaa30 : 0x101cdaab0) type="275" 
+[Csound] name="T_OPCODE0" opname0="prints"
+[Csound]  loc="37:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdaf20 : 0x101cdaee0) type="298" 
+[Csound] name="T_STRCONST" str=""kNAmpChn: %f\n""
+[Csound]  loc="37:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdafc0 : 0x101cdaf80) type="273" 
+[Csound] name="LABEL_TOKEN" label="kNAmpChn"
+[Csound]  loc="38:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cdb1b0 : 0x101cdb110) type="277" 
+[Csound] name="T_OPCODE" opname="oscili"
+[Csound]  loc="39:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cdb150 : 0x101cdadf0) type="299" 
+[Csound] name="T_IDENT" varname="asound"
+[Csound]  loc="39:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdb250 : 0x101cdb210) type="273" 
+[Csound] name="LABEL_TOKEN" label="p4"
+[Csound]  loc="39:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdb310 : 0x101cdb2b0) type="273" 
+[Csound] name="LABEL_TOKEN" label="p5"
+[Csound]  loc="39:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdb3d0 : 0x101cdb370) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cdb4f0 : 0x101cdb0b0) type="275" 
+[Csound] name="T_OPCODE0" opname0="outs"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdb700 : 0x0) type="42" 
+[Csound] name="*"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cdb600 : 0x101cdb5c0) type="299" 
+[Csound] name="T_IDENT" varname="asound"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdb6a0 : 0x101cdb660) type="299" 
+[Csound] name="T_IDENT" varname="kAmpChn"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdb8a0 : 0x0) type="42" 
+[Csound] name="*"
+[Csound]  loc="41:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cdb7a0 : 0x101cdb760) type="299" 
+[Csound] name="T_IDENT" varname="asound"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdb840 : 0x101cdb800) type="299" 
+[Csound] name="T_IDENT" varname="kAmpChn"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound] </treenext>
+[Csound] </ast>
+[Csound] Verifying AST
+[Csound] Handling Optional Args for opcode =.r, 1, 1
+[Csound] ep->intypes = >i<
+[Csound] Handling Optional Args for opcode =.r, 1, 1
+[Csound] ep->intypes = >i<
+[Csound] Handling Optional Args for opcode =.r, 1, 1
+[Csound] ep->intypes = >i<
+[Csound] Handling Optional Args for opcode =.r, 1, 1
+[Csound] ep->intypes = >i<
+[Csound] Handling Optional Args for opcode ftgen, 5, 6
+[Csound] ep->intypes = >iiiiim<
+[Csound] Found Statement.
+[Csound] Handling Optional Args for opcode ftgen, 11, 6
+[Csound] ep->intypes = >iiiiim<
+[Csound] Handling Optional Args for opcode ftgen, 11, 6
+[Csound] ep->intypes = >iiiiim<
+[Csound] Found Statement.
+[Csound] Handling Optional Args for opcode ftgen, 11, 6
+[Csound] ep->intypes = >iiiiim<
+[Csound] Handling Optional Args for opcode ftgen, 11, 6
+[Csound] ep->intypes = >iiiiim<
+[Csound] Found Statement.
+[Csound] Handling Optional Args for opcode ftgen, 11, 6
+[Csound] ep->intypes = >iiiiim<
+[Csound] Handling Optional Args for opcode ftgen, 11, 6
+[Csound] ep->intypes = >iiiiim<
+[Csound] Instrument found
+[Csound] Verifying AST
+[Csound] Handling Optional Args for opcode sprintf, 2, 3
+[Csound] ep->intypes = >STN<
+[Csound] Handling Optional Args for opcode strcat, 2, 2
+[Csound] ep->intypes = >SS<
+[Csound] Handling Optional Args for opcode puts, 2, 3
+[Csound] ep->intypes = >Sko<
+[Csound] Handling Optional Args for opcode chnget.k, 1, 1
+[Csound] ep->intypes = >S<
+[Csound] Handling Optional Args for opcode lineto, 2, 2
+[Csound] ep->intypes = >kk<
+[Csound] Handling Optional Args for opcode prints, 2, 2
+[Csound] ep->intypes = >SM<
+[Csound] Handling Optional Args for opcode oscili.a, 3, 4
+[Csound] ep->intypes = >kkjo<
+[Csound] Found Statement.
+[Csound] Found Expression.
+[Csound] New Arg: #a0
+[Csound] Found Expression.
+[Csound] New Arg: #a1
+[Csound] Handling Optional Args for opcode outs, 2, 1
+[Csound] ep->intypes = >y<
+[Csound] Handling Optional Args for opcode ##mul.ak, 2, 2
+[Csound] ep->intypes = >ak<
+[Csound] Handling Optional Args for opcode ##mul.ak, 2, 2
+[Csound] ep->intypes = >ak<
+[Csound] Handling Optional Args for opcode outs, 2, 1
+[Csound] ep->intypes = >y<
+[Csound] [End Verifying AST]
+[Csound] [End Verifying AST]
+[Csound] AST - AFTER VERIFICATION/EXPANSION
+
+[Csound] <ast>
+[Csound] <tree (0x101cd70e0 : 0x101cd6fc0) type="61" 
+[Csound] name="="
+[Csound]  loc="17:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd6f60 : 0x101cd6f20) type="292" 
+[Csound] name="SRATE_TOKEN"
+[Csound]  loc="16:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd7080 : 0x101cd7020) type="301" 
+[Csound] name="INTEGER_TOKEN" value="44100"
+[Csound]  loc="16:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound] </tree>
+[Csound] <treenext (0x101cd7320 : 0x101cd7200) type="61" 
+[Csound] name="="
+[Csound]  loc="19:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd71a0 : 0x101cd7140) type="294" 
+[Csound] name="KSMPS_TOKEN"
+[Csound]  loc="18:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd72c0 : 0x101cd7260) type="301" 
+[Csound] name="INTEGER_TOKEN" value="32"
+[Csound]  loc="18:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd7560 : 0x101cd7440) type="61" 
+[Csound] name="="
+[Csound]  loc="20:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd73e0 : 0x101cd7380) type="295" 
+[Csound] name="NCHNLS_TOKEN"
+[Csound]  loc="19:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd7500 : 0x101cd74a0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="2"
+[Csound]  loc="19:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd77a0 : 0x101cd7680) type="61" 
+[Csound] name="="
+[Csound]  loc="21:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd7620 : 0x101cd75c0) type="297" 
+[Csound] name="ZERODBFS_TOKEN"
+[Csound]  loc="20:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd7740 : 0x101cd76e0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="20:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd7920 : 0x101cd7860) type="277" 
+[Csound] name="T_OPCODE" opname="ftgen"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd78c0 : 0x101cd7800) type="299" 
+[Csound] name="T_IDENT" varname="giSine"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd79e0 : 0x101cd7980) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] <treenext (0x101cd7aa0 : 0x101cd7a40) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd7b60 : 0x101cd7b00) type="273" 
+[Csound] name="LABEL_TOKEN" label="1024"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd7c20 : 0x101cd7bc0) type="273" 
+[Csound] name="LABEL_TOKEN" label="10"
+[Csound]  loc="22:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd7ce0 : 0x101cd7c80) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd7e60 : 0x101cd7da0) type="277" 
+[Csound] name="T_OPCODE" opname="ftgen"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd7e00 : 0x101cd7d40) type="299" 
+[Csound] name="T_IDENT" varname="giTriangle"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd7f20 : 0x101cd7ec0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="2"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] <treenext (0x101cd7fe0 : 0x101cd7f80) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd80a0 : 0x101cd8040) type="273" 
+[Csound] name="LABEL_TOKEN" label="1024"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8160 : 0x101cd8100) type="273" 
+[Csound] name="LABEL_TOKEN" label="7"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8220 : 0x101cd81c0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd82e0 : 0x101cd8280) type="273" 
+[Csound] name="LABEL_TOKEN" label="256"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd83a0 : 0x101cd8340) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8460 : 0x101cd8400) type="273" 
+[Csound] name="LABEL_TOKEN" label="512"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8580 : 0x101c9cb10) type="301" 
+[Csound] name="INTEGER_TOKEN" value="-1"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cd8520 : 0x101cd84c0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8640 : 0x101cd85e0) type="273" 
+[Csound] name="LABEL_TOKEN" label="256"
+[Csound]  loc="23:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8700 : 0x101cd86a0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd8880 : 0x101cd87c0) type="277" 
+[Csound] name="T_OPCODE" opname="ftgen"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd8820 : 0x101cd8760) type="299" 
+[Csound] name="T_IDENT" varname="giSawtooth"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd8940 : 0x101cd88e0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="3"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] <treenext (0x101cd8a00 : 0x101cd89a0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8ac0 : 0x101cd8a60) type="273" 
+[Csound] name="LABEL_TOKEN" label="1024"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8b80 : 0x101cd8b20) type="273" 
+[Csound] name="LABEL_TOKEN" label="7"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8c40 : 0x101cd8be0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8d00 : 0x101cd8ca0) type="273" 
+[Csound] name="LABEL_TOKEN" label="512"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8dc0 : 0x101cd8d60) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8e80 : 0x101cd8e20) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd8fa0 : 0x101c9ca20) type="301" 
+[Csound] name="INTEGER_TOKEN" value="-1"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cd8f40 : 0x101cd8ee0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9060 : 0x101cd9000) type="273" 
+[Csound] name="LABEL_TOKEN" label="512"
+[Csound]  loc="24:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9120 : 0x101cd90c0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound] </treenext>
+[Csound] <treenext (0x101cd92a0 : 0x101cd91e0) type="277" 
+[Csound] name="T_OPCODE" opname="ftgen"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd9240 : 0x101cd9180) type="299" 
+[Csound] name="T_IDENT" varname="giSquare"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd9360 : 0x101cd9300) type="301" 
+[Csound] name="INTEGER_TOKEN" value="4"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] <treenext (0x101cd9420 : 0x101cd93c0) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd94e0 : 0x101cd9480) type="273" 
+[Csound] name="LABEL_TOKEN" label="1024"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd95a0 : 0x101cd9540) type="273" 
+[Csound] name="LABEL_TOKEN" label="7"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9660 : 0x101cd9600) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9720 : 0x101cd96c0) type="273" 
+[Csound] name="LABEL_TOKEN" label="512"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd97e0 : 0x101cd9780) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd98a0 : 0x101cd9840) type="273" 
+[Csound] name="LABEL_TOKEN" label="0"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd99c0 : 0x101cdbde0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="-1"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cd9960 : 0x101cd9900) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9a80 : 0x101cd9a20) type="273" 
+[Csound] name="LABEL_TOKEN" label="512"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cd9ba0 : 0x101cdbe60) type="301" 
+[Csound] name="INTEGER_TOKEN" value="-1"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cd9b40 : 0x101cd9ae0) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="25:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] </treenext>
+[Csound] </treenext>
+[Csound] <treenext (0x101cdb920 : 0x0) type="287" 
+[Csound] name="INSTR_TOKEN"
+[Csound]  loc="27:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] <treeleft (0x101cd9c60 : 0x101cd9c00) type="301" 
+[Csound] name="INTEGER_TOKEN" value="1"
+[Csound]  loc="28:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound] <treeright (0x101cd9f20 : 0x101cd9e60) type="277" 
+[Csound] name="T_OPCODE" opname="sprintf"
+[Csound]  loc="29:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cd9ec0 : 0x101cd9e00) type="299" 
+[Csound] name="T_IDENT" varname="SNAmpChn"
+[Csound]  loc="29:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cd9fe0 : 0x101cd9f80) type="298" 
+[Csound] name="T_STRCONST" str=""%f""
+[Csound]  loc="29:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cda0a0 : 0x101cda040) type="273" 
+[Csound] name="LABEL_TOKEN" label="p1"
+[Csound]  loc="30:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] <treenext (0x101cda290 : 0x101cd9d60) type="277" 
+[Csound] name="T_OPCODE" opname="strcat"
+[Csound]  loc="30:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cd9da0 : 0x101cda1f0) type="299" 
+[Csound] name="T_IDENT" varname="SNAmpChn"
+[Csound]  loc="30:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cda350 : 0x101cda2f0) type="273" 
+[Csound] name="LABEL_TOKEN" label="SNAmpChn"
+[Csound]  loc="30:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cda420 : 0x101cda3b0) type="298" 
+[Csound] name="T_STRCONST" str="".NoteAmplitude""
+[Csound]  loc="30:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cda140 : 0x101cda520) type="275" 
+[Csound] name="T_OPCODE0" opname0="puts"
+[Csound]  loc="32:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cda5c0 : 0x101cda250) type="273" 
+[Csound] name="LABEL_TOKEN" label="SNAmpChn"
+[Csound]  loc="32:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cda660 : 0x101cda620) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="33:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdbca0 : 0x101cdbc40) type="301" 
+[Csound] name="INTEGER_TOKEN" value="0"
+[Csound]  loc="32:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cda8a0 : 0x101cda560) type="277" 
+[Csound] name="T_OPCODE" opname="chnget"
+[Csound]  loc="34:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cda840 : 0x101cda760) type="299" 
+[Csound] name="T_IDENT" varname="kNAmpChn"
+[Csound]  loc="34:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cda940 : 0x101cda900) type="273" 
+[Csound] name="LABEL_TOKEN" label="SNAmpChn"
+[Csound]  loc="35:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cdabe0 : 0x101cdab40) type="277" 
+[Csound] name="T_OPCODE" opname="lineto"
+[Csound]  loc="35:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cdab80 : 0x101cda9f0) type="299" 
+[Csound] name="T_IDENT" varname="kAmpChn"
+[Csound]  loc="35:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdac80 : 0x101cdac40) type="273" 
+[Csound] name="LABEL_TOKEN" label="kNAmpChn"
+[Csound]  loc="35:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdad40 : 0x101cdace0) type="302" 
+[Csound] name="NUMBER_TOKEN" value="0.100000"
+[Csound]  loc="35:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cdaa30 : 0x101cdaab0) type="275" 
+[Csound] name="T_OPCODE0" opname0="prints"
+[Csound]  loc="37:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdaf20 : 0x101cdaee0) type="298" 
+[Csound] name="T_STRCONST" str=""kNAmpChn: %f\n""
+[Csound]  loc="37:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdafc0 : 0x101cdaf80) type="273" 
+[Csound] name="LABEL_TOKEN" label="kNAmpChn"
+[Csound]  loc="38:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cdb1b0 : 0x101cdb110) type="277" 
+[Csound] name="T_OPCODE" opname="oscili"
+[Csound]  loc="39:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cdb150 : 0x101cdadf0) type="299" 
+[Csound] name="T_IDENT" varname="asound"
+[Csound]  loc="39:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdb250 : 0x101cdb210) type="273" 
+[Csound] name="LABEL_TOKEN" label="p4"
+[Csound]  loc="39:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdb310 : 0x101cdb2b0) type="273" 
+[Csound] name="LABEL_TOKEN" label="p5"
+[Csound]  loc="39:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdb3d0 : 0x101cdb370) type="273" 
+[Csound] name="LABEL_TOKEN" label="1"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdc080 : 0x101cdc020) type="301" 
+[Csound] name="INTEGER_TOKEN" value="0"
+[Csound]  loc="39:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cdc2c0 : 0x101cdc330) type="277" 
+[Csound] name="T_OPCODE" opname="##mul"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cdc370 : 0x101cdc3d0) type="299" 
+[Csound] name="T_IDENT" varname="#a0"
+[Csound]  loc="0:**unknown**">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdb600 : 0x101cdb5c0) type="299" 
+[Csound] name="T_IDENT" varname="asound"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdb6a0 : 0x101cdb660) type="299" 
+[Csound] name="T_IDENT" varname="kAmpChn"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cdc570 : 0x101cdc600) type="277" 
+[Csound] name="T_OPCODE" opname="##mul"
+[Csound]  loc="41:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeleft (0x101cdc640 : 0x101cdc6a0) type="299" 
+[Csound] name="T_IDENT" varname="#a1"
+[Csound]  loc="0:**unknown**">
+[Csound]  
+[Csound]  
+[Csound] </treeleft>
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdb7a0 : 0x101cdb760) type="299" 
+[Csound] name="T_IDENT" varname="asound"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdb840 : 0x101cdb800) type="299" 
+[Csound] name="T_IDENT" varname="kAmpChn"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] <treenext (0x101cdb4f0 : 0x101cdb0b0) type="275" 
+[Csound] name="T_OPCODE0" opname0="outs"
+[Csound]  loc="40:/Users/dejean/Developer/personal/projects/haxe/luxe-template/bin/mac64/luxe-template.app/Contents/MacOS/./../Resources/csound/modiqus.csd">
+[Csound]  
+[Csound]  
+[Csound] <treeright (0x101cdb700 : 0x101cdc180) type="299" 
+[Csound] name="T_IDENT" varname="#a0"
+[Csound]  loc="0:**unknown**">
+[Csound]  
+[Csound]  
+[Csound] </treeright>
+[Csound]  
+[Csound]  
+[Csound] <treenext (0x101cdb8a0 : 0x101cdc430) type="299" 
+[Csound] name="T_IDENT" varname="#a1"
+[Csound]  loc="0:**unknown**">
+[Csound]  
+[Csound]  
+[Csound] </treenext>
+[Csound]  
+[Csound] </treenext>
+[Csound] </treenext>
+[Csound] </ast>
+[Csound] In INSTR 0: =
+[Csound] In INSTR 0: =
+[Csound] In INSTR 0: =
+[Csound] In INSTR 0: =
+[Csound] In INSTR 0: ftgen
+[Csound] create_opcode: Found node for opcode ftgen
+[Csound] In INSTR 0: ftgen
+[Csound] create_opcode: Found node for opcode ftgen
+[Csound] In INSTR 0: ftgen
+[Csound] create_opcode: Found node for opcode ftgen
+[Csound] In INSTR 0: ftgen
+[Csound] create_opcode: Found node for opcode ftgen
+[Csound] create_instrument: instr num 1
+[Csound] create_opcode: Found node for opcode sprintf
+[Csound] create_opcode: Found node for opcode strcat
+[Csound] create_opcode: Found node for opcode puts
+[Csound] create_opcode: Found node for opcode chnget
+[Csound] create_opcode: Found node for opcode lineto
+[Csound] create_opcode: Found node for opcode prints
+[Csound] create_opcode: Found node for opcode oscili
+[Csound] create_opcode: Found node for opcode ##mul
+[Csound] create_opcode: Found node for opcode ##mul
+[Csound] create_opcode: Found node for opcode outs
+[Csound] Elapsed time at end of orchestra compile: real: 0.006s, CPU: 0.006s
+[Csound] sorting score ...
+[Csound] 	... done
+[Csound] Elapsed time at end of score sort: real: 0.006s, CPU: 0.006s
+[Csound] --Csound version 6.07 (double samples) Aug 27 2016
+[Csound] graphics suppressed, ascii substituted
+[Csound] 0dBFS level = 1.0
+[Csound] ftable 1:
+[Csound] ftable 1:	1024 points, scalemax 1.000
+[Csound]                .-''''''-._
+[Csound]             _-'           '.
+[Csound]           _-                '.
+[Csound]          -                    '_
+[Csound]        .'                       -
+[Csound]       -                          '_
+[Csound]     _'                             .
+[Csound]    .                                -
+[Csound]   -                                  '_
+[Csound] _'_____________________________________._______________________________________
+[Csound]                                         -                                     .
+[Csound]                                          -                                   -
+[Csound]                                           '_                               _'
+[Csound]                                             .                             .
+[Csound]                                              -                           -
+[Csound]                                               '.                       _'
+[Csound]                                                 -_                    -
+[Csound]                                                   -_                .'
+[Csound]                                                     -_           _.'
+[Csound]                                                       '-._____..'
+[Csound] ftable 2:
+[Csound] ftable 2:	1024 points, scalemax 1.000
+[Csound]                   _-'.
+[Csound]                 _-    '.
+[Csound]               _-        '.
+[Csound]             _-            '.
+[Csound]           _-                '.
+[Csound]         _-                    '.
+[Csound]       _-                        '_
+[Csound]     _-                            -_
+[Csound]   _-                                -_
+[Csound] _-____________________________________-________________________________________
+[Csound]                                         -_                                   _-
+[Csound]                                           -_                               _-
+[Csound]                                             -_                           _-
+[Csound]                                               -_                       _-
+[Csound]                                                 -_                   _-
+[Csound]                                                   -_               _-
+[Csound]                                                     -_           _-
+[Csound]                                                       -_        -
+[Csound]                                                         -_    .'
+[Csound]                                                           -_.'
+[Csound] ftable 3:
+[Csound] ftable 3:	1024 points, scalemax 1.000
+[Csound]                                     _.-'
+[Csound]                                 _.-'
+[Csound]                             _.-'
+[Csound]                         _.-'
+[Csound]                     _.-'
+[Csound]                 _.-'
+[Csound]             _.-'
+[Csound]         _.-'
+[Csound]     _.-'
+[Csound] _.-'___________________________________________________________________________
+[Csound]                                                                            _.-'
+[Csound]                                                                        _.-'
+[Csound]                                                                    _.-'
+[Csound]                                                                 .-'
+[Csound]                                                             _.-'
+[Csound]                                                         _.-'
+[Csound]                                                     _.-'
+[Csound]                                                 _.-'
+[Csound]                                             _.-'
+[Csound]                                         _.-'
+[Csound] ftable 4:
+[Csound] ftable 4:	1024 points, scalemax 1.000
+[Csound] ________________________________________
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] _______________________________________________________________________________
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound] 
+[Csound]                                         _______________________________________
+[Csound] orch now loaded
+[Csound] audio buffered in 1024 sample-frame blocks
+[Csound] ==========================================================
+[Csound] AuHAL Module: found 4 output device(s):
+[Csound] 1: Built-in Output (2 channels) 
+[Csound] 2: Soundflower (2ch) (2 channels) 
+[Csound] 3: Soundflower (64ch) (64 channels) 
+[Csound] 4: Multi-Output Device (2 channels) 
+[Csound] selected output device: Built-in Output 
+[Csound] ***** AuHAL module: output device open with 1024 buffer frames
+[Csound] ==========================================================
+[Csound] writing 2048 sample blks of 64-bit floats to dac 
+[Csound] SECTION 1:
+Main.hx:91:      i / main / Main w: 160
+Main.hx:92:      i / main / Main h: 144
+Main.hx:93:      i / main / Screen width:160 1280
+Main.hx:94:      i / main / Screen height: 144 1152
+Scene.hx:107:     d / scene / default scene / adding background_camera with id : 1S9ilF
+Scene.hx:107:     d / scene / default scene / adding foreground_camera with id : 131ldV
+MiosisPhysicsEngine.hx:36: d / miosisphysicsengine / ---------- MiosisPhysicsEngine.new ----------
+Entity.hx:1202:    d / entity / >>  fade_overlay_sprite calling set parent to default camera
+Entity.hx:1039:    d / entity / default camera / add child / fade_overlay_sprite
+Entity.hx:1047:    d / entity / default camera / add child fade_overlay_sprite being parented, but not from a scene
+FadeOverlay.hx:14: d / fadeoverlay / ---------- FadeOverlay.new ----------
+Components.hx:44: d / components /     entity fade_overlay_sprite added component fade, now at 1 components
+Components.hx:45: d / components /     entity fade_overlay_sprite added component, calling added() on fade
+FadeOverlay.hx:30: d / fadeoverlay / ---------- FadeOverlay.init ----------
+Load.hx:41:      d / load / ---------- Load.new ----------
+BaseState.hx:24: d / basestate / ---------- BaseState.new ----------
+States.hx:186:    d / states / states / adding a state called load, now at 1 states
+Splash.hx:19:    d / splash / ---------- Splash.new ----------
+BaseState.hx:24: d / basestate / ---------- BaseState.new ----------
+States.hx:186:    d / states / states / adding a state called splash, now at 2 states
+Game.hx:48:      d / game / ---------- GameState.new ----------
+BaseState.hx:24: d / basestate / ---------- BaseState.new ----------
+States.hx:186:    d / states / states / adding a state called game, now at 3 states
+Synth.hx:21:     d / synth / ---------- Synth.new ----------
+BaseState.hx:24: d / basestate / ---------- BaseState.new ----------
+States.hx:186:    d / states / states / adding a state called synth, now at 4 states
+States.hx:328:    d / states / found state named splash, calling enter
+Splash.hx:27:    d / splash / ---------- Splash.onenter ----------
+BaseState.hx:49: d / basestate / ---------- BaseState.onenter ----------
+States.hx:333:    d / states / called enter on splash, now at 1 active_states
+FadeOverlay.hx:38: d / fadeoverlay / ---------- FadeOverlay.fade_in ----------
+Main.hx:199:      d / main / ---------- Main.on_fade_in_done ----------
+Main.hx:202:      d / main / Splash
+Splash.hx:53:    d / splash / ---------- Splash.post_fade_in ----------
+Scene.hx:107:     d / scene / default scene / adding miosis_m with id : 1CS7dx
+Scene.hx:107:     d / scene / default scene / adding miosis_i1 with id : 1kekx6
+Scene.hx:107:     d / scene / default scene / adding miosis_o with id : 17JC1s
+Scene.hx:107:     d / scene / default scene / adding miosis_s with id : KadsT
+Scene.hx:107:     d / scene / default scene / adding miosis_i2 with id : 5hH2G
+Scene.hx:107:     d / scene / default scene / adding miosis_s2 with id : pTIMe
+LetterOAnimation.hx:11: d / letteroanimation / ---------- LetterOAnimation.new ----------
+Components.hx:44: d / components /     entity miosis_o added component anim, now at 1 components
+Components.hx:45: d / components /     entity miosis_o added component, calling added() on anim
+Entity.hx:286:    d / entity / calling init on miosis_m
+Entity.hx:286:    d / entity / calling init on foreground_camera
+Entity.hx:286:    d / entity / calling init on miosis_o
+LetterOAnimation.hx:27: d / letteroanimation / ---------- LetterOAnimation.init ----------
+Entity.hx:286:    d / entity / calling init on miosis_s2
+Entity.hx:286:    d / entity / calling init on default camera
+Entity.hx:286:    d / entity / calling init on fade_overlay_sprite
+Entity.hx:286:    d / entity / calling init on miosis_i1
+Entity.hx:286:    d / entity / calling init on background_camera
+Entity.hx:286:    d / entity / calling init on miosis_s
+Entity.hx:286:    d / entity / calling init on miosis_i2
+Entity.hx:318:    d / entity / calling reset on default camera
+Entity.hx:318:    d / entity / calling reset on fade_overlay_sprite
+Entity.hx:336:    d / entity /          parent default camera calling reset on child fade_overlay_sprite
+Entity.hx:318:    d / entity / calling reset on background_camera
+Entity.hx:318:    d / entity / calling reset on foreground_camera
+Entity.hx:318:    d / entity / calling reset on miosis_m
+Entity.hx:318:    d / entity / calling reset on miosis_i1
+Entity.hx:318:    d / entity / calling reset on miosis_o
+Entity.hx:318:    d / entity / calling reset on miosis_s
+Entity.hx:318:    d / entity / calling reset on miosis_i2
+Entity.hx:318:    d / entity / calling reset on miosis_s2
+Splash.hx:134:    d / splash / ---------- Splash.on_anim_done ----------
+Main.hx:172:      d / main / ---------- Main.on_change_state, go to state: load----------
+FadeOverlay.hx:45: d / fadeoverlay / ---------- FadeOverlay.fade_out ----------
+Main.hx:208:      d / main / ---------- Main.on_fade_out_done ----------
+Scene.hx:169:     d / scene / default scene / empty
+Entity.hx:353:    d / entity / destroy miosis_m with 0 children and 0 components / 1CS7dx
+Scene.hx:140:     d / scene / default scene / removing miosis_m with id : 1CS7dx
+Entity.hx:353:    d / entity / destroy foreground_camera with 0 children and 0 components / 131ldV
+Scene.hx:140:     d / scene / default scene / removing foreground_camera with id : 131ldV
+Entity.hx:353:    d / entity / destroy miosis_o with 0 children and 1 components / 17JC1s
+LetterOAnimation.hx:37: d / letteroanimation / ---------- LetterOAnimation.onremoved ----------
+LetterOAnimation.hx:42: d / letteroanimation / ---------- LetterOAnimation.ondestroy ----------
+Scene.hx:140:     d / scene / default scene / removing miosis_o with id : 17JC1s
+Entity.hx:353:    d / entity / destroy miosis_s2 with 0 children and 0 components / pTIMe
+Scene.hx:140:     d / scene / default scene / removing miosis_s2 with id : pTIMe
+Entity.hx:353:    d / entity / destroy miosis_i1 with 0 children and 0 components / 1kekx6
+Scene.hx:140:     d / scene / default scene / removing miosis_i1 with id : 1kekx6
+Entity.hx:353:    d / entity / destroy background_camera with 0 children and 0 components / 1S9ilF
+Scene.hx:140:     d / scene / default scene / removing background_camera with id : 1S9ilF
+Entity.hx:353:    d / entity / destroy miosis_s with 0 children and 0 components / KadsT
+Scene.hx:140:     d / scene / default scene / removing miosis_s with id : KadsT
+Entity.hx:353:    d / entity / destroy miosis_i2 with 0 children and 0 components / 5hH2G
+Scene.hx:140:     d / scene / default scene / removing miosis_i2 with id : 5hH2G
+Resource.hx:62:  d / resource / destroy / assets/img/logo/miosis_m.png  / ref 0
+Resource.hx:62:  d / resource / destroy / assets/img/logo/miosis_i.png  / ref 0
+Resource.hx:62:  d / resource / destroy / assets/img/logo/miosis_s.png  / ref 0
+Resource.hx:62:  d / resource / destroy / assets/img/logo/miosis_o.png  / ref 0
+States.hx:344:    d / states / current state was valid, leaving current state : splash (true)
+States.hx:345:    d / states / currently at 1 active_states
+Splash.hx:37:    d / splash / ---------- Splash.onleave ----------
+States.hx:349:    d / states / removed splash, now at 0 active_states
+States.hx:328:    d / states / found state named load, calling enter
+Load.hx:80:      d / load / ---------- Load.onenter ----------
+Scene.hx:107:     d / scene / default scene / adding background with id : 1VUgKw
+Scene.hx:118:     d / scene / adding a delayed entity to init list background
+Scene.hx:123:     d / scene / adding a delayed entity to reset list background
+Scene.hx:107:     d / scene / default scene / adding bar with id : 2EqqhA
+Scene.hx:118:     d / scene / adding a delayed entity to init list bar
+Scene.hx:123:     d / scene / adding a delayed entity to reset list bar
+Scene.hx:107:     d / scene / default scene / adding border with id : cbceJ
+Scene.hx:118:     d / scene / adding a delayed entity to init list border
+Scene.hx:123:     d / scene / adding a delayed entity to reset list border
+Resources.hx:203: d / resources / json / loading / assets/json/parcel/parcel_synth.json
+BaseState.hx:49: d / basestate / ---------- BaseState.onenter ----------
+States.hx:333:    d / states / called enter on load, now at 1 active_states
+FadeOverlay.hx:38: d / fadeoverlay / ---------- FadeOverlay.fade_in ----------
+Entity.hx:425:    d / entity /  calling update AFTER DESTROYED on miosis_s2 / null
+Entity.hx:425:    d / entity /  calling update AFTER DESTROYED on miosis_i1 / null
+Entity.hx:425:    d / entity /  calling update AFTER DESTROYED on background_camera / null
+Entity.hx:425:    d / entity /  calling update AFTER DESTROYED on miosis_s / null
+Entity.hx:425:    d / entity /  calling update AFTER DESTROYED on miosis_i2 / null
+Load.hx:169:      d / load / ---------- Load.json_load_failed ----------
+Load.hx:205:      d / load / ---------- Load.set_progress ----------
+Main.hx:172:      d / main / ---------- Main.on_change_state, go to state: synth----------
+FadeOverlay.hx:45: d / fadeoverlay / ---------- FadeOverlay.fade_out ----------
+Scene.hx:526:     d / scene / delayed entities in scene will init/reset now! 3 / 3
+Scene.hx:533:     d / scene / 	 handling late entity init background
+Entity.hx:286:    d / entity / calling init on background
+Scene.hx:533:     d / scene / 	 handling late entity init bar
+Entity.hx:286:    d / entity / calling init on bar
+Scene.hx:533:     d / scene / 	 handling late entity init border
+Entity.hx:286:    d / entity / calling init on border
+Scene.hx:546:     d / scene / 	 handling late entity reset background
+Entity.hx:318:    d / entity / calling reset on background
+Scene.hx:546:     d / scene / 	 handling late entity reset bar
+Entity.hx:318:    d / entity / calling reset on bar
+Scene.hx:546:     d / scene / 	 handling late entity reset border
+Entity.hx:318:    d / entity / calling reset on border
+Main.hx:208:      d / main / ---------- Main.on_fade_out_done ----------
+Scene.hx:169:     d / scene / default scene / empty
+Entity.hx:353:    d / entity / destroy bar with 0 children and 0 components / 2EqqhA
+Scene.hx:140:     d / scene / default scene / removing bar with id : 2EqqhA
+Entity.hx:353:    d / entity / destroy border with 0 children and 0 components / cbceJ
+Scene.hx:140:     d / scene / default scene / removing border with id : cbceJ
+Entity.hx:353:    d / entity / destroy background with 0 children and 0 components / 1VUgKw
+Scene.hx:140:     d / scene / default scene / removing background with id : 1VUgKw
+States.hx:344:    d / states / current state was valid, leaving current state : load (true)
+States.hx:345:    d / states / currently at 1 active_states
+Load.hx:140:      d / load / ---------- Load.onleave ----------
+States.hx:349:    d / states / removed load, now at 0 active_states
+States.hx:328:    d / states / found state named synth, calling enter
+Synth.hx:30:     d / synth / ---------- Synth.onenter ----------
+Circle.hx:15:    d / circle / ---------- Circle.new ----------
+Scene.hx:107:     d / scene / default scene / adding circle with id : Km4qy
+Scene.hx:118:     d / scene / adding a delayed entity to init list circle
+Scene.hx:123:     d / scene / adding a delayed entity to reset list circle
+ShapeController.hx:34: d / shapecontroller / ---------- ShapeController.new ----------
+Components.hx:44: d / components /     entity circle_0 added component synth_controller_0, now at 1 components
+Components.hx:45: d / components /     entity circle_0 added component, calling added() on synth_controller_0
+ShapeController.hx:66: d / shapecontroller / ---------- ShapeController.onadded ----------
+[Csound]   rtevent:	   T  3.251 TT  3.251 M:Circle.hx:15:    d / circle / ---------- Circle.new ----------
+
+[Csound]   0.00000
+[Csound]   0.00000
+[Csound] 
+[Csound] new alloc for instr 1:
+Scene.hx:107:     d / scene / default scene / adding circle with id : tKfKQ
+Scene.hx:118:     d / scene / adding a delayed entity to init list circle
+Scene.hx:123:     d / scene / adding a delayed entity to reset list circle
+ShapeController.hx:34: d / shapecontroller / ---------- ShapeController.new ----------
+[Csound] 1.000000.NoteAmplitude
+[Csound] kNAmpChn: 0.000000
+
+Components.hx:44: d / components /     entity circle_1 added component synth_controller_1, now at 1 components
+Components.hx:45: d / components /     entity circle_1 added component, calling added() on synth_controller_1
+[Csound] ShapeController.hx:66: d / shapecontroller / ---------- ShapeController.onadded ----------
+  rtevent:	   T  3.252 TT  3.252 M:Circle.hx:15:    d / circle / ---------- Circle.new ----------
+
+[Csound]   0.00000
+[Csound]   0.00000
+[Csound] 
+[Csound] new alloc for instr 1:
+[Csound] 1.000001.NoteAmplitude
+[Csound] kNAmpChn: 0.000000
+Scene.hx:107:     d / scene / default scene / adding circle with id : 2H1Uqi
+
+Scene.hx:118:     d / scene / adding a delayed entity to init list circle
+Scene.hx:123:     d / scene / adding a delayed entity to reset list circle
+ShapeController.hx:34: d / shapecontroller / ---------- ShapeController.new ----------
+Components.hx:44: d / components /     entity circle_2 added component synth_controller_2, now at 1 components
+[Csound] Components.hx:45: d / components /     entity circle_2 added component, calling added() on synth_controller_2
+  rtevent:	   T  3.267 TT  3.267 M:ShapeController.hx:66: d / shapecontroller / ---------- ShapeController.onadded ----------
+
+Circle.hx:15:    d / circle / ---------- Circle.new ----------
+[Csound]   0.00000
+[Csound]   0.00000
+[Csound] 
+[Csound] new alloc for instr 1:
+Scene.hx:107:     d / scene / default scene / adding circle with id : j9wTD
+Scene.hx:118:     d / scene / adding a delayed entity to init list circle
+[Csound] Scene.hx:123:     d / scene / adding a delayed entity to reset list circle
+1.000002.NoteAmplitude
+ShapeController.hx:34: d / shapecontroller / ---------- ShapeController.new ----------
+[Csound] kNAmpChn: 0.000000
+
+Components.hx:44: d / components /     entity circle_3 added component synth_controller_3, now at 1 components
+Components.hx:45: d / components /     entity circle_3 added component, calling added() on synth_controller_3
+[Csound] ShapeController.hx:66: d / shapecontroller / ---------- ShapeController.onadded ----------
+  rtevent:	   T  3.267 TT  3.267 M:BaseState.hx:49: d / basestate / ---------- BaseState.onenter ----------
+
+States.hx:333:    d / states / called enter on synth, now at 1 active_states
+[Csound] FadeOverlay.hx:38: d / fadeoverlay / ---------- FadeOverlay.fade_in ----------
+  0.00000
+[Csound] Scene.hx:526:     d / scene / delayed entities in scene will init/reset now! 4 / 4
+  0.00000Scene.hx:533:     d / scene / 	 handling late entity init circle_0
+
+Entity.hx:286:    d / entity / calling init on circle_0
+[Csound] ShapeController.hx:58: d / shapecontroller / ---------- ShapeController.init ----------
+
+Scene.hx:533:     d / scene / 	 handling late entity init circle_1
+[Csound] Entity.hx:286:    d / entity / calling init on circle_1
+new alloc for instr 1:
+ShapeController.hx:58: d / shapecontroller / ---------- ShapeController.init ----------
+Scene.hx:533:     d / scene / 	 handling late entity init circle_2
+Entity.hx:286:    d / entity / calling init on circle_2
+ShapeController.hx:58: d / shapecontroller / ---------- ShapeController.init ----------
+Scene.hx:533:     d / scene / 	 handling late entity init circle_3
+Entity.hx:286:    d / entity / calling init on circle_3
+ShapeController.hx:58: d / shapecontroller / ---------- ShapeController.init ----------
+Scene.hx:546:     d / scene / 	 handling late entity reset circle_0
+Entity.hx:318:    d / entity / calling reset on circle_0
+Scene.hx:546:     d / scene / 	 handling late entity reset circle_1
+Entity.hx:318:    d / entity / calling reset on circle_1
+Scene.hx:546:     d / scene / 	 handling late entity reset circle_2
+[Csound] Entity.hx:318:    d / entity / calling reset on circle_2
+1.000003.NoteAmplitude
+Scene.hx:546:     d / scene / 	 handling late entity reset circle_3
+[Csound] Entity.hx:318:    d / entity / calling reset on circle_3
+kNAmpChn: 0.000000
+
+Main.hx:199:      d / main / ---------- Main.on_fade_in_done ----------
+Main.hx:202:      d / main / Synth
+Synth.hx:158:     d / synth / ---------- Synth.post_fade_in ----------
+Engine.hx:185:    i / luxe / shutting down...
+Scene.hx:403:     d / scene / destroy / `default scene` with 5 entities / xCCq1
+Entity.hx:353:    d / entity / destroy default camera with 1 children and 0 components / gbh0z
+Entity.hx:353:    d / entity / destroy fade_overlay_sprite with 0 children and 1 components / MFhyq
+FadeOverlay.hx:52: d / fadeoverlay / ---------- FadeOverlay.onremoved ----------
+FadeOverlay.hx:53: d / fadeoverlay / luxe Entity: fade_overlay_sprite / 1 components:[fade] / id: MFhyq
+FadeOverlay.hx:58: d / fadeoverlay / ---------- FadeOverlay.ondestroy ----------
+FadeOverlay.hx:59: d / fadeoverlay / luxe Entity: fade_overlay_sprite / 1 components:[fade] / id: MFhyq
+Scene.hx:140:     d / scene / default scene / removing default camera with id : gbh0z
+Entity.hx:353:    d / entity / destroy circle_1 with 0 children and 1 components / tKfKQ
+Scene.hx:140:     d / scene / default scene / removing circle_1 with id : tKfKQ
+Entity.hx:353:    d / entity / destroy circle_3 with 0 children and 1 components / j9wTD
+Scene.hx:140:     d / scene / default scene / removing circle_3 with id : j9wTD
+Synth.hx:151:     d / synth / ---------- Synth.onleave ----------
+Input.hx:189:     d / input / 	 input shut down.
+Audio.hx:125:     d / audio / 	 audio shut down.
+Timer.hx:28:     d / timer / 	 timer shut down.
+Debug.hx:453:     d / debug / 	 debug shut down.
+Engine.hx:215:    i / luxe / goodbye.
+Snow.hx:237:      i / snow / goodbye.
+[Csound] inactive allocs returned to freespace
+[Csound] end of score.		   overall amps:
+[Csound]   1.22717
+[Csound]   1.22717
+[Csound] 
+	   overall samples out of range:[Csound]      9946
+[Csound]      9946
+[Csound] 
+0 errors in performance
+[Csound] Elapsed time at end of performance: real: 42.582s, CPU: 2.946s
+[Csound] AuHAL module: device closed
+[Csound] 1836 2048 sample blks of 64-bit floats written to dac

@@ -81,7 +81,9 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.ready ----------");
 
+        Modiqus.set_log_level(MQ_LOG_LEVEL_DEBUG);
         Modiqus.start(true);
+        modiqus.Modiqus.setControlChannel('1.000001.NoteAmplitude', 0.9);
 
         // Set background color
         Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_2_DARK);

@@ -97,6 +97,7 @@ class ShapeController extends Component
             // log(_circles[i].scale);
             var amplitude = (_visual.scale.x - _scale_min) / (_scale_max - _scale_min);
             amplitude = Maths.clamp(amplitude, 0, 1);
+            amplitude *= 0.5;
             // log("Scale : " + _circles[i].scale);                                
             // log("Amplitude : " + amplitude); 
 
