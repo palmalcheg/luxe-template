@@ -14,17 +14,14 @@
       package : 'luxetemplate'
     },
     build : {
-      defines:['MACOSX_VER=10.7'],
+      defines:['MACOSX_VER=10.12'],
       flags:['--macro luxe.Log.level(2)'],
       dependencies : {
         luxe : '*',
-        mint : '*',
-        linc_modiqus:'*'
+        mint : '*'
       }
     },
     files : {
-      csound : 'csound',
-      frameworks : 'Frameworks => ../Frameworks',
       assets : 'assets/'
     }
   }

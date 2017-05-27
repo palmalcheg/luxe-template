@@ -29,10 +29,7 @@ import luxetemplate.state.BaseState;
 import luxetemplate.state.Load;
 import luxetemplate.state.Game;
 import luxetemplate.state.Splash;
-import luxetemplate.state.Synth;
 import luxetemplate.system.MiosisPhysicsEngine;
-
-import modiqus.Modiqus;
 
 class Main extends luxe.Game 
 {
@@ -80,10 +77,6 @@ class Main extends luxe.Game
     override function ready() 
     {
         _debug("---------- Main.ready ----------");
-
-        Modiqus.set_log_level(MQ_LOG_LEVEL_DEBUG);
-        Modiqus.start(true);
-        modiqus.Modiqus.setControlChannel('1.000001.NoteAmplitude', 0.9);
 
         // Set background color
         Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_2_DARK);
@@ -159,7 +152,7 @@ class Main extends luxe.Game
         load_state = states.add(new Load());
         states.add(new Splash());
         states.add(new Game());
-        states.add(new Synth());        
+
         next_state = "splash";
         states.set(next_state);
 
@@ -226,7 +219,7 @@ class Main extends luxe.Game
             }
 
             // TODO: Set filename according to some config file
-            load_state.state_to_load = 'synth';
+            load_state.state_to_load = 'game';
         }
 
         states.set(next_state);
