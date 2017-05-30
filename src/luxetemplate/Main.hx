@@ -27,9 +27,8 @@ import miosis.ui.MiosisCanvas;
 import luxetemplate.component.FadeOverlay;
 import luxetemplate.state.BaseState;
 import luxetemplate.state.Load;
-import luxetemplate.state.Game;
+import luxetemplate.state.Level1;
 import luxetemplate.state.Splash;
-import luxetemplate.system.MiosisPhysicsEngine;
 
 class Main extends luxe.Game 
 {
@@ -38,7 +37,6 @@ class Main extends luxe.Game
     public static var focus: Focus;
     public static var background_batcher: phoenix.Batcher;    
     public static var foreground_batcher: phoenix.Batcher;
-    public static var physics:MiosisPhysicsEngine; 
 
     public static var w:Int = -1;
     public static var h:Int = -1;
@@ -64,11 +62,13 @@ class Main extends luxe.Game
         config.window.width = w * cast Luxe.snow.config.user.game_scale;
         config.window.height = h * cast Luxe.snow.config.user.game_scale;
 
+        config.window.title = Luxe.snow.config.user.window.title;
+
         // Just load assets for the splash screen
-        config.preload.textures.push({ id : "assets/img/logo/miosis_m.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.textures.push({ id : "assets/img/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.textures.push({ id : "assets/img/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.textures.push({ id : "assets/img/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : "assets/textures/logo/miosis_m.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : "assets/textures/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : "assets/textures/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : "assets/textures/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
         config.preload.jsons.push({ id : "assets/json/animation/miosis_anim.json" });
 
         return config;
@@ -127,11 +127,6 @@ class Main extends luxe.Game
 
         focus = new Focus(canvas);
 
-        // Set up custom physics
-        physics = Luxe.physics.add_engine(MiosisPhysicsEngine);
-        physics.draw = false;
-        physics.player_collider = Polygon.rectangle(0,0,8,8);
-
         // Set up fade overlay
         fade_overlay_sprite = new Sprite({
             batcher: foreground_batcher,
@@ -151,7 +146,7 @@ class Main extends luxe.Game
         states = new States({ name:'states' });
         load_state = states.add(new Load());
         states.add(new Splash());
-        states.add(new Game());
+        states.add(new Level1());
 
         next_state = "splash";
         states.set(next_state);
@@ -219,7 +214,7 @@ class Main extends luxe.Game
             }
 
             // TODO: Set filename according to some config file
-            load_state.state_to_load = 'game';
+            load_state.state_to_load = 'level1';
         }
 
         states.set(next_state);

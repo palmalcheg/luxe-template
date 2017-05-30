@@ -27,7 +27,7 @@ class FadeOverlay extends luxe.Component
 
     override function onadded() 
     {
-        _debug("---------- FadeOverlay.init ----------");
+        _debug("---------- FadeOverlay.onadded ----------");
 
         _sprite = cast entity;
         _sprite.events.fire('fade_overlay_ready');        

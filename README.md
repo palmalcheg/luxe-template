@@ -1,2 +1,2 @@
 # luxe-template
-My Luxe template
+My template for games made with the Luxe Engine

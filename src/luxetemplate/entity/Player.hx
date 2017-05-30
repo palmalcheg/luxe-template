@@ -8,7 +8,7 @@ class Player extends Sprite
 {
     public function new() 
     {   
-        _debug("---------- Load.onleave ----------");
+        _debug("---------- Player.new ----------");
 
     	super({
     		name: 'player',

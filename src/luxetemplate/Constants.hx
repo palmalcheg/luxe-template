@@ -4,16 +4,6 @@ import luxe.Color;
 
 class Constants
 {
-
-	public static function clear(arr:Array<Dynamic>)
-	{
-#if (cpp||php)
-		arr.splice(0, arr.length);
-#else
-		untyped arr.length = 0;
-#end
-	}
-
 	// Basic colors
 	public static inline var COLOR_BLACK:Int = 0x000000;
 	public static inline var COLOR_WHITE:Int = 0xffffff;
