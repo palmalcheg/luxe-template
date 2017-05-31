@@ -24,6 +24,7 @@ import snow.api.Promise;
 
 import miosis.ui.MiosisCanvas;
 
+import luxetemplate.Constants;
 import luxetemplate.component.FadeOverlay;
 import luxetemplate.state.BaseState;
 import luxetemplate.state.Load;
@@ -35,7 +36,8 @@ class Main extends luxe.Game
     public static var mint_renderer:LuxeMintRender;
     public static var canvas:MiosisCanvas;
     public static var focus: Focus;
-    public static var background_batcher: phoenix.Batcher;    
+    public static var background_batcher: phoenix.Batcher;  
+    public static var ui_batcher: phoenix.Batcher;    
     public static var foreground_batcher: phoenix.Batcher;
 
     public static var w:Int = -1;
@@ -52,19 +54,26 @@ class Main extends luxe.Game
 
     override function config(config:luxe.GameConfig) 
     {
-        log('config loaded as ' + Luxe.snow.config.user);
+        log('Config loaded as ' + Luxe.snow.config.user);
+        log('User config param : ' + Luxe.snow.config.user.game.test);
 
-        game_scale = Luxe.snow.config.user.game_scale;
+        var windowConfig = Luxe.snow.config.user.window;
+        var userConfig = Luxe.snow.config.user.game;
 
-        w = Luxe.snow.config.user.window.width;
-        h = Luxe.snow.config.user.window.height;
+        w = windowConfig.width;
+        h = windowConfig.height;
 
-        config.window.width = w * cast Luxe.snow.config.user.game_scale;
-        config.window.height = h * cast Luxe.snow.config.user.game_scale;
+        game_scale = windowConfig.scale;
 
-        config.window.title = Luxe.snow.config.user.window.title;
+        config.window.width = w * cast game_scale;
+        config.window.height = h * cast game_scale;
 
-        // Just load assets for the splash screen
+        config.window.title = windowConfig.title;
+        config.window.fullscreen = windowConfig.fullscreen;
+        config.window.resizable = windowConfig.resizable;
+        config.window.borderless = windowConfig.borderless;
+
+        // Load assets for the splash screen
         config.preload.textures.push({ id : "assets/textures/logo/miosis_m.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/textures/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/textures/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
@@ -108,13 +117,19 @@ class Main extends luxe.Game
             camera: background_camera.view
         });
 
+        ui_batcher = Luxe.renderer.create_batcher({
+            layer: 1,
+            name:'ui_batcher',
+            camera: background_camera.view
+        });
+
         foreground_batcher = Luxe.renderer.create_batcher({
             layer: 3,
             name:'foreground_batcher',
             camera: foreground_camera.view
         });
 
-        mint_renderer = new LuxeMintRender({ batcher:foreground_batcher });
+        mint_renderer = new LuxeMintRender({ batcher:ui_batcher });
         
         // Set up Mint canvas
         canvas = new MiosisCanvas({
@@ -140,7 +155,7 @@ class Main extends luxe.Game
         fade_overlay = fade_overlay_sprite.add(new FadeOverlay());
         
         // Subscribe to state change events
-        Luxe.events.listen('change_state', on_change_state);
+        Luxe.events.listen(EventTypes.ChangeState, on_change_state);
 
         // Go to first state
         states = new States({ name:'states' });

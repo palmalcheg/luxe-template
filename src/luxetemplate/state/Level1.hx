@@ -3,11 +3,17 @@ package luxetemplate.state;
 import luxe.Color;
 import luxe.Log.*;
 import luxe.Sprite;
+import luxe.Text;
 import luxe.Vector;
+
+import mint.Button;
+
+import miosis.ui.MiosisMintRendering;
 
 class Level1 extends BaseState 
 {
 	var circle:Sprite;
+    var button:Button;
 
 	public function new() 
 	{
@@ -22,7 +28,32 @@ class Level1 extends BaseState
         _debug("---------- Level1.onenter ----------");
 
 		// Set background color
+
 	    Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_1_LIGHT);
+        button = new Button({
+            parent : Main.canvas, 
+            name : 'testbutton', 
+            text : 'test',
+            rendering : new MiosisMintRendering({ batcher: Main.ui_batcher }),
+            x : 0.1 * Main.w, 
+            y : 0.1 * Main.h, 
+            w : 30, 
+            h : 20
+        });
+
+        var labelRenderer:mint.render.luxe.Label = cast button.label.renderer;
+        Luxe.scene.add(labelRenderer.text);
+
+        var txt:Text = Luxe.scene.get('testbutton.label.text');    
+        log('Text obj : ' + txt);  
+        txt.font = Luxe.resources.font('assets/fonts/justabit/justabit32.fnt');
+        txt.color = new Color().rgb(Constants.COLOR_GB_2_DARK);
+        txt.geom.letter_snapping = true;        
+        txt.geom.texture = txt.font.pages[0];
+        txt.geom.texture.filter_mag = nearest;
+        txt.geom.texture.filter_min = nearest;
+        txt.point_size = 16;
+
                
         super.onenter(_);		
     }

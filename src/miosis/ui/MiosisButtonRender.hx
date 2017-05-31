@@ -28,15 +28,15 @@ class MiosisButtonRender extends Render
         var customRendering:MiosisMintRendering = cast rendering;
 
         log(control.x);
-log(control.y);
-log(control.w);
-log(control.h);        
+        log(control.y);
+        log(control.w);
+        log(control.h);        
 
         visual = new luxe.NineSlice({
             no_scene: true,
             name: control.name + '.visual',
             batcher: customRendering.options.batcher,
-            texture : Luxe.resources.texture('assets/img/ui/button_normal.png'),
+            texture : Luxe.resources.texture('assets/textures/ui/gb_button_normal.png'),
             top : 5, left : 5, right : 5, bottom : 5,
             pos: new Vector(control.x, control.y),
             size: new Vector(control.w, control.h),
@@ -79,14 +79,16 @@ log(control.h);
     {
         _debug("---------- MiosisButtonRender.goto_normal_state ----------");
 
-        var b:Button = cast control;
-        visual.texture = Luxe.resources.texture('assets/img/ui/button_normal.png');        
-
         if (e.button == none) 
         {
             // mouseleave
-            var txt:Text = Luxe.scene.get('testbutton.label.text');
-            txt.color = new Color().rgb(Constants.COLOR_GB_2_DARK);
+            // var txt:Text = Luxe.scene.get('testbutton.label.text');
+            // txt.color = new Color().rgb(Constants.COLOR_GB_2_DARK);
+            visual.texture = Luxe.resources.texture('assets/textures/ui/gb_button_normal.png');        
+        }
+        else
+        {
+            goto_hover_state(null, null);
         }
     }
 
@@ -94,14 +96,15 @@ log(control.h);
     {
         _debug("---------- MiosisButtonRender.goto_hover_state ----------");
 
-        var txt:Text = Luxe.scene.get('testbutton.label.text'); 
-        txt.color = new Color().rgb(Constants.COLOR_GB_2_MEDIUM);
+        visual.texture = Luxe.resources.texture('assets/textures/ui/gb_button_hover.png');
+        // var txt:Text = Luxe.scene.get('testbutton.label.text'); 
+        // txt.color = new Color().rgb(Constants.COLOR_GB_2_MEDIUM);
     }
 
     function goto_pressed_state(e:MouseEvent, c:Control) 
     {
         _debug("---------- MiosisButtonRender.goto_pressed_state ----------");
                 
-        visual.texture = Luxe.resources.texture('assets/img/ui/button_pressed.png');
+        visual.texture = Luxe.resources.texture('assets/textures/ui/gb_button_pressed.png');
     }
 }

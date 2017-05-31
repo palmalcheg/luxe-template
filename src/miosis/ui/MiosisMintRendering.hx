@@ -9,9 +9,6 @@ import mint.Control;
 
 import mint.render.luxe.LuxeMintRender;
 
-import miosis.ui.MiosisSliderControl;
-import miosis.ui.MiosisSliderRender;
-
 class MiosisMintRendering extends LuxeMintRender 
 {
     override function get<T:Control, T1>( type:Class<T>, control:T ) : T1 
@@ -32,8 +29,7 @@ class MiosisMintRendering extends LuxeMintRender
             case mint.Slider:       new mint.render.luxe.Slider(this, cast control);
             case mint.Progress:     new mint.render.luxe.Progress(this, cast control);
             // Custom
-            case Button:                    new MiosisButtonRender(this, cast control);            
-            case MiosisSliderControl:       new MiosisSliderRender(cast this, cast control);            
+            case Button:            new MiosisButtonRender(this, cast control);                       
             case _:                 null;
         }
     }

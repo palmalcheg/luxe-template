@@ -18,7 +18,7 @@ class MiosisCanvas extends mint.Canvas
             //make sure we clean up
         ondestroy.listen(auto_unlisten);
 
-    } //listen
+    }
 
     public function auto_unlisten() 
     {
@@ -34,7 +34,7 @@ class MiosisCanvas extends mint.Canvas
             //no longer try to clean up
         ondestroy.remove(auto_unlisten);
 
-    } //
+    }
 
     function conv_update(dt:Float)  update(dt);
     function conv_render(_)         render();

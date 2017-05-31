@@ -11,6 +11,7 @@ import luxe.resource.Resource;
 
 import snow.api.Promise;
 
+import luxetemplate.Constants;
 import luxetemplate.state.BaseState;
 
 typedef LoadStateOptions = 
@@ -167,15 +168,18 @@ class Load extends BaseState
     function json_load_failed(json:JSONResource) 
     {
         _debug("---------- Load.json_load_failed ----------");
-        set_progress(1);
-        var args = { 
-            state : state_to_load, 
-            fade_in_time : fade_in_time, 
-            fade_out_time : fade_out_time, 
-            parcel : null 
-        };
 
-        Luxe.events.fire('change_state', args);
+        Luxe.shutdown();
+        
+        // set_progress(1);
+        // var args = { 
+        //     state : state_to_load, 
+        //     fade_in_time : fade_in_time, 
+        //     fade_out_time : fade_out_time, 
+        //     parcel : null 
+        // };
+
+        // Luxe.events.fire('change_state', args);
     }
 
     function onprogress(change:ParcelChange ) 
@@ -197,15 +201,22 @@ class Load extends BaseState
             parcel : parcel 
         };
 
-        Luxe.events.fire('change_state', args);
+        Luxe.events.fire(EventTypes.ChangeState, args);
     }
 
     function set_progress(amount:Float) 
     {
         _debug("---------- Load.set_progress ----------");
 
-        if(amount < 0) amount = 0;
-        if(amount > 1) amount = 1;
+        if (amount < 0) 
+        {
+            amount = 0;
+        }
+
+        if (amount > 1)
+        {
+            amount = 1;
+        }
 
         progress_bar.size.x = Math.ceil(width * amount);
     }
