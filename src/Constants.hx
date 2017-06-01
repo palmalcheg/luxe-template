@@ -1,5 +1,3 @@
-package luxetemplate;
-
 import luxe.Color;
 
 @:enum abstract EventTypes(String) to String 

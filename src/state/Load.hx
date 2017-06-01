@@ -1,4 +1,4 @@
-package luxetemplate.state;
+package state;
 
 import luxe.Color;
 import luxe.Log.*;
@@ -11,8 +11,8 @@ import luxe.resource.Resource;
 
 import snow.api.Promise;
 
-import luxetemplate.Constants;
-import luxetemplate.state.BaseState;
+import Constants;
+import state.BaseState;
 
 typedef LoadStateOptions = 
 {

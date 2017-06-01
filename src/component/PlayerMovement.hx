@@ -1,4 +1,4 @@
-package luxetemplate.component;
+package component;
 
 import luxe.Component;
 import luxe.Input;

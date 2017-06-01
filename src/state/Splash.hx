@@ -1,4 +1,4 @@
-package luxetemplate.state;
+package state;
 
 import luxe.Color;
 import luxe.Log.*;
@@ -7,8 +7,8 @@ import luxe.Vector;
 
 import luxe.components.sprite.SpriteAnimation;
 
-import luxetemplate.Constants;
-import luxetemplate.component.LetterOAnimation;
+import Constants;
+import component.LetterOAnimation;
 
 class Splash extends BaseState 
 {

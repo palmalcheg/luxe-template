@@ -1,7 +1,6 @@
-package miosis.ui;
+package ui;
 
 import mint.render.luxe.Convert;
-import luxetemplate.Main;
 
 class MiosisCanvas extends mint.Canvas 
 {

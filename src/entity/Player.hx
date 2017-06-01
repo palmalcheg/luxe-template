@@ -1,4 +1,4 @@
-package luxetemplate.entity;
+package entity;
 
 import luxe.Log.*;
 import luxe.Sprite;

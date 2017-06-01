@@ -1,11 +1,8 @@
-package luxetemplate;
-
 import luxe.Camera;
 import luxe.Color;
 import luxe.Input;
 import luxe.Log.*;
 import luxe.Parcel;
-import luxe.Scene;
 import luxe.Screen.WindowEvent;
 import luxe.Sprite;
 import luxe.States;
@@ -22,14 +19,13 @@ import mint.render.luxe.LuxeMintRender;
 
 import snow.api.Promise;
 
-import miosis.ui.MiosisCanvas;
-
-import luxetemplate.Constants;
-import luxetemplate.component.FadeOverlay;
-import luxetemplate.state.BaseState;
-import luxetemplate.state.Load;
-import luxetemplate.state.Level1;
-import luxetemplate.state.Splash;
+import Constants;
+import component.FadeOverlay;
+import state.BaseState;
+import state.Load;
+import state.Level1;
+import state.Splash;
+import ui.MiosisCanvas;
 
 class Main extends luxe.Game 
 {

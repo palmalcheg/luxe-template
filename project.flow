@@ -1,7 +1,7 @@
 {
   snow : {
     config: {
-      config_path: 'assets/jsons/config/config.json'
+      config_path: 'assets/json/config/config.json'
     }
   },
   project : {
@@ -9,7 +9,7 @@
     version : '1.0.0',
     author : 'miosis',
     app : {
-      main : 'luxetemplate.Main',
+      main : 'Main',
       name : 'luxe-template',
       package : 'luxetemplate'
     },

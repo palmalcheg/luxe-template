@@ -1,4 +1,4 @@
-package miosis.ui;
+package ui;
 
 import luxe.Log.*;
 

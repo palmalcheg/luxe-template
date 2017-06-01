@@ -1,4 +1,4 @@
-package miosis.ui;
+package ui;
 
 import luxe.Color;
 import luxe.Log.*;
@@ -12,9 +12,7 @@ import mint.render.Render;
 import mint.render.Rendering;
 import mint.types.Types.MouseEvent;
 
-import luxetemplate.Constants;
-
-import miosis.ui.MiosisMintRendering;
+import ui.MiosisMintRendering;
 
 class MiosisButtonRender extends Render 
 {

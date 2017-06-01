@@ -1,4 +1,4 @@
-package luxetemplate.state;
+package state;
 
 import luxe.Color;
 import luxe.Log.*;
@@ -8,7 +8,7 @@ import luxe.Vector;
 
 import mint.Button;
 
-import miosis.ui.MiosisMintRendering;
+import ui.MiosisMintRendering;
 
 class Level1 extends BaseState 
 {
