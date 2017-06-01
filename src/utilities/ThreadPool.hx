@@ -1,4 +1,4 @@
-package luxetemplate.utility;
+package utilities;
 
 #if neko
 	import neko.vm.Thread;

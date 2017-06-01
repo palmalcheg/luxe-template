@@ -7,11 +7,11 @@
   project : {
     name : 'luxe-template',
     version : '1.0.0',
-    author : 'miosis',
+    author : 'zollenz',
     app : {
       main : 'Main',
       name : 'luxe-template',
-      package : 'luxetemplate'
+      package : 'is.miosis.luxetemplate'
     },
     build : {
       defines:['MACOSX_VER=10.12'],

@@ -1,11 +1,11 @@
-package state;
+package states;
 
 import luxe.Log.*;
 import luxe.options.StateOptions;
 import luxe.Sprite;
 import luxe.States;
 
-import component.FadeOverlay;
+import components.FadeOverlay;
 
 typedef BaseStateOptions = 
 {

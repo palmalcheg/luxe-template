@@ -8,26 +8,21 @@ import luxe.Sprite;
 import luxe.States;
 import luxe.Vector;
 
-import luxe.collision.shapes.Polygon;
-
 import phoenix.Batcher;
-import phoenix.Texture.FilterType;
 
 import mint.Canvas;
 import mint.focus.Focus;
 import mint.render.luxe.LuxeMintRender;
 
-import snow.api.Promise;
-
-import Constants;
-import component.FadeOverlay;
-import state.BaseState;
-import state.Load;
-import state.Level1;
-import state.Splash;
+import definitions.Enums;
+import components.FadeOverlay;
+import states.BaseState;
+import states.Load;
+import states.Level1;
+import states.Splash;
 import ui.MiosisCanvas;
 
-class Main extends luxe.Game 
+class Main extends luxe.Game  
 {
     public static var mint_renderer:LuxeMintRender;
     public static var canvas:MiosisCanvas;
@@ -84,7 +79,7 @@ class Main extends luxe.Game
         _debug("---------- Main.ready ----------");
 
         // Set background color
-        Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_2_DARK);
+        Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Dark);
 
         log('Main w: ${w}');
         log('Main h: ${h}');
@@ -144,7 +139,7 @@ class Main extends luxe.Game
             parent : Luxe.camera,
             name : 'fade_overlay_sprite',
             size : Luxe.screen.size,
-            color : new Color().rgb(Constants.COLOR_GB_2_DARK),
+            color : new Color().rgb(GameBoyPalette2.Dark),
             centered : false,
             depth : 990
         });     

@@ -1,4 +1,4 @@
-package luxetemplate.utility;
+package utilities;
 
 import luxe.Log.*;
 

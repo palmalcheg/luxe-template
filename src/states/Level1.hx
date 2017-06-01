@@ -1,4 +1,4 @@
-package state;
+package states;
 
 import luxe.Color;
 import luxe.Log.*;
@@ -8,6 +8,7 @@ import luxe.Vector;
 
 import mint.Button;
 
+import definitions.Enums;
 import ui.MiosisMintRendering;
 
 class Level1 extends BaseState 
@@ -47,7 +48,7 @@ class Level1 extends BaseState
         var txt:Text = Luxe.scene.get('testbutton.label.text');    
         log('Text obj : ' + txt);  
         txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
-        txt.color = new Color().rgb(Constants.COLOR_GB_2_DARK);
+        txt.color = new Color().rgb(GameBoyPalette2.Dark);
         txt.geom.letter_snapping = true;        
         txt.geom.texture = txt.font.pages[0];
         txt.geom.texture.filter_mag = nearest;

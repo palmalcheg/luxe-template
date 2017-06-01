@@ -1,11 +1,5 @@
 import luxe.Color;
 
-@:enum abstract EventTypes(String) to String 
-{
-    var ChangeState = "change_state";
-    var ParcelLoadFailed = "parcel_load_failed";
-}
-
 class Constants
 {
 	// Basic colors
