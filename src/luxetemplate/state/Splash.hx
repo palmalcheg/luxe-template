@@ -64,7 +64,7 @@ class Splash extends BaseState
 
         letters.push(new Sprite({
             name:'miosis_m',
-            texture:Luxe.resources.texture('assets/textures/logo/miosis_m.png'),
+            texture:Luxe.resources.texture('assets/texture/logo/miosis_m.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4
@@ -75,7 +75,7 @@ class Splash extends BaseState
 
         letters.push(new Sprite({
             name:'miosis_i1',            
-            texture:Luxe.resources.texture('assets/textures/logo/miosis_i.png'),
+            texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4
@@ -86,7 +86,7 @@ class Splash extends BaseState
 
         letters.push(new Sprite({
             name:'miosis_o',                        
-            texture:Luxe.resources.texture('assets/textures/logo/miosis_o.png'),
+            texture:Luxe.resources.texture('assets/texture/logo/miosis_o.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4,
@@ -98,7 +98,7 @@ class Splash extends BaseState
 
         letters.push(new Sprite({
             name:'miosis_s',                        
-            texture:Luxe.resources.texture('assets/textures/logo/miosis_s.png'),
+            texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4
@@ -109,7 +109,7 @@ class Splash extends BaseState
 
         letters.push(new Sprite({
             name:'miosis_i2',                        
-            texture:Luxe.resources.texture('assets/textures/logo/miosis_i.png'),
+            texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4
@@ -120,7 +120,7 @@ class Splash extends BaseState
 
         letters.push(new Sprite({
             name:'miosis_s2',                        
-            texture:Luxe.resources.texture('assets/textures/logo/miosis_s.png'),
+            texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(Constants.COLOR_GB_2_OFF),
             depth:4

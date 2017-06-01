@@ -1,7 +1,7 @@
 {
   snow : {
     config: {
-      config_path: 'assets/json/config/config.json'
+      config_path: 'assets/jsons/config/config.json'
     }
   },
   project : {

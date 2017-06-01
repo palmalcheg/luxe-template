@@ -1,18 +1,22 @@
 {
-    "textures" : [
-        { "id" : "assets/textures/smiley.png", "filter_min" : "nearest", "filter_mag" : "nearest" },
-        { "id" : "assets/textures/ui/gb_button_normal.png", "filter_min" : "nearest", "filter_mag" : "nearest" },
-        { "id" : "assets/textures/ui/gb_button_pressed.png", "filter_min" : "nearest", "filter_mag" : "nearest" },
-        { "id" : "assets/textures/ui/gb_button_hover.png", "filter_min" : "nearest", "filter_mag" : "nearest" }        
+    "data" : [
     ],
     "fonts" : [
-        { "id" : "assets/fonts/justabit/justabit32.fnt" }
+        { "id" : "assets/font/justabit/justabit32.fnt" }
     ],            
+    "json" : [
+    ],    
+    "shaders" : [
+    ],
     "sounds" : [
-        { "id" : "assets/sounds/steppin.wav", "name" : "steppin", "is_stream" : false }
+        { "id" : "assets/sound/steppin.wav", "name" : "steppin", "is_stream" : false }
     ],
     "text" : [
     ],
-    "json" : [
+    "textures" : [
+        { "id" : "assets/texture/smiley.png", "filter_min" : "nearest", "filter_mag" : "nearest" },
+        { "id" : "assets/texture/ui/gb_button_normal.png", "filter_min" : "nearest", "filter_mag" : "nearest" },
+        { "id" : "assets/texture/ui/gb_button_pressed.png", "filter_min" : "nearest", "filter_mag" : "nearest" },
+        { "id" : "assets/texture/ui/gb_button_hover.png", "filter_min" : "nearest", "filter_mag" : "nearest" }        
     ]    
 }

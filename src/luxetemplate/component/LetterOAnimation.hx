@@ -26,7 +26,7 @@ class LetterOAnimation extends luxe.components.sprite.SpriteAnimation
     {
         _debug("---------- LetterOAnimation.init ----------");        
 
-        var anim_json = Luxe.resources.json('assets/json/animation/miosis_anim.json');
+        var anim_json = Luxe.resources.json('assets/json/animation/splash_anim.json');
         add_from_json_object(anim_json.asset.json);
         animation = 'splash';
         play();

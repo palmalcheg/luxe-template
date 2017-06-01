@@ -46,7 +46,7 @@ class Level1 extends BaseState
 
         var txt:Text = Luxe.scene.get('testbutton.label.text');    
         log('Text obj : ' + txt);  
-        txt.font = Luxe.resources.font('assets/fonts/justabit/justabit32.fnt');
+        txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         txt.color = new Color().rgb(Constants.COLOR_GB_2_DARK);
         txt.geom.letter_snapping = true;        
         txt.geom.texture = txt.font.pages[0];

@@ -74,11 +74,11 @@ class Main extends luxe.Game
         config.window.borderless = windowConfig.borderless;
 
         // Load assets for the splash screen
-        config.preload.textures.push({ id : "assets/textures/logo/miosis_m.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.textures.push({ id : "assets/textures/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.textures.push({ id : "assets/textures/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.textures.push({ id : "assets/textures/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.jsons.push({ id : "assets/json/animation/miosis_anim.json" });
+        config.preload.textures.push({ id : "assets/texture/logo/miosis_m.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : "assets/texture/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : "assets/texture/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : "assets/texture/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
+        config.preload.jsons.push({ id : "assets/json/animation/splash_anim.json" });
 
         return config;
     }
@@ -107,20 +107,20 @@ class Main extends luxe.Game
         background_camera.size_mode = luxe.Camera.SizeMode.fit;
 
         var foreground_camera = new Camera({
-            name: 'foreground_camera'
+            name : 'foreground_camera'
         });
         foreground_camera.size = new Vector(Luxe.screen.width, Luxe.screen.height);
 
         background_batcher = Luxe.renderer.create_batcher({
-            layer: -1,
-            name:'background_batcher',
-            camera: background_camera.view
+            layer : -1,
+            name :'background_batcher',
+            camera : background_camera.view
         });
 
         ui_batcher = Luxe.renderer.create_batcher({
-            layer: 1,
-            name:'ui_batcher',
-            camera: background_camera.view
+            layer : 1,
+            name :'ui_batcher',
+            camera : background_camera.view
         });
 
         foreground_batcher = Luxe.renderer.create_batcher({
@@ -133,9 +133,9 @@ class Main extends luxe.Game
         
         // Set up Mint canvas
         canvas = new MiosisCanvas({
-            name:'canvas',
-            rendering: mint_renderer,
-            options: { color:new Color(1, 1, 1, 0) },
+            name :'canvas',
+            rendering : mint_renderer,
+            options : { color:new Color(1, 1, 1, 0) },
             x: 0, y:0, w: 100, h: 100
         });
         canvas.auto_listen();
@@ -144,13 +144,13 @@ class Main extends luxe.Game
 
         // Set up fade overlay
         fade_overlay_sprite = new Sprite({
-            batcher: foreground_batcher,
-            parent: Luxe.camera,
-            name: 'fade_overlay_sprite',
-            size: Luxe.screen.size,
-            color: new Color().rgb(Constants.COLOR_GB_2_DARK),
-            centered: false,
-            depth:990
+            batcher : foreground_batcher,
+            parent : Luxe.camera,
+            name : 'fade_overlay_sprite',
+            size : Luxe.screen.size,
+            color : new Color().rgb(Constants.COLOR_GB_2_DARK),
+            centered : false,
+            depth : 990
         });     
         fade_overlay = fade_overlay_sprite.add(new FadeOverlay());
         

@@ -36,7 +36,7 @@ class MiosisButtonRender extends Render
             no_scene: true,
             name: control.name + '.visual',
             batcher: customRendering.options.batcher,
-            texture : Luxe.resources.texture('assets/textures/ui/gb_button_normal.png'),
+            texture : Luxe.resources.texture('assets/texture/ui/gb_button_normal.png'),
             top : 5, left : 5, right : 5, bottom : 5,
             pos: new Vector(control.x, control.y),
             size: new Vector(control.w, control.h),
@@ -84,7 +84,7 @@ class MiosisButtonRender extends Render
             // mouseleave
             // var txt:Text = Luxe.scene.get('testbutton.label.text');
             // txt.color = new Color().rgb(Constants.COLOR_GB_2_DARK);
-            visual.texture = Luxe.resources.texture('assets/textures/ui/gb_button_normal.png');        
+            visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_normal.png');        
         }
         else
         {
@@ -96,7 +96,7 @@ class MiosisButtonRender extends Render
     {
         _debug("---------- MiosisButtonRender.goto_hover_state ----------");
 
-        visual.texture = Luxe.resources.texture('assets/textures/ui/gb_button_hover.png');
+        visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_hover.png');
         // var txt:Text = Luxe.scene.get('testbutton.label.text'); 
         // txt.color = new Color().rgb(Constants.COLOR_GB_2_MEDIUM);
     }
@@ -105,6 +105,6 @@ class MiosisButtonRender extends Render
     {
         _debug("---------- MiosisButtonRender.goto_pressed_state ----------");
                 
-        visual.texture = Luxe.resources.texture('assets/textures/ui/gb_button_pressed.png');
+        visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_pressed.png');
     }
 }

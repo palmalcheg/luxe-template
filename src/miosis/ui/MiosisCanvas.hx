@@ -1,6 +1,7 @@
 package miosis.ui;
 
 import mint.render.luxe.Convert;
+import luxetemplate.Main;
 
 class MiosisCanvas extends mint.Canvas 
 {
@@ -38,10 +39,10 @@ class MiosisCanvas extends mint.Canvas
 
     function conv_update(dt:Float)  update(dt);
     function conv_render(_)         render();
-    function conv_mousewheel(e)     mousewheel(Convert.mouse_event(e));
-    function conv_mousedown(e)      mousedown(Convert.mouse_event(e));
-    function conv_mouseup(e)        mouseup(Convert.mouse_event(e));
-    function conv_mousemove(e)      mousemove(Convert.mouse_event(e));
+    function conv_mousewheel(e)     mousewheel(Convert.mouse_event(e, Main.game_scale));
+    function conv_mousedown(e)      mousedown(Convert.mouse_event(e, Main.game_scale));
+    function conv_mouseup(e)        mouseup(Convert.mouse_event(e, Main.game_scale));
+    function conv_mousemove(e)      mousemove(Convert.mouse_event(e, Main.game_scale));
     function conv_keyup(e)          keyup(Convert.key_event(e));
     function conv_keydown(e)        keydown(Convert.key_event(e));
     function conv_textinput(e)      textinput(Convert.text_event(e));
