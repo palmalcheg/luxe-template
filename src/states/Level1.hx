@@ -30,7 +30,7 @@ class Level1 extends BaseState
 
 		// Set background color
 
-	    Luxe.renderer.clear_color = new Color().rgb(Constants.COLOR_GB_1_LIGHT);
+	    Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Light);
         button = new Button({
             parent : Main.canvas, 
             name : 'testbutton', 
