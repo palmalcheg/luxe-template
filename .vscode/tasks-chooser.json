@@ -2,17 +2,29 @@
     "selectDescription": "Select build setting",
     "items": [
         {
-            "displayName": "▶︎ Mac application",
+            "displayName": "▶︎ Mac run",
             "description": "haxelib run flow run mac",
             "command": "haxelib",
             "args": ["run", "flow", "run", "mac", "--debug"]
         },
         {
-            "displayName": "▶︎ Web application",
-            "description": "flow run web",
+            "displayName": "▶︎ Mac compile",
+            "description": "haxelib run flow compile mac",
+            "command": "haxelib",
+            "args": ["run", "flow", "compile", "mac", "--debug"]
+        },        
+        {
+            "displayName": "▶︎ Web run",
+            "description": "haxelib flow run web",
             "command": "haxelib",
             "args": ["run", "flow", "run", "web", "--debug"]
-        }
+        },
+        {
+            "displayName": "▶︎ Web compile",
+            "description": "haxelib flow compile web",
+            "command": "haxelib",
+            "args": ["run", "flow", "compile", "web", "--debug"]
+        }        
     ],
     "baseItem": {
         "version": "0.1.0",

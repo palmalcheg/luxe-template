@@ -48,7 +48,7 @@ class BaseState extends State
     {
         _debug("---------- BaseState.onenter ----------");     
 
-        Luxe.events.fire('state_ready', { state : name, fade_in_time : fade_in_time, fade_out_time : fade_out_time });
+        Luxe.events.fire('state_ready', { state:name, fade_in_time:fade_in_time, fade_out_time : fade_out_time });
                
         super.onenter(_);       
     }

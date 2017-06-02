@@ -1,12 +1,12 @@
 {
-    "displayName": "▶︎ Mac application",
-    "description": "haxelib run flow run mac",
+    "displayName": "▶︎ Web run",
+    "description": "haxelib flow run web",
     "command": "haxelib",
     "args": [
         "run",
         "flow",
         "run",
-        "mac",
+        "web",
         "--debug"
     ],
     "version": "0.1.0",
@@ -23,5 +23,5 @@
             "message": 7
         }
     },
-    "chooserIndex": 0
+    "chooserIndex": 2
 }
