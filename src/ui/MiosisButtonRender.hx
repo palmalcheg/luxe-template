@@ -69,6 +69,11 @@ class MiosisButtonRender extends Render
 
     override function ondestroy() 
     {
+        control.onmouseenter.remove(goto_hover_state);
+        control.onmouseleave.remove(goto_normal_state);
+        control.onmousedown.remove(goto_pressed_state);
+        control.onmouseup.remove(goto_normal_state);
+
         visual.destroy();
         visual = null;
     }

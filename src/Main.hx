@@ -36,12 +36,13 @@ class Main extends luxe.Game
 
     public static var game_scale:Float = 1.0;
 
-    var load_state:Load;
-    var next_state:String;
-    var current_parcel:Parcel;
-    var states:States;
-    var fade_overlay_sprite:Sprite;
-    var fade_overlay:FadeOverlay;  
+    private var load_state:Load;
+    private var next_state:String;
+    private var current_parcel:Parcel;
+    private var states:States;
+    private var fade_overlay_sprite:Sprite;
+    private var fade_overlay:FadeOverlay;
+    private var changeStateEventId:String;
 
     override function config(config:luxe.GameConfig) 
     {
@@ -70,6 +71,8 @@ class Main extends luxe.Game
         config.preload.textures.push({ id : "assets/texture/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/texture/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
         config.preload.jsons.push({ id : "assets/json/animation/splash_anim.json" });
+
+        changeStateEventId = "";
 
         return config;
     }
@@ -146,7 +149,7 @@ class Main extends luxe.Game
         fade_overlay = fade_overlay_sprite.add(new FadeOverlay());
         
         // Subscribe to state change events
-        Luxe.events.listen(EventTypes.ChangeState, on_change_state);
+        changeStateEventId = Luxe.events.listen(EventTypes.ChangeState, on_change_state);
 
         // Go to first state
         states = new States({ name:'states' });
@@ -244,6 +247,8 @@ class Main extends luxe.Game
 
     override function ondestroy() 
     {
+        Luxe.events.unlisten(changeStateEventId);
+
         if (states != null)
         {
             states.destroy();
