@@ -9,7 +9,7 @@
     "shaders" : [
     ],
     "sounds" : [
-        { "id" : "assets/sound/steppin.wav", "name" : "steppin", "is_stream" : false }
+        { "id" : "assets/sound/POL-chubby-cat-short.wav", "name" : "steppin", "is_stream" : false }
     ],
     "text" : [
     ],

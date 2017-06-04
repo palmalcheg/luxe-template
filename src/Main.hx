@@ -19,6 +19,7 @@ import components.FadeOverlay;
 import states.BaseState;
 import states.Load;
 import states.Level1;
+import states.Level2;
 import states.Splash;
 import ui.MiosisCanvas;
 
@@ -29,6 +30,7 @@ class Main extends luxe.Game
     public static var focus: Focus;
     public static var background_batcher: phoenix.Batcher;  
     public static var ui_batcher: phoenix.Batcher;    
+    public static var foreground_camera: luxe.Camera;    
     public static var foreground_batcher: phoenix.Batcher;
 
     public static var w:Int = -1;
@@ -37,7 +39,7 @@ class Main extends luxe.Game
     public static var game_scale:Float = 1.0;
 
     private var load_state:Load;
-    private var next_state:String;
+    private var current_state_name:String;
     private var current_parcel:Parcel;
     private var states:States;
     private var fade_overlay_sprite:Sprite;
@@ -47,7 +49,6 @@ class Main extends luxe.Game
     override function config(config:luxe.GameConfig) 
     {
         log('Config loaded as ' + Luxe.snow.config.user);
-        log('User config param : ' + Luxe.snow.config.user.game.test);
 
         var windowConfig = Luxe.snow.config.user.window;
         var userConfig = Luxe.snow.config.user.game;
@@ -71,6 +72,7 @@ class Main extends luxe.Game
         config.preload.textures.push({ id : "assets/texture/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/texture/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
         config.preload.jsons.push({ id : "assets/json/animation/splash_anim.json" });
+        config.preload.jsons.push({ id : "assets/json/data/state-config.json" });        
 
         changeStateEventId = "";
 
@@ -80,6 +82,9 @@ class Main extends luxe.Game
     override function ready() 
     {
         _debug("---------- Main.ready ----------");
+
+        var data:Array<Dynamic> = (Luxe.resources.json('assets/json/data/state-config.json').asset.json);
+        log('data : ' + data); 
 
         // Set background color
         Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Dark);
@@ -94,16 +99,13 @@ class Main extends luxe.Game
         Luxe.camera.size_mode = luxe.Camera.SizeMode.fit;
 
         // Set up rendering
-        var background_camera = new Camera({
-            name: 'background_camera'
-        });
+        var background_camera = new Camera({ name: 'background_camera' });
         background_camera.size = new Vector(w, h);
         background_camera.size_mode = luxe.Camera.SizeMode.fit;
 
-        var foreground_camera = new Camera({
-            name : 'foreground_camera'
-        });
-        foreground_camera.size = new Vector(Luxe.screen.width, Luxe.screen.height);
+        foreground_camera = new Camera({ name : 'foreground_camera' });
+        foreground_camera.size = new Vector(w, h);
+        foreground_camera.size_mode = luxe.Camera.SizeMode.fit;        
 
         background_batcher = Luxe.renderer.create_batcher({
             layer : -1,
@@ -156,9 +158,10 @@ class Main extends luxe.Game
         load_state = states.add(new Load());
         states.add(new Splash());
         states.add(new Level1());
+        states.add(new Level2());        
 
-        next_state = "splash";
-        states.set(next_state);
+        current_state_name = "splash";
+        states.set(current_state_name);
 
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);      
@@ -168,9 +171,9 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.on_change_state, go to state: " + e.state + "----------");
 
-        next_state = e.state;
+        current_state_name = e.state;
         
-        if (next_state == 'load')
+        if (current_state_name == 'load')
         {
             current_parcel = e.parcel;
         }
@@ -207,7 +210,7 @@ class Main extends luxe.Game
         Luxe.scene.empty();
 
         // Destroy unused resources
-        if (next_state == 'load')
+        if (current_state_name == 'load')
         {
             if (current_parcel == null)
             {// Previous state was splash => assets were loaded in config
@@ -226,7 +229,7 @@ class Main extends luxe.Game
             load_state.state_to_load = 'level1';
         }
 
-        states.set(next_state);
+        states.set(current_state_name);
 
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);
@@ -243,6 +246,7 @@ class Main extends luxe.Game
     override function onwindowsized( e:WindowEvent ) 
     {
         Luxe.camera.viewport = new luxe.Rectangle(0, 0, e.x, e.y);
+        foreground_camera.viewport = new luxe.Rectangle(0, 0, e.x, e.y);
     }
 
     override function ondestroy() 
@@ -262,7 +266,7 @@ class Main extends luxe.Game
         }
 
         load_state = null;
-        next_state = null;
+        current_state_name = null;
         fade_overlay_sprite = null;
         fade_overlay = null;
     }

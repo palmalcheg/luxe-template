@@ -12,7 +12,7 @@ import mint.Button;
 import definitions.Enums;
 import ui.MiosisMintRendering;
 
-class Level1 extends BaseState 
+class Level2 extends BaseState 
 {
 	var circle:Sprite;
     var button:Button;
@@ -21,14 +21,14 @@ class Level1 extends BaseState
 
 	public function new() 
 	{
-        _debug("---------- Level1.new ----------");
+        _debug("---------- Level2.new ----------");
 
-        super({ name:'level1' });
+        super({ name:'level2' });
     }
 
 	override function onenter<T>(_:T) 
 	{
-        _debug("---------- Level1.onenter ----------");
+        _debug("---------- Level2.onenter ----------");
 
 		// Set background color
 
@@ -67,12 +67,16 @@ class Level1 extends BaseState
 
     private function on_button_click()
     {
-        Luxe.events.fire(EventTypes.ChangeState, { state : "level2" });
+        var args = { 
+            state : "level1"
+        };
+
+        Luxe.events.fire(EventTypes.ChangeState, args);
     }
 
     override function onleave<T>( _data:T ) 
     {
-        _debug("---------- Level1.onleave ----------");
+        _debug("---------- Level2.onleave ----------");
 
         // CLEAN UP
         Luxe.audio.stop(music_handle);
@@ -82,7 +86,7 @@ class Level1 extends BaseState
 
     override function post_fade_in()
     {
-        _debug("---------- Level1.post_fade_in ----------");
+        _debug("---------- Level2.post_fade_in ----------");
 
         // DO STUFF
     }

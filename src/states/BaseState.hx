@@ -29,7 +29,7 @@ class BaseState extends State
         }
         else
         {
-            fade_in_time = 0;
+            fade_in_time = 1;
         }
 
         if (_options.fade_out_time != null)
@@ -38,7 +38,7 @@ class BaseState extends State
         }
         else
         {
-            fade_out_time = 0;
+            fade_out_time = 1;
         }        
 
         super(_options);

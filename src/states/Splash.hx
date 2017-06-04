@@ -135,6 +135,6 @@ class Splash extends BaseState
         _debug("---------- Splash.on_anim_done ----------");
 
         o_anim.entity.events.unlisten('animation.splash.end');
-        Luxe.events.fire(EventTypes.ChangeState, { state : 'load', fade_in_time : fade_in_time, fade_out_time : fade_out_time });
+        Luxe.events.fire(EventTypes.ChangeState, { state : 'load' });
     }
 }

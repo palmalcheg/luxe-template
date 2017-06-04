@@ -1,0 +1,8 @@
+{
+  "state_config":{
+    "splash": {
+      "fade_in":1,
+      "fade_out":1
+    }
+  }
+}

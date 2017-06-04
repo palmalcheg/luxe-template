@@ -4,25 +4,6 @@
 
 // class Constants
 // {
-// 	// Basic colors
-// 	public static inline var COLOR_BLACK:Int = 0x000000;
-// 	public static inline var COLOR_WHITE:Int = 0xffffff;
-// 	public static inline var COLOR_RED:Int = 0xFF0000;
-// 	public static inline var COLOR_GREEN:Int = 0x00FF00;
-// 	public static inline var COLOR_BLUE:Int = 0x0000FF;	
-
-// 	// // Game Boy palette, gray 1
-// 	public static inline var COLOR_GB_1_OFF:Int = 0xffffff;
-// 	public static inline var COLOR_GB_1_LIGHT:Int = 0xb2b2b2;
-// 	public static inline var COLOR_GB_1_MEDIUM:Int = 0x757575;
-// 	public static inline var COLOR_GB_1_DARK:Int = 0x000000;
-
-// 	// // Game Boy palette, gray 2
-// 	// public static inline var COLOR_GB_2_OFF:Int = 0xefefef;
-// 	// public static inline var COLOR_GB_2_LIGHT:Int = 0xb2b2b2;
-// 	// public static inline var COLOR_GB_2_MEDIUM:Int = 0x757575;
-// 	// public static inline var COLOR_GB_2_DARK:Int = 0x383838;
-
 // 	// // Game Boy palette, green 1
 // 	public static inline var COLOR_GB_3_OFF:Int = 0x9BBC0F;
 // 	public static inline var COLOR_GB_3_LIGHT:Int = 0x8BAC0F;

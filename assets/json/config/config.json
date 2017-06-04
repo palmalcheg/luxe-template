@@ -1,14 +1,11 @@
 {
-	"window": {
-      "width":160,
-      "height":144,
-      "title":"Luxe Template",
-      "fullscreen":false,
-      "resizable":false,
-      "borderless":false,
-      "scale":4
-    },
-	"game": {
-      "test":"test"
-    }
+  "window": {
+    "width":160,
+    "height":144,
+    "title":"Luxe Template",
+    "fullscreen":false,
+    "resizable":false,
+    "borderless":false,
+    "scale":4
+  }
 }
