@@ -194,14 +194,7 @@ class Load extends BaseState
     {
         _debug("---------- Load.oncomplete ----------");
 
-        var args = { 
-            state : state_to_load, 
-            fade_in_time : fade_in_time, 
-            fade_out_time : fade_out_time, 
-            parcel : parcel 
-        };
-
-        Luxe.events.fire(EventTypes.ChangeState, args);
+        Luxe.events.fire(EventTypes.ChangeState, { state : state_to_load, parcel : parcel });
     }
 
     function set_progress(amount:Float) 

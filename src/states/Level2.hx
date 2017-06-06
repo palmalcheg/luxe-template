@@ -59,7 +59,7 @@ class Level2 extends BaseState
         txt.point_size = 16;
 
         // Set up level music
-        music = Luxe.resources.audio('assets/sound/POL-chubby-cat-short.wav');
+        music = Luxe.resources.audio('assets/sound/BeatLoop_110bpm024_8BitBeats_LoopCache.ogg');        
         music_handle = Luxe.audio.loop(music.source);
                
         super.onenter(_);		
@@ -67,11 +67,7 @@ class Level2 extends BaseState
 
     private function on_button_click()
     {
-        var args = { 
-            state : "level1"
-        };
-
-        Luxe.events.fire(EventTypes.ChangeState, args);
+        Luxe.events.fire(EventTypes.ChangeState, { state : "level1" });
     }
 
     override function onleave<T>( _data:T ) 

@@ -1,7 +1,7 @@
 {
   snow: {
     config: {
-      log: 0,
+      log: 4,
       config_path: 'assets/json/config/config.json'
     }
   },
@@ -19,7 +19,7 @@
         'MACOSX_VER=10.12'
       ],
       flags: [
-        '--macro luxe.Log.level(0)'
+        '--macro luxe.Log.level(2)'
       ],
       dependencies: {
         luxe: '*',

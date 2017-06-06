@@ -10,6 +10,7 @@ import luxe.resource.Resource.AudioResource;
 import mint.Button;
 
 import definitions.Enums;
+import ui.MiosisButtonRender;
 import ui.MiosisMintRendering;
 
 class Level1 extends BaseState 
@@ -31,7 +32,6 @@ class Level1 extends BaseState
         _debug("---------- Level1.onenter ----------");
 
 		// Set background color
-
 	    Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Light);
         button = new Button({
             parent : Main.canvas, 
@@ -58,9 +58,14 @@ class Level1 extends BaseState
         txt.geom.texture.filter_min = nearest;
         txt.point_size = 16;
 
+        // var buttonRender:MiosisButtonRender = cast button.renderer;
+        // var mouse_pos = Luxe.screen.cursor.pos;
+        // buttonRender.check_current_mouse_position(mouse_pos.x, mouse_pos.y);
+
         // Set up level music
         music = Luxe.resources.audio('assets/sound/POL-chubby-cat-short.wav');
-        music_handle = Luxe.audio.loop(music.source);
+        // music = Luxe.resources.audio('assets/sound/BeatLoop_110bpm016_8BitBeats_LoopCache.ogg');        
+        music_handle = Luxe.audio.play(music.source);
                
         super.onenter(_);		
     }
@@ -74,10 +79,11 @@ class Level1 extends BaseState
     {
         _debug("---------- Level1.onleave ----------");
 
+        super.onleave(_data);
+
         // CLEAN UP
         Luxe.audio.stop(music_handle);
-        
-        super.onleave(_data);
+        Luxe.resources.destroy('assets/sound/POL-chubby-cat-short.wav');        
     }
 
     override function post_fade_in()

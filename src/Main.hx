@@ -38,10 +38,11 @@ class Main extends luxe.Game
 
     public static var game_scale:Float = 1.0;
 
-    private var load_state:Load;
-    private var current_state_name:String;
-    private var current_parcel:Parcel;
     private var states:States;
+    private var load_state:Load;        
+    private var current_state:String;
+    private var next_state:String;
+    private var current_parcel:Parcel;
     private var fade_overlay_sprite:Sprite;
     private var fade_overlay:FadeOverlay;
     private var changeStateEventId:String;
@@ -75,6 +76,9 @@ class Main extends luxe.Game
         config.preload.jsons.push({ id : "assets/json/data/state-config.json" });        
 
         changeStateEventId = "";
+        current_state = "";
+        next_state = "";
+        load_state = null;
 
         return config;
     }
@@ -160,8 +164,8 @@ class Main extends luxe.Game
         states.add(new Level1());
         states.add(new Level2());        
 
-        current_state_name = "splash";
-        states.set(current_state_name);
+        next_state = "splash";
+        states.set(next_state);
 
         var state:BaseState = cast states.current_state;
         fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);      
@@ -171,16 +175,12 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.on_change_state, go to state: " + e.state + "----------");
 
-        current_state_name = e.state;
-        
-        if (current_state_name == 'load')
+        next_state = e.state;   
+
+        if (e.parcel != null)
         {
             current_parcel = e.parcel;
-        }
-        else
-        {
-            current_parcel = null;
-        }
+        }     
 
         var state:BaseState = cast states.current_state;
 
@@ -207,32 +207,42 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.on_fade_out_done ----------");
 
+        log("!!!!!!!!!!!!! current_state = " + current_state);
+        log("!!!!!!!!!!!!! next_state = " + next_state);        
+
         Luxe.scene.empty();
 
-        // Destroy unused resources
-        if (current_state_name == 'load')
-        {
-            if (current_parcel == null)
-            {// Previous state was splash => assets were loaded in config
-                Luxe.resources.destroy("assets/img/logo/miosis_m.png");
-                Luxe.resources.destroy("assets/img/logo/miosis_i.png");
-                Luxe.resources.destroy("assets/img/logo/miosis_s.png");
-                Luxe.resources.destroy("assets/img/logo/miosis_o.png");
-                Luxe.resources.destroy("assets/json/miosis_anim.json");
-            }
-            else
-            {// Previous state was not splash => assets were loaded from a parcel
-                current_parcel.unload();
-            }
-
-            // TODO: Set filename according to some config file
-            load_state.state_to_load = 'level1';
+        if (current_state == "splash")
+        {// Destroy preloaded splash resources
+            Luxe.resources.destroy("assets/img/logo/miosis_m.png");
+            Luxe.resources.destroy("assets/img/logo/miosis_i.png");
+            Luxe.resources.destroy("assets/img/logo/miosis_s.png");
+            Luxe.resources.destroy("assets/img/logo/miosis_o.png");
+            Luxe.resources.destroy("assets/json/miosis_anim.json");
         }
 
-        states.set(current_state_name);
+        if (current_state == "load")
+        {
+            // Resources for next state loaded, proceed
+            states.set(next_state);
+        }
+        else
+        {
+            // if (current_parcel != null)
+            // {// Assets were loaded from a parcel (i.e. current state is not splash or load)
+            //     current_parcel.unload();
+            // }
+
+            // Bootstrap load state to preload resources for next state
+            load_state.state_to_load = next_state;            
+            states.set("load");
+
+
+        }
 
         var state:BaseState = cast states.current_state;
-        fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);
+        current_state = state.name;
+        fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);                        
     }
 
     override function onkeyup(e:luxe.Input.KeyEvent) 
@@ -265,8 +275,7 @@ class Main extends luxe.Game
             current_parcel = null; 
         }
 
-        load_state = null;
-        current_state_name = null;
+        next_state = null;
         fade_overlay_sprite = null;
         fade_overlay = null;
     }

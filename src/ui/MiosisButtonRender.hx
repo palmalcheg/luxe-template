@@ -25,10 +25,10 @@ class MiosisButtonRender extends Render
         super(_rendering, _control);
         var customRendering:MiosisMintRendering = cast rendering;
 
-        log(control.x);
-        log(control.y);
-        log(control.w);
-        log(control.h);        
+        // log(control.x);
+        // log(control.y);
+        // log(control.w);
+        // log(control.h);        
 
         visual = new luxe.NineSlice({
             no_scene: true,
@@ -44,10 +44,11 @@ class MiosisButtonRender extends Render
 
         visual.create(new Vector(control.x, control.y), control.w, control.h);
         
-        control.onmouseenter.listen(goto_hover_state);
-        control.onmouseleave.listen(goto_normal_state);
-        control.onmousedown.listen(goto_pressed_state);
-        control.onmouseup.listen(goto_normal_state);
+        control.onmouseenter.listen(on_mouse_enter);
+        control.onmouseleave.listen(on_mouse_leave);
+        control.onmousedown.listen(on_mouse_down);
+        control.onmouseup.listen(on_mouse_up);
+        control.onmousemove.listen(on_mouse_move);  
     }
 
     override function onbounds() 
@@ -58,7 +59,9 @@ class MiosisButtonRender extends Render
 
     override function onvisible(_visible:Bool) 
     {
-        visual.visible = _visible;
+        _debug("---------- MiosisButtonRender.onvisible ----------");
+
+        visual.visible = _visible;      
     }
 
     override function ondepth(_depth:Float) 
@@ -69,45 +72,67 @@ class MiosisButtonRender extends Render
 
     override function ondestroy() 
     {
-        control.onmouseenter.remove(goto_hover_state);
-        control.onmouseleave.remove(goto_normal_state);
-        control.onmousedown.remove(goto_pressed_state);
-        control.onmouseup.remove(goto_normal_state);
+        control.onmouseenter.remove(on_mouse_enter);
+        control.onmouseleave.remove(on_mouse_leave);
+        control.onmousedown.remove(on_mouse_down);
+        control.onmouseup.remove(on_mouse_up);
+        control.onmousemove.remove(on_mouse_move);  
 
         visual.destroy();
         visual = null;
     }
 
-    function goto_normal_state(e:MouseEvent, c:Control) 
+    // public function check_current_mouse_position(x:Float, y:Float)
+    // {
+    //     _debug("x : " + x);
+    //     _debug("y : " + y);     
+
+    //     if (control.contains(x / Main.game_scale, y / Main.game_scale))
+    //     {
+    //         _debug("HOVER!!!!!!!!!!!!!!");
+    //         visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_hover.png');
+    //     }
+    // }
+
+    function on_mouse_enter(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.goto_normal_state ----------");
+        _debug("---------- MiosisButtonRender.on_mouse_enter ----------");
+
+        visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_hover.png');
+    }
+
+    function on_mouse_leave(e:MouseEvent, c:Control) 
+    {
+        _debug("---------- MiosisButtonRender.on_mouse_leave ----------");
+
+        visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_normal.png');        
+    }
+
+    function on_mouse_down(e:MouseEvent, c:Control) 
+    {
+        _debug("---------- MiosisButtonRender.on_mouse_down ----------");
+                
+        visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_pressed.png');
+    }
+
+    function on_mouse_up(e:MouseEvent, c:Control) 
+    {
+        _debug("---------- MiosisButtonRender.on_mouse_up ----------");
 
         if (e.button == none) 
         {
-            // mouseleave
-            // var txt:Text = Luxe.scene.get('testbutton.label.text');
-            // txt.color = new Color().rgb(Constants.COLOR_GB_2_DARK);
             visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_normal.png');        
-        }
+        }   
         else
         {
-            goto_hover_state(null, null);
-        }
+            visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_hover.png');
+        }    
     }
 
-    function goto_hover_state(e:MouseEvent, c:Control) 
+    function on_mouse_move(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.goto_hover_state ----------");
+        _debug("---------- MiosisButtonRender.on_mouse_up ----------");
 
         visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_hover.png');
-        // var txt:Text = Luxe.scene.get('testbutton.label.text'); 
-        // txt.color = new Color().rgb(Constants.COLOR_GB_2_MEDIUM);
-    }
-
-    function goto_pressed_state(e:MouseEvent, c:Control) 
-    {
-        _debug("---------- MiosisButtonRender.goto_pressed_state ----------");
-                
-        visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_pressed.png');
     }
 }
