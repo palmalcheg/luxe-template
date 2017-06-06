@@ -1,28 +1,33 @@
 {
-  snow : {
+  snow: {
     config: {
+      log: 0,
       config_path: 'assets/json/config/config.json'
     }
   },
-  project : {
-    name : 'luxe-template',
-    version : '1.0.0',
-    author : 'zollenz',
-    app : {
-      main : 'Main',
-      name : 'luxe-template',
-      package : 'is.miosis.luxetemplate'
+  project: {
+    name: 'luxe-template',
+    version: '1.0.0',
+    author: 'zollenz',
+    app: {
+      main: 'Main',
+      name: 'luxe-template',
+      package: 'is.mios.luxetemplate'
     },
-    build : {
-      defines:['MACOSX_VER=10.12'],
-      flags:['--macro luxe.Log.level(2)'],
-      dependencies : {
-        luxe : '*',
-        mint : '*'
+    build: {
+      defines: [
+        'MACOSX_VER=10.12'
+      ],
+      flags: [
+        '--macro luxe.Log.level(0)'
+      ],
+      dependencies: {
+        luxe: '*',
+        mint: '*'
       }
     },
-    files : {
-      assets : 'assets/'
+    files: {
+      assets: 'assets/'
     }
   }
 }
