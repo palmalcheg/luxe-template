@@ -31,7 +31,8 @@ class MiosisButtonRender extends Render
         // log(control.h);        
 
         visual = new luxe.NineSlice({
-            no_scene: true,
+            // no_scene: true,
+            scene : Main.main_scene,
             name: control.name + '.visual',
             batcher: customRendering.options.batcher,
             texture : Luxe.resources.texture('assets/texture/ui/gb_button_normal.png'),
@@ -41,8 +42,8 @@ class MiosisButtonRender extends Render
             depth: customRendering.options.depth + control.depth,
             visible: control.visible
         });
-
         visual.create(new Vector(control.x, control.y), control.w, control.h);
+        // Main.main_scene.add(visual);
         
         control.onmouseenter.listen(on_mouse_enter);
         control.onmouseleave.listen(on_mouse_leave);

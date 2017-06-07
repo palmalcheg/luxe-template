@@ -36,7 +36,7 @@ class Level2 extends BaseState
         button = new Button({
             parent : Main.canvas, 
             name : 'testbutton', 
-            text : 'test',
+            text : 'two',
             rendering : new MiosisMintRendering({ batcher: Main.ui_batcher }),
             x : 0.1 * Main.w, 
             y : 0.1 * Main.h, 
@@ -59,8 +59,8 @@ class Level2 extends BaseState
         txt.point_size = 16;
 
         // Set up level music
-        music = Luxe.resources.audio('assets/sound/BeatLoop_110bpm024_8BitBeats_LoopCache.ogg');        
-        music_handle = Luxe.audio.loop(music.source);
+        music = Luxe.resources.audio('assets/sound/POL-king-of-coins-short.wav');        
+        // music_handle = Luxe.audio.loop(music.source);
                
         super.onenter(_);		
     }
@@ -74,10 +74,11 @@ class Level2 extends BaseState
     {
         _debug("---------- Level2.onleave ----------");
 
-        // CLEAN UP
-        Luxe.audio.stop(music_handle);
-        
         super.onleave(_data);
+
+        // CLEAN UP
+        button.destroy();
+        // Luxe.audio.stop(music_handle);
     }
 
     override function post_fade_in()

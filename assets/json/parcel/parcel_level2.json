@@ -9,7 +9,7 @@
     "shaders": [],
     "sounds": [
         {
-            "id": "assets/sound/BeatLoop_110bpm024_8BitBeats_LoopCache.ogg",
+            "id": "assets/sound/POL-king-of-coins-short.wav",
             "name": "level2music",
             "is_stream": false
         }

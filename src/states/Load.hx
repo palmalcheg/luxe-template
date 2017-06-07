@@ -90,7 +90,6 @@ class Load extends BaseState
         }
 
         var view_mid_x = Math.floor(view_width / 2);
-        var view_mid_y = Math.floor(view_height / 2);
 
         width = Math.max(Math.floor(view_width * 0.75), 2);
         height = Math.max(Math.floor(view_height * 0.002), 2);
@@ -100,7 +99,8 @@ class Load extends BaseState
         var half_height = Math.floor(height / 2);
 
         background = new Sprite({
-            name:"background",           
+            name:"background", 
+            scene:Main.main_scene,          
             size : new Vector(view_width, view_height),
             centered : false,
             color : background_color,
@@ -109,7 +109,8 @@ class Load extends BaseState
         });
 
         progress_bar = new Sprite({
-            name:"bar",                     
+            name:"bar",  
+            scene:Main.main_scene,                   
             pos : new Vector(view_mid_x - half_width, ypos - half_height),
             size : new Vector(2, height),
             centered : false,
@@ -119,6 +120,7 @@ class Load extends BaseState
 
         progress_border = new Visual({
             name:"border",
+            scene:Main.main_scene,
             color : border_color,
             pos : new Vector(view_mid_x - half_width, ypos - half_height),
             geometry : Luxe.draw.rectangle({
@@ -128,7 +130,6 @@ class Load extends BaseState
             }),
             depth : 101
         });
-
 
         var promise_json:Promise = Luxe.resources.load_json("assets/json/parcel/parcel_" + state_to_load + ".json");
         promise_json.then(load_assets, json_load_failed);

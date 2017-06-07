@@ -15,7 +15,6 @@ import ui.MiosisMintRendering;
 
 class Level1 extends BaseState 
 {
-	var circle:Sprite;
     var button:Button;
     var music: AudioResource;
     var music_handle: luxe.Audio.AudioHandle;
@@ -33,11 +32,12 @@ class Level1 extends BaseState
 
 		// Set background color
 	    Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Light);
+
         button = new Button({
             parent : Main.canvas, 
             name : 'testbutton', 
-            text : 'test',
-            rendering : new MiosisMintRendering({ batcher: Main.ui_batcher }),
+            text : 'one',
+            rendering : new MiosisMintRendering({ batcher : Main.ui_batcher }),
             x : 0.1 * Main.w, 
             y : 0.1 * Main.h, 
             w : 30, 
@@ -45,10 +45,10 @@ class Level1 extends BaseState
             onclick: function(e,c) { on_button_click(); }
         });
 
+        // Customize button label
         var labelRenderer:mint.render.luxe.Label = cast button.label.renderer;
-        Luxe.scene.add(labelRenderer.text);
-
-        var txt:Text = Luxe.scene.get('testbutton.label.text');    
+        Main.main_scene.add(labelRenderer.text);
+        var txt:Text = Main.main_scene.get('testbutton.label.text');    
         log('Text obj : ' + txt);  
         txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         txt.color = new Color().rgb(GameBoyPalette2.Dark);
@@ -65,7 +65,7 @@ class Level1 extends BaseState
         // Set up level music
         music = Luxe.resources.audio('assets/sound/POL-chubby-cat-short.wav');
         // music = Luxe.resources.audio('assets/sound/BeatLoop_110bpm016_8BitBeats_LoopCache.ogg');        
-        music_handle = Luxe.audio.play(music.source);
+        // music_handle = Luxe.audio.loop(music.source);
                
         super.onenter(_);		
     }
@@ -82,7 +82,8 @@ class Level1 extends BaseState
         super.onleave(_data);
 
         // CLEAN UP
-        Luxe.audio.stop(music_handle);
+        button.destroy();
+        // Luxe.audio.stop(music_handle);
         Luxe.resources.destroy('assets/sound/POL-chubby-cat-short.wav');        
     }
 

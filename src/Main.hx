@@ -3,6 +3,7 @@ import luxe.Color;
 import luxe.Input;
 import luxe.Log.*;
 import luxe.Parcel;
+import luxe.Scene;
 import luxe.Screen.WindowEvent;
 import luxe.Sprite;
 import luxe.States;
@@ -10,7 +11,6 @@ import luxe.Vector;
 
 import phoenix.Batcher;
 
-import mint.Canvas;
 import mint.focus.Focus;
 import mint.render.luxe.LuxeMintRender;
 
@@ -25,12 +25,12 @@ import ui.MiosisCanvas;
 
 class Main extends luxe.Game  
 {
+    public static var main_scene:Scene;
     public static var mint_renderer:LuxeMintRender;
-    public static var canvas:MiosisCanvas;
-    public static var focus: Focus;
+    public static var canvas:MiosisCanvas; // TODO : does this need to be public static
+    public static var focus: Focus; // TODO : does this need to be public static
     public static var background_batcher: phoenix.Batcher;  
     public static var ui_batcher: phoenix.Batcher;    
-    public static var foreground_camera: luxe.Camera;    
     public static var foreground_batcher: phoenix.Batcher;
 
     public static var w:Int = -1;
@@ -52,7 +52,6 @@ class Main extends luxe.Game
         log('Config loaded as ' + Luxe.snow.config.user);
 
         var windowConfig = Luxe.snow.config.user.window;
-        var userConfig = Luxe.snow.config.user.game;
 
         w = windowConfig.width;
         h = windowConfig.height;
@@ -104,10 +103,12 @@ class Main extends luxe.Game
 
         // Set up rendering
         var background_camera = new Camera({ name: 'background_camera' });
+        background_camera.scene = main_scene;
         background_camera.size = new Vector(w, h);
         background_camera.size_mode = luxe.Camera.SizeMode.fit;
 
-        foreground_camera = new Camera({ name : 'foreground_camera' });
+        var foreground_camera = new Camera({ name : 'foreground_camera' });
+        foreground_camera.scene = main_scene;
         foreground_camera.size = new Vector(w, h);
         foreground_camera.size_mode = luxe.Camera.SizeMode.fit;        
 
@@ -142,7 +143,12 @@ class Main extends luxe.Game
 
         focus = new Focus(canvas);
 
+        // Create main scene
+
+        main_scene = new Scene("main_scene");
+
         // Set up fade overlay
+
         fade_overlay_sprite = new Sprite({
             batcher : foreground_batcher,
             parent : Luxe.camera,
@@ -151,7 +157,7 @@ class Main extends luxe.Game
             color : new Color().rgb(GameBoyPalette2.Dark),
             centered : false,
             depth : 990
-        });     
+        });    
         fade_overlay = fade_overlay_sprite.add(new FadeOverlay());
         
         // Subscribe to state change events
@@ -210,8 +216,6 @@ class Main extends luxe.Game
         log("!!!!!!!!!!!!! current_state = " + current_state);
         log("!!!!!!!!!!!!! next_state = " + next_state);        
 
-        Luxe.scene.empty();
-
         if (current_state == "splash")
         {// Destroy preloaded splash resources
             Luxe.resources.destroy("assets/img/logo/miosis_m.png");
@@ -221,6 +225,9 @@ class Main extends luxe.Game
             Luxe.resources.destroy("assets/json/miosis_anim.json");
         }
 
+        states.unset(current_state);
+        main_scene.empty();
+
         if (current_state == "load")
         {
             // Resources for next state loaded, proceed
@@ -228,16 +235,14 @@ class Main extends luxe.Game
         }
         else
         {
-            // if (current_parcel != null)
-            // {// Assets were loaded from a parcel (i.e. current state is not splash or load)
-            //     current_parcel.unload();
-            // }
+            if (current_parcel != null)
+            {// Assets were loaded from a parcel (i.e. current state is not splash or load)
+                current_parcel.unload();
+            }
 
             // Bootstrap load state to preload resources for next state
             load_state.state_to_load = next_state;            
             states.set("load");
-
-
         }
 
         var state:BaseState = cast states.current_state;
@@ -256,7 +261,7 @@ class Main extends luxe.Game
     override function onwindowsized( e:WindowEvent ) 
     {
         Luxe.camera.viewport = new luxe.Rectangle(0, 0, e.x, e.y);
-        foreground_camera.viewport = new luxe.Rectangle(0, 0, e.x, e.y);
+        foreground_batcher.view.viewport = new luxe.Rectangle(0, 0, e.x, e.y);
     }
 
     override function ondestroy() 
