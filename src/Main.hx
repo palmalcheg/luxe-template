@@ -97,18 +97,20 @@ class Main extends luxe.Game
         log('Screen width:${w} ${Luxe.screen.w}');
         log('Screen height: ${h} ${Luxe.screen.h}');
 
-        // Fit camera viewport to window size
+        // Create main scene
+
+        main_scene = new Scene("main_scene");
+
+        // Set up cameras and batchers
+
         Luxe.camera.size = new Vector(w, h);
         Luxe.camera.size_mode = luxe.Camera.SizeMode.fit;
 
-        // Set up rendering
         var background_camera = new Camera({ name: 'background_camera' });
-        background_camera.scene = main_scene;
         background_camera.size = new Vector(w, h);
         background_camera.size_mode = luxe.Camera.SizeMode.fit;
 
         var foreground_camera = new Camera({ name : 'foreground_camera' });
-        foreground_camera.scene = main_scene;
         foreground_camera.size = new Vector(w, h);
         foreground_camera.size_mode = luxe.Camera.SizeMode.fit;        
 
@@ -129,10 +131,11 @@ class Main extends luxe.Game
             name:'foreground_batcher',
             camera: foreground_camera.view
         });
-
-        mint_renderer = new LuxeMintRender({ batcher:ui_batcher });
         
         // Set up Mint canvas
+
+        mint_renderer = new LuxeMintRender({ batcher:ui_batcher });
+
         canvas = new MiosisCanvas({
             name :'canvas',
             rendering : mint_renderer,
@@ -142,10 +145,6 @@ class Main extends luxe.Game
         canvas.auto_listen();
 
         focus = new Focus(canvas);
-
-        // Create main scene
-
-        main_scene = new Scene("main_scene");
 
         // Set up fade overlay
 
@@ -192,7 +191,7 @@ class Main extends luxe.Game
 
         if (state.fade_out_time > 0)
         {
-            fade_overlay.fade_out(state.fade_in_time, on_fade_out_done);    
+            fade_overlay.fade_out(state.fade_out_time, on_fade_out_done);    
         }
         else
         {
@@ -205,7 +204,6 @@ class Main extends luxe.Game
         _debug("---------- Main.on_fade_in_done ----------");
 
         var state:BaseState = cast states.current_state;
-        _debug(state);
         state.post_fade_in();
     }
 

@@ -2,10 +2,7 @@ package states;
 
 import luxe.Log.*;
 import luxe.options.StateOptions;
-import luxe.Sprite;
 import luxe.States;
-
-import components.FadeOverlay;
 
 typedef BaseStateOptions = 
 {
@@ -48,7 +45,7 @@ class BaseState extends State
     {
         _debug("---------- BaseState.onenter ----------");     
 
-        Luxe.events.fire('state_ready', { state:name, fade_in_time:fade_in_time, fade_out_time : fade_out_time });
+        // Luxe.events.fire('state_ready', { state:name });
                
         super.onenter(_);       
     }

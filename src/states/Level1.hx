@@ -2,15 +2,12 @@ package states;
 
 import luxe.Color;
 import luxe.Log.*;
-import luxe.Sprite;
 import luxe.Text;
-import luxe.Vector;
 import luxe.resource.Resource.AudioResource;
 
 import mint.Button;
 
 import definitions.Enums;
-import ui.MiosisButtonRender;
 import ui.MiosisMintRendering;
 
 class Level1 extends BaseState 
@@ -31,7 +28,7 @@ class Level1 extends BaseState
         _debug("---------- Level1.onenter ----------");
 
 		// Set background color
-	    Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Light);
+        Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Dark);
 
         button = new Button({
             parent : Main.canvas, 
@@ -83,8 +80,8 @@ class Level1 extends BaseState
 
         // CLEAN UP
         button.destroy();
+        
         // Luxe.audio.stop(music_handle);
-        Luxe.resources.destroy('assets/sound/POL-chubby-cat-short.wav');        
     }
 
     override function post_fade_in()

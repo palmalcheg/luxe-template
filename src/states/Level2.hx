@@ -4,7 +4,6 @@ import luxe.Color;
 import luxe.Log.*;
 import luxe.Sprite;
 import luxe.Text;
-import luxe.Vector;
 import luxe.resource.Resource.AudioResource;
 
 import mint.Button;
@@ -32,7 +31,7 @@ class Level2 extends BaseState
 
 		// Set background color
 
-	    Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Light);
+        Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Dark);
         button = new Button({
             parent : Main.canvas, 
             name : 'testbutton', 
@@ -46,9 +45,8 @@ class Level2 extends BaseState
         });
 
         var labelRenderer:mint.render.luxe.Label = cast button.label.renderer;
-        Luxe.scene.add(labelRenderer.text);
-
-        var txt:Text = Luxe.scene.get('testbutton.label.text');    
+        Main.main_scene.add(labelRenderer.text);
+        var txt:Text = Main.main_scene.get('testbutton.label.text');    
         log('Text obj : ' + txt);  
         txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         txt.color = new Color().rgb(GameBoyPalette2.Dark);

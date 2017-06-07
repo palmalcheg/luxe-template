@@ -1,9 +1,5 @@
 package ui;
 
-import luxe.Log.*;
-
-import luxe.options.RenderProperties;
-
 import mint.Button;
 import mint.Control;
 

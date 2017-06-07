@@ -1,9 +1,7 @@
 package ui;
 
-import luxe.Color;
 import luxe.Log.*;
 import luxe.NineSlice;
-import luxe.Text;
 import luxe.Vector;
 
 import mint.Button;
@@ -97,28 +95,28 @@ class MiosisButtonRender extends Render
 
     function on_mouse_enter(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.on_mouse_enter ----------");
+        // _debug("---------- MiosisButtonRender.on_mouse_enter ----------");
 
         visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_hover.png');
     }
 
     function on_mouse_leave(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.on_mouse_leave ----------");
+        // _debug("---------- MiosisButtonRender.on_mouse_leave ----------");
 
         visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_normal.png');        
     }
 
     function on_mouse_down(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.on_mouse_down ----------");
+        // _debug("---------- MiosisButtonRender.on_mouse_down ----------");
                 
         visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_pressed.png');
     }
 
     function on_mouse_up(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.on_mouse_up ----------");
+        // _debug("---------- MiosisButtonRender.on_mouse_up ----------");
 
         if (e.button == none) 
         {
@@ -132,7 +130,7 @@ class MiosisButtonRender extends Render
 
     function on_mouse_move(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.on_mouse_up ----------");
+        // _debug("---------- MiosisButtonRender.on_mouse_move ----------");
 
         visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_hover.png');
     }
