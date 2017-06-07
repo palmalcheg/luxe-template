@@ -7,6 +7,8 @@
     "haxe.displayConfigurations": [
         ["build.hxml"], // if a hxml file is safe to use, we can just pass it as argument
         // you can add more than one configuration and switch between them
+        ["bin/mac64.build/build.debug.hxml"],
+        ["bin/mac64.build/build.hxml"],        
         ["bin/mac64.build/snow.hxml"],
         ["bin/web.build/build.debug.hxml"],
         ["bin/web.build/build.hxml"],
