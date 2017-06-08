@@ -24,7 +24,7 @@ typedef LoadStateOptions =
 
 class Load extends BaseState 
 {
-    public var state_to_load:String;
+    public static var state_to_load:String;
 
     var progress_bar:Sprite;
     var progress_border:Visual;
@@ -33,40 +33,9 @@ class Load extends BaseState
     var width:Float = 0;
     var height:Float = 0;
 
-    var bar_color:Color;
-    var border_color:Color;
-    var background_color:Color;
-
     public function new(?_options:LoadStateOptions) 
     {
         _debug("---------- Load.new ----------");
-
-        if (_options != null && _options.bar_color != null)
-        {
-            bar_color = _options.bar_color;
-        }
-        else
-        {
-            bar_color = new Color().rgb(GameBoyPalette2.Off);
-        }
-
-        if (_options != null && _options.border_color != null)
-        {
-            border_color = _options.border_color;
-        }
-        else
-        {
-            border_color = new Color().rgb(GameBoyPalette2.Medium);
-        }
-
-        if (_options != null && _options.background_color != null)
-        {
-            background_color = _options.background_color;
-        }
-        else
-        {
-            background_color = new Color().rgb(GameBoyPalette2.Dark);
-        }
 
         state_to_load = "";
 
@@ -79,7 +48,7 @@ class Load extends BaseState
 
         // Set background color
 
-        Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Dark);
+        Luxe.renderer.clear_color = new Color().rgb(BasicColors.Blue);
 
         var view_width:Float = Luxe.screen.w;
         var view_height:Float = Luxe.screen.h;
@@ -104,8 +73,8 @@ class Load extends BaseState
             scene : Main.main_scene,          
             size : new Vector(view_width, view_height),
             centered : false,
-            color : background_color,
-            depth : 100,
+            color : new Color().rgb(GameBoyPalette2.Dark),            
+            depth : 1,
             visible : true,
         });
 
@@ -115,27 +84,25 @@ class Load extends BaseState
             pos : new Vector(view_mid_x - half_width, y_pos - half_height),
             size : new Vector(2, height),
             centered : false,
-            color : bar_color,
-            depth : 100
+            color : new Color().rgb(GameBoyPalette2.Off),
+            depth : 2
         });
 
         progress_border = new Visual({
             name : "border",
             scene : Main.main_scene,
-            color : border_color,
+            color : new Color().rgb(GameBoyPalette2.Medium),
             pos : new Vector(view_mid_x - half_width, y_pos - half_height),
             geometry : Luxe.draw.rectangle({
                 w : width,
                 h : height,
-                depth : 101
+                depth : 3
             }),
-            depth : 101
+            depth : 3
         });
 
         var promise_json:Promise = Luxe.resources.load_json("assets/json/parcel/parcel_" + state_to_load + ".json");
         promise_json.then(load_assets, json_load_failed);
-
-        _debug(Main.main_scene);
                
         super.onenter(_);       
     }
@@ -151,10 +118,6 @@ class Load extends BaseState
         progress_border = null;
         background.destroy();
         background = null;
-
-        bar_color = null;
-        border_color = null;
-        background_color = null;
 
         super.onleave(_data);
     }
@@ -201,10 +164,7 @@ class Load extends BaseState
     {
         _debug("---------- Load.oncomplete ----------");
 
-        // if (state_to_load != "level2")
-        // {
-            Luxe.events.fire(EventTypes.ChangeState, { state : state_to_load, parcel : parcel });
-        // }
+        Luxe.events.fire(EventTypes.ChangeState, { state : state_to_load, parcel : parcel });
     }
 
     function set_progress(amount:Float) 

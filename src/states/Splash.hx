@@ -69,7 +69,7 @@ class Splash extends BaseState
             texture:Luxe.resources.texture('assets/texture/logo/miosis_m.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(GameBoyPalette2.Off),
-            depth:4
+            depth:1
         }));
 
         // I
@@ -81,7 +81,7 @@ class Splash extends BaseState
             texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(GameBoyPalette2.Off),
-            depth:4
+            depth:1
         }));
 
         // O
@@ -93,7 +93,7 @@ class Splash extends BaseState
             texture:Luxe.resources.texture('assets/texture/logo/miosis_o.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(GameBoyPalette2.Off),
-            depth:4,
+            depth:1,
             size: new Vector(32, 32)
         }));
 
@@ -106,7 +106,7 @@ class Splash extends BaseState
             texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(GameBoyPalette2.Off),
-            depth:4
+            depth:1
         }));
 
         // I
@@ -118,7 +118,7 @@ class Splash extends BaseState
             texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(GameBoyPalette2.Off),
-            depth:4
+            depth:1
         }));
 
         // S
@@ -130,7 +130,7 @@ class Splash extends BaseState
             texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(GameBoyPalette2.Off),
-            depth:4
+            depth:1
         }));
 
         o_anim = letters[2].add(new LetterOAnimation({ name:'anim'}));

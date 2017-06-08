@@ -71,8 +71,7 @@ class Main extends luxe.Game
         config.preload.textures.push({ id : "assets/texture/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/texture/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/texture/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.jsons.push({ id : "assets/json/animation/splash_anim.json" });
-        config.preload.jsons.push({ id : "assets/json/data/state-config.json" });        
+        config.preload.jsons.push({ id : "assets/json/animation/splash_anim.json" });     
 
         changeStateEventId = "";
         current_state = "";
@@ -85,9 +84,6 @@ class Main extends luxe.Game
     override function ready() 
     {
         _debug("---------- Main.ready ----------");
-
-        var data:Array<Dynamic> = (Luxe.resources.json('assets/json/data/state-config.json').asset.json);
-        log('data : ' + data); 
 
         // Set background color
         Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Dark);
@@ -155,7 +151,7 @@ class Main extends luxe.Game
             size : Luxe.screen.size,
             color : new Color().rgb(GameBoyPalette2.Dark),
             centered : false,
-            depth : 990
+            depth : 1
         });    
         fade_overlay = fade_overlay_sprite.add(new FadeOverlay());
         
@@ -239,7 +235,7 @@ class Main extends luxe.Game
             }
 
             // Bootstrap load state to preload resources for next state
-            load_state.state_to_load = next_state;            
+            Load.state_to_load = next_state;            
             states.set("load");
         }
 
