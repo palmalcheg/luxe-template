@@ -66,11 +66,11 @@ class Main extends luxe.Game
         config.window.borderless = windowConfig.borderless;
 
         // Load assets for the splash screen
-        config.preload.textures.push({ id : "assets/texture/logo/miosis_m.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.textures.push({ id : "assets/texture/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.textures.push({ id : "assets/texture/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.textures.push({ id : "assets/texture/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.jsons.push({ id : "assets/json/animation/splash_anim.json" });
+        config.preload.textures.push({ id : LetterMTexture, filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : LetterITexture, filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : LetterOTexture, filter_min:nearest, filter_mag:nearest });
+        config.preload.textures.push({ id : LetterSTexture, filter_min:nearest, filter_mag:nearest });
+        config.preload.jsons.push({ id : LogoAnimationJson });
 
         changeStateEventId = "";
         current_state = "";
@@ -211,11 +211,11 @@ class Main extends luxe.Game
 
         if (current_state == "splash")
         {// Destroy preloaded splash resources
-            Luxe.resources.destroy("assets/texture/logo/miosis_m.png", true);
-            Luxe.resources.destroy("assets/texture/logo/miosis_i.png", true);
-            Luxe.resources.destroy("assets/texture/logo/miosis_s.png", true);
-            Luxe.resources.destroy("assets/texture/logo/miosis_o.png", true);
-            Luxe.resources.destroy("assets/json/animation/miosis_anim.json", true);
+            Luxe.resources.destroy(LetterMTexture);
+            Luxe.resources.destroy(LetterITexture);
+            Luxe.resources.destroy(LetterOTexture);
+            Luxe.resources.destroy(LetterSTexture);            
+            Luxe.resources.destroy(LogoAnimationJson);
         }
 
         states.unset(current_state);

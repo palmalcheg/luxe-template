@@ -1,5 +1,14 @@
 package definitions;
 
+@:enum abstract SplashAssets(String) to String
+{
+    var LetterMTexture    = "assets/texture/logo/miosis_m.png";
+    var LetterITexture    = "assets/texture/logo/miosis_i.png";
+    var LetterOTexture    = "assets/texture/logo/miosis_o.png";    
+    var LetterSTexture    = "assets/texture/logo/miosis_s.png";        
+    var LogoAnimationJson = "assets/json/animation/splash_anim.json";            
+}
+
 @:enum abstract EventTypes(String) to String
 {
     var ChangeState = "change_state";
