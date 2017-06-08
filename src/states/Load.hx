@@ -26,12 +26,12 @@ class Load extends BaseState
 {
     public static var state_to_load:String;
 
-    var progress_bar:Sprite;
-    var progress_border:Visual;
-    var background:Sprite;
+    private var progress_bar:Sprite;
+    private var progress_border:Visual;
+    private var background:Sprite;
 
-    var width:Float = 0;
-    var height:Float = 0;
+    private var width:Float = 0;
+    private var height:Float = 0;
 
     public function new(?_options:LoadStateOptions) 
     {
@@ -48,7 +48,7 @@ class Load extends BaseState
 
         // Set background color
 
-        Luxe.renderer.clear_color = new Color().rgb(BasicColors.Blue);
+        Luxe.renderer.clear_color = new Color().rgb(BasicColors.Red);
 
         var view_width:Float = Luxe.screen.w;
         var view_height:Float = Luxe.screen.h;
@@ -70,17 +70,17 @@ class Load extends BaseState
 
         background = new Sprite({
             name : "background", 
-            scene : Main.main_scene,          
+            scene : Main.main_scene,  
             size : new Vector(view_width, view_height),
             centered : false,
-            color : new Color().rgb(GameBoyPalette2.Dark),            
+            color : new Color().rgb(GameBoyPalette2.Dark),
             depth : 1,
             visible : true,
         });
 
         progress_bar = new Sprite({
             name : "bar",  
-            scene : Main.main_scene,                   
+            scene : Main.main_scene,
             pos : new Vector(view_mid_x - half_width, y_pos - half_height),
             size : new Vector(2, height),
             centered : false,
@@ -103,6 +103,8 @@ class Load extends BaseState
 
         var promise_json:Promise = Luxe.resources.load_json("assets/json/parcel/parcel_" + state_to_load + ".json");
         promise_json.then(load_assets, json_load_failed);
+
+        _debug(Main.main_scene);
                
         super.onenter(_);       
     }
@@ -140,16 +142,6 @@ class Load extends BaseState
         _debug("---------- Load.json_load_failed ----------");
 
         Luxe.shutdown();
-        
-        // set_progress(1);
-        // var args = { 
-        //     state : state_to_load, 
-        //     fade_in_time : fade_in_time, 
-        //     fade_out_time : fade_out_time, 
-        //     parcel : null 
-        // };
-
-        // Luxe.events.fire('change_state', args);
     }
 
     function onprogress(change:ParcelChange ) 

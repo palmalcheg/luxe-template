@@ -39,7 +39,6 @@ class Main extends luxe.Game
     public static var game_scale:Float = 1.0;
 
     private var states:States;
-    private var load_state:Load;        
     private var current_state:String;
     private var next_state:String;
     private var current_parcel:Parcel;
@@ -71,12 +70,11 @@ class Main extends luxe.Game
         config.preload.textures.push({ id : "assets/texture/logo/miosis_i.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/texture/logo/miosis_s.png", filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : "assets/texture/logo/miosis_o.png", filter_min:nearest, filter_mag:nearest });
-        config.preload.jsons.push({ id : "assets/json/animation/splash_anim.json" });     
+        config.preload.jsons.push({ id : "assets/json/animation/splash_anim.json" });
 
         changeStateEventId = "";
         current_state = "";
         next_state = "";
-        load_state = null;
 
         return config;
     }
@@ -160,11 +158,12 @@ class Main extends luxe.Game
 
         // Go to first state
         states = new States({ name:'states' });
-        load_state = states.add(new Load());
+        states.add(new Load());
         states.add(new Splash());
         states.add(new Level1());
         states.add(new Level2());        
 
+        current_state = "splash";
         next_state = "splash";
         states.set(next_state);
 
@@ -212,11 +211,11 @@ class Main extends luxe.Game
 
         if (current_state == "splash")
         {// Destroy preloaded splash resources
-            Luxe.resources.destroy("assets/img/logo/miosis_m.png");
-            Luxe.resources.destroy("assets/img/logo/miosis_i.png");
-            Luxe.resources.destroy("assets/img/logo/miosis_s.png");
-            Luxe.resources.destroy("assets/img/logo/miosis_o.png");
-            Luxe.resources.destroy("assets/json/miosis_anim.json");
+            Luxe.resources.destroy("assets/texture/logo/miosis_m.png", true);
+            Luxe.resources.destroy("assets/texture/logo/miosis_i.png", true);
+            Luxe.resources.destroy("assets/texture/logo/miosis_s.png", true);
+            Luxe.resources.destroy("assets/texture/logo/miosis_o.png", true);
+            Luxe.resources.destroy("assets/json/animation/miosis_anim.json", true);
         }
 
         states.unset(current_state);

@@ -28,7 +28,7 @@ class Level1 extends BaseState
         _debug("---------- Level1.onenter ----------");
 
 		// Set background color
-        Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Dark);
+        Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Off);
 
         button = new Button({
             parent : Main.canvas, 

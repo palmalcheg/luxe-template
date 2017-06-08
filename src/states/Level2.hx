@@ -13,7 +13,6 @@ import ui.MiosisMintRendering;
 
 class Level2 extends BaseState 
 {
-	var circle:Sprite;
     var button:Button;
     var music: AudioResource;
     var music_handle: luxe.Audio.AudioHandle;
@@ -31,7 +30,7 @@ class Level2 extends BaseState
 
 		// Set background color
 
-        Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Dark);
+        Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Off);
         button = new Button({
             parent : Main.canvas, 
             name : 'testbutton', 
