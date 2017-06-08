@@ -11,8 +11,9 @@ package definitions;
 
 @:enum abstract EventTypes(String) to String
 {
+    var ParcelLoadFailed = "parcel_load_failed";    
     var ChangeState = "change_state";
-    var ParcelLoadFailed = "parcel_load_failed";
+    var StateReady = "state_ready";    
 }
 
 @:enum abstract BasicColors(Int) to Int
@@ -24,22 +25,13 @@ package definitions;
     var Blue = 0x0000FF;  
 }
 
-// 	Game Boy palette, gray 1
-@:enum abstract GameBoyPaletteGray1(Int) to Int
+// CGA palette types
+@:enum abstract CGAPaletteType(String) to String
 {
-    var Off = BasicColors.Black;
-    var Light = 0xb2b2b2;
-	var Medium = 0x757575;    
-	var Dark = BasicColors.White;	
-}
-
-// 	Game Boy palette, gray 2
-@:enum abstract GameBoyPalette2(Int) to Int
-{
-    var Off = 0xefefef;
-    var Light = 0xb2b2b2;
-	var Medium = 0x757575;    
-	var Dark = 0x383838;	
+  var CGA0Low = "CGA0Low";
+  var CGA0High = "CGA0High";
+  var CGA1Low = "CGA1Low";
+  var CGA1High = "CGA1High";
 }
 
 // CGA Palette 0, low intensity
@@ -76,4 +68,22 @@ package definitions;
     var LightGreen = 0x55ff55;
 	var LightRed = 0xff5555;    
 	var Yellow = 0xffff55;	
+}
+
+// 	Game Boy palette, gray 1
+@:enum abstract GameBoyPalette1(Int) to Int
+{
+    var Off = BasicColors.Black;
+    var Light = 0xb2b2b2;
+	var Medium = 0x757575;    
+	var Dark = BasicColors.White;	
+}
+
+// 	Game Boy palette, gray 2
+@:enum abstract GameBoyPalette2(Int) to Int
+{
+    var Off = 0xefefef;
+    var Light = 0xb2b2b2;
+	var Medium = 0x757575;    
+	var Dark = 0x383838;	
 }

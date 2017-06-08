@@ -21,6 +21,7 @@ import states.Load;
 import states.Level1;
 import states.Level2;
 import states.Splash;
+import system.CGAPalette;
 import ui.MiosisCanvas;
 
 class Main extends luxe.Game  
@@ -28,10 +29,11 @@ class Main extends luxe.Game
     public static var main_scene:Scene;
     public static var mint_renderer:LuxeMintRender;
     public static var canvas:MiosisCanvas; // TODO : does this need to be public static
-    public static var focus: Focus; // TODO : does this need to be public static
-    public static var background_batcher: phoenix.Batcher;  
+    public static var focus:Focus; // TODO : does this need to be public static
+    public static var background_batcher:phoenix.Batcher;  
     public static var ui_batcher: phoenix.Batcher;    
-    public static var foreground_batcher: phoenix.Batcher;
+    public static var foreground_batcher:phoenix.Batcher;
+    public static var palette:CGAPalette;
 
     public static var w:Int = -1;
     public static var h:Int = -1;
@@ -168,7 +170,9 @@ class Main extends luxe.Game
         states.set(next_state);
 
         var state:BaseState = cast states.current_state;
-        fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);      
+        fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);  
+
+        palette = new CGAPalette(CGAPaletteType.CGA0High);    
     }
 
     function on_change_state(e)
