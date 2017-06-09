@@ -35,7 +35,7 @@ class BaseState extends State
     {
         _debug("---------- BaseState.onenter ----------");     
 
-        Luxe.events.fire(EventTypes.StateReady, { state:name });
+        Luxe.events.fire(EventTypes.StateReady, { state : name });
                
         super.onenter(_);       
     }

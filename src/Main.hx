@@ -15,7 +15,8 @@ import mint.focus.Focus;
 import mint.render.luxe.LuxeMintRender;
 
 import definitions.Enums;
-import components.FadeOverlay;
+import components.Fader;
+import entities.FadeTransitionSprite;
 import states.BaseState;
 import states.LoadState;
 import states.Level1State;
@@ -40,13 +41,12 @@ class Main extends luxe.Game
 
     public static var game_scale:Float = 1.0;
 
-    private var states:States;
-    private var current_state:String;
-    private var next_state:String;
-    private var current_parcel:Parcel;
-    private var fade_overlay_sprite:Sprite;
-    private var fade_overlay:FadeOverlay;
-    private var changeStateEventId:String;
+    private var _states : States;
+    private var _current_state : String;
+    private var _next_state : String;
+    private var _current_parcel : Parcel;
+    private var _changeStateEventId : String;
+    private var _fader : Fader;
 
     override function config(config:luxe.GameConfig) 
     {
@@ -74,9 +74,9 @@ class Main extends luxe.Game
         config.preload.textures.push({ id : LetterSTexture, filter_min:nearest, filter_mag:nearest });
         config.preload.jsons.push({ id : LogoAnimationJson });
 
-        changeStateEventId = "";
-        current_state = "";
-        next_state = "";
+        _changeStateEventId = "";
+        _current_state = "";
+        _next_state = "";
 
         return config;
     }
@@ -144,33 +144,25 @@ class Main extends luxe.Game
 
         // Set up fade overlay
 
-        fade_overlay_sprite = new Sprite({
-            batcher : foreground_batcher,
-            parent : Luxe.camera,
-            name : 'fade_overlay_sprite',
-            size : Luxe.screen.size,
-            color : new Color().rgb(GameBoyPalette2.Dark),
-            centered : false,
-            depth : 1
-        });    
-        fade_overlay = fade_overlay_sprite.add(new FadeOverlay());
+        var fader_sprite = new FadeTransitionSprite();
+        _fader = fader_sprite.add(new Fader());
         
         // Subscribe to state change events
-        changeStateEventId = Luxe.events.listen(EventTypes.ChangeState, on_change_state);
+        _changeStateEventId = Luxe.events.listen(EventTypes.ChangeState, on_change_state);
 
         // Go to first state
-        states = new States({ name:'states' });
-        states.add(new SplashState());
-        states.add(new LoadState());        
-        states.add(new Level1State());
-        states.add(new Level2State());        
+        _states = new States({ name:'states' });
+        _states.add(new SplashState());
+        _states.add(new LoadState());        
+        _states.add(new Level1State());
+        _states.add(new Level2State());        
 
-        current_state = StateNames.Splash;
-        next_state = StateNames.Splash;
-        states.set(next_state);
+        _current_state = StateNames.Splash;
+        _next_state = StateNames.Splash;
+        _states.set(_next_state);
 
-        var state:BaseState = cast states.current_state;
-        fade_overlay.fade_in(state.transition_in_time, on_fade_in_done);  
+        var state:BaseState = cast _states.current_state;
+        _fader.fade_in(state.transition_in_time, on_fade_in_done);  
 
         palette = new CGAPalette(CGAPaletteType.CGA0High);    
     }
@@ -179,18 +171,18 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.on_change_state, go to state: " + e.state + "----------");
 
-        next_state = e.state;   
+        _next_state = e.state;   
 
         if (e.parcel != null)
         {
-            current_parcel = e.parcel;
+            _current_parcel = e.parcel;
         }     
 
-        var state:BaseState = cast states.current_state;
+        var state:BaseState = cast _states.current_state;
 
         if (state.transition_out_time > 0)
         {
-            fade_overlay.fade_out(state.transition_out_time, on_fade_out_done);    
+            _fader.fade_out(state.transition_out_time, on_fade_out_done);    
         }
         else
         {
@@ -202,7 +194,7 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.on_fade_in_done ----------");
 
-        var state:BaseState = cast states.current_state;
+        var state:BaseState = cast _states.current_state;
         state.post_fade_in();
     }
 
@@ -210,12 +202,12 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.on_fade_out_done ----------");
 
-        log("!!!!!!!!!!!!! current_state = " + current_state);
-        log("!!!!!!!!!!!!! next_state = " + next_state);        
+        log("!!!!!!!!!!!!! _current_state = " + _current_state);
+        log("!!!!!!!!!!!!! _next_state = " + _next_state);        
 
-        states.unset(current_state);
+        _states.unset(_current_state);
 
-        if (current_state == StateNames.Splash)
+        if (_current_state == StateNames.Splash)
         {// Destroy preloaded splash resources
             Luxe.resources.destroy(LetterMTexture);
             Luxe.resources.destroy(LetterITexture);
@@ -226,26 +218,26 @@ class Main extends luxe.Game
 
         main_scene.empty();
 
-        if (current_state == StateNames.Load)
+        if (_current_state == StateNames.Load)
         {
             // Resources for next state loaded, proceed
-            states.set(next_state);
+            _states.set(_next_state);
         }
         else
         {
-            if (current_parcel != null)
+            if (_current_parcel != null)
             {// Assets were loaded from a parcel (i.e. current state is not splash or load)
-                current_parcel.unload();
+                _current_parcel.unload();
             }
 
             // Bootstrap load state to preload resources for next state
-            LoadState.state_to_load = next_state;            
-            states.set(StateNames.Load);
+            LoadState.state_to_load = _next_state;            
+            _states.set(StateNames.Load);
         }
 
-        var state:BaseState = cast states.current_state;
-        current_state = state.name;
-        fade_overlay.fade_in(state.transition_in_time, on_fade_in_done);                        
+        var state:BaseState = cast _states.current_state;
+        _current_state = state.name;
+        _fader.fade_in(state.transition_in_time, on_fade_in_done);                        
     }
 
     override function onkeyup(e:luxe.Input.KeyEvent) 
@@ -264,22 +256,21 @@ class Main extends luxe.Game
 
     override function ondestroy() 
     {
-        Luxe.events.unlisten(changeStateEventId);
+        Luxe.events.unlisten(_changeStateEventId);
 
-        if (states != null)
+        if (_states != null)
         {
-            states.destroy();
-            states = null;            
+            _states.destroy();
+            _states = null;            
         }
 
-        if (current_parcel != null)
+        if (_current_parcel != null)
         {
-            current_parcel.unload();
-            current_parcel = null; 
+            _current_parcel.unload();
+            _current_parcel = null; 
         }
 
-        next_state = null;
-        fade_overlay_sprite = null;
-        fade_overlay = null;
+        _next_state = null;
+        _fader = null;
     }
 }
