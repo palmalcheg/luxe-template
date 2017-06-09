@@ -18,14 +18,14 @@ class Level1State extends BaseState
 
 	public function new() 
 	{
-        _debug("---------- Level1.new ----------");
+        _debug("---------- Level1State.new ----------");
 
         super({ name : StateNames.Level1 });
     }
 
 	override function onenter<T>(_:T) 
 	{
-        _debug("---------- Level1.onenter ----------");
+        _debug("---------- Level1State.onenter ----------");
 
 		// Set background color
         Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Off);
@@ -74,7 +74,7 @@ class Level1State extends BaseState
 
     override function onleave<T>( _data:T ) 
     {
-        _debug("---------- Level1.onleave ----------");
+        _debug("---------- Level1State.onleave ----------");
 
         super.onleave(_data);
 
@@ -86,7 +86,7 @@ class Level1State extends BaseState
 
     override function post_fade_in()
     {
-        _debug("---------- Level1.post_fade_in ----------");
+        _debug("---------- Level1State.post_fade_in ----------");
 
         // DO STUFF
     }

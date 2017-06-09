@@ -12,22 +12,26 @@ import components.LetterOAnimation;
 
 class SplashState extends BaseState 
 {
-	var o_anim:SpriteAnimation;
-	var letters:Array<Sprite>;
+	var o_anim : SpriteAnimation;
+	var letters : haxe.ds.Vector<Sprite>;
 
 	public function new() 
 	{
         _debug("---------- Splash.new ----------");
 
-        super({ name:'splash', fade_in_time:0.0, fade_out_time:0.5 });
-        letters = new Array<Sprite>();
+        super({ 
+            name : StateNames.Splash, 
+            transition_in_time : 0.2,
+            transition_out_time : 0.2 
+        });
+        
+        letters = new haxe.ds.Vector<Sprite>(6);
     }
 
 	override function onenter<T>(_:T) 
 	{
         _debug("---------- Splash.onenter ----------");
 
-		// Set background color
 	    Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Dark);
                
         super.onenter(_);		
@@ -63,75 +67,69 @@ class SplashState extends BaseState
         // M
         var pos_x = halfscreen_width - width_total_half + 8;
 
-        letters.push(new Sprite({
-            name:'miosis_m',
-            scene:Main.main_scene,
-            texture:Luxe.resources.texture('assets/texture/logo/miosis_m.png'),
-            pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(GameBoyPalette2.Off),
-            depth:1
-        }));
+        letters[0] = new Sprite({
+            name : ' miosis_m',
+            scene : Main.main_scene,
+            texture : Luxe.resources.texture('assets/texture/logo/miosis_m.png'),
+            pos : new Vector(pos_x, Main.h * 0.5),
+            color : new Color().rgb(GameBoyPalette2.Off)
+        });
 
         // I
         pos_x += 8 + distance + 2;
 
-        letters.push(new Sprite({
+        letters[1] = new Sprite({
             name:'miosis_i1', 
             scene:Main.main_scene,           
             texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(GameBoyPalette2.Off),
-            depth:1
-        }));
+        });
 
         // O
         pos_x += 2 + distance + 16;
 
-        letters.push(new Sprite({
+        letters[2] = new Sprite({
             name:'miosis_o',   
             scene:Main.main_scene,                     
             texture:Luxe.resources.texture('assets/texture/logo/miosis_o.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(GameBoyPalette2.Off),
-            depth:1,
             size: new Vector(32, 32)
-        }));
+        });
 
         // S
         pos_x += 16 + distance + 8;
 
-        letters.push(new Sprite({
+        letters[3] = new Sprite({
             name:'miosis_s',  
             scene:Main.main_scene,                      
             texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color: new Color().rgb(GameBoyPalette2.Off),
-            depth:1
-        }));
+        });
 
         // I
         pos_x += 8 + distance + 2;
 
-        letters.push(new Sprite({
-            name:'miosis_i2',  
-            scene:Main.main_scene,                      
-            texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
-            pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(GameBoyPalette2.Off),
-            depth:1
-        }));
+        letters[4] = new Sprite({
+            name : 'miosis_i2',  
+            scene : Main.main_scene,                      
+            texture : Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
+            pos : new Vector(pos_x, Main.h * 0.5),
+            color : new Color().rgb(GameBoyPalette2.Off),
+        });
 
         // S
         pos_x += 2 + distance + 8;
 
-        letters.push(new Sprite({
-            name:'miosis_s2',    
-            scene:Main.main_scene,                    
-            texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
-            pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(GameBoyPalette2.Off),
-            depth:1
-        }));
+        letters[5] = new Sprite({
+            name : 'miosis_s2',    
+            scene : Main.main_scene,                    
+            texture : Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
+            pos : new Vector(pos_x, Main.h * 0.5),
+            color : new Color().rgb(GameBoyPalette2.Off),
+        });
 
         o_anim = letters[2].add(new LetterOAnimation({ name:'anim'}));
         o_anim.entity.events.listen('animation.splash.end', on_anim_done);

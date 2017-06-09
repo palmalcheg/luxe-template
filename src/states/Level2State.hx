@@ -18,14 +18,14 @@ class Level2State extends BaseState
 
 	public function new() 
 	{
-        _debug("---------- Level2.new ----------");
+        _debug("---------- Level2State.new ----------");
 
-        super({ name:'level2' });
+        super({ name : StateNames.Level2 });
     }
 
 	override function onenter<T>(_:T) 
 	{
-        _debug("---------- Level2.onenter ----------");
+        _debug("---------- Level2State.onenter ----------");
 
 		// Set background color
 
@@ -68,7 +68,7 @@ class Level2State extends BaseState
 
     override function onleave<T>( _data:T ) 
     {
-        _debug("---------- Level2.onleave ----------");
+        _debug("---------- Level2State.onleave ----------");
 
         super.onleave(_data);
 
@@ -79,7 +79,7 @@ class Level2State extends BaseState
 
     override function post_fade_in()
     {
-        _debug("---------- Level2.post_fade_in ----------");
+        _debug("---------- Level2State.post_fade_in ----------");
 
         // DO STUFF
     }

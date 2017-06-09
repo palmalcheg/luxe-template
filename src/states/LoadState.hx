@@ -33,8 +33,8 @@ class LoadState extends BaseState
 
         super({ 
             name : StateNames.Load, 
-            fade_in_time : 0.2, 
-            fade_out_time : 0.2 
+            transition_in_time : 0.2, 
+            transition_out_time : 0.2 
         });
     }
 

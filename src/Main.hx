@@ -170,7 +170,7 @@ class Main extends luxe.Game
         states.set(next_state);
 
         var state:BaseState = cast states.current_state;
-        fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);  
+        fade_overlay.fade_in(state.transition_in_time, on_fade_in_done);  
 
         palette = new CGAPalette(CGAPaletteType.CGA0High);    
     }
@@ -188,9 +188,9 @@ class Main extends luxe.Game
 
         var state:BaseState = cast states.current_state;
 
-        if (state.fade_out_time > 0)
+        if (state.transition_out_time > 0)
         {
-            fade_overlay.fade_out(state.fade_out_time, on_fade_out_done);    
+            fade_overlay.fade_out(state.transition_out_time, on_fade_out_done);    
         }
         else
         {
@@ -245,7 +245,7 @@ class Main extends luxe.Game
 
         var state:BaseState = cast states.current_state;
         current_state = state.name;
-        fade_overlay.fade_in(state.fade_in_time, on_fade_in_done);                        
+        fade_overlay.fade_in(state.transition_in_time, on_fade_in_done);                        
     }
 
     override function onkeyup(e:luxe.Input.KeyEvent) 

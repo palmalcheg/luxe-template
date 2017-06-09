@@ -5,7 +5,7 @@ package definitions;
     var Splash  = "splash";
     var Load    = "load";    
     var Level1  = "level1";
-    var Level2  = "Level2";    
+    var Level2  = "level2";    
 }
 
 @:enum abstract SplashAssets(String) to String
