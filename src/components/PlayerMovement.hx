@@ -14,20 +14,14 @@ class PlayerMovement extends Component
 	public var sprite:Sprite;
 	public var half_size:Float;
 
-    public function new(?_options:ComponentOptions) 
+    public function new(?options:ComponentOptions) 
     {
         _debug("---------- PlayerMovement.new ----------");        
 
-        if (_options == null) 
-        {
-			_options = { name : "movement"};
-        } 
-        else if (_options.name == null)
-        {
-            _options.name = "movement";
-        }
+		def(options, { name : 'movement'});
+		def(options.name, 'movement');
 
-        super(_options);
+        super(options);
     }
 
 	public override function init() 

@@ -1,23 +1,17 @@
 package components;
 
 import luxe.Log.*;
-
+import luxe.components.sprite.SpriteAnimation;
 import luxe.options.ComponentOptions;
 
-class LetterOAnimation extends luxe.components.sprite.SpriteAnimation 
+class LetterOAnimation extends SpriteAnimation 
 {
     public function new(?_options:ComponentOptions) 
     {
-        _debug("---------- LetterOAnimation.new ----------");        
+        _debug("---------- LetterOAnimation.new ----------");  
 
-        if (_options == null) 
-        {
-            _options = { name : "animation"};
-        } 
-        else if (_options.name == null)
-        {
-            _options.name = "animation";
-        }
+        def(_options, { name : 'animation' });  
+        def(_options.name, 'animation');    
 
         super(_options);
     }
