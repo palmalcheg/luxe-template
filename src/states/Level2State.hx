@@ -2,7 +2,6 @@ package states;
 
 import luxe.Color;
 import luxe.Log.*;
-import luxe.Sprite;
 import luxe.Text;
 import luxe.resource.Resource.AudioResource;
 
@@ -11,7 +10,7 @@ import mint.Button;
 import definitions.Enums;
 import ui.MiosisMintRendering;
 
-class Level2 extends BaseState 
+class Level2State extends BaseState 
 {
     var button:Button;
     var music: AudioResource;
@@ -64,7 +63,7 @@ class Level2 extends BaseState
 
     private function on_button_click()
     {
-        Luxe.events.fire(EventTypes.ChangeState, { state : "level1" });
+        Luxe.events.fire(EventTypes.ChangeState, { state : StateNames.Level1 });
     }
 
     override function onleave<T>( _data:T ) 

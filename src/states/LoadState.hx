@@ -14,15 +14,7 @@ import snow.api.Promise;
 import definitions.Enums;
 import states.BaseState;
 
-typedef LoadStateOptions = 
-{
-    > BaseStateOptions,
-    @:optional var bar_color:Color;
-    @:optional var border_color:Color;
-    @:optional var background_color:Color;    
-}
-
-class Load extends BaseState 
+class LoadState extends BaseState 
 {
     public static var state_to_load:String;
 
@@ -33,13 +25,17 @@ class Load extends BaseState
     private var width:Float = 0;
     private var height:Float = 0;
 
-    public function new(?_options:LoadStateOptions) 
+    public function new() 
     {
         _debug("---------- Load.new ----------");
 
         state_to_load = "";
 
-        super({ name : 'load', fade_in_time : 0.2, fade_out_time : 0.2 });
+        super({ 
+            name : StateNames.Load, 
+            fade_in_time : 0.2, 
+            fade_out_time : 0.2 
+        });
     }
 
     override function onenter<T>(_:T) 
@@ -50,8 +46,8 @@ class Load extends BaseState
 
         Luxe.renderer.clear_color = new Color().rgb(BasicColors.Red);
 
-        var view_width:Float = Luxe.screen.w;
-        var view_height:Float = Luxe.screen.h;
+        var view_width : Float = Luxe.screen.w;
+        var view_height : Float = Luxe.screen.h;
 
         if (Luxe.camera.size != null) 
         {

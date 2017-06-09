@@ -1,5 +1,13 @@
 package definitions;
 
+@:enum abstract StateNames(String) to String
+{
+    var Splash  = "splash";
+    var Load    = "load";    
+    var Level1  = "level1";
+    var Level2  = "Level2";    
+}
+
 @:enum abstract SplashAssets(String) to String
 {
     var LetterMTexture    = "assets/texture/logo/miosis_m.png";

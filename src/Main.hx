@@ -17,10 +17,10 @@ import mint.render.luxe.LuxeMintRender;
 import definitions.Enums;
 import components.FadeOverlay;
 import states.BaseState;
-import states.Load;
-import states.Level1;
-import states.Level2;
-import states.Splash;
+import states.LoadState;
+import states.Level1State;
+import states.Level2State;
+import states.SplashState;
 import system.CGAPalette;
 import ui.MiosisCanvas;
 
@@ -160,13 +160,13 @@ class Main extends luxe.Game
 
         // Go to first state
         states = new States({ name:'states' });
-        states.add(new Load());
-        states.add(new Splash());
-        states.add(new Level1());
-        states.add(new Level2());        
+        states.add(new SplashState());
+        states.add(new LoadState());        
+        states.add(new Level1State());
+        states.add(new Level2State());        
 
-        current_state = "splash";
-        next_state = "splash";
+        current_state = StateNames.Splash;
+        next_state = StateNames.Splash;
         states.set(next_state);
 
         var state:BaseState = cast states.current_state;
@@ -213,7 +213,9 @@ class Main extends luxe.Game
         log("!!!!!!!!!!!!! current_state = " + current_state);
         log("!!!!!!!!!!!!! next_state = " + next_state);        
 
-        if (current_state == "splash")
+        states.unset(current_state);
+
+        if (current_state == StateNames.Splash)
         {// Destroy preloaded splash resources
             Luxe.resources.destroy(LetterMTexture);
             Luxe.resources.destroy(LetterITexture);
@@ -222,10 +224,9 @@ class Main extends luxe.Game
             Luxe.resources.destroy(LogoAnimationJson);
         }
 
-        states.unset(current_state);
         main_scene.empty();
 
-        if (current_state == "load")
+        if (current_state == StateNames.Load)
         {
             // Resources for next state loaded, proceed
             states.set(next_state);
@@ -238,8 +239,8 @@ class Main extends luxe.Game
             }
 
             // Bootstrap load state to preload resources for next state
-            Load.state_to_load = next_state;            
-            states.set("load");
+            LoadState.state_to_load = next_state;            
+            states.set(StateNames.Load);
         }
 
         var state:BaseState = cast states.current_state;

@@ -10,7 +10,7 @@ import luxe.components.sprite.SpriteAnimation;
 import definitions.Enums;
 import components.LetterOAnimation;
 
-class Splash extends BaseState 
+class SplashState extends BaseState 
 {
 	var o_anim:SpriteAnimation;
 	var letters:Array<Sprite>;
@@ -142,6 +142,6 @@ class Splash extends BaseState
         _debug("---------- Splash.on_anim_done ----------");
 
         o_anim.entity.events.unlisten('animation.splash.end');
-        Luxe.events.fire(EventTypes.ChangeState, { state : 'level1' });
+        Luxe.events.fire(EventTypes.ChangeState, { state : StateNames.Level1 });
     }
 }

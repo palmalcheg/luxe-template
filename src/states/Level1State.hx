@@ -10,7 +10,7 @@ import mint.Button;
 import definitions.Enums;
 import ui.MiosisMintRendering;
 
-class Level1 extends BaseState 
+class Level1State extends BaseState 
 {
     var button:Button;
     var music: AudioResource;
@@ -20,7 +20,7 @@ class Level1 extends BaseState
 	{
         _debug("---------- Level1.new ----------");
 
-        super({ name:'level1' });
+        super({ name : StateNames.Level1 });
     }
 
 	override function onenter<T>(_:T) 
@@ -39,7 +39,7 @@ class Level1 extends BaseState
             y : 0.1 * Main.h, 
             w : 30, 
             h : 20,
-            onclick: function(e,c) { on_button_click(); }
+            onclick : function(e,c) { on_button_click(); }
         });
 
         // Customize button label
@@ -69,7 +69,7 @@ class Level1 extends BaseState
 
     private function on_button_click()
     {
-        Luxe.events.fire(EventTypes.ChangeState, { state : "level2" });
+        Luxe.events.fire(EventTypes.ChangeState, { state : StateNames.Level2 });
     }
 
     override function onleave<T>( _data:T ) 

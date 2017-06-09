@@ -4,6 +4,8 @@ import luxe.Log.*;
 import luxe.options.StateOptions;
 import luxe.States;
 
+import definitions.Enums;
+
 typedef BaseStateOptions = 
 {
     > StateOptions,
@@ -45,7 +47,7 @@ class BaseState extends State
     {
         _debug("---------- BaseState.onenter ----------");     
 
-        // Luxe.events.fire('state_ready', { state:name });
+        Luxe.events.fire(EventTypes.StateReady, { state:name });
                
         super.onenter(_);       
     }

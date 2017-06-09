@@ -6,6 +6,7 @@ import definitions.Enums;
 
 class CGAPalette
 {
+    private var _paletteType:CGAPaletteType;
     private var _palette:haxe.ds.Vector<Color>;
 
 	public function new(type:CGAPaletteType) 
@@ -14,8 +15,15 @@ class CGAPalette
         set_palette_type(type);
     }
 
+    public function get_palette_type():CGAPaletteType
+    {
+        return _paletteType;
+    }
+    
     public function set_palette_type(type:CGAPaletteType):Void
     {
+        _paletteType = type;
+        
         switch (type)
         {
             case CGA0Low:
