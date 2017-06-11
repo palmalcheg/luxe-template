@@ -2,11 +2,8 @@ import luxe.Camera;
 import luxe.Color;
 import luxe.Input;
 import luxe.Log.*;
-import luxe.Parcel;
 import luxe.Scene;
 import luxe.Screen.WindowEvent;
-import luxe.Sprite;
-import luxe.States;
 import luxe.Vector;
 
 import phoenix.Batcher;
@@ -15,14 +12,8 @@ import mint.focus.Focus;
 import mint.render.luxe.LuxeMintRender;
 
 import definitions.Enums;
-import components.Fader;
-import entities.FadeTransitionSprite;
-import states.BaseState;
-import states.LoadState;
-import states.Level1State;
-import states.Level2State;
-import states.SplashState;
 import system.CGAPalette;
+import system.StateManager;
 import ui.MiosisCanvas;
 
 class Main extends luxe.Game  
@@ -41,12 +32,7 @@ class Main extends luxe.Game
 
     public static var game_scale:Float = 1.0;
 
-    private var _states : States;
-    private var _current_state : String;
-    private var _next_state : String;
-    private var _current_parcel : Parcel;
-    private var _changeStateEventId : String;
-    private var _fader : Fader;
+    private var _state_manager : StateManager;
 
     override function config(config:luxe.GameConfig) 
     {
@@ -73,10 +59,6 @@ class Main extends luxe.Game
         config.preload.textures.push({ id : LetterOTexture, filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : LetterSTexture, filter_min:nearest, filter_mag:nearest });
         config.preload.jsons.push({ id : LogoAnimationJson });
-
-        _changeStateEventId = "";
-        _current_state = "";
-        _next_state = "";
 
         return config;
     }
@@ -142,102 +124,11 @@ class Main extends luxe.Game
 
         focus = new Focus(canvas);
 
-        // Set up fade overlay
+        // Start state manager
 
-        var fader_sprite = new FadeTransitionSprite();
-        _fader = fader_sprite.add(new Fader());
-        
-        // Subscribe to state change events
-        _changeStateEventId = Luxe.events.listen(EventTypes.ChangeState, on_change_state);
-
-        // Go to first state
-        _states = new States({ name:'states' });
-        _states.add(new SplashState());
-        _states.add(new LoadState());        
-        _states.add(new Level1State());
-        _states.add(new Level2State());        
-
-        _current_state = StateNames.Splash;
-        _next_state = StateNames.Splash;
-        _states.set(_next_state);
-
-        var state:BaseState = cast _states.current_state;
-        _fader.fade_in(state.transition_in_time, on_fade_in_done);  
+        _state_manager = new StateManager();
 
         palette = new CGAPalette(CGAPaletteType.CGA0High);    
-    }
-
-    function on_change_state(e)
-    {
-        _debug("---------- Main.on_change_state, go to state: " + e.state + "----------");
-
-        _next_state = e.state;   
-
-        if (e.parcel != null)
-        {
-            _current_parcel = e.parcel;
-        }     
-
-        var state:BaseState = cast _states.current_state;
-
-        if (state.transition_out_time > 0)
-        {
-            _fader.fade_out(state.transition_out_time, on_fade_out_done);    
-        }
-        else
-        {
-            on_fade_out_done();
-        }
-    }
-
-    function on_fade_in_done()
-    {
-        _debug("---------- Main.on_fade_in_done ----------");
-
-        var state:BaseState = cast _states.current_state;
-        state.post_fade_in();
-    }
-
-    function on_fade_out_done()
-    {
-        _debug("---------- Main.on_fade_out_done ----------");
-
-        log("!!!!!!!!!!!!! _current_state = " + _current_state);
-        log("!!!!!!!!!!!!! _next_state = " + _next_state);        
-
-        _states.unset(_current_state);
-
-        if (_current_state == StateNames.Splash)
-        {// Destroy preloaded splash resources
-            Luxe.resources.destroy(LetterMTexture);
-            Luxe.resources.destroy(LetterITexture);
-            Luxe.resources.destroy(LetterOTexture);
-            Luxe.resources.destroy(LetterSTexture);            
-            Luxe.resources.destroy(LogoAnimationJson);
-        }
-
-        main_scene.empty();
-
-        if (_current_state == StateNames.Load)
-        {
-            // Resources for next state loaded, proceed
-            _states.set(_next_state);
-        }
-        else
-        {
-            if (_current_parcel != null)
-            {// Assets were loaded from a parcel (i.e. current state is not splash or load)
-                _current_parcel.unload();
-            }
-
-            // Bootstrap load state to preload resources for next state
-            LoadState.state_to_load = _next_state;            
-            _states.set(StateNames.Load);
-        }
-
-        var state:BaseState = cast _states.current_state;
-        _current_state = state.name;
-        _fader.fade_in(state.transition_in_time, on_fade_in_done);                        
     }
 
     override function onkeyup(e:luxe.Input.KeyEvent) 
@@ -256,21 +147,6 @@ class Main extends luxe.Game
 
     override function ondestroy() 
     {
-        Luxe.events.unlisten(_changeStateEventId);
-
-        if (_states != null)
-        {
-            _states.destroy();
-            _states = null;            
-        }
-
-        if (_current_parcel != null)
-        {
-            _current_parcel.unload();
-            _current_parcel = null; 
-        }
-
-        _next_state = null;
-        _fader = null;
+        _state_manager.destroy();
     }
 }
