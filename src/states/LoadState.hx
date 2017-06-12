@@ -16,7 +16,7 @@ import states.BaseState;
 
 class LoadState extends BaseState 
 {
-    public static var state_to_load:String;
+    public static var next_state:String;
 
     private var progress_bar:Sprite;
     private var progress_border:Visual;
@@ -29,7 +29,7 @@ class LoadState extends BaseState
     {
         _debug("---------- Load.new ----------");
 
-        state_to_load = "";
+        next_state = "";
 
         super({ 
             name:StateNames.Load, 
@@ -99,7 +99,7 @@ class LoadState extends BaseState
             depth:3
         });
 
-        var promise_json:Promise = Luxe.resources.load_json("assets/json/parcel/parcel_" + state_to_load + ".json");
+        var promise_json:Promise = Luxe.resources.load_json("assets/json/parcel/parcel_" + next_state + ".json");
         promise_json.then(load_assets, json_load_failed);
 
         _debug(Main.main_scene);
@@ -152,7 +152,7 @@ class LoadState extends BaseState
     {
         _debug("---------- Load.oncomplete ----------");
 
-        Luxe.events.fire(EventTypes.ChangeState, { state:state_to_load, parcel:parcel });
+        Luxe.events.fire(EventTypes.ChangeState, { state:next_state, parcel:parcel });
     }
 
     function set_progress(amount:Float) 

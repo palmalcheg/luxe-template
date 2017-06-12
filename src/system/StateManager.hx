@@ -88,8 +88,8 @@ class StateManager
     {
         _debug("---------- StateManager.on_fade_out_done ----------");
 
-        log("!!!!!!!!!!!!! _current_state = " + _current_state);
-        log("!!!!!!!!!!!!! _next_state = " + _next_state);        
+        log("[StateManager] Current state : " + _current_state);
+        log("[StateManager] Next state : " + _next_state);        
 
         _states.unset(_current_state);
 
@@ -123,7 +123,7 @@ class StateManager
 
             // Queue next state and preload resources
 
-            LoadState.state_to_load = _next_state;            
+            LoadState.next_state = _next_state;            
             _states.set(StateNames.Load);
         }
 
