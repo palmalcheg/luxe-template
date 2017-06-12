@@ -2,6 +2,7 @@ package ui;
 
 import luxe.Log.*;
 import luxe.NineSlice;
+import luxe.Scene;
 import luxe.Vector;
 
 import mint.Button;
@@ -16,7 +17,7 @@ class MiosisButtonRender extends Render
 {
     private var visual:NineSlice;
 
-    public function new(_rendering:Rendering, _control:Button) 
+    public function new(_rendering:Rendering, _control:Button, _scene:Scene) 
     {
         _debug("---------- MiosisButtonRender.new ----------");
 
@@ -29,7 +30,7 @@ class MiosisButtonRender extends Render
         // log(control.h);        
 
         visual = new luxe.NineSlice({
-            scene:Main.main_scene,
+            scene:_scene,
             name:control.name + '.visual',
             batcher:customRendering.options.batcher,
             texture:Luxe.resources.texture('assets/texture/ui/gb_button_normal.png'),
@@ -40,7 +41,6 @@ class MiosisButtonRender extends Render
             visible:control.visible
         });
         visual.create(new Vector(control.x, control.y), control.w, control.h);
-        // Main.main_scene.add(visual);
         
         control.onmouseenter.listen(on_mouse_enter);
         control.onmouseleave.listen(on_mouse_leave);

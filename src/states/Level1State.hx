@@ -32,11 +32,13 @@ class Level1State extends BaseState
 		// Set background color
         Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Off);
 
+        var rendering = new MiosisMintRendering({ batcher:Main.ui_batcher });
+
         button = new Button({
             parent:Main.canvas, 
             name:'testbutton', 
             text:'one',
-            rendering:new MiosisMintRendering({ batcher:Main.ui_batcher }),
+            rendering:rendering,
             x:0.1 * Main.w, 
             y:0.1 * Main.h, 
             w:30, 
@@ -45,9 +47,10 @@ class Level1State extends BaseState
         });
 
         // Customize button label
+        // TODO : Move to button renderer
         var labelRenderer:mint.render.luxe.Label = cast button.label.renderer;
-        Main.main_scene.add(labelRenderer.text);
-        var txt:Text = Main.main_scene.get('testbutton.label.text');    
+        rendering.ui_scene.add(labelRenderer.text);
+        var txt:Text = rendering.ui_scene.get('testbutton.label.text');    
         log('Text obj:' + txt);  
         txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         txt.color = new Color().rgb(GameBoyPalette2.Dark);

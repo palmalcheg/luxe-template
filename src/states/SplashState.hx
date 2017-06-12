@@ -69,7 +69,7 @@ class SplashState extends BaseState
 
         letters[0] = new Sprite({
             name:' miosis_m',
-            scene:Main.main_scene,
+            scene:_scene,
             texture:Luxe.resources.texture('assets/texture/logo/miosis_m.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color:new Color().rgb(GameBoyPalette2.Off)
@@ -80,7 +80,7 @@ class SplashState extends BaseState
 
         letters[1] = new Sprite({
             name:'miosis_i1', 
-            scene:Main.main_scene,           
+            scene:_scene,           
             texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color:new Color().rgb(GameBoyPalette2.Off),
@@ -91,7 +91,7 @@ class SplashState extends BaseState
 
         letters[2] = new Sprite({
             name:'miosis_o',   
-            scene:Main.main_scene,                     
+            scene:_scene,                     
             texture:Luxe.resources.texture('assets/texture/logo/miosis_o.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color:new Color().rgb(GameBoyPalette2.Off),
@@ -103,7 +103,7 @@ class SplashState extends BaseState
 
         letters[3] = new Sprite({
             name:'miosis_s',  
-            scene:Main.main_scene,                      
+            scene:_scene,                      
             texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color:new Color().rgb(GameBoyPalette2.Off),
@@ -114,7 +114,7 @@ class SplashState extends BaseState
 
         letters[4] = new Sprite({
             name:'miosis_i2',  
-            scene:Main.main_scene,                      
+            scene:_scene,                      
             texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color:new Color().rgb(GameBoyPalette2.Off),
@@ -125,7 +125,7 @@ class SplashState extends BaseState
 
         letters[5] = new Sprite({
             name:'miosis_s2',    
-            scene:Main.main_scene,                    
+            scene:_scene,                    
             texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
             color:new Color().rgb(GameBoyPalette2.Off),

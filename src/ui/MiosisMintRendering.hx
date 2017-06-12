@@ -1,5 +1,7 @@
 package ui;
 
+import luxe.Scene;
+
 import mint.Button;
 import mint.Control;
 
@@ -7,6 +9,15 @@ import mint.render.luxe.LuxeMintRender;
 
 class MiosisMintRendering extends LuxeMintRender 
 {
+    public var ui_scene(default, null):Scene;
+
+    public function new(?_options:luxe.options.RenderProperties)
+    {
+        super(options);
+
+        ui_scene = new Scene('ui_scene');
+    }
+
     override function get<T:Control, T1>( type:Class<T>, control:T ) :T1 
     {
         return cast switch(type) 
@@ -25,7 +36,7 @@ class MiosisMintRendering extends LuxeMintRender
             case mint.Slider:      new mint.render.luxe.Slider(this, cast control);
             case mint.Progress:    new mint.render.luxe.Progress(this, cast control);
             // Custom
-            case Button:           new MiosisButtonRender(this, cast control);                       
+            case Button:           new MiosisButtonRender(this, cast control, ui_scene);                       
             case _:                null;
         }
     }
