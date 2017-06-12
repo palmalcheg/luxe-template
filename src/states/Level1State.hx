@@ -33,10 +33,9 @@ class Level1State extends BaseState
         Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Off);
 
         var rendering = new MiosisMintRendering({ batcher:Main.ui_batcher });
-
         button = new Button({
             parent:Main.canvas, 
-            name:'testbutton', 
+            name:'button', 
             text:'one',
             rendering:rendering,
             x:0.1 * Main.w, 
@@ -45,24 +44,6 @@ class Level1State extends BaseState
             h:20,
             onclick:function(e,c) { on_button_click(); }
         });
-
-        // Customize button label
-        // TODO : Move to button renderer
-        var labelRenderer:mint.render.luxe.Label = cast button.label.renderer;
-        rendering.ui_scene.add(labelRenderer.text);
-        var txt:Text = rendering.ui_scene.get('testbutton.label.text');    
-        log('Text obj:' + txt);  
-        txt.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
-        txt.color = new Color().rgb(GameBoyPalette2.Dark);
-        txt.geom.letter_snapping = true;        
-        txt.geom.texture = txt.font.pages[0];
-        txt.geom.texture.filter_mag = nearest;
-        txt.geom.texture.filter_min = nearest;
-        txt.point_size = 16;
-
-        // var buttonRender:MiosisButtonRender = cast button.renderer;
-        // var mouse_pos = Luxe.screen.cursor.pos;
-        // buttonRender.check_current_mouse_position(mouse_pos.x, mouse_pos.y);
 
         // Set up level music
         music = Luxe.resources.audio('assets/sound/POL-chubby-cat-short.wav');
