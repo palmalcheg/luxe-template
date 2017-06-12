@@ -13,7 +13,7 @@ class Fader extends luxe.Component
     {
         _debug("---------- Fader.new ----------");  
 
-        def(options, { name : 'fade'});
+        def(options, { name:'fade'});
         def(options.name, 'fade');      
 
         super(options);
@@ -30,14 +30,14 @@ class Fader extends luxe.Component
     {
         _debug("---------- Fader.fade_in ----------");
 
-        _sprite.color.tween(t, { a : 0 }).onComplete(fn);
+        _sprite.color.tween(t, { a:0 }).onComplete(fn);
     }
 
     public function fade_out(?t = 0.15, ?fn:Void->Void) 
     {
         _debug("---------- Fader.fade_out ----------");
                 
-        _sprite.color.tween(t, { a : 1 }).onComplete(fn);
+        _sprite.color.tween(t, { a:1 }).onComplete(fn);
     }
 
     override function onremoved()

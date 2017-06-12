@@ -2,6 +2,7 @@ package states;
 
 import luxe.Log.*;
 import luxe.options.StateOptions;
+import luxe.Scene;
 import luxe.States;
 
 import definitions.Enums;
@@ -18,6 +19,8 @@ class BaseState extends State
     public var transition_in_time:Float;
     public var transition_out_time:Float; 
 
+    private var _scene :Scene;
+
     public function new(_options:BaseStateOptions) 
     {
         _debug("---------- BaseState.new ----------");
@@ -33,11 +36,24 @@ class BaseState extends State
 
     override function onenter<T>(_:T) 
     {
-        _debug("---------- BaseState.onenter ----------");     
+        _debug("---------- BaseState.onenter ----------");
 
-        Luxe.events.fire(EventTypes.StateReady, { state : name });
-               
         super.onenter(_);       
+
+        _scene = new Scene(this.name);  
+
+        Luxe.events.fire(EventTypes.StateReady, { state :name });
+    }
+
+    override function onleave<T>(_:T) 
+    {
+        _debug("---------- BaseState.onenter ----------");
+
+        super.onleave(_);       
+
+        _scene.empty();
+        _scene.destroy();
+        _scene = null;
     }
 
     public function post_fade_in()

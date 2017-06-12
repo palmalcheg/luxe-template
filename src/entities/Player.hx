@@ -11,10 +11,10 @@ class Player extends Sprite
         _debug("---------- Player.new ----------");
 
     	super({
-    		name : 'player',
-            texture : Luxe.resources.texture('assets/img/smiley.png'),
-            pos : new Vector(Main.w * 0.5, Main.h * 0.5),
-            depth : 1
+    		name:'player',
+            texture:Luxe.resources.texture('assets/img/smiley.png'),
+            pos:new Vector(Main.w * 0.5, Main.h * 0.5),
+            depth:1
         });
     }
 }

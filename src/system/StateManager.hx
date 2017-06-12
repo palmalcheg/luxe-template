@@ -15,12 +15,12 @@ import states.SplashState;
 
 class StateManager
 {
-    private var _states : States;
-    private var _current_state : String;
-    private var _next_state : String;
-    private var _current_parcel : Parcel;
-    private var _changeStateEventId : String;
-    private var _fader : Fader;
+    private var _states :States;
+    private var _current_state :String;
+    private var _next_state :String;
+    private var _current_parcel :Parcel;
+    private var _changeStateEventId :String;
+    private var _fader :Fader;
 
 	public function new() 
 	{
@@ -50,12 +50,12 @@ class StateManager
         _states.set(_next_state);
 
         var state:BaseState = cast _states.current_state;
-        _fader.fade_in(state.transition_in_time, on_fade_in_done); 
+        _fader.fade_in(state.transition_in_time, on_fade_in_done);
     }
 
     function on_change_state(e)
     {
-        _debug("---------- StateManager.on_change_state, go to state: " + e.state + "----------");
+        _debug("---------- StateManager.on_change_state, go to state:" + e.state + "----------");
 
         _next_state = e.state;   
 

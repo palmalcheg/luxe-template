@@ -18,7 +18,7 @@ class PlayerMovement extends Component
     {
         _debug("---------- PlayerMovement.new ----------");        
 
-		def(options, { name : 'movement'});
+		def(options, { name:'movement'});
 		def(options.name, 'movement');
 
         super(options);

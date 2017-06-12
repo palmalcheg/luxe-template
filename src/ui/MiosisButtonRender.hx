@@ -14,7 +14,7 @@ import ui.MiosisMintRendering;
 
 class MiosisButtonRender extends Render 
 {
-    var visual:NineSlice;
+    private var visual:NineSlice;
 
     public function new(_rendering:Rendering, _control:Button) 
     {
@@ -29,16 +29,15 @@ class MiosisButtonRender extends Render
         // log(control.h);        
 
         visual = new luxe.NineSlice({
-            // no_scene: true,
-            scene : Main.main_scene,
-            name: control.name + '.visual',
-            batcher: customRendering.options.batcher,
-            texture : Luxe.resources.texture('assets/texture/ui/gb_button_normal.png'),
-            top : 5, left : 5, right : 5, bottom : 5,
-            pos: new Vector(control.x, control.y),
-            size: new Vector(control.w, control.h),
-            depth: customRendering.options.depth + control.depth,
-            visible: control.visible
+            scene:Main.main_scene,
+            name:control.name + '.visual',
+            batcher:customRendering.options.batcher,
+            texture:Luxe.resources.texture('assets/texture/ui/gb_button_normal.png'),
+            top:5, left:5, right:5, bottom:5,
+            pos:new Vector(control.x, control.y),
+            size:new Vector(control.w, control.h),
+            depth:customRendering.options.depth + control.depth,
+            visible:control.visible
         });
         visual.create(new Vector(control.x, control.y), control.w, control.h);
         // Main.main_scene.add(visual);
@@ -83,8 +82,8 @@ class MiosisButtonRender extends Render
 
     // public function check_current_mouse_position(x:Float, y:Float)
     // {
-    //     _debug("x : " + x);
-    //     _debug("y : " + y);     
+    //     _debug("x:" + x);
+    //     _debug("y:" + y);     
 
     //     if (control.contains(x / Main.game_scale, y / Main.game_scale))
     //     {

@@ -13,12 +13,12 @@ class FadeTransitionSprite extends Sprite
         _debug("---------- FadeTransitionSprite.new ----------");
 
     	super({
-            name : 'fade-transition-sprite',            
-            batcher : Main.foreground_batcher,
-            parent : Luxe.camera,
-            size : Luxe.screen.size,
-            color : new Color().rgb(GameBoyPalette2.Dark),
-            centered : false
+            name :'fade-transition-sprite',            
+            batcher :Main.foreground_batcher,
+            parent :Luxe.camera,
+            size :Luxe.screen.size,
+            color :new Color().rgb(GameBoyPalette2.Dark),
+            centered :false
         });
     }
 }

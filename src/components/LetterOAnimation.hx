@@ -10,7 +10,7 @@ class LetterOAnimation extends SpriteAnimation
     {
         _debug("---------- LetterOAnimation.new ----------");  
 
-        def(_options, { name : 'animation' });  
+        def(_options, { name :'animation' });  
         def(_options.name, 'animation');    
 
         super(_options);

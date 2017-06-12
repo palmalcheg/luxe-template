@@ -12,17 +12,17 @@ import components.LetterOAnimation;
 
 class SplashState extends BaseState 
 {
-	var o_anim : SpriteAnimation;
-	var letters : haxe.ds.Vector<Sprite>;
+	var o_anim:SpriteAnimation;
+	var letters:haxe.ds.Vector<Sprite>;
 
 	public function new() 
 	{
         _debug("---------- Splash.new ----------");
 
         super({ 
-            name : StateNames.Splash, 
-            transition_in_time : 0.2,
-            transition_out_time : 0.2 
+            name:StateNames.Splash, 
+            transition_in_time:0.2,
+            transition_out_time:0.2 
         });
         
         letters = new haxe.ds.Vector<Sprite>(6);
@@ -68,11 +68,11 @@ class SplashState extends BaseState
         var pos_x = halfscreen_width - width_total_half + 8;
 
         letters[0] = new Sprite({
-            name : ' miosis_m',
-            scene : Main.main_scene,
-            texture : Luxe.resources.texture('assets/texture/logo/miosis_m.png'),
-            pos : new Vector(pos_x, Main.h * 0.5),
-            color : new Color().rgb(GameBoyPalette2.Off)
+            name:' miosis_m',
+            scene:Main.main_scene,
+            texture:Luxe.resources.texture('assets/texture/logo/miosis_m.png'),
+            pos:new Vector(pos_x, Main.h * 0.5),
+            color:new Color().rgb(GameBoyPalette2.Off)
         });
 
         // I
@@ -83,7 +83,7 @@ class SplashState extends BaseState
             scene:Main.main_scene,           
             texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(GameBoyPalette2.Off),
+            color:new Color().rgb(GameBoyPalette2.Off),
         });
 
         // O
@@ -94,8 +94,8 @@ class SplashState extends BaseState
             scene:Main.main_scene,                     
             texture:Luxe.resources.texture('assets/texture/logo/miosis_o.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(GameBoyPalette2.Off),
-            size: new Vector(32, 32)
+            color:new Color().rgb(GameBoyPalette2.Off),
+            size:new Vector(32, 32)
         });
 
         // S
@@ -106,29 +106,29 @@ class SplashState extends BaseState
             scene:Main.main_scene,                      
             texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color: new Color().rgb(GameBoyPalette2.Off),
+            color:new Color().rgb(GameBoyPalette2.Off),
         });
 
         // I
         pos_x += 8 + distance + 2;
 
         letters[4] = new Sprite({
-            name : 'miosis_i2',  
-            scene : Main.main_scene,                      
-            texture : Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
-            pos : new Vector(pos_x, Main.h * 0.5),
-            color : new Color().rgb(GameBoyPalette2.Off),
+            name:'miosis_i2',  
+            scene:Main.main_scene,                      
+            texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
+            pos:new Vector(pos_x, Main.h * 0.5),
+            color:new Color().rgb(GameBoyPalette2.Off),
         });
 
         // S
         pos_x += 2 + distance + 8;
 
         letters[5] = new Sprite({
-            name : 'miosis_s2',    
-            scene : Main.main_scene,                    
-            texture : Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
-            pos : new Vector(pos_x, Main.h * 0.5),
-            color : new Color().rgb(GameBoyPalette2.Off),
+            name:'miosis_s2',    
+            scene:Main.main_scene,                    
+            texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
+            pos:new Vector(pos_x, Main.h * 0.5),
+            color:new Color().rgb(GameBoyPalette2.Off),
         });
 
         o_anim = letters[2].add(new LetterOAnimation({ name:'anim'}));
@@ -140,6 +140,6 @@ class SplashState extends BaseState
         _debug("---------- Splash.on_anim_done ----------");
 
         o_anim.entity.events.unlisten('animation.splash.end');
-        Luxe.events.fire(EventTypes.ChangeState, { state : StateNames.Level1 });
+        Luxe.events.fire(EventTypes.ChangeState, { state:StateNames.Level1 });
     }
 }
