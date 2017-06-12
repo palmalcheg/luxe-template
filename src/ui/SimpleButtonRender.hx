@@ -31,20 +31,18 @@ class SimpleButtonRender extends Render
         // Init visuals
 
         _background = new Sprite({
-            name:"button_background", 
+            name:"button.background", 
             scene:scene,
             batcher:rendering.options.batcher,
-            // color:new Color().rgb(GameBoyPalette2.Medium),
             depth:rendering.options.depth + control.depth,
             visible:control.visible,
             centered:false
         });        
 
         _foreground = new Sprite({
-            name:"button_background", 
+            name:"button.foreground", 
             scene:scene,
             batcher:rendering.options.batcher,
-            // color:new Color().rgb(GameBoyPalette2.Light),
             depth:rendering.options.depth + control.depth,
             visible:control.visible,
             centered:false
@@ -57,7 +55,6 @@ class SimpleButtonRender extends Render
         _text = rendering.ui_scene.get(control.name + '.label.text');    
         log('Text obj:' + _text);  
         _text.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
-        // _text.color = new Color().rgb(GameBoyPalette2.Dark);
         _text.geom.letter_snapping = true;        
         _text.geom.texture = _text.font.pages[0];
         _text.geom.texture.filter_mag = nearest;

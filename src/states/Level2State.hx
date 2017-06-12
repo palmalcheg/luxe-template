@@ -28,13 +28,11 @@ class Level2State extends BaseState
         _debug("---------- Level2State.onenter ----------");
 
         Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Off);
-
-        var rendering = new MiosisMintRendering({ batcher:Main.ui_batcher });
         button = new Button({
             parent:Main.canvas, 
             name:'button', 
             text:'two',
-            rendering:rendering,
+            rendering:Main.mint_renderer,
             x:0.1 * Main.w, 
             y:0.1 * Main.h, 
             w:30, 

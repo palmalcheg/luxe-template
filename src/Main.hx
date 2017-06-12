@@ -9,17 +9,18 @@ import luxe.Vector;
 import phoenix.Batcher;
 
 import mint.focus.Focus;
-import mint.render.luxe.LuxeMintRender;
+// import mint.render.luxe.LuxeMintRender;
 
 import definitions.Enums;
 import system.GameBoyPalette;
 import system.StateManager;
 import ui.MiosisCanvas;
+import ui.MiosisMintRendering;
 
 class Main extends luxe.Game  
 {
     public static var main_scene:Scene;
-    public static var mint_renderer:LuxeMintRender;
+    public static var mint_renderer:MiosisMintRendering;
     public static var canvas:MiosisCanvas; // TODO : does this need to be public static
     public static var focus:Focus; // TODO : does this need to be public static
     public static var background_batcher:phoenix.Batcher;  
@@ -67,8 +68,13 @@ class Main extends luxe.Game
     {
         _debug("---------- Main.ready ----------");
 
+        // Init palette
+
+        palette = new GameBoyPalette(GameBoyPaletteType.GB2);    
+
         // Set background color
-        Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Dark);
+        
+        Luxe.renderer.clear_color = GameBoyPalette.get_color(3);
 
         log('Main w: ${w}');
         log('Main h: ${h}');
@@ -112,7 +118,7 @@ class Main extends luxe.Game
         
         // Set up Mint canvas
 
-        mint_renderer = new LuxeMintRender({ batcher:ui_batcher });
+        mint_renderer = new MiosisMintRendering({ batcher:ui_batcher });
 
         canvas = new MiosisCanvas({
             name :'canvas',
@@ -127,8 +133,6 @@ class Main extends luxe.Game
         // Start state manager
 
         _state_manager = new StateManager();
-
-        palette = new GameBoyPalette(GameBoyPaletteType.GB2);    
     }
 
     override function onkeyup(e:luxe.Input.KeyEvent) 
