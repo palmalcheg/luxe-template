@@ -12,7 +12,7 @@ import mint.focus.Focus;
 import mint.render.luxe.LuxeMintRender;
 
 import definitions.Enums;
-import system.CGAPalette;
+import system.GameBoyPalette;
 import system.StateManager;
 import ui.MiosisCanvas;
 
@@ -25,7 +25,7 @@ class Main extends luxe.Game
     public static var background_batcher:phoenix.Batcher;  
     public static var ui_batcher: phoenix.Batcher;    
     public static var foreground_batcher:phoenix.Batcher;
-    public static var palette:CGAPalette;
+    public static var palette:GameBoyPalette;
 
     public static var w:Int = -1;
     public static var h:Int = -1;
@@ -128,7 +128,7 @@ class Main extends luxe.Game
 
         _state_manager = new StateManager();
 
-        palette = new CGAPalette(CGAPaletteType.CGA0High);    
+        palette = new GameBoyPalette(GameBoyPaletteType.GB2);    
     }
 
     override function onkeyup(e:luxe.Input.KeyEvent) 

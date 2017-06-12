@@ -78,7 +78,14 @@ package definitions;
 	var Yellow = 0xffff55;	
 }
 
-// 	Game Boy palette, gray 1
+// Game Boy palette types
+@:enum abstract GameBoyPaletteType(String) to String
+{
+  var GB1 = "GB1";
+  var GB2 = "GB2";
+}
+
+// Game Boy palette, gray 1
 @:enum abstract GameBoyPalette1(Int) to Int
 {
     var Off = BasicColors.Black;
@@ -87,7 +94,7 @@ package definitions;
 	var Dark = BasicColors.White;	
 }
 
-// 	Game Boy palette, gray 2
+// Game Boy palette, gray 2
 @:enum abstract GameBoyPalette2(Int) to Int
 {
     var Off = 0xefefef;

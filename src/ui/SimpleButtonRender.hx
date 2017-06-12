@@ -14,6 +14,7 @@ import mint.types.Types.MouseEvent;
 
 import definitions.Enums;
 import ui.MiosisMintRendering;
+import system.GameBoyPalette;
 
 class SimpleButtonRender extends Render 
 {
@@ -130,30 +131,33 @@ class SimpleButtonRender extends Render
 
         if (control.contains(x / Main.game_scale, y / Main.game_scale))
         {
-            _debug("HOVER!!!!!!!!!!!!!!");
-            visual.texture = Luxe.resources.texture('assets/texture/ui/gb_button_hover.png');
+            go_to_hover_state();
+        }
+        else
+        {
+            go_to_normal_state();
         }
     }
 
     function go_to_normal_state()
     {
-        _text.color = new Color().rgb(GameBoyPalette2.Medium);
-        _background.color = new Color().rgb(GameBoyPalette2.Light);                 
-        _foreground.color = new Color().rgb(GameBoyPalette2.Off);        
+        _text.color = GameBoyPalette.get_color(0);
+        _background.color = GameBoyPalette.get_color(2);                 
+        _foreground.color = GameBoyPalette.get_color(3);        
     }
 
     function go_to_hover_state()
     {
-        _text.color = new Color().rgb(GameBoyPalette2.Off);
-        _background.color = new Color().rgb(GameBoyPalette2.Light);         
-        _foreground.color = new Color().rgb(GameBoyPalette2.Medium);        
+        _text.color = GameBoyPalette.get_color(0);
+        _background.color = GameBoyPalette.get_color(1);         
+        _foreground.color = GameBoyPalette.get_color(2);        
     }
 
     function go_to_pressed_state()
     {
-        _text.color = new Color().rgb(GameBoyPalette2.Dark);
-        _background.color = new Color().rgb(GameBoyPalette2.Dark);        
-        _foreground.color = new Color().rgb(GameBoyPalette2.Medium);
+        _text.color = GameBoyPalette.get_color(1);
+        _background.color = GameBoyPalette.get_color(3);        
+        _foreground.color = GameBoyPalette.get_color(2);
     }
 
     function on_mouse_enter(e:MouseEvent, c:Control) 
