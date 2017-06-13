@@ -14,14 +14,14 @@ import mint.focus.Focus;
 import definitions.Enums;
 import system.GameBoyPalette;
 import system.StateManager;
-import ui.MiosisCanvas;
-import ui.MiosisMintRendering;
+import ui.UICanvas;
+import ui.UIRendering;
 
 class Main extends luxe.Game  
 {
     public static var main_scene:Scene;
-    public static var mint_renderer:MiosisMintRendering;
-    public static var canvas:MiosisCanvas; // TODO : does this need to be public static
+    public static var mint_renderer:UIRendering;
+    public static var canvas:UICanvas; // TODO : does this need to be public static
     public static var focus:Focus; // TODO : does this need to be public static
     public static var background_batcher:phoenix.Batcher;  
     public static var ui_batcher: phoenix.Batcher;    
@@ -118,9 +118,9 @@ class Main extends luxe.Game
         
         // Set up Mint canvas
 
-        mint_renderer = new MiosisMintRendering({ batcher:ui_batcher });
+        mint_renderer = new UIRendering({ batcher:ui_batcher });
 
-        canvas = new MiosisCanvas({
+        canvas = new UICanvas({
             name :'canvas',
             rendering : mint_renderer,
             options : { color:new Color(1, 1, 1, 0) },

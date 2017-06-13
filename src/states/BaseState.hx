@@ -47,12 +47,20 @@ class BaseState extends State
 
     override function onleave<T>(_:T) 
     {
-        _debug("---------- BaseState.onenter ----------");
+        _debug("---------- BaseState.onleave ----------");
 
-        super.onleave(_);       
+        if (Luxe.core.shutting_down)
+        {
+            return;
+        }
 
         _scene.empty();
-        _scene.destroy();
+
+        if (!_scene.destroyed)
+        {
+            _scene.destroy();
+        }
+
         _scene = null;
     }
 

@@ -2,7 +2,7 @@ package ui;
 
 import mint.render.luxe.Convert;
 
-class MiosisCanvas extends mint.Canvas 
+class UICanvas extends mint.Canvas 
 {
     public function auto_listen() 
     {

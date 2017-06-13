@@ -6,9 +6,9 @@ import mint.Button;
 import mint.Control;
 import mint.render.luxe.LuxeMintRender;
 
-import ui.SimpleButtonRender;
+import ui.UIButtonSimple;
 
-class MiosisMintRendering extends LuxeMintRender 
+class UIRendering extends LuxeMintRender 
 {
     public var ui_scene(default, null):Scene;
 
@@ -38,7 +38,7 @@ class MiosisMintRendering extends LuxeMintRender
             case mint.Progress:    new mint.render.luxe.Progress(this, cast control);
             // Custom
             // case Button:           new MiosisButtonRender(this, cast control, ui_scene);                       
-            case Button:           new SimpleButtonRender(this, cast control, ui_scene);                        
+            case Button:           new UIButtonSimple(this, cast control, ui_scene);                        
             case _:                null;
         }
     }

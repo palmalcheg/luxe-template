@@ -2,13 +2,11 @@ package states;
 
 import luxe.Color;
 import luxe.Log.*;
-import luxe.Text;
 import luxe.resource.Resource.AudioResource;
 
 import mint.Button;
 
 import definitions.Enums;
-import ui.MiosisMintRendering;
 
 class Level1State extends BaseState 
 {
@@ -57,9 +55,6 @@ class Level1State extends BaseState
     override function onleave<T>( _data:T ) 
     {
         _debug("---------- Level1State.onleave ----------");
-
-        // CLEAN UP
-        button.destroy();
 
         super.onleave(_data);
         

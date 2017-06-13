@@ -2,13 +2,11 @@ package states;
 
 import luxe.Color;
 import luxe.Log.*;
-import luxe.Text;
 import luxe.resource.Resource.AudioResource;
 
 import mint.Button;
 
 import definitions.Enums;
-import ui.MiosisMintRendering;
 
 class Level2State extends BaseState 
 {
@@ -58,8 +56,6 @@ class Level2State extends BaseState
 
         super.onleave(_data);
 
-        // CLEAN UP
-        button.destroy();
         // Luxe.audio.stop(music_handle);
     }
 

@@ -1,6 +1,5 @@
 package ui;
 
-import luxe.Color;
 import luxe.Log.*;
 import luxe.Scene;
 import luxe.Sprite;
@@ -12,19 +11,18 @@ import mint.Control;
 import mint.render.Render;
 import mint.types.Types.MouseEvent;
 
-import definitions.Enums;
-import ui.MiosisMintRendering;
+import ui.UIRendering;
 import system.GameBoyPalette;
 
-class SimpleButtonRender extends Render 
+class UIButtonSimple extends Render 
 {
     private var _background:Sprite;
     private var _foreground:Sprite;
     private var _text:Text;  
 
-    public function new(rendering:MiosisMintRendering, control:Button, scene:Scene) 
+    public function new(rendering:UIRendering, control:Button, scene:Scene) 
     {
-        _debug("---------- SimpleButtonRender.new ----------");
+        _debug("---------- UIButtonSimple.new ----------");
 
         super(rendering, control);
 
@@ -51,8 +49,7 @@ class SimpleButtonRender extends Render
         // Customize button label
 
         var labelRenderer:mint.render.luxe.Label = cast control.label.renderer;
-        rendering.ui_scene.add(labelRenderer.text);
-        _text = rendering.ui_scene.get(control.name + '.label.text');    
+        _text = labelRenderer.text;
         log('Text obj:' + _text);  
         _text.font = Luxe.resources.font('assets/font/justabit/justabit32.fnt');
         _text.geom.letter_snapping = true;        
@@ -89,7 +86,7 @@ class SimpleButtonRender extends Render
 
     override function onvisible(_visible:Bool) 
     {
-        _debug("---------- SimpleButtonRender.onvisible ----------");
+        _debug("---------- UIButtonSimple.onvisible ----------");
 
         _background.visible = _visible;      
         _foreground.visible = _visible;              
@@ -97,7 +94,7 @@ class SimpleButtonRender extends Render
 
     override function ondepth(depth:Float) 
     {
-        var customRendering:MiosisMintRendering = cast rendering;
+        var customRendering:UIRendering = cast rendering;
         _background.depth = customRendering.options.depth + depth;
         _foreground.depth = _background.depth + 1;        
     }
@@ -114,8 +111,16 @@ class SimpleButtonRender extends Render
 
         // Destroy visuals
 
-        _background.destroy();
-        _foreground.destroy();
+        if (!_background.destroyed)
+        {
+            _background.destroy();
+        }
+
+        if (!_foreground.destroyed)
+        {
+            _foreground.destroy();
+        }
+
         _background = null;
         _foreground = null; 
         _text = null;       
@@ -159,44 +164,44 @@ class SimpleButtonRender extends Render
 
     function on_mouse_enter(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.on_mouse_enter ----------");
+        _debug("---------- UIButtonSimple.on_mouse_enter ----------");
         go_to_hover_state();
     }
 
     function on_mouse_leave(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.on_mouse_leave ----------");
+        _debug("---------- UIButtonSimple.on_mouse_leave ----------");
 
         go_to_normal_state();
     }
 
     function on_mouse_down(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.on_mouse_down ----------");        
+        _debug("---------- UIButtonSimple.on_mouse_down ----------");        
 
         go_to_pressed_state();
     }
 
     function on_mouse_up(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.on_mouse_up ----------");
+        _debug("---------- UIButtonSimple.on_mouse_up ----------");
 
         if (e.button == none) 
         {
             // Outside button
-            _debug("OUTSIDE!!!!!!!!!!!!!!");
+            // _debug("OUTSIDE!!!!!!!!!!!!!!");
             go_to_normal_state();
         }   
         else
         {
             // Inside button
-            _debug("INSIDE!!!!!!!!!!!!!!");            
+            // _debug("INSIDE!!!!!!!!!!!!!!");            
             go_to_hover_state();
         }    
     }
 
     function on_mouse_move(e:MouseEvent, c:Control) 
     {
-        _debug("---------- MiosisButtonRender.on_mouse_move ----------");
+        _debug("---------- UIButtonSimple.on_mouse_move ----------");
     }
 }

@@ -11,9 +11,9 @@ import mint.render.Render;
 import mint.render.Rendering;
 import mint.types.Types.MouseEvent;
 
-import ui.MiosisMintRendering;
+import ui.UIRendering;
 
-class MiosisButtonRender extends Render 
+class UIButtonSliced extends Render 
 {
     private var visual:NineSlice;
 
@@ -22,7 +22,7 @@ class MiosisButtonRender extends Render
         _debug("---------- MiosisButtonRender.new ----------");
 
         super(_rendering, _control);
-        var customRendering:MiosisMintRendering = cast rendering;
+        var customRendering:UIRendering = cast rendering;
 
         // log(control.x);
         // log(control.y);
@@ -64,7 +64,7 @@ class MiosisButtonRender extends Render
 
     override function ondepth(_depth:Float) 
     {
-        var customRendering:MiosisMintRendering = cast rendering;
+        var customRendering:UIRendering = cast rendering;
         visual.depth = customRendering.options.depth + _depth;
     }
 

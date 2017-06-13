@@ -108,13 +108,9 @@ class LoadState extends BaseState
     override function onleave<T>( _data:T ) 
     {
         _debug("---------- Load.onleave ----------");
-        
-        // Clean up
-        progress_bar.destroy();
+
         progress_bar = null;
-        progress_border.destroy();
         progress_border = null;
-        background.destroy();
         background = null;
 
         super.onleave(_data);
