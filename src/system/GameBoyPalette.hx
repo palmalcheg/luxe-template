@@ -6,24 +6,17 @@ import definitions.Enums;
 
 class GameBoyPalette
 {
-    private var _paletteType:GameBoyPaletteType;
-    private static var _palette:haxe.ds.Vector<Color>;
+    public var palette_type(default, set):GameBoyPaletteType;
+    private static var _palette:haxe.ds.Vector<Color>; // TODO : static yuck
 
 	public function new(type:GameBoyPaletteType) 
 	{
         _palette = new haxe.ds.Vector<Color>(4);
         set_palette_type(type);
     }
-
-    public function get_palette_type()
-    {
-        return _paletteType;
-    }
     
-    public function set_palette_type(type:GameBoyPaletteType)
-    {
-        _paletteType = type;
-        
+    public function set_palette_type(type:GameBoyPaletteType):GameBoyPaletteType
+    {        
         switch (type)
         {
             case GB1:
@@ -45,8 +38,11 @@ class GameBoyPalette
                 throw "Unknown Game Boy palette type " + type;
             }
         }
+
+        return type;
     }
 
+    // TODO : static yuck
     public static function get_color(index:Int)
     {
         return _palette[index];

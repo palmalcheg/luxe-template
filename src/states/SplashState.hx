@@ -1,6 +1,5 @@
 package states;
 
-import luxe.Color;
 import luxe.Log.*;
 import luxe.Sprite;
 import luxe.Vector;
@@ -9,6 +8,7 @@ import luxe.components.sprite.SpriteAnimation;
 
 import definitions.Enums;
 import components.LetterOAnimation;
+import system.GameBoyPalette;
 
 class SplashState extends BaseState 
 {
@@ -32,7 +32,7 @@ class SplashState extends BaseState
 	{
         _debug("---------- Splash.onenter ----------");
 
-	    Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Dark);
+	    Luxe.renderer.clear_color = GameBoyPalette.get_color(3);
                
         super.onenter(_);		
     }
@@ -71,7 +71,7 @@ class SplashState extends BaseState
             scene:_scene,
             texture:Luxe.resources.texture('assets/texture/logo/miosis_m.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color:new Color().rgb(GameBoyPalette2.Off)
+            color:GameBoyPalette.get_color(0)
         });
 
         // I
@@ -82,7 +82,7 @@ class SplashState extends BaseState
             scene:_scene,           
             texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color:new Color().rgb(GameBoyPalette2.Off),
+            color:GameBoyPalette.get_color(0)
         });
 
         // O
@@ -93,7 +93,7 @@ class SplashState extends BaseState
             scene:_scene,                     
             texture:Luxe.resources.texture('assets/texture/logo/miosis_o.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color:new Color().rgb(GameBoyPalette2.Off),
+            color:GameBoyPalette.get_color(0),
             size:new Vector(32, 32)
         });
 
@@ -105,7 +105,7 @@ class SplashState extends BaseState
             scene:_scene,                      
             texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color:new Color().rgb(GameBoyPalette2.Off),
+            color:GameBoyPalette.get_color(0),
         });
 
         // I
@@ -116,7 +116,7 @@ class SplashState extends BaseState
             scene:_scene,                      
             texture:Luxe.resources.texture('assets/texture/logo/miosis_i.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color:new Color().rgb(GameBoyPalette2.Off),
+            color:GameBoyPalette.get_color(0),
         });
 
         // S
@@ -127,7 +127,7 @@ class SplashState extends BaseState
             scene:_scene,                    
             texture:Luxe.resources.texture('assets/texture/logo/miosis_s.png'),
             pos:new Vector(pos_x, Main.h * 0.5),
-            color:new Color().rgb(GameBoyPalette2.Off),
+            color:GameBoyPalette.get_color(0),
         });
 
         o_anim = letters[2].add(new LetterOAnimation({ name:'anim'}));

@@ -74,7 +74,7 @@ class Main extends luxe.Game
 
         // Set background color
         
-        Luxe.renderer.clear_color = GameBoyPalette.get_color(3);
+	    Luxe.renderer.clear_color = GameBoyPalette.get_color(3);
 
         log('Main w: ${w}');
         log('Main h: ${h}');
