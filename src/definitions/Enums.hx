@@ -88,10 +88,10 @@ package definitions;
 // Game Boy palette, gray 1
 @:enum abstract GameBoyPalette1(Int) to Int
 {
-    var Off = BasicColors.Black;
+    var Off = BasicColors.White;
     var Light = 0xb2b2b2;
 	var Medium = 0x757575;    
-	var Dark = BasicColors.White;	
+	var Dark = BasicColors.Black;	
 }
 
 // Game Boy palette, gray 2

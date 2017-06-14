@@ -1,12 +1,12 @@
 package states;
 
-import luxe.Color;
 import luxe.Log.*;
 import luxe.resource.Resource.AudioResource;
 
 import mint.Button;
 
 import definitions.Enums;
+import system.GameBoyPalette;
 
 class Level1State extends BaseState 
 {
@@ -27,8 +27,20 @@ class Level1State extends BaseState
 
         super.onenter(_);		
 
-		// Set background color
-        Luxe.renderer.clear_color = new Color().rgb(GameBoyPalette2.Off);
+        Luxe.renderer.clear_color = GameBoyPalette.get_color(0);
+
+        var colors = 
+        {
+            background_color:GameBoyPalette.get_color(2),
+            background_color_hover:GameBoyPalette.get_color(1),
+            background_color_down:GameBoyPalette.get_color(3),
+            foreground_color:GameBoyPalette.get_color(3),
+            foreground_color_hover:GameBoyPalette.get_color(2),
+            foreground_color_down:GameBoyPalette.get_color(2),
+            text_color:GameBoyPalette.get_color(0),
+            text_color_hover:GameBoyPalette.get_color(0),
+            text_color_down:GameBoyPalette.get_color(1)            
+        };
         button = new Button({
             parent:Main.canvas, 
             name:'button', 
@@ -36,8 +48,9 @@ class Level1State extends BaseState
             rendering:Main.mint_renderer,
             x:0.1 * Main.w, 
             y:0.1 * Main.h, 
-            w:30, 
-            h:20,
+            w:20, 
+            h:15,
+            options: { color_scheme:colors },
             onclick:function(e,c) { on_button_click(); }
         });
 

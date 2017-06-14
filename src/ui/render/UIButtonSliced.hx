@@ -1,4 +1,4 @@
-package ui;
+package ui.render;
 
 import luxe.Log.*;
 import luxe.NineSlice;
@@ -19,7 +19,7 @@ class UIButtonSliced extends Render
 
     public function new(_rendering:Rendering, _control:Button, _scene:Scene) 
     {
-        _debug("---------- MiosisButtonRender.new ----------");
+        _debug("---------- UIButtonSliced.new ----------");
 
         super(_rendering, _control);
         var customRendering:UIRendering = cast rendering;
@@ -57,7 +57,7 @@ class UIButtonSliced extends Render
 
     override function onvisible(_visible:Bool) 
     {
-        _debug("---------- MiosisButtonRender.onvisible ----------");
+        _debug("---------- UIButtonSliced.onvisible ----------");
 
         visual.visible = _visible;      
     }

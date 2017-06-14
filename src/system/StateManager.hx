@@ -105,6 +105,7 @@ class StateManager
         }
 
         Main.main_scene.empty();
+        Main.mint_renderer.scene.empty();
 
         if (_current_state == StateNames.Load)
         {
