@@ -1,6 +1,5 @@
 package states;
 
-import luxe.Color;
 import luxe.Log.*;
 import luxe.Parcel;
 import luxe.Sprite;
@@ -13,6 +12,7 @@ import snow.api.Promise;
 
 import definitions.Enums;
 import states.BaseState;
+import system.GameBoyPalette;
 
 class LoadState extends BaseState 
 {
@@ -46,7 +46,7 @@ class LoadState extends BaseState
 
         // Set background color
 
-        Luxe.renderer.clear_color = new Color().rgb(BasicColors.Red);
+        Luxe.renderer.clear_color = GameBoyPalette.get_color(3);
 
         var view_width:Float = Luxe.screen.w;
         var view_height:Float = Luxe.screen.h;
@@ -71,7 +71,7 @@ class LoadState extends BaseState
             scene:_scene,  
             size:new Vector(view_width, view_height),
             centered:false,
-            color:new Color().rgb(GameBoyPalette2.Dark),
+            color:GameBoyPalette.get_color(3),
             depth:1,
             visible:true,
         });
@@ -82,14 +82,14 @@ class LoadState extends BaseState
             pos:new Vector(view_mid_x - half_width, y_pos - half_height),
             size:new Vector(2, height),
             centered:false,
-            color:new Color().rgb(GameBoyPalette2.Off),
+            color:GameBoyPalette.get_color(0),
             depth:2
         });
 
         progress_border = new Visual({
             name:"border",
             scene:_scene,
-            color:new Color().rgb(GameBoyPalette2.Medium),
+            color:GameBoyPalette.get_color(2),
             pos:new Vector(view_mid_x - half_width, y_pos - half_height),
             geometry:Luxe.draw.rectangle({
                 w:width,
