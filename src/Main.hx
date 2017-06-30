@@ -17,6 +17,8 @@ import system.StateManager;
 import ui.UICanvas;
 import ui.UIRendering;
 
+import snowhxt.Snowhxt;
+
 class Main extends luxe.Game  
 {
     public static var main_scene:Scene;
@@ -34,6 +36,9 @@ class Main extends luxe.Game
     public static var game_scale:Float = 1.0;
 
     private var _state_manager : StateManager;
+
+
+    var shxt : Snowhxt;
 
     override function config(config:luxe.GameConfig) 
     {
@@ -54,6 +59,10 @@ class Main extends luxe.Game
         config.window.resizable = windowConfig.resizable;
         config.window.borderless = windowConfig.borderless;
 
+        config.render.opengl.profile = core;
+        config.render.stencil = 8;
+        config.render.depth = 24;
+
         // Load assets for the splash screen
         config.preload.textures.push({ id : LetterMTexture, filter_min:nearest, filter_mag:nearest });
         config.preload.textures.push({ id : LetterITexture, filter_min:nearest, filter_mag:nearest });
@@ -70,11 +79,11 @@ class Main extends luxe.Game
 
         // Init palette
 
-        palette = new GameBoyPalette(GameBoyPaletteType.GB2);    
+        palette = new GameBoyPalette(GameBoyPaletteType.GB1);    
 
         // Set background color
         
-	    Luxe.renderer.clear_color = GameBoyPalette.get_color(3);
+	    Luxe.renderer.clear_color = GameBoyPalette.get_color(2);
 
         log('Main w: ${w}');
         log('Main h: ${h}');
@@ -133,6 +142,11 @@ class Main extends luxe.Game
         // Start state manager
 
         _state_manager = new StateManager();
+
+        var myconfig = Snowhxt.default_config();
+        myconfig.app_name = 'custom';
+        myconfig.allocations = false;
+        shxt = new Snowhxt(myconfig);
     }
 
     override function onkeyup(e:luxe.Input.KeyEvent) 
@@ -147,6 +161,10 @@ class Main extends luxe.Game
     {
         Luxe.camera.viewport = new luxe.Rectangle(0, 0, e.x, e.y);
         foreground_batcher.view.viewport = new luxe.Rectangle(0, 0, e.x, e.y);
+    }
+
+    override function update(dt:Float) {
+        shxt.update();
     }
 
     override function ondestroy() 

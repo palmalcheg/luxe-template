@@ -13,7 +13,7 @@ class FadeTransitionSprite extends Sprite
         _debug("---------- FadeTransitionSprite.new ----------");
 
     	super({
-            name :'fade-transition-sprite',            
+            name :'fade-transition-sprite',
             batcher :Main.foreground_batcher,
             parent :Luxe.camera,
             size :Luxe.screen.size,

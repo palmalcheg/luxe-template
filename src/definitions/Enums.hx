@@ -65,7 +65,7 @@ package definitions;
 {
     var Black = BasicColors.Black;
     var Green = 0x00aa00;
-	var Red = 0xaa0000;    
+	var Red = 0xaa0000;  
 	var Brown = 0xaa5500;	
 }
 
@@ -75,7 +75,7 @@ package definitions;
     var Black = BasicColors.Black;
     var LightGreen = 0x55ff55;
 	var LightRed = 0xff5555;    
-	var Yellow = 0xffff55;	
+	var Yellow = 0xffff55;
 }
 
 // Game Boy palette types

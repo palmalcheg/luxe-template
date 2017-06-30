@@ -17,7 +17,6 @@ class UICanvas extends mint.Canvas
         Luxe.on(luxe.Ev.textinput,  conv_textinput);
             //make sure we clean up
         ondestroy.listen(auto_unlisten);
-
     }
 
     public function auto_unlisten() 

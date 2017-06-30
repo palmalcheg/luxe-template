@@ -48,8 +48,8 @@ class Level1State extends BaseState
             rendering:Main.mint_renderer,
             x:0.1 * Main.w, 
             y:0.1 * Main.h, 
-            w:20, 
-            h:15,
+            w:100, 
+            h:150,
             options: { color_scheme:colors },
             onclick:function(e,c) { on_button_click(); }
         });
